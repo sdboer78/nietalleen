@@ -5,33 +5,26 @@
     class="text-center"
   >
     <v-container class="pa-8">
-      <v-avatar size="150">
-        <img
-          :src="require('@/assets/logo-niet-alleen.svg')"
-          alt="Logo 'Niet Alleen'."
-        >
-      </v-avatar>
-      <h1>Ik zoek hulp</h1>
-      <div>
-        (( formulier ))
-      </div>
+      <v-img
+        :src="require('@/assets/logo-niet-alleen.png')"
+        aspect-ratio="2.2"
+        contain
+      />
+      <br>
+      <h1>Welkom bij #nietalleen</h1>
     </v-container>
-    <section class="grey pa-8">
-      <v-container>
-        <h3>Wij laten ons niet inpakken door het corona-virus.</h3>
-        <p>Wij laten ons niet inpakken door het corona-virus. Dat kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor je klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!</p>
-      </v-container>
-    </section>
-    <section class="grey lighten-2 pa-8">
-      <v-container>
-        <h3>Wij laten ons niet inpakken door het corona-virus.</h3>
-        <p>Wij laten ons niet inpakken door het corona-virus. Dat kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor je klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!</p>
-      </v-container>
-    </section>
     <section class="grey lighten-1 pa-8">
       <v-container>
-        <h3>Wij laten ons niet inpakken door het corona-virus.</h3>
-        <p>Wij laten ons niet inpakken door het corona-virus. Dat kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor je klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!</p>
+        <p>
+          Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het
+          coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.
+          Vanaf woensdag kun je hier een hulpvraag kwijt voor jezelf of voor een ander.
+          Ook kun je hier aangeven dat jij of jouw organisatie iets voor een ander kunt doen.
+          Jouw hulpvraag of jouw hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en
+          doorgestuurd naar een organisatie bij jou in de buurt. Zo proberen we elkaar in deze moeilijke
+          tijden te helpen en naar elkaar om te kijken.
+        </p>
+        <p><strong>Lokale maatschappelijke organisaties en kerken</strong></p>
       </v-container>
     </section>
   </v-layout>
