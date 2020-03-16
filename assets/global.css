@@ -1,0 +1,29 @@
+/* TEMPORARY custom fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+html,
+body,
+.v-application,
+.body-1,
+.body-2,
+.caption {
+  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.headline,
+.title,
+.subtitle-1,
+.subtitle-2 {
+  font-family: "Comfortaa", "Avenir Next", "Avenir", sans-serif !important;
+}
