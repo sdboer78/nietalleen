@@ -8,6 +8,10 @@ const api = axios.create({
 
 export const postMessage = async (formMessage) => {
   const message = formatMessage(formMessage)
-  const response = await api.post(message)
+  const response = await api.post(message, {
+    params: {
+      token: constants.API_TOKEN
+    }
+  })
   return response
 }
