@@ -9,9 +9,12 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'eslint:recommended',
+    'plugin:nuxt/recommended',
+    'plugin:vue/recommended',
   ],
-  // add your custom rules here
+  plugins: [],
   rules: {
+    'no-restricted-exports': ["error", { "restrictedNamedExports": ["default"] }]
   }
 }
