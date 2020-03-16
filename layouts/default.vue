@@ -1,16 +1,23 @@
 <template>
-  <v-app dark>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
-    <v-footer
-      :fixed="fixed"
+  <v-app>
+    <v-app-bar
       app
+      color="white"
+      fixed
     >
-      <span>&copy; 2020 Evangelische Omroep</span>
-    </v-footer>
+      <v-tabs
+        v-model="activeTab"
+        color="primary"
+        grow
+      >
+        <v-tab v-for="tab in tabs" :key="tab.id" :to="tab.route" exact>
+          {{ tab.name }}
+        </v-tab>
+      </v-tabs>
+    </v-app-bar>
+    <v-content>
+      <nuxt />
+    </v-content>
   </v-app>
 </template>
 
@@ -18,21 +25,19 @@
 export default {
   data () {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Niet alleen.'
+      activeTab: '/',
+      tabs: [
+        { id: 1, name: 'Ik zoek hulp', route: '/' },
+        { id: 2, name: 'Ik kan hulp bieden', route: '/hulp-bieden' }
+      ]
     }
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+  .v-tab {
+    text-transform: none;
+    letter-spacing: 0;
+  }
+</style>
