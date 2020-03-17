@@ -5,7 +5,7 @@
     class="text-center"
   >
     <v-container class="pa-8">
-      <h1>Ik kan hulp bieden</h1>
+      <h1>Wij kunnen hulp bieden</h1>
     </v-container>
   </v-layout>
 </template>

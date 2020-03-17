@@ -3,15 +3,23 @@
     <v-app-bar
       app
       color="white"
+      elevation="1"
       fixed
     >
       <v-tabs
         v-model="activeTab"
         color="primary"
-        grow
+        slider-size="3"
+        fixed-tabs
       >
-        <v-tab v-for="tab in tabs" :key="tab.id" :to="tab.route" exact>
-          {{ tab.name }}
+        <v-tab key="1" to="/" exact>
+          Ik zoek hulp
+        </v-tab>
+        <v-tab key="2" to="/hulp-bieden" exact>
+          Wij kunnen hulp bieden
+        </v-tab>
+        <v-tab key="3" to="/meer-info" exact>
+          <v-icon>mdi-information</v-icon>
         </v-tab>
       </v-tabs>
     </v-app-bar>
@@ -25,12 +33,7 @@
 export default {
   data () {
     return {
-      activeTab: '/',
-      tabs: [
-        { id: 1, name: 'Ik zoek hulp', route: '/' },
-        { id: 2, name: 'Wij kunnen hulp bieden', route: '/hulp-bieden' },
-        { id: 3, name: '<v-icon>mdi-phone</v-icon>', route: '/meer-info' }
-      ]
+      activeTab: '/'
     }
   }
 }
@@ -38,7 +41,12 @@ export default {
 
 <style type="text/css" lang="scss">
   .v-tab {
-    text-transform: none;
+    font-size: 17px;
     letter-spacing: 0;
+    text-transform: none;
+
+    &--active {
+      font-weight: bold;
+    }
   }
 </style>
