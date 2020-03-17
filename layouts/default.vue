@@ -14,9 +14,6 @@
         />
       </nuxt-link>
       <v-spacer />
-      <v-btn href="/over" icon color="white">
-        <v-icon>mdi-information</v-icon>
-      </v-btn>
       <v-btn
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
         target="_new"
@@ -29,8 +26,8 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer color="white">
-      <a href="https://www.eo.nl/privacy" class="caption primary--text">Privacyverlaring</a>
+    <v-footer color="primary">
+      <a href="https://www.eo.nl/privacy" class="caption white--text">Privacyverlaring</a>
     </v-footer>
   </v-app>
 </template>
