@@ -27,6 +27,14 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
+  head () {
+    return {
+      title: 'Over',
+      meta: [
+        { hid: 'Over', name: 'description', content: 'De aanleiding van het #nietalleen-initiatief' }
+      ]
+    }
+  }
 }
 </script>

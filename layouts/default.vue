@@ -14,7 +14,7 @@
         />
       </nuxt-link>
       <v-spacer />
-      <v-btn href="/informatie" icon color="primary">
+      <v-btn href="/over" icon color="primary">
         <v-icon>mdi-information</v-icon>
       </v-btn>
       <v-btn href="#" target="_new" color="primary" class="ml-2">

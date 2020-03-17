@@ -7,7 +7,7 @@ export default {
   components: {},
   head () {
     return {
-      title: '#nietalleen',
+      title: 'Home',
       meta: [
         { hid: 'homepage', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
       ]
