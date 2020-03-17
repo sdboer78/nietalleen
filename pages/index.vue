@@ -62,7 +62,7 @@
             Wij kunnen hulp bieden
           </v-btn>
           <p class="caption mt-5">
-            Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
+            Ben je <strong>een particulier</strong> en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
           </p>
         </v-flex>
       </v-layout>
