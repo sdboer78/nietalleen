@@ -74,8 +74,9 @@ export default {
 <style type="text/css" lang="scss">
   .v-tab {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 0;
+    line-height: 1.2;
     text-transform: none;
 
     &--active {
