@@ -13,7 +13,7 @@
       </v-avatar> -->
       <h1>Ik zoek hulp</h1>
       <p class="caption mt-5">
-        Deze functionaliteit komt woensdag 16 maart beschikbaar.
+        Deze functionaliteit komt woensdag 18 maart beschikbaar.
       </p>
     </v-flex>
   </v-layout>
