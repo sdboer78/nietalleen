@@ -1,17 +1,33 @@
 <template>
   <div>
-    <section class="pa-8 background-tea white--text text-center">
+    <section>
       <v-layout
         justify-center
         align-center
-        style="min-height: 50vh;"
+        class="pa-8 background-tea white--text text-center"
+        style="min-height: 40vh;"
       >
-        <v-flex xs12 sm8 md4>
+        <v-flex xs12 sm8 md5>
+          <v-img
+            :src="require('@/assets/logo-niet-alleen.svg')"
+            max-width="300px"
+            class="mx-auto mb-8"
+            position="center center"
+            contain
+          />
           <h1 class="display-1">
             Wij laten ons niet inpakken door het corona-virus.
           </h1>
-          <p>
-            Dat kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor elkaar klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!
+        </v-flex>
+      </v-layout>
+      <v-layout
+        justify-center
+        align-center
+        class="pa-8 text-center white"
+      >
+        <v-flex xs12 sm8 md5>
+          <p class="subtitle-1 font-weight-bold">
+            Het kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor elkaar klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!
           </p>
         </v-flex>
       </v-layout>
@@ -22,7 +38,7 @@
         align-center
         class="text-center"
       >
-        <v-flex xs12 sm8 md4>
+        <v-flex xs12 sm8 md5>
           <h2>Waarom #nietalleen?</h2>
           <p>
             Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen. <strong>Vanaf woensdag 18 maart</strong> kun je hier een hulpvraag kwijt voor jezelf of voor een ander. Ook kun je hier aangeven dat jij of jouw organisatie iets voor een ander kunt doen. Jouw hulpvraag of jouw hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo proberen we elkaar in deze moeilijke tijden te helpen en naar elkaar om te kijken.
@@ -36,7 +52,7 @@
         align-center
         class="text-center"
       >
-        <v-flex xs12 sm8 md4>
+        <v-flex xs12 sm8 md5>
           <h2>Meld jouw lokale organisatie aan!</h2>
           <v-btn
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
@@ -59,7 +75,7 @@ export default {
   components: {},
   head () {
     return {
-      title: 'Home',
+      title: '',
       meta: [
         { hid: 'homepage', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
       ]
@@ -83,7 +99,7 @@ export default {
     background-image: url('~assets/kopje-thee.jpg');
     background-position: center center;
     background-size: cover;
-    opacity: 0.25;
+    opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;

@@ -2,17 +2,31 @@
   <v-app>
     <v-app-bar
       app
-      style="background: linear-gradient(135deg, #C63866, #FE676E, #FD8F52);"
       fixed
     >
-      <nuxt-link to="/">
-        <v-img
-          :src="require('@/assets/logo-niet-alleen.svg')"
-          max-width="160px"
-          position="center left"
-          contain
-        />
-      </nuxt-link>
+      <v-app-bar
+        app
+        color="white"
+        elevation="0"
+        fixed
+      >
+        <v-tabs
+          v-model="activeTab"
+          color="primary"
+          slider-size="4"
+          fixed-tabs
+        >
+          <v-tab key="0" to="/" exact>
+            <v-icon>mdi-information</v-icon>
+          </v-tab>
+          <v-tab key="1" to="/hulp-bieden" exact>
+            Wij kunnen hulp bieden
+          </v-tab>
+          <v-tab key="2" to="/hulp-vragen" exact>
+            <strike>Ik zoek hulp</strike>
+          </v-tab>
+        </v-tabs>
+      </v-app-bar>
       <v-spacer />
       <v-btn
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
@@ -44,11 +58,13 @@ export default {
 
 <style type="text/css" lang="scss">
   .v-tab {
+    font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-size: 17px;
     letter-spacing: 0;
     text-transform: none;
 
     &--active {
+      color: #000000 !important;
       font-weight: bold;
     }
   }
