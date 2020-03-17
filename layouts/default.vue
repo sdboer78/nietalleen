@@ -56,7 +56,7 @@
       <nuxt />
     </v-content>
     <v-footer color="primary">
-      <a href="https://www.eo.nl/privacy" class="caption white--text">Privacyverlaring</a>
+      <a href="https://www.eo.nl/privacy" class="caption white--text">Privacyverklaring</a>
     </v-footer>
   </v-app>
 </template>
