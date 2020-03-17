@@ -4,16 +4,10 @@
     align-stretch
     class="text-center"
   >
-    <v-container class="pa-8">
-      <v-img
-        :src="require('@/assets/logo-niet-alleen.png')"
-        aspect-ratio="2.2"
-        contain
-      />
-      <h1 class="display-1">Ik zoek hulp</h1>
-      (( FORMULIER ))
-    </v-container>
-    <section class="grey lighten-2 pa-8">
+    <section class="grey lighten-2">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl" class="maps-iframe" />
+    </section>
+    <section class="primary white--text pa-8">
       <v-container>
         <h2 class="headline">
           Wij laten ons niet inpakken door het corona-virus.
@@ -23,36 +17,27 @@
         </p>
       </v-container>
     </section>
-    <section class="grey lighten-3 pa-8">
-      <v-container>
-        <h2 class="headline">
-          We bieden je een luisterend oor.
-        </h2>
-        <p>
-          Misschien heb je geen hulpvraag, maar wil je alleen even je hart luchten. Geen probleem! Wij staan voor je klaar. Of ben je slecht ter been en weet je niet hoe je boodschappen nu gedaan moeten worden of zou het fijn zijn als er voor je wordt gekookt. Wij verbinden je dan door met mensen in jouw woonplaats. Zij proberen dat voor jou te regelen.
-        </p>
-        <v-btn href="tel:0900-0000">
-          <v-icon>mdi-phone</v-icon>
-          0900-0000
-        </v-btn>
-      </v-container>
-    </section>
-    <section class="grey lighten-2 pa-8">
-      <v-container>
-        <h2 class="headline">
-          Betrokken organisaties
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-        </p>
-        (( LOGO'S ))
-      </v-container>
-    </section>
   </v-layout>
 </template>
 
 <script>
 export default {
-  components: {}
+  components: {},
+  head () {
+    return {
+      title: '#nietalleen',
+      meta: [
+        { hid: 'homepage', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
+      ]
+    }
+  }
 }
 </script>
+
+<style type="text/css" lang="scss">
+.maps-iframe {
+  border: 0;
+  height: 80vh;
+  width: 100%;
+}
+</style>

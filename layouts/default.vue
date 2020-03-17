@@ -3,25 +3,23 @@
     <v-app-bar
       app
       color="white"
-      elevation="1"
       fixed
     >
-      <v-tabs
-        v-model="activeTab"
-        color="primary"
-        slider-size="2"
-        fixed-tabs
-      >
-        <v-tab key="1" to="/" exact>
-          Ik zoek hulp
-        </v-tab>
-        <v-tab key="2" to="/hulp-bieden" exact>
-          Wij kunnen hulp bieden
-        </v-tab>
-        <v-tab key="3" to="/meer-info" exact style="flex-basis:0;">
-          <v-icon>mdi-information</v-icon>
-        </v-tab>
-      </v-tabs>
+      <nuxt-link to="/">
+        <v-img
+          :src="require('@/assets/logo-niet-alleen.svg')"
+          max-width="160px"
+          position="center left"
+          contain
+        />
+      </nuxt-link>
+      <v-spacer />
+      <v-btn href="/meer-info" icon>
+        <v-icon color="grey">mdi-information</v-icon>
+      </v-btn>
+      <v-btn href="#" target="_new" color="primary" class="ml-2">
+        Hulp bieden
+      </v-btn>
     </v-app-bar>
     <v-content>
       <nuxt />

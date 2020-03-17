@@ -37,3 +37,9 @@ html .v-application .subtitle-2 {
 .v-application p:last-child {
   margin-bottom: 0;
 }
+
+.v-btn__content {
+  font-weight: bold;
+  letter-spacing: 0;
+  text-transform: none;
+}
