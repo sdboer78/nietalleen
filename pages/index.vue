@@ -16,7 +16,7 @@
             contain
           />
           <h1 class="display-1">
-            Wij laten ons niet inpakken door het corona-virus.
+            Wij laten mensen niet alleen!
           </h1>
         </v-flex>
       </v-layout>
@@ -27,7 +27,7 @@
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <p class="subtitle-1 font-weight-bold">
-            Het kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor elkaar klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!
+            Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
           </p>
         </v-flex>
       </v-layout>
@@ -39,9 +39,9 @@
         class="text-center"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <h2>Waarom #nietalleen?</h2>
+          <h2>Dit is #nietalleen</h2>
           <p>
-            Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen. <strong>Vanaf woensdag 18 maart</strong> kun je hier een hulpvraag kwijt voor jezelf of voor een ander. Ook kun je hier aangeven dat jij of jouw organisatie iets voor een ander kunt doen. Jouw hulpvraag of jouw hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo proberen we elkaar in deze moeilijke tijden te helpen en naar elkaar om te kijken.
+            Steeds meer mensen worden getroffen door de gevolgen van het coronavirus (COVID-19). De komende tijd zullen veel mensen onze hulp nodig hebben. Met dit platform verbinden we de talloze lokale hulpinitiatieven aan elkaar en aan hulpvragers. Samen ben je meer dan alleen! De hulpvraag en het hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo helpen we elkaar in deze bijzondere tijd, want je bent #nietalleen.
           </p>
         </v-flex>
       </v-layout>
@@ -53,7 +53,7 @@
         class="text-center"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <h2>Meld jouw lokale organisatie aan!</h2>
+          <h2>Wil jij je aansluiten met een hulp-initiatief?</h2>
           <v-btn
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
             target="_new"
