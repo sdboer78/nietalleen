@@ -16,14 +16,14 @@
           slider-size="4"
           fixed-tabs
         >
-          <v-tab key="0" to="/" exact>
+          <v-tab key="0" to="/" exact style="flex-basis:0;">
             <v-icon>mdi-information</v-icon>
           </v-tab>
-          <v-tab key="1" to="/hulp-bieden" exact>
-            Wij kunnen hulp bieden
-          </v-tab>
-          <v-tab key="2" to="/hulp-vragen" exact>
+          <v-tab key="1" to="/hulp-vragen" exact>
             <strike>Ik zoek hulp</strike>
+          </v-tab>
+          <v-tab key="2" to="/hulp-bieden" exact>
+            Wij kunnen hulp bieden
           </v-tab>
         </v-tabs>
       </v-app-bar>

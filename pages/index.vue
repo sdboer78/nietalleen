@@ -4,14 +4,14 @@
       <v-layout
         justify-center
         align-center
-        class="pa-8 background-tea white--text text-center"
-        style="min-height: 40vh;"
+        class="px-8 py-12 white--text text-center"
+        style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
       >
         <v-flex xs12 sm8 md5>
           <v-img
             :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="300px"
-            class="mx-auto mb-8"
+            max-width="200px"
+            class="mx-auto my-8"
             position="center center"
             contain
           />
@@ -23,22 +23,22 @@
       <v-layout
         justify-center
         align-center
-        class="pa-8 text-center white"
+        class="px-8 py-12 text-center white"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 class="my-5">
           <p class="subtitle-1 font-weight-bold">
             Het kan onze gezondheid aanvallen, maar niet onze medemenselijkheid. Wij staan voor elkaar klaar, overal in Nederland. Voor een belangstellend telefoongesprek of het regelen van praktische hulp. Je bent #nietalleen!
           </p>
         </v-flex>
       </v-layout>
     </section>
-    <section class="pa-8" style="background-color:#EFEFF4;">
+    <section class="px-8 py-12" style="background-color:#EFEFF4;">
       <v-layout
         justify-center
         align-center
         class="text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 class="my-5">
           <h2>Waarom #nietalleen?</h2>
           <p>
             Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen. <strong>Vanaf woensdag 18 maart</strong> kun je hier een hulpvraag kwijt voor jezelf of voor een ander. Ook kun je hier aangeven dat jij of jouw organisatie iets voor een ander kunt doen. Jouw hulpvraag of jouw hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo proberen we elkaar in deze moeilijke tijden te helpen en naar elkaar om te kijken.
@@ -46,13 +46,13 @@
         </v-flex>
       </v-layout>
     </section>
-    <section class="pa-8">
+    <section class="px-8 py-12">
       <v-layout
         justify-center
         align-center
         class="text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 class="my-5">
           <h2>Meld jouw lokale organisatie aan!</h2>
           <v-btn
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
@@ -83,29 +83,3 @@ export default {
   }
 }
 </script>
-
-<style type="text/css" lang="scss">
-.background-tea {
-  background-color: #C63866;
-  position: relative;
-
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:after {
-    content: "";
-    background-image: url('~assets/kopje-thee.jpg');
-    background-position: center center;
-    background-size: cover;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: 0;
-  }
-}
-</style>
