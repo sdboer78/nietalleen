@@ -5,12 +5,12 @@
     class="pa-8 text-center"
   >
     <v-flex xs12 sm8 md5>
-      <v-avatar size="200px" class="mb-5">
+      <!-- <v-avatar size="200px" class="mb-5">
         <v-img
           :src="require('@/assets/kopje-thee.jpg')"
           cover
         />
-      </v-avatar>
+      </v-avatar> -->
       <h1>Ik zoek hulp</h1>
       <p class="caption mt-5">
         Deze functionaliteit komt woensdag 16 maart beschikbaar.

@@ -16,13 +16,13 @@
           slider-size="4"
           fixed-tabs
         >
-          <v-tab key="0" to="/" exact style="flex-basis:0;">
+          <v-tab key="0" exact to="/" style="flex-basis:0;">
             <v-icon>mdi-information</v-icon>
           </v-tab>
-          <v-tab key="1" to="/hulp-vragen" exact>
+          <v-tab key="1" exact to="/hulp-vragen">
             <strike>Ik zoek hulp</strike>
           </v-tab>
-          <v-tab key="2" to="/hulp-bieden" exact>
+          <v-tab key="2" exact to="/hulp-bieden">
             Wij kunnen hulp bieden
           </v-tab>
         </v-tabs>
