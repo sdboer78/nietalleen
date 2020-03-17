@@ -17,7 +17,12 @@
       <v-btn href="/over" icon color="white">
         <v-icon>mdi-information</v-icon>
       </v-btn>
-      <v-btn href="#" target="_new" color="white" class="primary--text ml-2">
+      <v-btn
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
+        target="_new"
+        color="white"
+        class="primary--text ml-2"
+      >
         Hulp bieden
       </v-btn>
     </v-app-bar>
