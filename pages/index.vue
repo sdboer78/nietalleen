@@ -10,8 +10,7 @@
         aspect-ratio="2.2"
         contain
       />
-      <br>
-      <h1>Welkom bij #nietalleen</h1>
+      <h1>Ik zoek hulp</h1>
     </v-container>
     <section class="grey lighten-1 pa-8">
       <v-container>
