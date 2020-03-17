@@ -9,7 +9,7 @@
       <v-tabs
         v-model="activeTab"
         color="primary"
-        slider-size="3"
+        slider-size="2"
         fixed-tabs
       >
         <v-tab key="1" to="/" exact>
@@ -18,7 +18,7 @@
         <v-tab key="2" to="/hulp-bieden" exact>
           Wij kunnen hulp bieden
         </v-tab>
-        <v-tab key="3" to="/meer-info" exact>
+        <v-tab key="3" to="/meer-info" exact style="flex-basis:0;">
           <v-icon>mdi-information</v-icon>
         </v-tab>
       </v-tabs>
@@ -48,5 +48,12 @@ export default {
     &--active {
       font-weight: bold;
     }
+  }
+  .v-slide-group__next--disabled,
+  .v-slide-group__prev--disabled {
+    display: none !important;
+  }
+  .v-slide-group__content {
+    width: 100%;
   }
 </style>
