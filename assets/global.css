@@ -1,29 +1,39 @@
 /* TEMPORARY custom fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellota&display=swap");
+
+html {
+  font-size: 17px;
+}
 
 html,
 body,
 .v-application,
-.body-1,
-.body-2,
-.caption {
+html .v-application .body-1,
+html .v-application .body-2,
+html .v-application .caption {
   font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.display-1,
-.display-2,
-.display-3,
-.display-4,
-.headline,
-.title,
-.subtitle-1,
-.subtitle-2 {
-  font-family: "Comfortaa", "Avenir Next", "Avenir", sans-serif !important;
+html .v-application h1,
+html .v-application h2,
+html .v-application h3,
+html .v-application h4,
+html .v-application h5,
+html .v-application h6,
+html .v-application .display-1,
+html .v-application .display-2,
+html .v-application .display-3,
+html .v-application .display-4,
+html .v-application .headline,
+html .v-application .title,
+html .v-application .subtitle-1,
+html .v-application .subtitle-2 {
+  font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
+.v-application p:last-child {
+  margin-bottom: 0;
 }
