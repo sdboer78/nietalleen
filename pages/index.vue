@@ -7,7 +7,7 @@
     <section class="grey lighten-2">
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl" class="maps-iframe" />
     </section>
-    <section class="primary white--text pa-8">
+    <section class="white--text pa-8" style="background: linear-gradient(135deg, #C63866, #FE676E, #FD8F52);">
       <v-container>
         <h2 class="headline">
           Wij laten ons niet inpakken door het corona-virus.
