@@ -59,7 +59,7 @@
             target="_new"
             color="primary"
           >
-            Wij kunnen helpen
+            Wij kunnen hulp bieden
           </v-btn>
           <p class="caption mt-5">
             Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.

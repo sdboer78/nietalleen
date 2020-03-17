@@ -12,7 +12,7 @@
         />
       </v-avatar>
       <h1>Ik zoek hulp</h1>
-      <p class="font-italic grey--text">
+      <p class="caption mt-5">
         Deze functionaliteit komt woensdag 16 maart beschikbaar.
       </p>
     </v-flex>
