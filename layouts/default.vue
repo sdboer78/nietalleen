@@ -29,7 +29,7 @@
             to="/hulp-vragen"
           >
             <v-tab key="1" exact :to="href">
-              <strike>Ik zoek hulp</strike>
+              Ik zoek hulp
             </v-tab>
           </router-link>
           <router-link
