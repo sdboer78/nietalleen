@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      style="background: linear-gradient(135deg, #C63866, #FE676E, #FD8F52);"
       fixed
     >
       <nuxt-link to="/">
@@ -29,6 +29,9 @@
     <v-content>
       <nuxt />
     </v-content>
+    <v-footer color="white">
+      <a href="https://www.eo.nl/privacy" class="caption primary--text">Privacyverlaring</a>
+    </v-footer>
   </v-app>
 </template>
 
