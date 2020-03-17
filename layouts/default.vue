@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="white"
+      color="primary"
       fixed
     >
       <nuxt-link to="/">
@@ -14,10 +14,10 @@
         />
       </nuxt-link>
       <v-spacer />
-      <v-btn href="/over" icon color="primary">
+      <v-btn href="/over" icon color="white">
         <v-icon>mdi-information</v-icon>
       </v-btn>
-      <v-btn href="#" target="_new" color="primary" class="ml-2">
+      <v-btn href="#" target="_new" color="white" class="primary--text ml-2">
         Hulp bieden
       </v-btn>
     </v-app-bar>
