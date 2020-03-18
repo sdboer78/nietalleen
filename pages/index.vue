@@ -51,10 +51,14 @@
         align-center
         class="px-8 py-12 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm9 md5>
           <h2>Zo werkt het</h2>
           <v-row>
-            <v-col class="text-center text-sm-left col-12 col-sm-6">
+            <v-col
+              cols="12"
+              sm="5"
+              class="text-sm-left"
+            >
               <p>Bel met ons nummer:</p>
               <v-btn href="tel:0800-1322" color="primary">
                 <v-icon left>
@@ -73,15 +77,20 @@
             </v-col>
             <v-col
               cols="12"
-              class="d-flex d-sm-none"
+              sm="2"
+              class="align-self-center"
             >
-              <v-row>
-                <v-col><hr class="my-3"/></v-col>
+              <v-row class="text-center flex-column">
+                <v-col class="d-sm-none"><hr class="my-3"/></v-col>
                 <v-col cols="2">OF</v-col>
-                <v-col><hr class="my-3"/></v-col>
+                <v-col class="d-sm-none"><hr class="my-3"/></v-col>
               </v-row>
             </v-col>
-            <v-col class="text-center text-sm-left col-12 col-sm-6">
+            <v-col
+              cols="12"
+              sm="5"
+              class="text-sm-left"
+            >
               <p>E-mail ons:</p>
               <v-btn href="mailto:info@nietalleen.nl" color="primary">
                 <v-icon left>
