@@ -61,14 +61,12 @@
         v-model="needyFullName"
         label="Wat is zijn/haar naam?"
         outlined
-        required
       />
       <v-text-field
         v-if="isForNeedy"
         v-model="needyCity"
         label="In welke plaats woon zij/hij?"
         outlined
-        required
       />
       <v-text-field
         v-if="isForNeedy"
@@ -76,7 +74,6 @@
         :rules="needyPhoneNumberRules"
         label="Wat is zijn/haar telefoonnummer?"
         outlined
-        required
       />
       <p class="text-left">
         Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
@@ -120,8 +117,7 @@ export default {
     valid: true,
     fullName: '',
     fullNameRules: [
-      v => !!v | 'We hebben je naam nodig',
-      v => (v && v.length <= 5) || 'Je naam moet langer zijn dan 5 karakters'
+      v => !!v || 'We hebben je naam nodig'
     ],
     emailAddress: '',
     emailAddressRules: [
@@ -167,11 +163,12 @@ export default {
     }
   },
   methods: {
-    validate () {
-      this.$refs.form.validate()
-    },
     submit (evt) {
       evt.preventDefault()
+
+      if (!this.$refs.form.validate()) {
+        return
+      }
 
       const message = {}
       const formData = new FormData(this.$refs.form)
