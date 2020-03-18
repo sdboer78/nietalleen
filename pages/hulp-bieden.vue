@@ -5,12 +5,6 @@
     class="pa-8 text-center"
   >
     <v-flex xs12 sm8 md5>
-      <!-- <v-avatar size="200px" class="mb-5">
-        <v-img
-          :src="require('@/assets/kopje-thee.jpg')"
-          cover
-        />
-      </v-avatar> -->
       <h1>Wij kunnen hulp bieden</h1>
       <v-btn
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"

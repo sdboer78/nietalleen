@@ -1,27 +1,31 @@
 <template>
   <div>
+    <v-layout
+      justify-center
+      align-center
+      class="pa-8 text-center"
+    >
+      <v-flex xs12 sm8 md5>
+        <v-img
+          :src="require('@/assets/kopje-thee.jpg')"
+          cover
+        />
+        <h1>Ik zoek hulp</h1>
+      </v-flex>
+    </v-layout>
+    <v-layout
+      justify-center
+      align-center
+      class="px-8 py-12 text-center white--text"
+      style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
+    >
+      <v-flex xs12 sm8 md5 class="my-5">
+        <p class="subtitle-1 font-weight-bold">
+          Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
+        </p>
+      </v-flex>
+    </v-layout>
     <section>
-      <v-layout
-        justify-center
-        align-center
-        class="pa-8 text-center"
-      >
-        <v-flex xs12 sm8 md5>
-          <h1>Ik zoek hulp</h1>
-        </v-flex>
-      </v-layout>
-      <v-layout
-        justify-center
-        align-center
-        class="px-8 py-12 text-center white--text"
-        style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
-      >
-        <v-flex xs12 sm8 md5 class="my-5">
-          <p class="subtitle-1 font-weight-bold">
-            Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
-          </p>
-        </v-flex>
-      </v-layout>
       <v-layout
         justify-center
         align-center
