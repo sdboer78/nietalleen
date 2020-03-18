@@ -13,7 +13,8 @@
       <v-layout
         justify-center
         align-center
-        class="px-8 py-12 text-center white"
+        class="px-8 py-12 text-center white--text"
+        style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <p class="subtitle-1 font-weight-bold">
