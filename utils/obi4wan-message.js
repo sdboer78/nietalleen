@@ -24,7 +24,7 @@ const formatMessageContent = (message) => {
     Hulpvraag: ${requestType}
     Ik zoek hulp bij: ${requestMessage}
     Ik vraag hulp voor: ${requestAidFor}
-    ${requestAidFor !== 'mezelf'
+    ${requestAidFor.toLowerCase() !== 'mijzelf'
       ? `
         HULPONTVANGER:
         Naam: ${needyFullName}
