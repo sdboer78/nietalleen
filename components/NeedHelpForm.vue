@@ -25,7 +25,7 @@
       <v-text-field
         v-model="city"
         :rules="cityRules"
-        label="In welke plaats woon je?"
+        label="Wat is je woonplats?"
         outlined
         required
       />
@@ -40,7 +40,7 @@
       <v-textarea
         v-model="requestMessage"
         :rules="requestMessageRules"
-        label="Wat is je hulpvraag?"
+        label="Op welke manier kunnen wij hulp bieden?"
         outlined
         required
       />
@@ -51,7 +51,7 @@
         <v-radio
           v-for="n in requestAidForOptions"
           :key="n"
-          :label="`Ik zoek hulp voor ${n}`"
+          :label="`Ik vraag hulp voor ${n}`"
           :value="n"
         />
       </v-radio-group>
@@ -73,6 +73,7 @@
       <v-text-field
         v-if="isForNeedy"
         v-model="needyPhoneNumber"
+        :rules="needyPhoneNumberRules"
         label="Wat is zijn/haar telefoonnummer?"
         outlined
         required
@@ -112,21 +113,21 @@ export default {
     emailAddress: '',
     emailAddressRules: [
       v => !!v || 'We hebben je e-mailadres nodig',
-      v => /.+@.+\..+/.test(v) || 'Het e-mailadres is nog niet compleet'
+      v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
     ],
     city: '',
     cityRules: [
-      v => !!v || 'Graag een woonplaats invullen'
+      v => !!v || 'We hebben je woonplaats nodig'
     ],
     phoneNumber: '',
     phoneNumberRules: [
       v => !!v || 'We hebben je telefoonnummer nodig',
-      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit telefoonnummer klopt nog niet'
+      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
     requestType: '',
     requestMessage: '',
     requestMessageRules: [
-      v => !!v || 'Graag je hulpvraag invullen'
+      v => !!v || 'We hebben je hulpvraag nodig'
     ],
     requestAidFor: '',
     requestAidForOptions: [
@@ -139,6 +140,9 @@ export default {
     needyFullName: '',
     needyCity: '',
     needyPhoneNumber: '',
+    needyPhoneNumberRules: [
+      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+    ],
     consentPrivacy: '',
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
