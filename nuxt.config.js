@@ -6,15 +6,17 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s #nietalleen',
+    title: '#nietalleen',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bellota&display=swap' }
     ]
   },
   /*
@@ -63,9 +65,9 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: colors.blue.darken2,
+          primary: '#C63866',
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: '#fd8f52',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
