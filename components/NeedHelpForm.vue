@@ -37,6 +37,15 @@
         required
       />
       <!-- requestType -->
+      <v-select
+        v-model="requestType"
+        :rules="requestTypeRules"
+        :items="requestTypeOptions"
+        label="Op welke manier kunnen we hulp bieden?"
+        outlined
+        required
+        multiple
+      />
       <v-textarea
         v-model="requestMessage"
         :rules="requestMessageRules"
@@ -149,6 +158,16 @@ export default {
       v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
     requestType: '',
+    requestTypeRules: [
+      v => !!v || 'We willen graag weten hoe we kunnen helpen'
+    ],
+    requestTypeOptions: [
+      'boodschappen',
+      'hond uitlaten',
+      'praatje',
+      'kinderopvang',
+      'Iets anders'
+    ],
     requestMessage: '',
     requestMessageRules: [
       v => !!v || 'We hebben je hulpvraag nodig'
