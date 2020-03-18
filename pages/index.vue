@@ -19,6 +19,7 @@
           />
         </hero-image>
         <h1>Ik zoek hulp</h1>
+        <need-help-form />
         <p class="subtitle-1 font-weight-bold">
           Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
         </p>
@@ -95,8 +96,12 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
+import NeedHelpForm from '~/components/NeedHelpForm.vue'
 export default {
-  components: { HeroImage },
+  components: {
+    HeroImage,
+    NeedHelpForm
+  },
   head () {
     return {
       title: 'Ik zoek hulp',
