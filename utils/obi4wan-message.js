@@ -5,14 +5,15 @@ const formatMessageContent = (message) => {
   const {
     fullName,
     emailAddress,
-    city,
+    postalCode,
     phoneNumber,
     requestType,
     requestMessage,
     consentPrivacy,
     requestAidFor,
     needyFullName,
-    needyCity,
+    needyEmailAddress,
+    needyPostalCode,
     needyPhoneNumber
   } = message
 
@@ -20,16 +21,17 @@ const formatMessageContent = (message) => {
     Naam: ${fullName}
     Email: ${emailAddress}
     Telefoonnummer: ${phoneNumber}
-    Plaats: ${city}
+    Postcode: ${postalCode}
     Hulpvraag: ${requestType}
     Ik zoek hulp bij: ${requestMessage}
     Ik vraag hulp voor: ${requestAidFor}
     ${requestAidFor.toLowerCase() !== 'mijzelf'
       ? `
-        HULPONTVANGER:
+        HULP-ONTVANGER:
         Naam: ${needyFullName}
+        Email: ${needyEmailAddress}
         Telefoonnummer: ${needyPhoneNumber}
-        Plaats: ${needyCity}`
+        Postcode: ${needyPostalCode}`
       : ''
     }
     Akkoord met privacy voorwaarden: ${consentPrivacy}`
@@ -42,8 +44,8 @@ const formatMessage = (message) => {
     requestType
   } = message
 
-  const publishDate = new Date()
-  const messageId = hash(publishDate.toISOString())
+  const publishDateISO = new Date().toISOString()
+  const messageId = hash(publishDateISO)
   const content = formatMessageContent(message)
 
   return {
@@ -55,7 +57,7 @@ const formatMessage = (message) => {
       userId: emailAddress
     },
     url: 'https://nietalleen.nl',
-    published: publishDate,
+    published: publishDateISO,
     title: `Hulp gevraagd bij ${requestType}`,
     content
   }

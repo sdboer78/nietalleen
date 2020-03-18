@@ -1,3 +1,4 @@
+// @TODO: get these env vars from Netlify
 export default Object.freeze({
   API_URL: 'https://custom-channels-251210.appspot.com/_ah/api/',
   API_ENDPOINT: 'customchannels/v1/index',

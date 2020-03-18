@@ -16,7 +16,9 @@
     "@nuxtjs/gtm": "^2.2.3",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.2.2",
-    "nuxt": "^2.0.0"
+    "axios": "^0.19.2",
+    "nuxt": "^2.0.0",
+    "object-hash": "^2.0.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
