@@ -14,6 +14,7 @@
           <v-img
             :src="require('@/assets/logo-niet-alleen.svg')"
             max-width="200px"
+            aspect-ratio="5"
             position="center center"
             contain
           />
@@ -52,22 +53,49 @@
       >
         <v-flex xs12 sm8 md5>
           <h2>Zo werkt het</h2>
-          <p>Bel met ons nummer:</p>
-          <v-btn href="tel:0800-1322" color="primary">
-            <v-icon left>
-              mdi-phone
-            </v-icon>
-            Bel 0800-1322
-          </v-btn>
-          <p class="caption mb-3 mt-6">
-            <strong>maandag t/m donderdag:</strong><br>
-            van 09.00 - 21.00 uur
-          </p>
-          <p class="caption">
-            <strong>vrijdag:</strong><br>
-            van 09.00 - 16.00 uur
-          </p>
-          <p>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>
+          <v-row>
+            <v-col class="text-center text-sm-left col-12 col-sm-6">
+              <p>Bel met ons nummer:</p>
+              <v-btn href="tel:0800-1322" color="primary">
+                <v-icon left>
+                  mdi-phone
+                </v-icon>
+                0800-1322
+              </v-btn>
+              <p class="caption mb-3 mt-6">
+                <strong>maandag t/m donderdag:</strong>
+                van 09.00 - 21.00 uur
+              </p>
+              <p class="caption">
+                <strong>vrijdag:</strong>
+                van 09.00 - 16.00 uur
+              </p>
+            </v-col>
+            <v-col
+              cols="12"
+              class="d-flex d-sm-none"
+            >
+              <v-row>
+                <v-col><hr class="my-3"/></v-col>
+                <v-col cols="2">OF</v-col>
+                <v-col><hr class="my-3"/></v-col>
+              </v-row>
+            </v-col>
+            <v-col class="text-center text-sm-left col-12 col-sm-6">
+              <p>E-mail ons:</p>
+              <v-btn href="mailto:info@nietalleen.nl" color="primary">
+                <v-icon left>
+                  mdi-mail
+                </v-icon>
+                info@nietalleen.nl
+              </v-btn>
+              <p class="caption mb-3 mt-6">
+                <strong>Geef aan ons door:</strong>
+                Naam, postcode e-mailadres en hulpvraag.
+              </p>
+            </v-col>
+          </v-row>
+          <p><br>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>
         </v-flex>
       </v-layout>
     </section>
