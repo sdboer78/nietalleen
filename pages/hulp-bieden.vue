@@ -5,13 +5,22 @@
     class="pa-8 text-center"
   >
     <v-flex xs12 sm8 md5>
-      <!-- <v-avatar size="200px" class="mb-5">
+      <hero-image
+        :src="require('@/assets/love-neighbour.jpg')"
+        size="400px"
+        class="mx-auto mb-8"
+      >
         <v-img
-          :src="require('@/assets/kopje-thee.jpg')"
-          cover
+          :src="require('@/assets/logo-niet-alleen.svg')"
+          max-width="200px"
+          position="center center"
+          contain
         />
-      </v-avatar> -->
+      </hero-image>
       <h1>Wij kunnen hulp bieden</h1>
+      <p>Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragers en lokale organisaties/kerken actief met elkaar in contact te brengen.</p>
+      <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #nietalleen.</p>
+      <p>Bedankt voor je hulp!</p>
       <v-btn
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
         target="_new"
@@ -27,8 +36,9 @@
 </template>
 
 <script>
+import HeroImage from '~/components/HeroImage.vue'
 export default {
-  components: {},
+  components: { HeroImage },
   head () {
     return {
       title: 'Wij kunnen hulp bieden',
