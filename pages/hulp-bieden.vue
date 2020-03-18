@@ -21,8 +21,6 @@
       <h1>Wij kunnen hulp bieden</h1>
       <p>Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragers en lokale organisaties/kerken actief met elkaar in contact te brengen.</p>
 
-      <iframe src="about:blank" class="npo_cc_social" data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl" width="100%" height="480" />
-
       <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #nietalleen.</p>
       <p>Bedankt voor je hulp!</p>
       <v-btn
@@ -35,6 +33,19 @@
       <p class="caption mt-5">
         Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
       </p>
+
+      <section>
+        <v-layout
+          justify-center
+          align-center
+          class="px-8 py-12 accent text-center"
+        >
+          <v-flex xs12 sm8 md5>
+            <h2>Bekijk alle lokale organisaties die al meedoen</h2>
+            <iframe src="about:blank" class="npo_cc_social" data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl" width="100%" height="480" />
+          </v-flex>
+        </v-layout>
+      </section>
     </v-flex>
   </v-layout>
 </template>
