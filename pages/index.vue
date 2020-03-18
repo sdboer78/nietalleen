@@ -81,9 +81,15 @@
               class="align-self-center"
             >
               <v-row class="text-center flex-column">
-                <v-col class="d-sm-none"><hr class="my-3"/></v-col>
-                <v-col cols="2">OF</v-col>
-                <v-col class="d-sm-none"><hr class="my-3"/></v-col>
+                <v-col class="d-sm-none">
+                  <hr class="my-3">
+                </v-col>
+                <v-col cols="2">
+                  OF
+                </v-col>
+                <v-col class="d-sm-none">
+                  <hr class="my-3">
+                </v-col>
               </v-row>
             </v-col>
             <v-col
