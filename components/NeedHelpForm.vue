@@ -65,7 +65,7 @@
       <v-text-field
         v-if="isForNeedy"
         v-model="needyCity"
-        label="In welke plaats woon zij/hij?"
+        label="In welke plaats woont zij/hij?"
         outlined
       />
       <v-text-field
@@ -170,10 +170,34 @@ export default {
         return
       }
 
-      const message = {}
-      const formData = new FormData(this.$refs.form)
+      const {
+        fullName,
+        emailAddress,
+        city,
+        phoneNumber,
+        requestType,
+        requestMessage,
+        consentPrivacy,
+        requestAidFor,
+        needyFullName,
+        needyCity,
+        needyPhoneNumber
+      } = this.data
 
-      formData.forEach((value, key) => { message[key] = value })
+      const message = {
+        fullName,
+        emailAddress,
+        city,
+        phoneNumber,
+        requestType,
+        requestMessage,
+        consentPrivacy,
+        requestAidFor,
+        needyFullName,
+        needyCity,
+        needyPhoneNumber
+      }
+
       postMessage(message)
     }
   }
