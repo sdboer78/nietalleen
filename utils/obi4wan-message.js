@@ -1,7 +1,7 @@
 import hash from 'object-hash'
 import constants from '../constants/obi4wan-api'
 
-export const formatMessage = (message) => {
+const formatMessageContent = (message) => {
   const {
     fullName,
     emailAddress,
@@ -9,25 +9,42 @@ export const formatMessage = (message) => {
     phoneNumber,
     requestType,
     requestMessage,
-    privacyConsent
+    consentPrivacy,
+    requestAidFor,
+    needyFullName,
+    needyCity,
+    needyPhoneNumber
+  } = message
+
+  return `
+    Naam: ${fullName}
+    Email: ${emailAddress}
+    Telefoonnummer: ${phoneNumber}
+    Plaats: ${city}
+    Hulpvraag: ${requestType}
+    Ik zoek hulp bij: ${requestMessage}
+    Ik vraag hulp voor: ${requestAidFor}
+    ${requestAidFor !== 'mezelf'
+      ? `
+        HULPONTVANGER:
+        Naam: ${needyFullName}
+        Telefoonnummer: ${needyPhoneNumber}
+        Plaats: ${needyCity}`
+      : ''
+    }
+    Akkoord met privacy voorwaarden: ${consentPrivacy}`
+}
+
+const formatMessage = (message) => {
+  const {
+    fullName,
+    emailAddress,
+    requestType
   } = message
 
   const publishDate = new Date()
   const messageId = hash(publishDate.toISOString())
-
-  // {
-  //   "channelIdentifier": "58f2aa7d-9828-46b8-9916-539fa7b559a7",
-  //   "threadId": "email@provider.tld",
-  //   "messageId": "current date hash",
-  //   "url": "https://optional.link/",
-  //   "published": "2019-10-28T00:00:00.000+00:00",
-  //   "title": "Message Title (Optional)",
-  //   "content": "Message Content",
-  //   "sender": {
-  //     "username": "Firstname Lastname",
-  //     "userId": "email@provider.tld"
-  //   }
-  //  }
+  const content = formatMessageContent(message)
 
   return {
     threadId: emailAddress,
@@ -40,14 +57,8 @@ export const formatMessage = (message) => {
     url: 'https://nietalleen.nl',
     published: publishDate,
     title: `Hulp gevraagd bij ${requestType}`,
-    content: `
-      Naam: ${fullName}
-      Email: ${emailAddress}
-      Telefoonnummer: ${phoneNumber}
-      Plaats: ${city}
-      Hulpvraag: ${requestType}
-      Ik zoek hulp bij: ${requestMessage}
-      Akkoord met privacy voorwaarden: ${privacyConsent}
-    `
+    content
   }
 }
+
+export default formatMessage

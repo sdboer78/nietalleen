@@ -6,12 +6,15 @@ const api = axios.create({
   baseURL: constants.API_URL
 })
 
-export const postMessage = async (formMessage) => {
+const postMessage = async (formMessage) => {
   const message = formatMessage(formMessage)
-  const response = await api.post(message, {
+
+  const response = await api.post(constants.API_ENDPOINT, message, {
     params: {
       token: constants.API_TOKEN
     }
   })
   return response
 }
+
+export default postMessage

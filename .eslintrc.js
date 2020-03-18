@@ -9,12 +9,16 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'eslint:recommended',
-    'plugin:nuxt/recommended',
-    'plugin:vue/recommended',
+    'plugin:nuxt/recommended'
   ],
-  plugins: [],
   rules: {
-    'no-restricted-exports': ["error", { "restrictedNamedExports": ["default"] }]
+    'vue/html-self-closing': ['error', {
+      'html': {
+        'void': 'always',
+        'normal': 'never',
+        'component': 'any'
+      }
+    }]
+
   }
 }
