@@ -13,6 +13,7 @@
         <v-img
           :src="require('@/assets/logo-niet-alleen.svg')"
           max-width="200px"
+          aspect-ratio="5"
           position="center center"
           contain
         />
