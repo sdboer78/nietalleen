@@ -39,7 +39,7 @@
                 1
               </h3>
             </v-col>
-            <v-col cols="10" class="text-left">
+            <v-col cols="5" class="text-left">
               <p>Bel met ons nummer:</p>
               <v-btn href="tel:0800-1322" color="primary">
                 <v-icon left>
@@ -54,6 +54,19 @@
               <p class="caption">
                 <strong>vrijdag:</strong><br>
                 van 09.00 - 16.00 uur
+              </p>
+            </v-col>
+            <v-col cols="5" class="text-left">
+              <p>E-mail ons:</p>
+              <v-btn href="mailto:info@nietalleen.nl" color="primary">
+                <v-icon left>
+                  mdi-mail
+                </v-icon>
+                info@nietalleen.nl
+              </v-btn>
+              <p class="caption mb-3 mt-6">
+                <strong>Geef aan ons door:</strong><br>
+                Naam, postcode e-mailadres en hulpvraag.
               </p>
             </v-col>
           </v-row>
