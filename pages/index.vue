@@ -31,7 +31,9 @@
           <h2>Zo werkt het</h2>
           <v-row>
             <v-col cols="2" class="text-right">
-              <h3 class="display-1 ma-none primary--text">1</h3>
+              <h3 class="display-1 ma-none primary--text">
+                1
+              </h3>
             </v-col>
             <v-col cols="10" class="text-left">
               <p>Bel met ons nummer:</p>
@@ -53,7 +55,9 @@
           </v-row>
           <v-row class="mt-6">
             <v-col cols="2" class="text-right">
-              <h3 class="display-1 ma-none primary--text">2</h3>
+              <h3 class="display-1 ma-none primary--text">
+                2
+              </h3>
             </v-col>
             <v-col cols="10" class="text-left">
               <p>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>

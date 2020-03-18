@@ -22,9 +22,6 @@
           <v-tab key="2" exact to="/hulp-bieden">
             Wij kunnen hulp bieden
           </v-tab>
-          <v-tab key="3" exact to="/over" style="flex-basis:0;">
-            <v-icon>mdi-information</v-icon>
-          </v-tab>
         </v-tabs>
       </v-app-bar>
       <v-spacer />
@@ -41,7 +38,11 @@
       <nuxt />
     </v-content>
     <v-footer color="primary">
-      <a href="https://www.eo.nl/privacy" class="caption white--text">Privacyverklaring</a>
+      <p class="caption white--text mx-auto">
+        <nuxt-link to="/over" class="white--text">Over ons</nuxt-link>
+        <span class="mx-2">|</span>
+        <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
+      </p>
     </v-footer>
   </v-app>
 </template>
