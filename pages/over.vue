@@ -32,7 +32,7 @@
         </v-flex>
       </v-layout>
     </section>
-    <section class="px-8 py-12" style="background-color:#EFEFF4;">
+    <section class="px-8 py-12 accent">
       <v-layout
         justify-center
         align-center

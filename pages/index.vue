@@ -6,10 +6,18 @@
       class="pa-8 text-center"
     >
       <v-flex xs12 sm8 md5>
-        <v-img
+        <hero-image
           :src="require('@/assets/kopje-thee.jpg')"
-          cover
-        />
+          size="400px"
+          class="mx-auto mb-8"
+        >
+          <v-img
+            :src="require('@/assets/logo-niet-alleen.svg')"
+            max-width="200px"
+            position="center center"
+            contain
+          />
+        </hero-image>
         <h1>Ik zoek hulp</h1>
       </v-flex>
     </v-layout>
@@ -29,7 +37,7 @@
       <v-layout
         justify-center
         align-center
-        class="px-8 py-12 grey lighten-3 text-center"
+        class="px-8 py-12 accent text-center"
       >
         <v-flex xs12 sm8 md5>
           <h2>Zo werkt het</h2>
@@ -95,8 +103,9 @@
 </template>
 
 <script>
+import HeroImage from '~/components/HeroImage.vue'
 export default {
-  components: {},
+  components: { HeroImage },
   head () {
     return {
       title: 'Ik zoek hulp',
