@@ -20,6 +20,9 @@
       </hero-image>
       <h1>Wij kunnen hulp bieden</h1>
       <p>Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragers en lokale organisaties/kerken actief met elkaar in contact te brengen.</p>
+
+      <iframe src="about:blank" class="npo_cc_social" data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl" width="100%" height="480" />
+
       <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #nietalleen.</p>
       <p>Bedankt voor je hulp!</p>
       <v-btn
