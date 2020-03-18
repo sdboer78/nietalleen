@@ -104,6 +104,7 @@
       color="grey darken-3"
       text
       style="text-decoration: underline;"
+      class="mt-3"
     >
       Wij kunnen hulp bieden
     </v-btn>

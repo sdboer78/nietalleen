@@ -35,7 +35,7 @@
             max-width="200px"
             position="center center"
             contain
-            class="mx-auto py-12"
+            class="mx-auto mb-12"
           />
           <h2>Ondanks het coronavirus (COVID-19), staan we voor je klaar.</h2>
           <p class="subtitle-1 font-weight-bold">
