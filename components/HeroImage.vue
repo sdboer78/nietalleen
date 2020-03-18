@@ -75,10 +75,6 @@ $offset: 12px;
     border-radius: $radius;
     position: relative;
     z-index: 1;
-
-    > .v-image__image {
-      opacity: 0.8;
-    }
   }
 
   &__content {

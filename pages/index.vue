@@ -7,7 +7,7 @@
     >
       <v-flex xs12 sm8 md5>
         <hero-image
-          :src="require('@/assets/kopje-thee.jpg')"
+          :src="require('@/assets/hond-uitlaten.jpg')"
           size="400px"
           class="mx-auto mb-8"
         >
