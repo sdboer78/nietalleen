@@ -228,7 +228,7 @@ export default {
         needyPhoneNumber,
         needyEmailAddress,
         needyPostalCode
-      } = this.data
+      } = this
 
       const message = {
         fullName,
