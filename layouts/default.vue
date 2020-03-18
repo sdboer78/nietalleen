@@ -16,30 +16,15 @@
           slider-size="4"
           fixed-tabs
         >
-          <router-link
-            v-slot="{ href }"
-            to="/"
-          >
-            <v-tab key="0" exact :to="href" style="flex-basis:0;">
-              <v-icon>mdi-information</v-icon>
-            </v-tab>
-          </router-link>
-          <router-link
-            v-slot="{ href }"
-            to="/hulp-vragen"
-          >
-            <v-tab key="1" exact :to="href">
-              Ik zoek hulp
-            </v-tab>
-          </router-link>
-          <router-link
-            v-slot="{ href }"
-            to="/hulp-bieden"
-          >
-            <v-tab key="2" exact :to="href">
-              Wij kunnen hulp bieden
-            </v-tab>
-          </router-link>
+          <v-tab key="1" exact to="/">
+            Ik zoek hulp
+          </v-tab>
+          <v-tab key="2" exact to="/hulp-bieden">
+            Wij kunnen hulp bieden
+          </v-tab>
+          <v-tab key="3" exact to="/over" style="flex-basis:0;">
+            <v-icon>mdi-information</v-icon>
+          </v-tab>
         </v-tabs>
       </v-app-bar>
       <v-spacer />
