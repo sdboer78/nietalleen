@@ -23,9 +23,9 @@
         required
       />
       <v-text-field
-        v-model="city"
-        :rules="cityRules"
-        label="Wat is je woonplaats?"
+        v-model="postalCode"
+        :rules="postalCodeRules"
+        label="Wat is je postcode?"
         outlined
         required
       />
@@ -55,7 +55,14 @@
           :value="n"
         />
       </v-radio-group>
-
+      <v-checkbox
+        v-if="isForNeedy"
+        v-model="consentPrivacyNeedy"
+        :rules="consentPrivacyNeedyRules"
+        label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
+        outlined
+        required
+      />
       <v-text-field
         v-if="isForNeedy"
         v-model="needyFullName"
@@ -64,8 +71,8 @@
       />
       <v-text-field
         v-if="isForNeedy"
-        v-model="needyCity"
-        label="In welke plaats woont zij/hij?"
+        v-model="needyPostalCode"
+        label="Wat is zijn/haar postcode?"
         outlined
       />
       <v-text-field
@@ -73,6 +80,13 @@
         v-model="needyPhoneNumber"
         :rules="needyPhoneNumberRules"
         label="Wat is zijn/haar telefoonnummer?"
+        outlined
+      />
+      <v-text-field
+        v-if="isForNeedy"
+        v-model="needyEmailAddress"
+        :rules="needyEmailAddressRules"
+        label="Wat is zijn/haar e-mailadres?"
         outlined
       />
       <p class="text-left">
@@ -101,7 +115,7 @@
       color="grey darken-3"
       text
       style="text-decoration: underline;"
-      class="mt-3"
+      class="mt-3 "
     >
       Wij kunnen hulp bieden
     </v-btn>
@@ -124,9 +138,10 @@ export default {
       v => !!v || 'We hebben je e-mailadres nodig',
       v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
     ],
-    city: '',
-    cityRules: [
-      v => !!v || 'We hebben je woonplaats nodig'
+    postalCode: '',
+    postalCodeRules: [
+      v => !!v || 'We hebben je postcode nodig',
+      v => /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
     ],
     phoneNumber: '',
     phoneNumberRules: [
@@ -147,10 +162,21 @@ export default {
       v => !!v || 'Je moet een keuze maken'
     ],
     needyFullName: '',
-    needyCity: '',
+    needyPostalCode: '',
+    needyPostalCodeRules: [
+      v => v === '' || /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
+    ],
     needyPhoneNumber: '',
     needyPhoneNumberRules: [
       v => v === '' || /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+    ],
+    needyEmailAddress: '',
+    needyEmailAddressRules: [
+      v => v === '' || /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+    ],
+    consentPrivacyNeedy: '',
+    consentPrivacyNeedyRules: [
+      v => !!v || 'Je moet toestemming hebben om de gegevens van een ander te verstrekken'
     ],
     consentPrivacy: '',
     consentPrivacyRules: [
@@ -173,29 +199,31 @@ export default {
       const {
         fullName,
         emailAddress,
-        city,
+        postalCode,
         phoneNumber,
         requestType,
         requestMessage,
         consentPrivacy,
         requestAidFor,
         needyFullName,
-        needyCity,
-        needyPhoneNumber
+        needyPhoneNumber,
+        needyEmailAddress,
+        needyPostalCode
       } = this.data
 
       const message = {
         fullName,
         emailAddress,
-        city,
+        postalCode,
         phoneNumber,
         requestType,
         requestMessage,
         consentPrivacy,
         requestAidFor,
         needyFullName,
-        needyCity,
-        needyPhoneNumber
+        needyPhoneNumber,
+        needyEmailAddress,
+        needyPostalCode
       }
 
       postMessage(message)

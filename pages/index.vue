@@ -3,7 +3,7 @@
     <v-layout
       justify-center
       align-center
-      class="pa-8 text-center"
+      class="pa-12 text-center"
     >
       <v-flex xs12 sm8 md5>
         <hero-image
@@ -38,7 +38,7 @@
             class="mx-auto mb-12"
           />
           <h2>Ondanks het coronavirus (COVID-19), staan we voor je klaar.</h2>
-          <p class="subtitle-1 font-weight-bold">
+          <p class="subtitle-1">
             Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
           </p>
         </v-flex>
@@ -53,7 +53,7 @@
         <v-flex xs12 sm8 md5>
           <h2>Zo werkt het</h2>
           <p>Bel met ons nummer:</p>
-          <v-btn href="tel:0800-1322" color="primary" large>
+          <v-btn href="tel:0800-1322" color="primary">
             <v-icon left>
               mdi-phone
             </v-icon>
