@@ -25,7 +25,7 @@
       <v-text-field
         v-model="city"
         :rules="cityRules"
-        label="Wat is je woonplats?"
+        label="Wat is je woonplaats?"
         outlined
         required
       />
@@ -92,11 +92,21 @@
         :disabled="!valid"
         color="primary"
         class="mr-4"
+        block
         @click="validate"
       >
         vraag hulp
       </v-btn>
     </v-form>
+    <v-btn
+      href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
+      target="_new"
+      color="grey darken-3"
+      text
+      style="text-decoration: underline;"
+    >
+      Wij kunnen hulp bieden
+    </v-btn>
   </div>
 </template>
 
