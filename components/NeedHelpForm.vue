@@ -93,7 +93,7 @@
         color="primary"
         class="mr-4"
         block
-        @click="validate"
+        @click="submit"
       >
         vraag hulp
       </v-btn>
@@ -112,6 +112,8 @@
 </template>
 
 <script>
+import postMessage from '~/utils/obi4wan-api'
+
 export default {
   name: 'NeedHelpForm',
   data: () => ({
@@ -167,6 +169,15 @@ export default {
   methods: {
     validate () {
       this.$refs.form.validate()
+    },
+    submit (evt) {
+      evt.preventDefault()
+
+      const message = {}
+      const formData = new FormData(this.$refs.form)
+
+      formData.forEach((value, key) => { message[key] = value })
+      postMessage(message)
     }
   }
 }
