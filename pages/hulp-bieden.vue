@@ -36,7 +36,7 @@
           <span class="d--block font-weight-bold" :style="'color:'+primaryColor">3.</span>
           <br>Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
         </p>
-        <h2 class="display-1">
+        <h2 class="display-1 mt-12">
           Meld je organisatie aan
         </h2>
         <v-btn
