@@ -6,7 +6,7 @@
         align-center
         class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 lg4>
           <hero-image
             :src="require('@/assets/hond-uitlaten.jpg')"
             size="400px"

@@ -38,7 +38,7 @@
           outlined
           required
           suffix="2/6"
-          class="mb-4"
+          class="mb-2"
         />
         <v-text-field
           v-model="postalCode"
@@ -49,7 +49,7 @@
           outlined
           required
           suffix="3/6"
-          class="mb-4"
+          class="mb-2"
         />
         <v-text-field
           v-model="phoneNumber"
@@ -60,7 +60,7 @@
           outlined
           required
           suffix="4/6"
-          class="mb-4"
+          class="mb-2"
         />
         <v-select
           v-model="requestType"
@@ -73,7 +73,7 @@
           required
           multiple
           suffix="5/6"
-          class="mb-4"
+          class="mb-2"
         />
         <v-expand-transition>
           <v-textarea
@@ -86,7 +86,7 @@
             validate-on-blur
             outlined
             required
-            class="mb-4"
+            class="mb-2"
           />
         </v-expand-transition>
         <v-radio-group
