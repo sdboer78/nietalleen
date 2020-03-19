@@ -4,11 +4,11 @@
       <v-layout
         justify-center
         align-center
-        class="pa-8 text-center"
+        class="pa-12 text-center"
       >
-        <v-flex xs12 sm8 md5 lg4>
+        <v-flex xs12 sm8 md5>
           <hero-image
-            :src="require('@/assets/love-neighbour.jpg')"
+            :src="require('@/assets/love-your-neighbour.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
@@ -50,7 +50,7 @@
           </v-btn>
           <p class="caption font-weight-bold mt-5">
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
-            Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
+            Bellen kan ook naar het algemene nummer: <a href="tel:0800 1322">0800 1322</a>.
           </p>
         </v-flex>
       </v-layout>

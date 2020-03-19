@@ -41,7 +41,7 @@ export default {
 
   &__iframe {
     border: 0;
-    height: 80vh;
+    height: 78vh;
     transition: height 1s cubic-bezier(0.4, 0.0, 0.2, 1);
     width: 100%;
 
