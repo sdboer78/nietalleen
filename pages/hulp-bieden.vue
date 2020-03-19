@@ -1,39 +1,74 @@
 <template>
-  <v-layout
-    justify-center
-    align-center
-    class="pa-8 text-center"
-  >
-    <v-flex xs12 sm8 md5>
-      <!-- <v-avatar size="200px" class="mb-5">
-        <v-img
-          :src="require('@/assets/kopje-thee.jpg')"
-          cover
-        />
-      </v-avatar> -->
-      <h1>Wij kunnen hulp bieden</h1>
-      <v-btn
-        href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
-        target="_new"
-        color="primary"
+  <div>
+    <v-layout
+      justify-center
+      align-center
+      class="pa-8 text-center"
+    >
+      <v-flex xs12 sm8 md5>
+        <hero-image :src="require('@/assets/love-neighbour.jpg')" size="400px" class="mx-auto mb-8">
+          <v-img
+            :src="require('@/assets/logo-niet-alleen.svg')"
+            max-width="200px"
+            aspect-ratio="5"
+            position="center center"
+            contain
+          />
+        </hero-image>
+        <h1>Wij kunnen hulp bieden</h1>
+        <p>Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragers en lokale organisaties/kerken actief met elkaar in contact te brengen.</p>
+
+        <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #nietalleen.</p>
+        <p>Bedankt voor je hulp!</p>
+        <v-btn
+          href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
+          target="_new"
+          color="primary"
+        >
+          aanmelden
+        </v-btn>
+        <p
+          class="caption mt-5"
+        >
+          Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
+        </p>
+        <h2>Deze organisaties hebben zich al aangemeld</h2>
+      </v-flex>
+    </v-layout>
+    <section>
+      <v-layout
+        justify-center
+        align-center
+        class="px-8 py-12 accent text-center"
       >
-        aanmelden
-      </v-btn>
-      <p class="caption mt-5">
-        Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
-      </p>
-    </v-flex>
-  </v-layout>
+        &nbsp;
+        <!-- In de grijze ball moet het kaartje -->
+        <iframe
+          src="about:blank"
+          class="npo_cc_social"
+          data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+          width="100%"
+          height="480"
+        />
+      </v-layout>
+    </section>
+  </div>
 </template>
 
 <script>
+import HeroImage from '~/components/HeroImage.vue'
 export default {
-  components: {},
+  components: { HeroImage },
   head () {
     return {
       title: 'Wij kunnen hulp bieden',
       meta: [
-        { hid: 'aanbieden', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
+        {
+          hid: 'aanbieden',
+          name: 'description',
+          content:
+            'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.'
+        }
       ]
     }
   }

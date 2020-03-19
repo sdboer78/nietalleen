@@ -11,6 +11,7 @@
           <v-img
             :src="require('@/assets/logo-niet-alleen.svg')"
             max-width="200px"
+            aspect-ratio="5"
             class="mx-auto my-8"
             position="center center"
             contain
@@ -20,19 +21,8 @@
           </h1>
         </v-flex>
       </v-layout>
-      <v-layout
-        justify-center
-        align-center
-        class="px-8 py-12 text-center white"
-      >
-        <v-flex xs12 sm8 md5 class="my-5">
-          <p class="subtitle-1 font-weight-bold">
-            Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
-          </p>
-        </v-flex>
-      </v-layout>
     </section>
-    <section class="px-8 py-12" style="background-color:#EFEFF4;">
+    <section class="px-8 py-12 accent">
       <v-layout
         justify-center
         align-center
