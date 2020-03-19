@@ -35,7 +35,9 @@
         Hulp bieden
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-content
+      :cookie-permissions="cookiePermissions"
+    >
       <nuxt />
     </v-content>
     <v-footer color="primary py-5">
@@ -54,12 +56,35 @@
 export default {
   data () {
     return {
-      activeTab: null
+      activeTab: null,
+      cookiePermissions: {
+        social: false
+      }
     }
   },
   computed: {
     currentPageHasTab () {
       return this.$nuxt.$route.path === this.activeTab
+    }
+  },
+  mounted () {
+    if (window) {
+      window.addEventListener('CCM_done', this.getCookiePermissions, false)
+    }
+  },
+  methods: {
+    getCookiePermissions () {
+      const { ccm } = window
+
+      if (ccm) {
+        const permissions = ccm.get_permissions()
+        permissions.map((permission) => {
+          this.addCookiePermission(permission)
+        })
+      }
+    },
+    addCookiePermission (permission) {
+      this.$store.commit('cookie-permissions/add', permission)
     }
   }
 }

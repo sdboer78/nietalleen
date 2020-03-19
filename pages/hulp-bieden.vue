@@ -52,6 +52,25 @@
           Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
         </p>
       </v-flex>
+      <section
+        v-if="allowRenderMaps"
+      >
+        <v-layout
+          justify-center
+          align-center
+          class="pt-12 accent text-center"
+        >
+          <v-flex xs12>
+            <h2 class="mb-5 px-8">
+              Deze organisaties hebben zich al aangemeld
+            </h2>
+            <iframe
+              class="map"
+              src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+            />
+          </v-flex>
+        </v-layout>
+      </section>
     </v-layout>
   </section>
 </template>
@@ -64,6 +83,12 @@ export default {
   computed: {
     primaryColor () {
       return this.$vuetify.theme.themes.light.primary
+    },
+    cookiePermissions () {
+      return this.$store.state['cookie-permissions'].list
+    },
+    allowRenderMaps () {
+      return this.cookiePermissions.findIndex(cat => cat === 'social') > -1
     }
   },
   head () {
@@ -76,3 +101,12 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+.map {
+  background-color: rgba(0, 0, 0, 0.08);
+  border: 0;
+  height: 75vh;
+  width: 100%;
+}
+</style>
