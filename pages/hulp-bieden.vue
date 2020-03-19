@@ -45,9 +45,8 @@
             Deze organisaties hebben zich al aangemeld
           </h2>
           <iframe
-            src="about:blank"
-            class="npo_cc_social map"
-            data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+            class="map"
+            :src="mapSource"
           />
         </v-flex>
       </v-layout>
@@ -59,6 +58,21 @@
 import HeroImage from '~/components/HeroImage.vue'
 export default {
   components: { HeroImage },
+  data () {
+    return {
+      mapSource: 'about:blank'
+    }
+  },
+  mounted () {
+    // Listen when the cookie module is ready to be read
+    window.addEventListener('CCM_done', function (e) {
+      const socialCookieValue = window.ccm.categoryCookies.social.value
+      if (socialCookieValue !== undefined && socialCookieValue === 'true') {
+        // enable the google maps embed
+        this.mapSource = 'https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl'
+      }
+    }, false)
+  },
   head () {
     return {
       title: 'Wij kunnen hulp bieden',
