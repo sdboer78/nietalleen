@@ -19,7 +19,9 @@
             contain
           />
         </hero-image>
-        <h2 class="display-1">Zo werkt het</h2>
+        <h2 class="display-1">
+          Zo werkt het
+        </h2>
         <p>
           <span class="d--block font-weight-bold" :style="'color:'+primaryColor">1.</span>
           <br>Meld je hulpinitiatief of organisatie aan via dit formulier
@@ -34,7 +36,9 @@
           <span class="d--block font-weight-bold" :style="'color:'+primaryColor">3.</span>
           <br>Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
         </p>
-        <h2 class="display-1">Meld je organisatie aan</h2>
+        <h2 class="display-1">
+          Meld je organisatie aan
+        </h2>
         <v-btn
           href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
           target="_new"
