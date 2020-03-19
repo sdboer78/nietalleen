@@ -84,7 +84,7 @@
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <span class="display-4">
-            133
+            354
           </span>
           <h2 class="display-1">
             organisaties hebben al hulp aangeboden
@@ -93,10 +93,10 @@
             Wil jij je ook aansluiten met een hulp-initiatief?
           </p>
           <v-btn
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
-            target="_new"
+            href="hulp-bieden"
             color="primary"
             x-large
+            nuxt
             class="mt-6"
           >
             Aanmelden

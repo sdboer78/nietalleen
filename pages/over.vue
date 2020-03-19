@@ -88,7 +88,7 @@
               <br>Stichting Agapè
               <br>Stichting HipHelpt
               <br>Stichting Present
-              <br>Stichting Schuldhulpmaatje
+              <br>Schuldhulpmaatje
               <br>Tear
               <br>Tot Heil des Volks
               <br>4e Musketier
@@ -122,7 +122,7 @@
             Gebruik dit logo en social posts voor jouw lokale initiatief!
           </h2>
           <div class="subtitle-1">
-            organisaties en kerken zich in voor mensen die hulp kunnen gebruiken onder de naam #Nietalleen. Download hier het logo om te gebruiken bij jouw lokale initiatief.
+            Organisaties en kerken zetten zich in voor mensen die hulp kunnen gebruiken onder de naam #Nietalleen. Download hier het logo om te gebruiken bij jouw lokale initiatief.
           </div>
           <v-btn
             href="https://portal.eo.nl/over-de-eo/pers/artikel/2020/03/platform-nietalleen-voor-verbinding-coronahulp"
@@ -132,14 +132,14 @@
           >
             Download
           </v-btn>
-          <h2 class="display-1">
+          <h2 class="display-1 mt-8">
             Zo werkt het
           </h2>
           <p>
             <span class="d--block font-weight-bold" :style="'color:'+primaryColor">1.</span>
             <br>Download het logo. Voeg desgewenst de plaatsnaan toe als je handig bent met Adobe Photoshop&copy;
           </p>
-          <p>
+          <p class="pb-12">
             <span class="d--block font-weight-bold" :style="'color:'+primaryColor">2.</span>
             <br>Verspreid de social media post via je lokale kanalen
           </p>
