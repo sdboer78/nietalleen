@@ -44,7 +44,7 @@
         <span class="mx-2">|</span>
         <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemene voorwaarden</a>
         <span class="mx-2 d-none d-sm-inline">|</span>
-        <span class="mx-2 d-block d-sm-none">&nbsp;</span>
+        <br class="mx-2 d-sm-none">
         <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
         <span class="mx-2">|</span>
         <a href="https://cookies.nietalleen.nl/sites/EO/eo.nl/settings.html" class="white--text npo_cc_settings_link" rel="noreferrer">Cookie instellingen</a>
