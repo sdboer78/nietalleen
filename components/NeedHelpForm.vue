@@ -13,7 +13,7 @@
       validate-on-blur
       outlined
       required
-      suffix="1/7"
+      suffix="1/6"
     />
     <v-expand-transition>
       <v-btn
@@ -37,7 +37,7 @@
           validate-on-blur
           outlined
           required
-          suffix="2/7"
+          suffix="2/6"
           class="mb-4"
         />
         <v-text-field
@@ -48,7 +48,7 @@
           validate-on-blur
           outlined
           required
-          suffix="3/7"
+          suffix="3/6"
           class="mb-4"
         />
         <v-text-field
@@ -59,7 +59,7 @@
           validate-on-blur
           outlined
           required
-          suffix="4/7"
+          suffix="4/6"
           class="mb-4"
         />
         <v-select
@@ -72,7 +72,7 @@
           outlined
           required
           multiple
-          suffix="5/7"
+          suffix="5/6"
           class="mb-4"
         />
         <v-expand-transition>
@@ -86,16 +86,16 @@
             validate-on-blur
             outlined
             required
-            suffix="6/7"
             class="mb-4"
           />
         </v-expand-transition>
         <v-radio-group
           v-model="requestAidFor"
+          color="black"
           mandatory
         >
           <template v-slot:label>
-            <p>Ik vraag hulp voor... (7/7)</p>
+            <p>Ik vraag hulp voor... (6/6)</p>
           </template>
           <v-radio
             v-for="n in requestAidForOptions"
@@ -255,11 +255,6 @@ export default {
       return this.requestType.includes('iets anders')
     }
   },
-  watch: {
-    requestType () {
-      console.log(this.requestType)
-    }
-  },
   methods: {
     resetValidation () {
       this.$refs.form.resetValidation()
@@ -317,5 +312,9 @@ export default {
 
   .v-textarea .v-text-field__suffix {
     padding-right: 12px;
+  }
+
+  .v-select__slot .v-label {
+    padding-right: 1.5em;
   }
 </style>

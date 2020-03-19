@@ -86,7 +86,7 @@
           <span class="display-4">
             354
           </span>
-          <h2 class="display-1">
+          <h2 class="display-1 mb-2">
             organisaties hebben al hulp aangeboden
           </h2>
           <p class="subtitle-1">
@@ -101,7 +101,7 @@
           >
             Aanmelden
           </v-btn>
-          <p class="body-2 font-weight-bold pa-12">
+          <p class="body-2 font-weight-bold py-8 px-4">
             Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
           </p>
         </v-flex>
