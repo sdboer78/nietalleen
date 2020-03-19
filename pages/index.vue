@@ -4,7 +4,7 @@
       <v-layout
         justify-center
         align-center
-        class="pa-12 text-center"
+        class="pa-8 text-center"
       >
         <v-flex xs12 sm8 md5>
           <hero-image
@@ -23,7 +23,7 @@
           <h1 class="display-1">
             Ik zoek hulp
           </h1>
-          <p>
+          <p class="mb-8 subtitle-1">
             Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
           <need-help-form />

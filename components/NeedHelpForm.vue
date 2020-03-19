@@ -9,115 +9,154 @@
       v-model="fullName"
       :rules="fullNameRules"
       label="Wat is je naam?"
+      validate-on-blur
       outlined
       required
+      suffix="1/7"
     />
-    <div
-      v-if="fullName"
+    <v-btn
+      v-if="!fullName"
+      color="primary"
+      class="mr-4"
+      block
+      x-large
+      @click="validate"
     >
-      <v-text-field
-        v-model="emailAddress"
-        :rules="emailAddressRules"
-        label="Wat is je e-mailadres?"
-        outlined
-        required
-      />
-      <v-text-field
-        v-model="postalCode"
-        :rules="postalCodeRules"
-        label="Wat is je postcode?"
-        outlined
-        required
-      />
-      <v-text-field
-        v-model="phoneNumber"
-        :rules="phoneNumberRules"
-        label="Wat is je telefoonnummer?"
-        outlined
-        required
-      />
-      <v-select
-        v-model="requestType"
-        :rules="requestTypeRules"
-        :items="requestTypeOptions"
-        label="Op welke manier kunnen we hulp bieden?"
-        outlined
-        required
-        multiple
-      />
-      <v-textarea
-        v-model="requestMessage"
-        :rules="requestMessageRules"
-        label="Op welke manier kunnen wij hulp bieden?"
-        outlined
-        required
-      />
-      <v-radio-group
-        v-model="requestAidFor"
-        mandatory
-      >
-        <v-radio
-          v-for="n in requestAidForOptions"
-          :key="n"
-          :label="`Ik vraag hulp voor ${n}`"
-          :value="n"
+      volgende stap
+    </v-btn>
+    <v-expand-transition>
+      <div v-if="fullName">
+        <v-text-field
+          v-model="emailAddress"
+          :rules="emailAddressRules"
+          label="Wat is je e-mailadres?"
+          validate-on-blur
+          outlined
+          required
+          suffix="2/7"
+          class="mb-4"
         />
-      </v-radio-group>
-      <v-checkbox
-        v-if="isForNeedy"
-        v-model="consentPrivacyNeedy"
-        :rules="consentPrivacyNeedyRules"
-        label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
-        outlined
-        required
-      />
-      <v-text-field
-        v-if="isForNeedy"
-        v-model="needyFullName"
-        label="Wat is zijn/haar naam?"
-        outlined
-      />
-      <v-text-field
-        v-if="isForNeedy"
-        v-model="needyPostalCode"
-        label="Wat is zijn/haar postcode?"
-        outlined
-      />
-      <v-text-field
-        v-if="isForNeedy"
-        v-model="needyPhoneNumber"
-        :rules="needyPhoneNumberRules"
-        label="Wat is zijn/haar telefoonnummer?"
-        outlined
-      />
-      <v-text-field
-        v-if="isForNeedy"
-        v-model="needyEmailAddress"
-        :rules="needyEmailAddressRules"
-        label="Wat is zijn/haar e-mailadres?"
-        outlined
-      />
-      <p class="text-left">
-        Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
-      </p>
-      <v-checkbox
-        v-model="consentPrivacy"
-        :rules="consentPrivacyRules"
-        label="Ja, ik ga akkoord"
-        outlined
-        required
-      />
-      <v-btn
-        :disabled="!valid"
-        color="primary"
-        class="mr-4"
-        block
-        x-large
-        @click="submit"
-      >
-        vraag hulp
-      </v-btn>
-    </div>
+        <v-text-field
+          v-model="postalCode"
+          :rules="postalCodeRules"
+          label="Wat is je postcode?"
+          validate-on-blur
+          outlined
+          required
+          suffix="3/7"
+          class="mb-4"
+        />
+        <v-text-field
+          v-model="phoneNumber"
+          :rules="phoneNumberRules"
+          label="Wat is je telefoonnummer?"
+          validate-on-blur
+          outlined
+          required
+          suffix="4/7"
+          class="mb-4"
+        />
+        <v-select
+          v-model="requestType"
+          :rules="requestTypeRules"
+          :items="requestTypeOptions"
+          label="Op welke manier kunnen we hulp bieden?"
+          validate-on-blur
+          outlined
+          required
+          multiple
+          suffix="5/7"
+          class="mb-4"
+        />
+        <v-textarea
+          v-model="requestMessage"
+          :rules="requestMessageRules"
+          no-resize
+          label="Op welke manier kunnen wij hulp bieden?"
+          validate-on-blur
+          outlined
+          required
+          suffix="6/7"
+          class="mb-4"
+        />
+        <v-radio-group
+          v-model="requestAidFor"
+          mandatory
+        >
+          <template v-slot:label>
+            <p>Ik vraag hulp voor... (7/7)</p>
+          </template>
+          <v-radio
+            v-for="n in requestAidForOptions"
+            :key="n"
+            :label="`${n}`"
+            :value="n"
+          />
+        </v-radio-group>
+        <v-expand-transition>
+          <v-sheet
+            v-if="isForNeedy"
+            elevation="3"
+          >
+            <div class="px-4 pt-2 pb-0">
+              <v-checkbox
+                v-model="consentPrivacyNeedy"
+                :rules="consentPrivacyNeedyRules"
+                label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
+                outlined
+                required
+              />
+              <v-text-field
+                v-model="needyFullName"
+                label="Wat is zijn/haar naam?"
+                validate-on-blur
+                outlined
+              />
+              <v-text-field
+                v-model="needyPostalCode"
+                label="Wat is zijn/haar postcode?"
+                validate-on-blur
+                outlined
+              />
+              <v-text-field
+                v-model="needyPhoneNumber"
+                :rules="needyPhoneNumberRules"
+                label="Wat is zijn/haar telefoonnummer?"
+                validate-on-blur
+                outlined
+              />
+              <v-text-field
+                v-model="needyEmailAddress"
+                :rules="needyEmailAddressRules"
+                label="Wat is zijn/haar e-mailadres?"
+                validate-on-blur
+                outlined
+              />
+            </div>
+          </v-sheet>
+        </v-expand-transition>
+        <p class="text-left mt-5">
+          Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
+        </p>
+        <v-checkbox
+          v-model="consentPrivacy"
+          :rules="consentPrivacyRules"
+          label="Ja, ik ga akkoord"
+          outlined
+          required
+        />
+        <v-btn
+          :disabled="!valid"
+          color="primary"
+          class="mr-4"
+          block
+          x-large
+          @click="submit"
+        >
+          vraag hulp
+        </v-btn>
+      </div>
+    </v-expand-transition>
   </v-form>
 </template>
 
@@ -198,6 +237,12 @@ export default {
     }
   },
   methods: {
+    resetValidation () {
+      this.$refs.form.resetValidation()
+    },
+    validate () {
+      this.$refs.form.validate()
+    },
     submit (evt) {
       evt.preventDefault()
 
@@ -238,3 +283,15 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+  .v-text-field .v-text-field__suffix {
+    color: #8F9094;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+  }
+
+  .v-textarea .v-text-field__suffix {
+    padding-right: 12px;
+  }
+</style>
