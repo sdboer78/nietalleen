@@ -220,7 +220,7 @@ export default {
         needyPostalCode
       } = this
 
-      const message = {
+      postMessage({
         fullName,
         emailAddress,
         postalCode,
@@ -233,9 +233,7 @@ export default {
         needyPhoneNumber,
         needyEmailAddress,
         needyPostalCode
-      }
-
-      postMessage(message)
+      })
     }
   }
 }
