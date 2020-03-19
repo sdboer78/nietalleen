@@ -9,27 +9,31 @@
       v-model="fullName"
       :rules="fullNameRules"
       label="Wat is je naam?"
+      color="black"
       validate-on-blur
       outlined
       required
       suffix="1/7"
     />
-    <v-btn
-      v-if="!fullName"
-      color="primary"
-      class="mr-4"
-      block
-      x-large
-      @click="validate"
-    >
-      volgende stap
-    </v-btn>
+    <v-expand-transition>
+      <v-btn
+        v-if="!fullName"
+        color="primary"
+        class="mr-4"
+        block
+        x-large
+        @click="validate"
+      >
+        volgende stap
+      </v-btn>
+    </v-expand-transition>
     <v-expand-transition>
       <div v-if="fullName">
         <v-text-field
           v-model="emailAddress"
           :rules="emailAddressRules"
           label="Wat is je e-mailadres?"
+          color="black"
           validate-on-blur
           outlined
           required
@@ -40,6 +44,7 @@
           v-model="postalCode"
           :rules="postalCodeRules"
           label="Wat is je postcode?"
+          color="black"
           validate-on-blur
           outlined
           required
@@ -50,6 +55,7 @@
           v-model="phoneNumber"
           :rules="phoneNumberRules"
           label="Wat is je telefoonnummer?"
+          color="black"
           validate-on-blur
           outlined
           required
@@ -61,6 +67,7 @@
           :rules="requestTypeRules"
           :items="requestTypeOptions"
           label="Op welke manier kunnen we hulp bieden?"
+          color="black"
           validate-on-blur
           outlined
           required
@@ -73,6 +80,7 @@
           :rules="requestMessageRules"
           no-resize
           label="Op welke manier kunnen wij hulp bieden?"
+          color="black"
           validate-on-blur
           outlined
           required
@@ -103,18 +111,21 @@
                 v-model="consentPrivacyNeedy"
                 :rules="consentPrivacyNeedyRules"
                 label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
+                color="black"
                 outlined
                 required
               />
               <v-text-field
                 v-model="needyFullName"
                 label="Wat is zijn/haar naam?"
+                color="black"
                 validate-on-blur
                 outlined
               />
               <v-text-field
                 v-model="needyPostalCode"
                 label="Wat is zijn/haar postcode?"
+                color="black"
                 validate-on-blur
                 outlined
               />
@@ -122,6 +133,7 @@
                 v-model="needyPhoneNumber"
                 :rules="needyPhoneNumberRules"
                 label="Wat is zijn/haar telefoonnummer?"
+                color="black"
                 validate-on-blur
                 outlined
               />
@@ -129,6 +141,7 @@
                 v-model="needyEmailAddress"
                 :rules="needyEmailAddressRules"
                 label="Wat is zijn/haar e-mailadres?"
+                color="black"
                 validate-on-blur
                 outlined
               />
