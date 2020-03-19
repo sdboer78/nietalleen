@@ -1,50 +1,55 @@
 <template>
   <div>
-    <v-layout
-      justify-center
-      align-center
-      class="pa-12 text-center"
-    >
-      <v-flex xs12 sm8 md5>
-        <hero-image
-          :src="require('@/assets/hond-uitlaten.jpg')"
-          size="400px"
-          class="mx-auto mb-8"
-        >
-          <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="200px"
-            aspect-ratio="5"
-            position="center center"
-            contain
-          />
-        </hero-image>
-        <h1>Ik zoek hulp</h1>
-        <need-help-form />
-        <p><br><br>of<br><br></p>
-        <p>Bel met ons nummer:</p>
-        <v-btn
-          href="tel:0800-1322"
-          color="primary"
-          x-large
-        >
-          <v-icon left>
-            mdi-phone
-          </v-icon>
-          0800-1322
-        </v-btn>
-        <p class="caption my-6">
-          <strong>maandag t/m donderdag:</strong>
-          van 09.00 - 21.00 uur
-          <br>
-          <strong>vrijdag:</strong>
-          van 09.00 - 16.00 uur
-        </p>
-        <p class="text-left pa-6">
-          Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
-        </p>
-      </v-flex>
-    </v-layout>
+    <section>
+      <v-layout
+        justify-center
+        align-center
+        class="pa-12 text-center"
+      >
+        <v-flex xs12 sm8 md5>
+          <hero-image
+            :src="require('@/assets/hond-uitlaten.jpg')"
+            size="400px"
+            class="mx-auto mb-8"
+          >
+            <v-img
+              :src="require('@/assets/logo-niet-alleen.svg')"
+              max-width="200px"
+              aspect-ratio="5"
+              position="center center"
+              contain
+            />
+          </hero-image>
+          <h1 class="display-1">Ik zoek hulp</h1>
+          <p>
+            Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          </p>
+          <need-help-form />
+          <p><br><br>of<br><br></p>
+          <p>Bel met ons nummer:</p>
+          <v-btn
+            href="tel:0800-1322"
+            color="primary"
+            x-large
+          >
+            <v-icon left>
+              mdi-phone
+            </v-icon>
+            0800-1322
+          </v-btn>
+          <p class="caption my-6">
+            <strong>maandag t/m donderdag:</strong>
+            van 09.00 - 21.00 uur
+            <br>
+            <strong>vrijdag:</strong>
+            van 09.00 - 16.00 uur
+          </p>
+          <p class="text-left pa-6">
+            Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          </p>
+        </v-flex>
+      </v-layout>
+    </section>
     <section>
       <v-layout
         justify-center
@@ -71,12 +76,23 @@
       <v-layout
         justify-center
         align-center
-        class="text-center accent px-8 py-12"
+        class="text-center px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <span class="display-4">133</span>
-          <h2 class="display-1">organisaties hebben al hulp aangeboden</h2>
-          <p>Wil jij je ook aansluiten met een hulp-initiatief?</p>
+          <hero-image
+            :src="require('@/assets/hond-uitlaten.jpg')"
+            size="400px"
+            class="mx-auto mb-8 white--text"
+          >
+            <div class="d-flex flex-column">
+              <span class="display-4 mb-0">133</span>
+              <span class="display-1 mt-n8">organisaties</span>
+            </div>
+          </hero-image>
+          <h2 class="display-1">hebben al hulp aangeboden</h2>
+          <p class="subtitle-1">
+            Wil jij je ook aansluiten met een hulp-initiatief?
+          </p>
           <v-btn
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
             target="_new"
@@ -96,7 +112,7 @@
       <v-layout
         justify-center
         align-center
-        class="text-center px-8 py-12"
+        class="text-center accent px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <hero-image
@@ -113,7 +129,7 @@
             />
           </hero-image>
           <h2 class="display-1">Over ons</h2>
-          <p>
+          <p class="subtitle-1">
             Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
             <br>De hulpvraag wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd
           </p>
