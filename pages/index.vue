@@ -115,19 +115,6 @@
         class="text-center accent px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <hero-image
-            :src="require('@/assets/hond-uitlaten.jpg')"
-            size="400px"
-            class="mx-auto mb-8"
-          >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
-          </hero-image>
           <h2 class="display-1">Over ons</h2>
           <p class="subtitle-1">
             Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
