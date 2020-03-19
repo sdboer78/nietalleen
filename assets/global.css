@@ -27,16 +27,27 @@ html .v-application .display-4,
 html .v-application .title {
   font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.6;
   margin-bottom: 0.75em;
 }
 
-.v-application p:last-child {
+html .v-application p:last-child {
   margin-bottom: 0;
 }
 
-.v-btn__content {
+html .v-btn__content {
   font-weight: bold;
   letter-spacing: 0;
   text-transform: none;
+}
+
+html .v-btn--contained {
+  box-shadow: none;
+}
+
+html .v-btn:not(.v-btn--round).v-size--x-large {
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 1;
+  padding: 6px 32px;
 }

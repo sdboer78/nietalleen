@@ -39,7 +39,11 @@
     </v-content>
     <v-footer color="primary">
       <p class="caption white--text mx-auto">
-        <nuxt-link to="/over" class="white--text">Over ons</nuxt-link>
+        <nuxt-link to="/over" class="white--text">
+          Over ons
+        </nuxt-link>
+        <span class="mx-2">|</span>
+        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemen voorwaarden</a>
         <span class="mx-2">|</span>
         <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
       </p>
