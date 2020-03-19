@@ -162,7 +162,7 @@
           required
         />
         <v-btn
-          :disabled="!valid"
+          :disabled="!valid || showPopup"
           color="primary"
           class="mr-4"
           block
@@ -173,6 +173,24 @@
         </v-btn>
       </div>
     </v-expand-transition>
+    <v-snackbar
+      v-model="showPopup"
+      color="white"
+      class="black--text"
+      :timeout="0"
+      top
+      multi-line
+      vertical
+    >
+      {{ popupMessage }}
+      <v-btn
+        color="primary"
+        text
+        @click="showPopup = null"
+      >
+        sluit
+      </v-btn>
+    </v-snackbar>
   </v-form>
 </template>
 
@@ -245,7 +263,12 @@ export default {
     consentPrivacy: '',
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
-    ]
+    ],
+    formSubmissionResponse: {},
+    popupMessage: '',
+    showPopup: false,
+    formSubmissionSuccessMessage: 'Jouw verzoek wordt door ons team zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
+    formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
   }),
   computed: {
     isForNeedy () {
@@ -255,6 +278,16 @@ export default {
       return this.requestType.includes('iets anders')
     }
   },
+  watch: {
+    formSubmissionResponse () {
+      if (this.formSubmissionResponse.status === '204') {
+        this.popupMessage = this.formSubmissionSuccessMessage
+      } else {
+        this.popupMessage = this.formSubmissionFailedMessage
+      }
+      this.showPopup = true
+    }
+  },
   methods: {
     resetValidation () {
       this.$refs.form.resetValidation()
@@ -262,8 +295,10 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    submit (evt) {
+    async submit (evt) {
       evt.preventDefault()
+
+      // show loading bar
 
       if (!this.$refs.form.validate()) {
         return
@@ -284,7 +319,7 @@ export default {
         needyPostalCode
       } = this
 
-      postMessage({
+      this.formSubmissionResponse = await postMessage({
         fullName,
         emailAddress,
         postalCode,
