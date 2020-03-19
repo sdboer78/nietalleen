@@ -12,108 +12,112 @@
       outlined
       required
     />
-    <v-text-field
-      v-model="emailAddress"
-      :rules="emailAddressRules"
-      label="Wat is je e-mailadres?"
-      outlined
-      required
-    />
-    <v-text-field
-      v-model="postalCode"
-      :rules="postalCodeRules"
-      label="Wat is je postcode?"
-      outlined
-      required
-    />
-    <v-text-field
-      v-model="phoneNumber"
-      :rules="phoneNumberRules"
-      label="Wat is je telefoonnummer?"
-      outlined
-      required
-    />
-    <v-select
-      v-model="requestType"
-      :rules="requestTypeRules"
-      :items="requestTypeOptions"
-      label="Op welke manier kunnen we hulp bieden?"
-      outlined
-      required
-      multiple
-    />
-    <v-textarea
-      v-model="requestMessage"
-      :rules="requestMessageRules"
-      label="Op welke manier kunnen wij hulp bieden?"
-      outlined
-      required
-    />
-    <v-radio-group
-      v-model="requestAidFor"
-      mandatory
+    <div
+      v-if="fullName"
     >
-      <v-radio
-        v-for="n in requestAidForOptions"
-        :key="n"
-        :label="`Ik vraag hulp voor ${n}`"
-        :value="n"
+      <v-text-field
+        v-model="emailAddress"
+        :rules="emailAddressRules"
+        label="Wat is je e-mailadres?"
+        outlined
+        required
       />
-    </v-radio-group>
-    <v-checkbox
-      v-if="isForNeedy"
-      v-model="consentPrivacyNeedy"
-      :rules="consentPrivacyNeedyRules"
-      label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
-      outlined
-      required
-    />
-    <v-text-field
-      v-if="isForNeedy"
-      v-model="needyFullName"
-      label="Wat is zijn/haar naam?"
-      outlined
-    />
-    <v-text-field
-      v-if="isForNeedy"
-      v-model="needyPostalCode"
-      label="Wat is zijn/haar postcode?"
-      outlined
-    />
-    <v-text-field
-      v-if="isForNeedy"
-      v-model="needyPhoneNumber"
-      :rules="needyPhoneNumberRules"
-      label="Wat is zijn/haar telefoonnummer?"
-      outlined
-    />
-    <v-text-field
-      v-if="isForNeedy"
-      v-model="needyEmailAddress"
-      :rules="needyEmailAddressRules"
-      label="Wat is zijn/haar e-mailadres?"
-      outlined
-    />
-    <p class="text-left">
-      Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
-    </p>
-    <v-checkbox
-      v-model="consentPrivacy"
-      :rules="consentPrivacyRules"
-      label="Ja, ik ga akkoord"
-      outlined
-      required
-    />
-    <v-btn
-      :disabled="!valid"
-      color="primary"
-      class="mr-4"
-      block
-      x-large
-      @click="submit"
-    >
-      vraag hulp
-    </v-btn>
+      <v-text-field
+        v-model="postalCode"
+        :rules="postalCodeRules"
+        label="Wat is je postcode?"
+        outlined
+        required
+      />
+      <v-text-field
+        v-model="phoneNumber"
+        :rules="phoneNumberRules"
+        label="Wat is je telefoonnummer?"
+        outlined
+        required
+      />
+      <v-select
+        v-model="requestType"
+        :rules="requestTypeRules"
+        :items="requestTypeOptions"
+        label="Op welke manier kunnen we hulp bieden?"
+        outlined
+        required
+        multiple
+      />
+      <v-textarea
+        v-model="requestMessage"
+        :rules="requestMessageRules"
+        label="Op welke manier kunnen wij hulp bieden?"
+        outlined
+        required
+      />
+      <v-radio-group
+        v-model="requestAidFor"
+        mandatory
+      >
+        <v-radio
+          v-for="n in requestAidForOptions"
+          :key="n"
+          :label="`Ik vraag hulp voor ${n}`"
+          :value="n"
+        />
+      </v-radio-group>
+      <v-checkbox
+        v-if="isForNeedy"
+        v-model="consentPrivacyNeedy"
+        :rules="consentPrivacyNeedyRules"
+        label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
+        outlined
+        required
+      />
+      <v-text-field
+        v-if="isForNeedy"
+        v-model="needyFullName"
+        label="Wat is zijn/haar naam?"
+        outlined
+      />
+      <v-text-field
+        v-if="isForNeedy"
+        v-model="needyPostalCode"
+        label="Wat is zijn/haar postcode?"
+        outlined
+      />
+      <v-text-field
+        v-if="isForNeedy"
+        v-model="needyPhoneNumber"
+        :rules="needyPhoneNumberRules"
+        label="Wat is zijn/haar telefoonnummer?"
+        outlined
+      />
+      <v-text-field
+        v-if="isForNeedy"
+        v-model="needyEmailAddress"
+        :rules="needyEmailAddressRules"
+        label="Wat is zijn/haar e-mailadres?"
+        outlined
+      />
+      <p class="text-left">
+        Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
+      </p>
+      <v-checkbox
+        v-model="consentPrivacy"
+        :rules="consentPrivacyRules"
+        label="Ja, ik ga akkoord"
+        outlined
+        required
+      />
+      <v-btn
+        :disabled="!valid"
+        color="primary"
+        class="mr-4"
+        block
+        x-large
+        @click="submit"
+      >
+        vraag hulp
+      </v-btn>
+    </div>
   </v-form>
 </template>
 
