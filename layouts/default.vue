@@ -39,22 +39,15 @@
       <nuxt />
     </v-content>
     <v-footer color="primary py-5">
-      <p class="caption white--text mx-auto text-center">
-        <nuxt-link to="/over" class="white--text wrap-whitespace">Over ons</nuxt-link>
-        <span class="mx-2">|</span>
-        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemene voorwaarden</a>
-        <span class="mx-2 d-none d-sm-inline">|</span>
-        <br class="mx-2 d-sm-none">
-        <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
-        <span class="mx-2">|</span>
-        <a href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html" class="white--text npo_cc_settings_link" rel="noreferrer">Cookie instellingen</a>
-      </p>
+      <footer-content />
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import FooterContent from '~/components/FooterContent.vue'
 export default {
+  components: { FooterContent },
   data () {
     return {
       activeTab: null
