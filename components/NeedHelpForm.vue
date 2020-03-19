@@ -264,7 +264,6 @@ export default {
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
     ],
-    formSubmissionResponse: {},
     popupMessage: '',
     showPopup: false,
     formSubmissionSuccessMessage: 'Jouw verzoek wordt door ons team zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
@@ -278,16 +277,6 @@ export default {
       return this.requestType.includes('iets anders')
     }
   },
-  watch: {
-    formSubmissionResponse () {
-      if (this.formSubmissionResponse.status === '204') {
-        this.popupMessage = this.formSubmissionSuccessMessage
-      } else {
-        this.popupMessage = this.formSubmissionFailedMessage
-      }
-      this.showPopup = true
-    }
-  },
   methods: {
     resetValidation () {
       this.$refs.form.resetValidation()
@@ -297,8 +286,6 @@ export default {
     },
     async submit (evt) {
       evt.preventDefault()
-
-      // show loading bar
 
       if (!this.$refs.form.validate()) {
         return
@@ -319,7 +306,7 @@ export default {
         needyPostalCode
       } = this
 
-      this.formSubmissionResponse = await postMessage({
+      const response = await postMessage({
         fullName,
         emailAddress,
         postalCode,
@@ -333,6 +320,12 @@ export default {
         needyEmailAddress,
         needyPostalCode
       })
+
+      this.popupMessage = response.status === 204
+        ? this.formSubmissionSuccessMessage
+        : this.formSubmissionFailedMessage
+
+      this.showPopup = true
     }
   }
 }
