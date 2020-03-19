@@ -15,6 +15,7 @@
           color="primary"
           slider-size="4"
           fixed-tabs
+          :class="{'has-no-active': !currentPageHasTab}"
         >
           <v-tab key="1" exact to="/">
             Ik zoek hulp
@@ -37,7 +38,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer color="primary">
+    <v-footer color="primary py-5">
       <p class="caption white--text mx-auto">
         <nuxt-link to="/over" class="white--text">
           Over ons
@@ -55,7 +56,13 @@
 export default {
   data () {
     return {
-      activeTab: '/'
+      activeTab: null
+    }
+  },
+  computed: {
+    currentPageHasTab () {
+      console.log(this.$nuxt.$route.path === this.activeTab)
+      return this.$nuxt.$route.path === this.activeTab
     }
   }
 }
@@ -80,5 +87,11 @@ export default {
   }
   .v-slide-group__content {
     width: 100%;
+  }
+
+  .has-no-active {
+    .v-tabs-slider-wrapper {
+      opacity: 0;
+    }
   }
 </style>
