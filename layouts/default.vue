@@ -15,6 +15,7 @@
           color="primary"
           slider-size="4"
           fixed-tabs
+          :class="{'has-no-active': !currentPageHasTab}"
         >
           <v-tab key="1" exact to="/">
             Ik zoek hulp
@@ -37,13 +38,11 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer color="primary">
+    <v-footer color="primary py-5">
       <p class="caption white--text mx-auto">
-        <nuxt-link to="/over" class="white--text">
-          Over ons
-        </nuxt-link>
+        <nuxt-link to="/over" class="white--text wrap-whitespace">Over ons</nuxt-link>
         <span class="mx-2">|</span>
-        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemen voorwaarden</a>
+        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemene voorwaarden</a>
         <span class="mx-2">|</span>
         <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
       </p>
@@ -55,7 +54,12 @@
 export default {
   data () {
     return {
-      activeTab: '/'
+      activeTab: null
+    }
+  },
+  computed: {
+    currentPageHasTab () {
+      return this.$nuxt.$route.path === this.activeTab
     }
   }
 }
@@ -70,7 +74,6 @@ export default {
     text-transform: none;
 
     &--active {
-      color: #000000 !important;
       font-weight: bold;
     }
   }
@@ -80,5 +83,11 @@ export default {
   }
   .v-slide-group__content {
     width: 100%;
+  }
+
+  .has-no-active {
+    .v-tabs-slider-wrapper {
+      opacity: 0;
+    }
   }
 </style>

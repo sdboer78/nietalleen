@@ -38,23 +38,25 @@
             doorgestuurd naar een organisatie bij jou in de buurt. Zo helpen we elkaar in deze bijzondere
             tijd, want je bent #Nietalleen.
           </p>
-          <v-btn
-            href="/"
-            color="primary"
-            class="mt-10"
-            nuxt
-            x-large
-          >
-            Help je hulp nodig?
-          </v-btn>
-          <v-btn
-            href="hulp-bieden"
-            class="mt-4"
-            nuxt
-            x-large
-          >
-            Wil je hulp bieden?
-          </v-btn>
+          <div class="mt-12">
+            <v-btn
+              href="/"
+              color="primary"
+              class="ma-2"
+              nuxt
+              x-large
+            >
+              Help je hulp nodig?
+            </v-btn>
+            <v-btn
+              href="hulp-bieden"
+              class="ma-2"
+              nuxt
+              x-large
+            >
+              Wil je hulp bieden?
+            </v-btn>
+          </div>
         </v-flex>
       </v-layout>
     </section>

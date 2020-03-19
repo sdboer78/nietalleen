@@ -6,7 +6,7 @@
         align-center
         class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 lg4>
           <hero-image
             :src="require('@/assets/hond-uitlaten.jpg')"
             size="400px"
@@ -46,7 +46,7 @@
             <strong>vrijdag:</strong>
             van 09.00 - 16.00 uur
           </p>
-          <p class="text-left pa-6">
+          <p class="pa-6">
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
         </v-flex>
