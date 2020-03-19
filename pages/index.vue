@@ -20,12 +20,14 @@
               contain
             />
           </hero-image>
-          <h1 class="display-1">Ik zoek hulp</h1>
+          <h1 class="display-1">
+            Ik zoek hulp
+          </h1>
           <p>
             Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
           <need-help-form />
-          <p><br><br>of<br><br></p>
+          <divider class="my-5" />
           <p>Bel met ons nummer:</p>
           <v-btn
             href="tel:0800-1322"
@@ -65,7 +67,9 @@
             contain
             class="mx-auto mb-12"
           />
-          <h2 class="display-1">Ondanks het coronavirus staan we voor je klaar.</h2>
+          <h2 class="display-1">
+            Ondanks het coronavirus staan we voor je klaar.
+          </h2>
           <p class="subtitle-1">
             Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
           </p>
@@ -79,8 +83,12 @@
         class="text-center px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <span class="display-4">133</span>
-          <h2 class="display-1">organisaties hebben al hulp aangeboden</h2>
+          <span class="display-4">
+            133
+          </span>
+          <h2 class="display-1">
+            organisaties hebben al hulp aangeboden
+          </h2>
           <p class="subtitle-1">
             Wil jij je ook aansluiten met een hulp-initiatief?
           </p>
@@ -119,7 +127,9 @@
               contain
             />
           </hero-image>
-          <h2 class="display-1">Over ons</h2>
+          <h2 class="display-1">
+            Over ons
+          </h2>
           <p class="subtitle-1">
             Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
             <br>De hulpvraag wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd
@@ -142,11 +152,13 @@
 <script>
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
+import Divider from '~/components/Divider.vue'
 
 export default {
   components: {
     HeroImage,
-    NeedHelpForm
+    NeedHelpForm,
+    Divider
   },
   head () {
     return {
