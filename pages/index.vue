@@ -142,6 +142,7 @@
 <script>
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
+
 export default {
   components: {
     HeroImage,
