@@ -75,18 +75,21 @@
           suffix="5/7"
           class="mb-4"
         />
-        <v-textarea
-          v-model="requestMessage"
-          :rules="requestMessageRules"
-          no-resize
-          label="Op welke manier kunnen wij hulp bieden?"
-          color="black"
-          validate-on-blur
-          outlined
-          required
-          suffix="6/7"
-          class="mb-4"
-        />
+        <v-expand-transition>
+          <v-textarea
+            v-if="showRequestMessage"
+            v-model="requestMessage"
+            :rules="requestMessageRules"
+            no-resize
+            label="Op welke manier kunnen wij hulp bieden?"
+            color="black"
+            validate-on-blur
+            outlined
+            required
+            suffix="6/7"
+            class="mb-4"
+          />
+        </v-expand-transition>
         <v-radio-group
           v-model="requestAidFor"
           mandatory
@@ -208,7 +211,7 @@ export default {
       'hond uitlaten',
       'praatje',
       'kinderopvang',
-      'Iets anders'
+      'iets anders'
     ],
     requestMessage: '',
     requestMessageRules: [
@@ -247,6 +250,14 @@ export default {
   computed: {
     isForNeedy () {
       return this.requestAidFor === this.requestAidForOptions[1]
+    },
+    showRequestMessage () {
+      return this.requestType.includes('iets anders')
+    }
+  },
+  watch: {
+    requestType () {
+      console.log(this.requestType)
     }
   },
   methods: {
