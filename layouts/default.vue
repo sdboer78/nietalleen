@@ -97,6 +97,10 @@ export default {
       font-weight: bold;
     }
   }
+  .theme--light.v-tabs .v-tab--active:hover::before,
+  .theme--light.v-tabs .v-tab--active::before {
+    opacity: 0;
+  }
   .v-slide-group__next--disabled,
   .v-slide-group__prev--disabled {
     display: none !important;
