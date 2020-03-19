@@ -1,6 +1,6 @@
 import axios from 'axios'
-import constants from '../constants/obi4wan-api'
 import formatMessage from './obi4wan-message'
+import constants from '~/constants/obi4wan-api'
 
 const api = axios.create({
   baseURL: constants.API_URL

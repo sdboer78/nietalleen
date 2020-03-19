@@ -6,8 +6,8 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s #nietalleen',
-    title: '#nietalleen',
+    titleTemplate: '%s #Nietalleen',
+    title: '#Nietalleen',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -80,7 +80,7 @@ export default {
   gtm: {
     id: 'GTM-PNF2PX4',
     layer: 'datalayer',
-    variables: {"potag1":"eoportal","potag2":"nietalleen","potag3":"eo","potag4":"eo","potag5":"omroepportal","potag6":"","potag7":"","potag8":"site","potag9":"site","http_status":"200","classification":"","pubdate":0,"pubweek":"01","atinternet_siteid":"59"}
+    variables: { potag1: 'eoportal', potag2: 'nietalleen', potag3: 'eo', potag4: 'eo', potag5: 'omroepportal', potag6: '', potag7: '', potag8: 'site', potag9: 'site', http_status: '200', classification: '', pubdate: 0, pubweek: '01', atinternet_siteid: '59' }
   },
   /*
   ** Build configuration

@@ -1,5 +1,5 @@
 import hash from 'object-hash'
-import constants from '../constants/obi4wan-api'
+import constants from '~/constants/obi4wan-api'
 
 const formatMessageContent = (message) => {
   const {
