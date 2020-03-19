@@ -74,7 +74,6 @@ export default {
     text-transform: none;
 
     &--active {
-      color: #000000 !important;
       font-weight: bold;
     }
   }
