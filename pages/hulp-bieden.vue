@@ -20,7 +20,7 @@
       </hero-image>
       <h1>Wij kunnen hulp bieden</h1>
       <p>Op deze plek willen we zoveel mogelijk mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragers en lokale organisaties/kerken actief met elkaar in contact te brengen.</p>
-      <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #nietalleen.</p>
+      <p>Ben je een organisatie/kerk en kun je hulp bieden? Meld je dan hieronder aan. Binnenkort is jouw initiatief terug te vinden op de website van #Nietalleen.</p>
       <p>Bedankt voor je hulp!</p>
       <v-btn
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"

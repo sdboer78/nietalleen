@@ -29,9 +29,9 @@
         class="text-center"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <h2>Dit is #nietalleen</h2>
+          <h2>Dit is #Nietalleen</h2>
           <p>
-            Steeds meer mensen worden getroffen door de gevolgen van het coronavirus (COVID-19). De komende tijd zullen veel mensen onze hulp nodig hebben. Met dit platform verbinden we de talloze lokale hulpinitiatieven aan elkaar en aan hulpvragers. Samen ben je meer dan alleen! De hulpvraag en het hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo helpen we elkaar in deze bijzondere tijd, want je bent #nietalleen.
+            Steeds meer mensen worden getroffen door de gevolgen van het coronavirus (COVID-19). De komende tijd zullen veel mensen onze hulp nodig hebben. Met dit platform verbinden we de talloze lokale hulpinitiatieven aan elkaar en aan hulpvragers. Samen ben je meer dan alleen! De hulpvraag en het hulpaanbod wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd naar een organisatie bij jou in de buurt. Zo helpen we elkaar in deze bijzondere tijd, want je bent #Nietalleen.
           </p>
         </v-flex>
       </v-layout>
