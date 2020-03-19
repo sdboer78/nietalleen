@@ -46,7 +46,7 @@
             <strong>vrijdag:</strong>
             van 09.00 - 16.00 uur
           </p>
-          <p class="text-left pa-6">
+          <p class="pa-6">
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
         </v-flex>
