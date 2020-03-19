@@ -321,9 +321,12 @@ export default {
         needyPostalCode
       })
 
-      this.popupMessage = response.status === 204
-        ? this.formSubmissionSuccessMessage
-        : this.formSubmissionFailedMessage
+      if (response.status === 204) {
+        this.popupMessage = this.formSubmissionSuccessMessage
+        this.$refs.form.reset()
+      } else {
+        this.popupMessage = this.formSubmissionFailedMessage
+      }
 
       this.showPopup = true
     }
