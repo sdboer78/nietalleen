@@ -45,6 +45,6 @@ html .v-btn--contained {
   box-shadow: none;
 }
 
-html .v-btn:not(.v-btn--round).v-size--default {
-  padding: 0 24px;
+html .v-btn:not(.v-btn--round).v-size--x-large {
+  padding: 0 2.5em;
 }
