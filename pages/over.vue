@@ -8,7 +8,7 @@
       >
         <v-flex xs12 sm8 md5>
           <hero-image
-            :src="require('@/assets/love-neighbour.jpg')"
+            :src="require('@/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
@@ -108,7 +108,7 @@
       >
         <v-flex xs12 sm8 md5>
           <hero-image
-            :src="require('@/assets/kopje-thee.jpg')"
+            :src="require('@/assets/cooking.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >

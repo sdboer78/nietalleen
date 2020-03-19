@@ -8,7 +8,7 @@
       >
         <v-flex xs12 sm8 md5 lg4>
           <hero-image
-            :src="require('@/assets/hond-uitlaten.jpg')"
+            :src="require('@/assets/sitting-on-a-bench.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
@@ -115,7 +115,7 @@
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <hero-image
-            :src="require('@/assets/hond-uitlaten.jpg')"
+            :src="require('@/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >

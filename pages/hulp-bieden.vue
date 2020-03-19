@@ -7,7 +7,7 @@
     >
       <v-flex xs12 sm8 md5>
         <hero-image
-          :src="require('@/assets/love-neighbour.jpg')"
+          :src="require('@/assets/love-your-neighbour.jpg')"
           size="400px"
           class="mx-auto mb-8"
         >
