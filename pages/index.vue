@@ -25,7 +25,7 @@
             Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
           <need-help-form />
-          <p><br><br>of<br><br></p>
+          <divider class="my-5" />
           <p>Bel met ons nummer:</p>
           <v-btn
             href="tel:0800-1322"
@@ -142,10 +142,13 @@
 <script>
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
+import Divider from '~/components/Divider.vue'
+
 export default {
   components: {
     HeroImage,
-    NeedHelpForm
+    NeedHelpForm,
+    Divider
   },
   head () {
     return {
