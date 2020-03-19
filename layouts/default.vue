@@ -44,7 +44,7 @@
           Over ons
         </nuxt-link>
         <span class="mx-2">|</span>
-        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemen voorwaarden</a>
+        <a href="https://www.eo.nl/algemene-voorwaarden" class="white--text">Algemene voorwaarden</a>
         <span class="mx-2">|</span>
         <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
       </p>
