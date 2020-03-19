@@ -56,9 +56,11 @@
               class="d-flex d-sm-none"
             >
               <v-row>
-                <v-col><hr class="my-3"/></v-col>
-                <v-col cols="2">OF</v-col>
-                <v-col><hr class="my-3"/></v-col>
+                <v-col><hr class="my-3"></v-col>
+                <v-col cols="2">
+                  OF
+                </v-col>
+                <v-col><hr class="my-3"></v-col>
               </v-row>
             </v-col>
             <v-col class="text-center text-sm-left col-12 col-sm-6">

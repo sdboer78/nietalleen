@@ -37,7 +37,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer color="primary">
+    <v-footer color="primary py-2">
       <p class="caption white--text mx-auto">
         <nuxt-link to="/over" class="white--text">Over ons</nuxt-link>
         <span class="mx-2">|</span>

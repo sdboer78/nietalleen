@@ -32,24 +32,24 @@
         >
           Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
         </p>
-        <h2>Deze organisaties hebben zich al aangemeld</h2>
       </v-flex>
     </v-layout>
     <section>
       <v-layout
         justify-center
         align-center
-        class="px-8 py-12 accent text-center"
+        class="pt-12 accent text-center"
       >
-        &nbsp;
-        <!-- In de grijze ball moet het kaartje -->
-        <iframe
-          src="about:blank"
-          class="npo_cc_social"
-          data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
-          width="100%"
-          height="480"
-        />
+        <v-flex xs12>
+          <h2 class="mb-5 px-8">
+            Deze organisaties hebben zich al aangemeld
+          </h2>
+          <iframe
+            src="about:blank"
+            class="npo_cc_social map"
+            data-src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+          />
+        </v-flex>
       </v-layout>
     </section>
   </div>
@@ -74,3 +74,12 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+.map {
+  background-color: rgba(0, 0, 0, 0.08);
+  border: 0;
+  height: 75vh;
+  width: 100%;
+}
+</style>
