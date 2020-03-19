@@ -35,9 +35,7 @@
         Hulp bieden
       </v-btn>
     </v-app-bar>
-    <v-content
-      :cookie-permissions="cookiePermissions"
-    >
+    <v-content>
       <nuxt />
     </v-content>
     <v-footer color="primary py-5">
@@ -56,10 +54,7 @@
 export default {
   data () {
     return {
-      activeTab: null,
-      cookiePermissions: {
-        social: false
-      }
+      activeTab: null
     }
   },
   computed: {
