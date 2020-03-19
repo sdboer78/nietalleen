@@ -79,17 +79,8 @@
         class="text-center px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <hero-image
-            :src="require('@/assets/hond-uitlaten.jpg')"
-            size="400px"
-            class="mx-auto mb-8 white--text"
-          >
-            <div class="d-flex flex-column">
-              <span class="display-4 mb-0">133</span>
-              <span class="display-1 mt-n8">organisaties</span>
-            </div>
-          </hero-image>
-          <h2 class="display-1">hebben al hulp aangeboden</h2>
+          <span class="display-4">133</span>
+          <h2 class="display-1">organisaties hebben al hulp aangeboden</h2>
           <p class="subtitle-1">
             Wil jij je ook aansluiten met een hulp-initiatief?
           </p>
@@ -115,6 +106,19 @@
         class="text-center accent px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
+          <hero-image
+            :src="require('@/assets/hond-uitlaten.jpg')"
+            size="400px"
+            class="mx-auto mb-8"
+          >
+            <v-img
+              :src="require('@/assets/logo-niet-alleen.svg')"
+              max-width="200px"
+              aspect-ratio="5"
+              position="center center"
+              contain
+            />
+          </hero-image>
           <h2 class="display-1">Over ons</h2>
           <p class="subtitle-1">
             Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
