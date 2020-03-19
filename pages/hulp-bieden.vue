@@ -90,7 +90,12 @@ export default {
     return {
       title: 'Wij kunnen hulp bieden',
       meta: [
-        { hid: 'aanbieden', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
+        {
+          hid: 'aanbieden',
+          name: 'description',
+          content:
+            'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.'
+        }
       ]
     }
   }
