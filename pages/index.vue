@@ -34,12 +34,7 @@
         <v-flex xs12 sm8 md5>
           <h2>Zo werkt het</h2>
           <v-row>
-            <v-col cols="2" class="text-right">
-              <h3 class="display-1 ma-none primary--text">
-                1
-              </h3>
-            </v-col>
-            <v-col cols="10" class="text-left">
+            <v-col class="text-center text-sm-left col-12 col-sm-6">
               <p>Bel met ons nummer:</p>
               <v-btn href="tel:0800-1322" color="primary">
                 <v-icon left>
@@ -48,25 +43,39 @@
                 0800-1322
               </v-btn>
               <p class="caption mb-3 mt-6">
-                <strong>maandag t/m donderdag:</strong><br>
+                <strong>maandag t/m donderdag:</strong>
                 van 09.00 - 21.00 uur
               </p>
               <p class="caption">
-                <strong>vrijdag:</strong><br>
+                <strong>vrijdag:</strong>
                 van 09.00 - 16.00 uur
               </p>
             </v-col>
-          </v-row>
-          <v-row class="mt-6">
-            <v-col cols="2" class="text-right">
-              <h3 class="display-1 ma-none primary--text">
-                2
-              </h3>
+            <v-col
+              cols="12"
+              class="d-flex d-sm-none"
+            >
+              <v-row>
+                <v-col><hr class="my-3"/></v-col>
+                <v-col cols="2">OF</v-col>
+                <v-col><hr class="my-3"/></v-col>
+              </v-row>
             </v-col>
-            <v-col cols="10" class="text-left">
-              <p>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>
+            <v-col class="text-center text-sm-left col-12 col-sm-6">
+              <p>E-mail ons:</p>
+              <v-btn href="mailto:info@nietalleen.nl" color="primary">
+                <v-icon left>
+                  mdi-mail
+                </v-icon>
+                info@nietalleen.nl
+              </v-btn>
+              <p class="caption mb-3 mt-6">
+                <strong>Geef aan ons door:</strong>
+                Naam, postcode e-mailadres en hulpvraag.
+              </p>
             </v-col>
           </v-row>
+          <p><br>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>
         </v-flex>
       </v-layout>
     </section>
