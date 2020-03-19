@@ -47,7 +47,7 @@
         <br class="mx-2 d-sm-none">
         <a href="https://www.eo.nl/privacy" class="white--text">Privacyverklaring</a>
         <span class="mx-2">|</span>
-        <a href="https://cookies.nietalleen.nl/sites/EO/eo.nl/settings.html" class="white--text npo_cc_settings_link" rel="noreferrer">Cookie instellingen</a>
+        <a href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html" class="white--text npo_cc_settings_link" rel="noreferrer">Cookie instellingen</a>
       </p>
     </v-footer>
   </v-app>
