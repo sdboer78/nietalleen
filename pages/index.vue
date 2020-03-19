@@ -1,104 +1,148 @@
 <template>
   <div>
-    <v-layout
-      justify-center
-      align-center
-      class="pa-8 text-center"
-    >
-      <v-flex xs12 sm8 md5>
-        <hero-image
-          :src="require('@/assets/hond-uitlaten.jpg')"
-          size="400px"
-          class="mx-auto mb-8"
-        >
-          <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="200px"
-            aspect-ratio="5"
-            position="center center"
-            contain
-          />
-        </hero-image>
-        <h1>Ik zoek hulp</h1>
-        <p class="subtitle-1 font-weight-bold">
-          Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #nietalleen.
-        </p>
-      </v-flex>
-    </v-layout>
     <section>
       <v-layout
         justify-center
         align-center
-        class="px-8 py-12 accent text-center"
+        class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md5>
-          <h2>Zo werkt het</h2>
-          <v-row>
-            <v-col class="text-center text-sm-left col-12 col-sm-6">
-              <p>Bel met ons nummer:</p>
-              <v-btn href="tel:0800-1322" color="primary">
-                <v-icon left>
-                  mdi-phone
-                </v-icon>
-                0800-1322
-              </v-btn>
-              <p class="caption mb-3 mt-6">
-                <strong>maandag t/m donderdag:</strong>
-                van 09.00 - 21.00 uur
-              </p>
-              <p class="caption">
-                <strong>vrijdag:</strong>
-                van 09.00 - 16.00 uur
-              </p>
-            </v-col>
-            <v-col
-              cols="12"
-              class="d-flex d-sm-none"
-            >
-              <v-row>
-                <v-col><hr class="my-3"></v-col>
-                <v-col cols="2">
-                  OF
-                </v-col>
-                <v-col><hr class="my-3"></v-col>
-              </v-row>
-            </v-col>
-            <v-col class="text-center text-sm-left col-12 col-sm-6">
-              <p>E-mail ons:</p>
-              <v-btn href="mailto:info@nietalleen.nl" color="primary">
-                <v-icon left>
-                  mdi-mail
-                </v-icon>
-                info@nietalleen.nl
-              </v-btn>
-              <p class="caption mb-3 mt-6">
-                <strong>Geef aan ons door:</strong>
-                Naam, postcode e-mailadres en hulpvraag.
-              </p>
-            </v-col>
-          </v-row>
-          <p><br>Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.</p>
+        <v-flex xs12 sm8 md5 lg4>
+          <hero-image
+            :src="require('@/assets/hond-uitlaten.jpg')"
+            size="400px"
+            class="mx-auto mb-8"
+          >
+            <v-img
+              :src="require('@/assets/logo-niet-alleen.svg')"
+              max-width="200px"
+              aspect-ratio="5"
+              position="center center"
+              contain
+            />
+          </hero-image>
+          <h1 class="display-1">
+            Ik zoek hulp
+          </h1>
+          <p class="mb-8 subtitle-1">
+            Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          </p>
+          <need-help-form />
+          <divider class="my-5" />
+          <p>Bel met ons nummer:</p>
+          <v-btn
+            href="tel:0800-1322"
+            color="primary"
+            x-large
+          >
+            <v-icon left>
+              mdi-phone
+            </v-icon>
+            0800-1322
+          </v-btn>
+          <p class="caption my-6">
+            <strong>maandag t/m donderdag:</strong>
+            van 09.00 - 21.00 uur
+            <br>
+            <strong>vrijdag:</strong>
+            van 09.00 - 16.00 uur
+          </p>
+          <p class="pa-6">
+            Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          </p>
         </v-flex>
       </v-layout>
     </section>
-    <section class="px-8 py-12">
+    <section>
       <v-layout
         justify-center
         align-center
-        class="text-center"
+        class="px-8 py-12 white--text text-center"
+        style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
+      >
+        <v-flex xs12 sm8 md5>
+          <v-img
+            :src="require('@/assets/logo-niet-alleen.svg')"
+            max-width="200px"
+            position="center center"
+            contain
+            class="mx-auto mb-12"
+          />
+          <h2 class="display-1">
+            Ondanks het coronavirus staan we voor je klaar.
+          </h2>
+          <p class="subtitle-1">
+            Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
+          </p>
+        </v-flex>
+      </v-layout>
+    </section>
+    <section>
+      <v-layout
+        justify-center
+        align-center
+        class="text-center px-8 py-12"
       >
         <v-flex xs12 sm8 md5 class="my-5">
-          <h2>Wil jij je aansluiten met een hulp-initiatief?</h2>
-          <v-btn
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
-            target="_new"
-            color="secondary"
-          >
-            Wij kunnen hulp bieden
-          </v-btn>
-          <p class="caption mt-5">
-            Ben je <strong>een particulier</strong> en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
+          <span class="display-4">
+            354
+          </span>
+          <h2 class="display-1 mb-2">
+            organisaties hebben al hulp aangeboden
+          </h2>
+          <p class="subtitle-1">
+            Wil jij je ook aansluiten met een hulp-initiatief?
           </p>
+          <v-btn
+            href="hulp-bieden"
+            color="primary"
+            x-large
+            nuxt
+            class="mt-6"
+          >
+            Aanmelden
+          </v-btn>
+          <p class="body-2 font-weight-bold py-8 px-4">
+            Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
+          </p>
+        </v-flex>
+      </v-layout>
+    </section>
+    <section>
+      <v-layout
+        justify-center
+        align-center
+        class="text-center accent px-8 py-12"
+      >
+        <v-flex xs12 sm8 md5 class="my-5">
+          <hero-image
+            :src="require('@/assets/hond-uitlaten.jpg')"
+            size="400px"
+            class="mx-auto mb-8"
+          >
+            <v-img
+              :src="require('@/assets/logo-niet-alleen.svg')"
+              max-width="200px"
+              aspect-ratio="5"
+              position="center center"
+              contain
+            />
+          </hero-image>
+          <h2 class="display-1">
+            Over ons
+          </h2>
+          <p class="subtitle-1">
+            Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
+            <br>De hulpvraag wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd
+          </p>
+          <v-btn
+            href="/over"
+            color="primary"
+            class="mt-6"
+            x-large
+            nuxt
+          >
+            Meer lezen over ons
+          </v-btn>
         </v-flex>
       </v-layout>
     </section>
@@ -107,8 +151,15 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
+import NeedHelpForm from '~/components/NeedHelpForm.vue'
+import Divider from '~/components/Divider.vue'
+
 export default {
-  components: { HeroImage },
+  components: {
+    HeroImage,
+    NeedHelpForm,
+    Divider
+  },
   head () {
     return {
       title: 'Ik zoek hulp',
