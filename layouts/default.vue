@@ -59,7 +59,6 @@ export default {
   },
   computed: {
     currentPageHasTab () {
-      console.log(this.$nuxt.$route.path === this.activeTab)
       return this.$nuxt.$route.path === this.activeTab
     }
   }
