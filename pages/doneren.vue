@@ -41,7 +41,7 @@
             contain
           />
           <v-btn
-            href="https://www.metterdaad.nl/corona/doneren"
+            href="https://metterdaad.eo.nl/corona/doneren"
             color="primary"
             class="ma-2"
             nuxt
