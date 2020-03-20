@@ -6,7 +6,7 @@
         align-center
         class="pa-12 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
             :src="require('@/assets/walking-with-dog.jpg')"
             size="400px"
@@ -67,36 +67,42 @@
         class="px-8 py-12 white--text text-center"
         style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <h2 class="display-1">
             De volgende organisaties hebben zich aangesloten bij #Nietalleen
           </h2>
-          <v-row class="subtitle-1">
+          <v-row class="partner-list">
             <v-col>
-              Diaconaal Steunpunt
-              <br>Christelijk Gereformeerde Kerken
-              <br>ChristenUnie
-              <br>Evangelische Omroep
-              <br>Gereformeerde Kerken Vrijgemaakt
-              <br>Kerk in Actie
-              <br>Missie Nederland
-              <br>Navigators
-              <br>Nederlands Gereformeerde Kerken
+              <p>Diaconaal Steunpunt</p>
+              <p>Christelijk Gereformeerde Kerken</p>
+              <p>ChristenUnie</p>
+              <p>Evangelische Omroep</p>
+              <p>Gereformeerde Kerken Vrijgemaakt</p>
+              <p>Kerk in Actie</p>
+              <p>Missie Nederland</p>
+              <p>Navigators</p>
+              <p>Nederlands Gereformeerde Kerken</p>
+              <p>Compassion</p>
+              <p>KBO-PCOB</p>
             </v-col>
             <v-col>
-              Protestantse Kerk in Nederland
-              <br>Rooms Katholieke Kerk
-              <br>SGP
-              <br>Stichting Agapè
-              <br>Stichting HipHelpt
-              <br>Stichting Present
-              <br>Schuldhulpmaatje
-              <br>Tear
-              <br>Tot Heil des Volks
-              <br>4e Musketier
-              <br>Youth for Christ
+              <p>Protestantse Kerk in Nederland</p>
+              <p>Rooms Katholieke Kerk</p>
+              <p>SGP</p>
+              <p>Stichting Agapè</p>
+              <p>HipHelpt</p>
+              <p>Stichting Present</p>
+              <p>Schuldhulpmaatje</p>
+              <p>Tear</p>
+              <p>Tot Heil des Volks</p>
+              <p>4e Musketier</p>
+              <p>Youth for Christ</p>
+              <p>...</p>
             </v-col>
           </v-row>
+          <p class="mt-6 font-italic">
+            En nog steeds breidt deze lijst zich uit...
+          </p>
         </v-flex>
       </v-layout>
     </section>
@@ -106,7 +112,7 @@
         align-center
         class="pa-12 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
             :src="require('@/assets/cooking.jpg')"
             size="400px"
@@ -139,7 +145,7 @@
           </h2>
           <p>
             <span class="d--block font-weight-bold" :style="'color:'+primaryColor">1.</span>
-            <br>Download het logo. Voeg desgewenst de plaatsnaan toe als je handig bent met Adobe Photoshop&copy;
+            <br>Download het logo. Voeg desgewenst de plaatsnaam toe als je handig bent met Adobe Photoshop&copy;
           </p>
           <p class="pb-12">
             <span class="d--block font-weight-bold" :style="'color:'+primaryColor">2.</span>
@@ -171,3 +177,9 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+.partner-list p {
+  line-height: 1.2;
+}
+</style>
