@@ -133,7 +133,7 @@
             Organisaties en kerken zetten zich in voor mensen die hulp kunnen gebruiken onder de naam #Nietalleen. Download hieronder het logo, verschillende posters, social posts voor Facebook en Twitter om te gebruiken bij jouw lokale initiatief.
           </p>
           <v-btn
-            href="/Downloads-Nietalleen-logo.jpg"
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-logo.jpg"
             color="primary"
             class="ma-2"
             target="_new"
@@ -143,7 +143,7 @@
             Logo
           </v-btn>
           <v-btn
-            href="/Downloads-Nietalleen-posters.zip"
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-posters.zip"
             color="primary"
             class="ma-2"
             target="_new"
@@ -154,7 +154,7 @@
           </v-btn>
           <br>
           <v-btn
-            href="/Downloads-Nietalleen-facebook.zip"
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-facebook.zip"
             color="primary"
             class="ma-2"
             target="_new"
@@ -164,7 +164,7 @@
             Social posts voor Facebook
           </v-btn>
           <v-btn
-            href="/Downloads-Nietalleen-twitter.zip"
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-twitter.zip"
             color="primary"
             class="ma-2"
             target="_new"
