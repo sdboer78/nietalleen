@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto">
     <p class="caption mb-2 white--text text-center">
-      #Nietalleen wordt gecoördineerd door Protestantse Kerken in Nederland en Evangelische Omroep.
+      #Nietalleen wordt gecoördineerd door Protestantse Kerk in Nederland en Evangelische Omroep.
     </p>
     <p class="caption mb-0 white--text text-center">
       <nuxt-link to="/over" class="white--text wrap-whitespace">Over ons</nuxt-link>
