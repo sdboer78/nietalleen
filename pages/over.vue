@@ -127,18 +127,51 @@
             />
           </hero-image>
           <h2 class="display-1">
-            Gebruik dit logo en social posts voor jouw lokale initiatief!
+            Gebruik dit logo en de social posts voor jouw lokale initiatief!
           </h2>
-          <div class="subtitle-1">
-            Organisaties en kerken zetten zich in voor mensen die hulp kunnen gebruiken onder de naam #Nietalleen. Download hier het logo om te gebruiken bij jouw lokale initiatief.
-          </div>
+          <p class="subtitle-1 mb-12">
+            Organisaties en kerken zetten zich in voor mensen die hulp kunnen gebruiken onder de naam #Nietalleen. Download hieronder het logo, verschillende posters, social posts voor Facebook en Twitter om te gebruiken bij jouw lokale initiatief.
+          </p>
           <v-btn
-            href="https://portal.eo.nl/over-de-eo/pers/artikel/2020/03/platform-nietalleen-voor-verbinding-coronahulp"
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-logo.jpg"
             color="primary"
-            class="mt-10"
-            x-large
+            class="ma-2"
+            target="_new"
+            large
           >
-            Download
+            <v-icon left>mdi-download</v-icon>
+            Logo
+          </v-btn>
+          <v-btn
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-posters.zip"
+            color="primary"
+            class="ma-2"
+            target="_new"
+            large
+          >
+            <v-icon left>mdi-download</v-icon>
+            Posters
+          </v-btn>
+          <br>
+          <v-btn
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-facebook.zip"
+            color="primary"
+            class="ma-2"
+            target="_new"
+            large
+          >
+            <v-icon left>mdi-download</v-icon>
+            Social posts voor Facebook
+          </v-btn>
+          <v-btn
+            href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-twitter.zip"
+            color="primary"
+            class="ma-2"
+            target="_new"
+            large
+          >
+            <v-icon left>mdi-download</v-icon>
+            Social posts voor Twitter
           </v-btn>
         </v-flex>
       </v-layout>
