@@ -140,17 +140,6 @@
           >
             Download
           </v-btn>
-          <h2 class="display-1 mt-8">
-            Zo werkt het
-          </h2>
-          <p>
-            <span class="d--block font-weight-bold primary--text">1.</span>
-            <br>Download het logo. Voeg desgewenst de plaatsnaam toe als je handig bent met Adobe Photoshop&copy;
-          </p>
-          <p class="pb-12">
-            <span class="d--block font-weight-bold primary--text">2.</span>
-            <br>Verspreid de social media post via je lokale kanalen
-          </p>
         </v-flex>
       </v-layout>
     </section>
