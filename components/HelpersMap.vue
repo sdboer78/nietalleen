@@ -41,7 +41,7 @@ export default {
 
   &__iframe {
     border: 0;
-    height: 78vh;
+    height: 50vh;
     width: 100%;
   }
 }

@@ -37,7 +37,7 @@
             <span class="d--block font-weight-bold primary--text">3.</span>
             <br>Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
           </p>
-          <h2 class="display-1 mt-12">
+          <h2 class="mt-12">
             Meld je organisatie aan
           </h2>
           <v-btn
@@ -59,9 +59,9 @@
       <v-layout
         justify-center
         align-center
-        class="pt-12 accent text-center"
+        class="pt-12 text-center"
       >
-        <v-flex xs12>
+        <v-flex xs12 sm10 md8 lg6 xl5>
           <h2 class="mb-5 px-8">
             Deze organisaties hebben zich al aangemeld
           </h2>
