@@ -40,11 +40,11 @@
             0800-1322
           </v-btn>
           <p class="caption my-6">
-            <strong>maandag t/m donderdag:</strong>
+            <strong>maandag t/m vrijdag:</strong>
             van 09.00 - 21.00 uur
             <br>
-            <strong>vrijdag:</strong>
-            van 09.00 - 16.00 uur
+            <strong>zaterdag en zondag:</strong>
+            van 09.00 - 20.00 uur
           </p>
           <p class="pa-6">
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
