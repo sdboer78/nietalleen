@@ -49,7 +49,7 @@
               Help je hulp nodig?
             </v-btn>
             <v-btn
-              href="hulp-bieden"
+              href="/hulp-bieden"
               class="ma-2"
               nuxt
               x-large
