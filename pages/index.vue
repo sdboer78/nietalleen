@@ -84,7 +84,7 @@
       >
         <v-flex xs12 sm8 md5 class="my-5">
           <span class="display-4">
-            354
+            490
           </span>
           <h2 class="display-1 mb-2">
             organisaties hebben al hulp aangeboden
