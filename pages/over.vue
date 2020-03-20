@@ -82,21 +82,26 @@
               <br>Missie Nederland
               <br>Navigators
               <br>Nederlands Gereformeerde Kerken
+              <br>Compassion
             </v-col>
             <v-col>
               Protestantse Kerk in Nederland
               <br>Rooms Katholieke Kerk
               <br>SGP
               <br>Stichting Agapè
-              <br>Stichting HipHelpt
+              <br>HipHelpt
               <br>Stichting Present
               <br>Schuldhulpmaatje
               <br>Tear
               <br>Tot Heil des Volks
               <br>4e Musketier
               <br>Youth for Christ
+              <br>...
             </v-col>
           </v-row>
+          <p class="mt-4 font-italic">
+            En nog steeds breidt deze lijst zich uit...
+          </p>
         </v-flex>
       </v-layout>
     </section>
