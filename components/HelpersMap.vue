@@ -1,19 +1,19 @@
 <template>
   <div class="map">
-    <iframe
-      :class="{
-        'map__iframe': true,
-        'hidden': !renderMap
-      }"
-      src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
-    />
-    <p
-      v-if="!renderMap"
-      class="caption"
-    >
-      Pas je <a href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html" class="npo_cc_settings_link" rel="noreferrer">cookie instellingen</a>
-      aan om deze kaart te kunnen zien.
-    </p>
+    <v-expand-transition>
+      <iframe
+        v-if="renderMap"
+        class="map__iframe"
+        src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+      />
+      <p
+        v-if="!renderMap"
+        class="caption"
+      >
+        Pas je <a href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html" class="npo_cc_settings_link" rel="noreferrer">cookie instellingen</a>
+        aan om deze kaart te kunnen zien.
+      </p>
+    </v-expand-transition>
   </div>
 </template>
 
@@ -42,12 +42,7 @@ export default {
   &__iframe {
     border: 0;
     height: 78vh;
-    transition: height 1s cubic-bezier(0.4, 0.0, 0.2, 1);
     width: 100%;
-
-    &.hidden {
-      height: 0;
-    }
   }
 }
 </style>
