@@ -63,6 +63,7 @@
             text
           >
             Bekijk
+            <v-icon right>mdi-open-in-new</v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -105,6 +106,7 @@
             text
           >
             Bekijk
+            <v-icon right>mdi-open-in-new</v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -144,7 +146,6 @@
             href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html"
             class="npo_cc_settings_link"
             rel="noreferrer"
-            target="_new"
             color="primary"
             text
           >
