@@ -57,6 +57,26 @@ export default {
     currentPageHasTab () {
       return this.$nuxt.$route.path === this.activeTab
     }
+  },
+  mounted () {
+    if (window) {
+      window.addEventListener('CCM_done', this.getCookiePermissions, false)
+    }
+  },
+  methods: {
+    getCookiePermissions () {
+      const { ccm } = window
+
+      if (ccm) {
+        const permissions = ccm.get_permissions()
+        permissions.map((permission) => {
+          this.addCookiePermission(permission)
+        })
+      }
+    },
+    addCookiePermission (permission) {
+      this.$store.commit('cookie-permissions/add', permission)
+    }
   }
 }
 </script>
@@ -72,6 +92,10 @@ export default {
     &--active {
       font-weight: bold;
     }
+  }
+  .theme--light.v-tabs .v-tab--active:hover::before,
+  .theme--light.v-tabs .v-tab--active::before {
+    opacity: 0;
   }
   .v-slide-group__next--disabled,
   .v-slide-group__prev--disabled {
