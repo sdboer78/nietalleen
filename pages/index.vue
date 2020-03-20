@@ -85,7 +85,7 @@
         <v-flex xs12 sm8 md5 lg4 xl3 class="my-5">
           <h2>
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              354
+              490
             </span>
             <span class="display-1 mb-2">
               organisaties hebben al hulp aangeboden
