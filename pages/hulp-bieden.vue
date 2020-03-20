@@ -20,9 +20,9 @@
               contain
             />
           </hero-image>
-          <h2 class="display-1">
+          <h1 class="display-1">
             Zo werkt het
-          </h2>
+          </h1>
           <p>
             <span class="d--block font-weight-bold primary--text">1.</span>
             <br>Meld je hulpinitiatief of organisatie aan via dit formulier
