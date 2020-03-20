@@ -83,11 +83,13 @@
         class="text-center px-8 py-12"
       >
         <v-flex xs12 sm8 md5 lg4 xl3 class="my-5">
-          <span class="display-4">
-            354
-          </span>
-          <h2 class="display-1 mb-2">
-            organisaties hebben al hulp aangeboden
+          <h2>
+            <span class="display-4 mb-0 d-block" style="line-height:1.1;">
+              354
+            </span>
+            <span class="display-1 mb-2">
+              organisaties hebben al hulp aangeboden
+            </span>
           </h2>
           <p class="subtitle-1">
             Wil jij je ook aansluiten met een hulp-initiatief?
