@@ -4,7 +4,7 @@
       <v-layout
         justify-center
         align-center
-        class="pa-12 text-center"
+        class="pa-8 text-center"
       >
         <v-flex xs12 sm8 md5 lg4 xl3>
           <hero-image
