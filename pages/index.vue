@@ -6,7 +6,7 @@
         align-center
         class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md5 lg4>
+        <v-flex xs12 sm8 md5 lg4 xl3>
           <hero-image
             :src="require('@/assets/sitting-on-a-bench.jpg')"
             size="400px"
@@ -59,7 +59,7 @@
         class="px-8 py-12 white--text text-center"
         style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md5 lg4 xl3>
           <v-img
             :src="require('@/assets/logo-niet-alleen.svg')"
             max-width="200px"
@@ -82,7 +82,7 @@
         align-center
         class="text-center px-8 py-12"
       >
-        <v-flex xs12 sm8 md5 class="my-5">
+        <v-flex xs12 sm8 md5 lg4 xl3 class="my-5">
           <span class="display-4">
             354
           </span>
@@ -113,7 +113,7 @@
         align-center
         class="text-center accent px-8 py-12"
       >
-        <v-flex xs12 sm8 md5 class="my-5">
+        <v-flex xs12 sm8 md5 lg4 xl3 class="my-5">
           <hero-image
             :src="require('@/assets/walking-with-dog.jpg')"
             size="400px"

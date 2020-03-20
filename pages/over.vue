@@ -6,7 +6,7 @@
         align-center
         class="pa-12 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
             :src="require('@/assets/walking-with-dog.jpg')"
             size="400px"
@@ -67,7 +67,7 @@
         class="px-8 py-12 white--text text-center"
         style="background:linear-gradient(135deg, #c63866, #fe676e, #fd8f52);"
       >
-        <v-flex xs12 sm8 md6 lg4>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <h2 class="display-1">
             De volgende organisaties hebben zich aangesloten bij #Nietalleen
           </h2>
@@ -112,7 +112,7 @@
         align-center
         class="pa-12 text-center"
       >
-        <v-flex xs12 sm8 md5>
+        <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
             :src="require('@/assets/cooking.jpg')"
             size="400px"
