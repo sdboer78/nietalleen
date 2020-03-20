@@ -348,4 +348,16 @@ export default {
   .v-select__slot .v-label {
     padding-right: 1.5em;
   }
+
+  // overwrite autofill styling
+  input,
+  textarea,
+  select {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      box-shadow: 0 0 0px 1000px #fff inset;
+      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    }
+  }
 </style>

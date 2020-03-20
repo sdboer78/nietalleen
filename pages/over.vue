@@ -4,7 +4,7 @@
       <v-layout
         justify-center
         align-center
-        class="pa-12 text-center"
+        class="pa-8 text-center"
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
@@ -20,9 +20,9 @@
               contain
             />
           </hero-image>
-          <h2 class="display-1">
+          <h1 class="display-1">
             Over ons
-          </h2>
+          </h1>
           <div class="headline">
             Wat is #Nietalleen?
           </div>
@@ -49,7 +49,7 @@
               Help je hulp nodig?
             </v-btn>
             <v-btn
-              href="hulp-bieden"
+              href="/hulp-bieden"
               class="ma-2"
               nuxt
               x-large
@@ -140,17 +140,6 @@
           >
             Download
           </v-btn>
-          <h2 class="display-1 mt-8">
-            Zo werkt het
-          </h2>
-          <p>
-            <span class="d--block font-weight-bold primary--text">1.</span>
-            <br>Download het logo. Voeg desgewenst de plaatsnaam toe als je handig bent met Adobe Photoshop&copy;
-          </p>
-          <p class="pb-12">
-            <span class="d--block font-weight-bold primary--text">2.</span>
-            <br>Verspreid de social media post via je lokale kanalen
-          </p>
         </v-flex>
       </v-layout>
     </section>
