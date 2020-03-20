@@ -20,9 +20,9 @@
               contain
             />
           </hero-image>
-          <h2 class="display-1">
+          <h1 class="display-1">
             Over ons
-          </h2>
+          </h1>
           <div class="headline">
             Wat is #Nietalleen?
           </div>
