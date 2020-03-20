@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto">
-    <p class="caption mb-0 white--text text-center">
-      #Nietalleen wordt gecoördineerd door Evangelische Omroep
+    <p class="caption mb-2 white--text text-center">
+      #Nietalleen wordt gecoördineerd door Evangelische Omroep.
     </p>
     <p class="caption mb-0 white--text text-center">
       <nuxt-link to="/over" class="white--text wrap-whitespace">Over ons</nuxt-link>
@@ -38,8 +38,14 @@
           Algemene voorwaarden
         </v-card-title>
         <v-card-text>
-          <p>....</p>
-          <p>Bekijk deze informatie op de website van de EO (in een nieuw venster).</p>
+          <p>
+            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            We hechten waarde aan duidelijkheid over ons beleid ten opzichte van de algemene voorwaarden.
+          </p>
+          <p>
+            Voor #Nietalleen maken we gebruik van technologie op de platformen van de Evangelische Omroep.
+            Bekijk daarom de algemene voorwaarden op de website van de Evangelische Omroep (in een nieuw venster).
+          </p>
         </v-card-text>
         <v-divider />
         <v-card-actions @click="showTermsConditionsDialog = false">
@@ -74,8 +80,14 @@
           Privacyverklaring
         </v-card-title>
         <v-card-text>
-          <p>....</p>
-          <p>Bekijk deze informatie op de website van de EO (in een nieuw venster).</p>
+          <p>
+            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            We hechten waarde aan duidelijkheid over ons beleid ten opzichte van uw privacy.
+          </p>
+          <p>
+            Voor #Nietalleen maken we gebruik van technologie op de platformen van de Evangelische Omroep.
+            Bekijk daarom de privacyverklaring op de website van de Evangelische Omroep (in een nieuw venster).
+          </p>
         </v-card-text>
         <v-divider />
         <v-card-actions @click="showPrivacyDialog = false">
@@ -110,8 +122,14 @@
           Cookie-instellingen
         </v-card-title>
         <v-card-text>
-          <p>....</p>
-          <p>Bekijk deze informatie op de website van de EO (in een nieuw venster).</p>
+          <p>
+            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            We hechten waarde aan duidelijkheid over ons beleid ten opzichte van cookies en tracking.
+          </p>
+          <p>
+            Voor #Nietalleen maken we gebruik van technologie op de platformen van de Evangelische Omroep.
+            Het aanpassen van je cookie-voorkeuren gebeurt daarom via de Evangelische Omroep (in een nieuw venster).
+          </p>
         </v-card-text>
         <v-divider />
         <v-card-actions @click="showCookiesDialog = false">
@@ -130,7 +148,7 @@
             color="primary"
             text
           >
-            Bekijk
+            Aanpassen
           </v-btn>
         </v-card-actions>
       </v-card>
