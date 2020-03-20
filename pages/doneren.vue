@@ -44,10 +44,11 @@
             href="https://metterdaad.eo.nl/corona/doneren"
             color="primary"
             class="ma-2"
+            target="_new"
             nuxt
             x-large
           >
-            Doneer
+            Doneer via EO Metterdaad
             <v-icon right>mdi-open-in-new</v-icon>
           </v-btn>
         </v-flex>
