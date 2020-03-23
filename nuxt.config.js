@@ -1,8 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
-import constants from './constants/site'
 
 export default {
   mode: 'universal',
+  env: {
+    URL: process.env.URL
+  },
   /*
   ** Headers of the page
   */
@@ -38,7 +40,7 @@ export default {
       {
         hid: 'og-image',
         property: 'og:image',
-        content: constants.SITE_URL + '/og-image-nietalleen.jpg'
+        content: process.env.URL + '/og-image-nietalleen.jpg'
       },
       {
         hid: 'twitter-card',

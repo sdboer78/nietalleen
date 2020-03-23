@@ -189,7 +189,6 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
-import constants from '~/constants/site.js'
 
 export default {
   components: { HeroImage },
@@ -212,7 +211,7 @@ export default {
         {
           hid: 'og-url',
           property: 'og:url',
-          content: constants.SITE_URL + this.$route.path
+          content: process.env.URL + this.$route.path
         }
       ]
     }

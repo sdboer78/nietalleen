@@ -144,7 +144,6 @@
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
 import Divider from '~/components/Divider.vue'
-import constants from '~/constants/site.js'
 
 export default {
   components: {
@@ -171,7 +170,7 @@ export default {
         {
           hid: 'og-url',
           property: 'og:url',
-          content: constants.SITE_URL + this.$route.path
+          content: process.env.URL + this.$route.path
         }
       ]
     }
