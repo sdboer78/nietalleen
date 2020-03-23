@@ -10,4 +10,4 @@
 
 [context.deploy-preview.environment]
 #    NODE_ENV = "development"
-    URL = "https://develop.nietalleen.nl"
+    URL = DEPLOY_PRIME_URL
