@@ -1,8 +1,18 @@
 <template>
   <div>
     <section>
-      <v-layout justify-center align-center class="pa-8 text-center">
-        <v-flex xs12 sm8 md5 lg4 xl3>
+      <v-layout
+        justify-center
+        align-center
+        class="pa-8 text-center"
+      >
+        <v-flex
+          xs12
+          sm8
+          md5
+          lg4
+          xl3
+        >
           <hero-image
             :src="require('@/assets/sitting-on-a-bench.jpg')"
             size="400px"
@@ -105,9 +115,9 @@
 </template>
 
 <script>
-import HeroImage from "~/components/HeroImage.vue";
-import NeedHelpForm from "~/components/NeedHelpForm.vue";
-import Divider from "~/components/Divider.vue";
+import HeroImage from '~/components/HeroImage.vue'
+import NeedHelpForm from '~/components/NeedHelpForm.vue'
+import Divider from '~/components/Divider.vue'
 
 export default {
   components: {
@@ -118,21 +128,21 @@ export default {
   head() {
     // page specific metadata
     return {
-      title: "Ik zoek hulp",
+      title: 'Ik zoek hulp',
       meta: [
         {
-          hid: "og-title",
-          property: "og:title",
-          content: "#Nietalleen"
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen'
         },
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen."
+            'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

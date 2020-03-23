@@ -78,37 +78,37 @@
 </template>
 
 <script>
-import HeroImage from "~/components/HeroImage.vue";
-import HelpersMap from "~/components/HelpersMap.vue";
+import HeroImage from "~/components/HeroImage.vue"
+import HelpersMap from "~/components/HelpersMap.vue"
 
 export default {
   components: { HeroImage, HelpersMap },
   computed: {
     cookiePermissions() {
-      return this.$store.state["cookie-permissions"].list;
+      return this.$store.state["cookie-permissions"].list
     },
     allowMapRender() {
-      return this.cookiePermissions.findIndex(cat => cat === "social") > -1;
+      return this.cookiePermissions.findIndex(cat => cat === "social") > -1
     }
   },
   head() {
     // page specific metadata
     return {
-      title: "Wij kunnen hulp bieden",
+      title: 'Wij kunnen hulp bieden',
       meta: [
         {
-          hid: "og-title",
-          property: "og:title",
-          content: "#Nietalleen - Hulp bieden"
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen - Hulp bieden'
         },
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen."
+            'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

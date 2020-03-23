@@ -139,25 +139,25 @@
 </template>
 
 <script>
-import HeroImage from "~/components/HeroImage.vue";
+import HeroImage from '~/components/HeroImage.vue';
 
 export default {
   components: { HeroImage },
   head() {
     // page specific metadata
     return {
-      title: "Over ons",
+      title: 'Over ons',
       meta: [
         {
-          hid: "og-title",
-          property: "og:title",
-          content: "#Nietalleen - Over ons"
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen - Over ons'
         },
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen."
+            'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
         }
       ]
     };
@@ -166,7 +166,7 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
-.partner-list p {
-  line-height: 1.2;
-}
+  .partner-list p {
+    line-height: 1.2;
+  }
 </style>
