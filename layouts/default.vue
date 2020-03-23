@@ -94,6 +94,7 @@ export default {
     }
   },
   created () {
+    // set default baseUrl when window is not available (yet)
     if (process.env.NODE_ENV === 'production') {
       this.baseUrl = 'https://www.nietalleen.nl'
     } else {
@@ -103,6 +104,8 @@ export default {
   mounted () {
     if (window) {
       window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      // overwrite baseUrl when window is available
+      this.baseUrl = window.location.protocol + '//' + window.location.host
     }
   },
   methods: {
