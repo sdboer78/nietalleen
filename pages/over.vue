@@ -46,7 +46,7 @@
               nuxt
               x-large
             >
-              Help je hulp nodig?
+              Heb je hulp nodig?
             </v-btn>
             <v-btn
               href="/hulp-bieden"
@@ -73,29 +73,35 @@
           </h2>
           <v-row class="partner-list">
             <v-col>
-              <p>Diaconaal Steunpunt</p>
+              <p>4e Musketier</p>
+              <p>ABC gemeenten</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
+              <p>Compassion</p>
+              <p>Diaconaal Steunpunt</p>
               <p>Evangelische Omroep</p>
               <p>Gereformeerde Kerken Vrijgemaakt</p>
+              <p>HipHelpt</p>
+              <p>Hour of Power</p>
+              <p>KBO-PCOB</p>
+              <p>Leger des Heils</p>
               <p>Kerk in Actie</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
-              <p>Nederlands Gereformeerde Kerken</p>
-              <p>Compassion</p>
-              <p>KBO-PCOB</p>
             </v-col>
             <v-col>
+              <p>Nederlands Gereformeerde Kerken</p>
+              <p>NPV</p>
               <p>Protestantse Kerk in Nederland</p>
               <p>Rooms Katholieke Kerk</p>
+              <p>Schuldhulpmaatje</p>
               <p>SGP</p>
               <p>Stichting Agapè</p>
-              <p>HipHelpt</p>
               <p>Stichting Present</p>
-              <p>Schuldhulpmaatje</p>
               <p>Tear</p>
+              <p>Tijd voor Actie</p>
               <p>Tot Heil des Volks</p>
-              <p>4e Musketier</p>
+              <p>Unie van Baptisten</p>
               <p>Youth for Christ</p>
               <p>...</p>
             </v-col>
