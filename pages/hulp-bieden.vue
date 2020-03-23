@@ -113,6 +113,7 @@
 <script>
 import HeroImage from '~/components/HeroImage.vue'
 import HelpersMap from '~/components/HelpersMap.vue'
+import constants from '~/constants/site.js'
 
 export default {
   components: { HeroImage, HelpersMap },
@@ -139,6 +140,11 @@ export default {
           name: 'description',
           content:
             'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.'
+        },
+        {
+          hid: 'og-url',
+          property: 'og:url',
+          content: constants.SITE_URL + this.$route.path
         }
       ]
     }

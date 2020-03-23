@@ -36,11 +36,6 @@ export default {
         content: 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
       },
       {
-        hid: 'og-url',
-        property: 'og:url',
-        content: constants.SITE_URL
-      },
-      {
         hid: 'og-image',
         property: 'og:image',
         content: constants.SITE_URL + '/og-image-nietalleen.jpg'

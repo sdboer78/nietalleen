@@ -68,6 +68,7 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
+import constants from '~/constants/site.js'
 
 export default {
   components: { HeroImage },
@@ -86,6 +87,11 @@ export default {
           name: 'description',
           content:
             'EO Metterdaad heeft een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen. Met uw gift steunt u het belangrijke werk van de de initiatiefnemers achter nietalleen.nl en andere hulporganisaties.'
+        },
+        {
+          hid: 'og-url',
+          property: 'og:url',
+          content: constants.SITE_URL + this.$route.path
         }
       ]
     }
