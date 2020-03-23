@@ -125,7 +125,7 @@ export default {
     NeedHelpForm,
     Divider
   },
-  head() {
+  head () {
     // page specific metadata
     return {
       title: 'Ik zoek hulp',

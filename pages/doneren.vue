@@ -62,7 +62,7 @@ import HeroImage from '~/components/HeroImage.vue'
 
 export default {
   components: { HeroImage },
-  head() {
+  head () {
     // page specific metadata
     return {
       title: 'Doneren',

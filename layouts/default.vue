@@ -45,11 +45,11 @@
 </template>
 
 <script>
-import FooterContent from '~/components/FooterContent.vue';
+import FooterContent from '~/components/FooterContent.vue'
 
 export default {
   components: { FooterContent },
-  head() {
+  head () {
     // global metadata
     return {
       meta: [
@@ -96,14 +96,14 @@ export default {
   },
   mounted () {
     if (window) {
-      window.addEventListener("CCM_done", this.getCookiePermissions, false)
-      this.pageUrl = window.location.href.split("?")[0]
+      window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      this.pageUrl = window.location.href.split('?')[0]
       this.siteRoot = window.location.protocol + '//' + window.location.host
     }
   },
   methods: {
     getCookiePermissions () {
-      const { ccm } = window;
+      const { ccm } = window
 
       if (ccm) {
         const permissions = ccm.get_permissions()
@@ -113,7 +113,7 @@ export default {
       }
     },
     addCookiePermission(permission) {
-      this.$store.commit("cookie-permissions/add", permission)
+      this.$store.commit('cookie-permissions/add', permission)
     }
   }
 }
