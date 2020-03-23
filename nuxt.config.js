@@ -20,7 +20,7 @@ export default {
       {
         hid: 'description', 
         name: 'description', 
-        content: process.env.npm_package_description || 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
+        content: 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
       },
       {
         hid: 'og-type',
