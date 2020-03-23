@@ -44,6 +44,11 @@ export default {
         hid: 'og-image',
         property: 'og:image',
         content: constants.SITE_URL + '/og-image-nietalleen.jpg'
+      },
+      {
+        hid: 'twitter-card',
+        property: 'twitter:card',
+        content: 'summary_large_image'
       }
     ],
     link: [
