@@ -56,7 +56,7 @@ export default {
         {
           hid: "og-type",
           property: "og:type",
-          content: "site"
+          content: "website"
         },
         {
           hid: "og-title",
