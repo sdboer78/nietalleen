@@ -24,35 +24,32 @@
             Zo werkt het
           </h1>
           <p>
-            <span class="d--block font-weight-bold primary--text">1.</span>
-            <br>Meld je hulpinitiatief of organisatie aan via dit formulier
+            <span class="d-block font-weight-bold primary--text">1.</span>
+            Meld je hulpinitiatief of organisatie aan via dit formulier
+            <v-btn
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
+              target="_new"
+              color="primary"
+              class="mt-2"
+              x-large
+            >
+              aanmelden
+            </v-btn>
+          </p>
+          <p class="mt-8">
+            <span class="d-block font-weight-bold primary--text">2.</span>
+            Alle initiatieven worden verzameld op plaatselijk niveau en aan elkaar gekoppeld.
             <br>
           </p>
-          <p>
-            <span class="d--block font-weight-bold primary--text">2.</span>
-            <br>Alle initiatieven worden verzameld op plaatselijk niveau en aan elkaar gekoppeld.
-            <br>
+          <p class="mt-8">
+            <span class="d-block font-weight-bold primary--text">3.</span>
+            Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
           </p>
-          <p>
-            <span class="d--block font-weight-bold primary--text">3.</span>
-            <br>Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
-          </p>
-          <h2 class="mt-12">
-            Meld je organisatie aan
-          </h2>
-          <v-btn
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
-            target="_new"
-            color="primary"
-            x-large
-          >
-            aanmelden
-          </v-btn>
-          <p class="caption mt-5">
+          <p class="caption mt-12">
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
-          <p class="caption mt-5">
+          <p class="caption mt-4">
             Wil je jouw organisatie, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://bit.ly/afm-lokale-organisaties">dit formulier</a>. Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
         </v-flex>
@@ -80,7 +77,8 @@
       >
         <v-flex xs12 sm10 md8 lg6 xl5 class="my-5">
           <h2 class="display-1 mb-5 px-8">
-            Corona raakt ons allemaal: blijf om elkaar geven
+            Corona raakt ons allemaal:<br>
+            blijf om elkaar geven
           </h2>
           <v-img
             :src="require('@/assets/logo-anbi.svg')"
@@ -90,7 +88,7 @@
             position="center center"
             contain
           />
-          <p class="mb-5">EO Metterdaad start een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen.</p>
+          <p class="mb-5">EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.</p>
           <v-btn
             href="/doneren"
             color="primary"
