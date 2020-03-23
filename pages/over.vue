@@ -139,7 +139,8 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>Logo
+            <v-icon left>mdi-download</v-icon>
+            Logo
           </v-btn>
           <v-btn
             href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-posters.zip"
@@ -148,7 +149,8 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>Posters
+            <v-icon left>mdi-download</v-icon>
+            Posters
           </v-btn>
           <br />
           <v-btn
@@ -158,7 +160,8 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>Social posts voor Facebook
+            <v-icon left>mdi-download</v-icon>
+            Social posts voor Facebook
           </v-btn>
           <v-btn
             href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-twitter.zip"
@@ -167,7 +170,8 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>Social posts voor Twitter
+            <v-icon left>mdi-download</v-icon>
+            Social posts voor Twitter
           </v-btn>
         </v-flex>
       </v-layout>

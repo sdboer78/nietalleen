@@ -49,10 +49,8 @@
             aanmelden
           </v-btn>
           <p class="caption font-weight-bold mt-5">
-            Als je vragen hebt of meer wilt weten, mail dan naar
-            <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
-            Bellen kan ook naar het algemene nummer
-            <a href="tel:0800 1322">0800 1322</a>.
+            Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
+            Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
         </v-flex>
       </v-layout>
@@ -112,10 +110,10 @@ import HelpersMap from '~/components/HelpersMap.vue'
 export default {
   components: { HeroImage, HelpersMap },
   computed: {
-    cookiePermissions() {
+    cookiePermissions () {
       return this.$store.state['cookie-permissions'].list
     },
-    allowMapRender() {
+    allowMapRender () {
       return this.cookiePermissions.findIndex(cat => cat === 'social') > -1
     }
   },

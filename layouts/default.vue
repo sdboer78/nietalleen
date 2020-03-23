@@ -112,7 +112,7 @@ export default {
         })
       }
     },
-    addCookiePermission(permission) {
+    addCookiePermission (permission) {
       this.$store.commit('cookie-permissions/add', permission)
     }
   }
