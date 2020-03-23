@@ -48,9 +48,12 @@
           >
             aanmelden
           </v-btn>
-          <p class="caption font-weight-bold mt-5">
+          <p class="caption mt-5">
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
+          </p>
+          <p class="caption mt-5">
+            Wil je jouw organisatie, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://bit.ly/afm-lokale-organisaties">dit formulier</a>. Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
         </v-flex>
       </v-layout>
