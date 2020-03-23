@@ -66,12 +66,12 @@ export default {
         {
           hid: "og-url",
           property: "og:url",
-          content: this.pageUrl,
+          content: this.baseUrl + this.$nuxt.$route.fullPath
         },
         {
           hid: "og-image",
           property: "og:image",
-          content: this.siteRoot + '/og-image-nietalleen.jpg'
+          content: this.baseUrl + '/og-image-nietalleen.jpg'
         },
         {
           hid: "og-description",
@@ -80,13 +80,12 @@ export default {
             "Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen."
         }
       ]
-    };
+    }
   },
   data () {
     return {
       activeTab: null,
-      pageHost: null,
-      siteRoot: null,
+      baseUrl: null,
     }
   },
   computed: {
@@ -94,11 +93,16 @@ export default {
       return this.$nuxt.$route.path === this.activeTab
     }
   },
+  created () {
+    if (process.env.NODE_ENV === 'production') {
+      this.baseUrl = 'https://www.nietalleen.nl'
+    } else {
+      this.baseUrl = 'https://develop.nietalleen.nl'
+    }
+  },
   mounted () {
     if (window) {
       window.addEventListener('CCM_done', this.getCookiePermissions, false)
-      this.pageUrl = window.location.href.split('?')[0]
-      this.siteRoot = window.location.protocol + '//' + window.location.host
     }
   },
   methods: {
