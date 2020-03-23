@@ -75,7 +75,14 @@
         align-center
         class="px-8 py-12 accent text-center"
       >
-        <v-flex xs12 sm10 md8 lg6 xl5 class="my-5">
+        <v-flex
+          xs12
+          sm10
+          md8
+          lg6
+          xl5
+          class="my-5"
+        >
           <h2 class="display-1 mb-5 px-8">
             Corona raakt ons allemaal: blijf om elkaar geven
           </h2>

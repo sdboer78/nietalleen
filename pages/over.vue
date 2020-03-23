@@ -139,7 +139,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Logo
           </v-btn>
           <v-btn
@@ -149,7 +151,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Posters
           </v-btn>
           <br>
@@ -160,7 +164,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Social posts voor Facebook
           </v-btn>
           <v-btn
@@ -170,7 +176,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Social posts voor Twitter
           </v-btn>
         </v-flex>

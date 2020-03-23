@@ -52,7 +52,7 @@ export default {
   data () {
     return {
       activeTab: null,
-      baseUrl: null,
+      baseUrl: null
     }
   },
   computed: {
@@ -71,7 +71,7 @@ export default {
 
       if (ccm) {
         const permissions = ccm.get_permissions()
-        permissions.map(permission => {
+        permissions.map((permission) => {
           this.addCookiePermission(permission)
         })
       }

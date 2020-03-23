@@ -6,7 +6,14 @@
         align-center
         class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md6 lg4 xl3 class="pb-12">
+        <v-flex
+          xs12
+          sm8
+          md6
+          lg4
+          xl3
+          class="pb-12"
+        >
           <hero-image
             :src="require('@/assets/vegetable-basket.jpg')"
             size="400px"
@@ -49,7 +56,9 @@
             x-large
           >
             Doneer via EO Metterdaad
-            <v-icon right>mdi-open-in-new</v-icon>
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
