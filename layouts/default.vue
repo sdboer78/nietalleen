@@ -49,39 +49,6 @@ import FooterContent from '~/components/FooterContent.vue'
 
 export default {
   components: { FooterContent },
-  head () {
-    // global metadata
-    return {
-      meta: [
-        {
-          hid: "og-type",
-          property: "og:type",
-          content: "website"
-        },
-        {
-          hid: "og-title",
-          property: "og:site_name",
-          content: "#Nietalleen"
-        },
-        {
-          hid: "og-url",
-          property: "og:url",
-          content: this.baseUrl + this.$nuxt.$route.fullPath
-        },
-        {
-          hid: "og-image",
-          property: "og:image",
-          content: this.baseUrl + '/og-image-nietalleen.jpg'
-        },
-        {
-          hid: "og-description",
-          property: "og:description",
-          content:
-            "Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen."
-        }
-      ]
-    }
-  },
   data () {
     return {
       activeTab: null,
@@ -93,19 +60,9 @@ export default {
       return this.$nuxt.$route.path === this.activeTab
     }
   },
-  created () {
-    // set default baseUrl when window is not available (yet)
-    if (process.env.NODE_ENV === 'production') {
-      this.baseUrl = 'https://www.nietalleen.nl'
-    } else {
-      this.baseUrl = 'https://develop.nietalleen.nl'
-    }
-  },
   mounted () {
     if (window) {
       window.addEventListener('CCM_done', this.getCookiePermissions, false)
-      // overwrite baseUrl when window is available
-      this.baseUrl = window.location.protocol + '//' + window.location.host
     }
   },
   methods: {
