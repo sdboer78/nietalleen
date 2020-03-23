@@ -71,7 +71,7 @@
             Ondanks het coronavirus staan we voor je klaar.
           </h2>
           <p class="subtitle-1">
-            Ondanks het coronavirus (COVID-19), staan we voor je klaar. Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
+            Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
           </p>
         </v-flex>
       </v-layout>
