@@ -152,7 +152,7 @@
             <v-icon left>mdi-download</v-icon>
             Posters
           </v-btn>
-          <br />
+          <br>
           <v-btn
             href="https://download.eo.nl/eo/nietalleen/Downloads-Nietalleen-facebook.zip"
             color="primary"
