@@ -1,6 +1,6 @@
-# nietalleen
+# #Nietalleen
 
-> My rad Nuxt.js project
+> Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
 
 ## Build Setup
 
@@ -11,12 +11,8 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
+# build for static production
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+This website is build with Nuxt.js + Netlify
