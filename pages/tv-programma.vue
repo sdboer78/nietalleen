@@ -14,24 +14,26 @@
           xl3
           class="pb-12"
         >
-          <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="200px"
-            aspect-ratio="5"
-            position="center center"
-            contain
-          />
           <h1 class="display-1 mb-0">
             #Nietalleen
           </h1>
-          <p class="subtitle-2 mb-3 grey--text text--darken-1">
-            <v-icon size="16" color="grey">mdi-clock</v-icon>
+          <p class="subtitle-2 mb-3 d-flex align-center grey--text text--darken-1">
+            <v-icon size="16" color="grey" left>mdi-clock</v-icon>
             Elke woensdag op
-            <img :src="require('@/assets/logo-npo-1.svg')" width="50" style="vertical-align:middle;" />
+            <img :src="require('@/assets/logo-npo-1.svg')" width="50" />
           </p>
           <p class="font-weight-bold">
             In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
           </p>
+          <v-img
+            :src="require('@/assets/bert-van-leeuwen.jpg')"
+            class="mx-n8 mx-auto my-5"
+            aspect-ratio="1.75"
+            position="center center"
+            width="auto"
+            max-width="none"
+            cover
+          />
           <p>
             Het zijn inspirerende verhalen die onder andere zijn ingezonden via het online platform #Nietalleen. Via dit platform worden hulpvragers en lokale hulpaanbieders aan elkaar verbonden. In het programma zijn beelden te zien van acties die in Nederland en daarbuiten op gang zijn gekomen.
           </p>
@@ -44,19 +46,21 @@
           <p>
             Het programma Nietalleen.nl is een coproductie met SkyHigh TV en is vanaf woensdag 25 maart, dagelijks om 16.45 uur, te zien bij de EO op NPO 1.
           </p>
-          <v-btn
-            href="https://npostart.nl/"
-            color="primary"
-            class="ma-2"
-            target="_new"
-            nuxt
-            x-large
-          >
-            Kijk de afleveringen
-            <v-icon right>
-              mdi-open-in-new
-            </v-icon>
-          </v-btn>
+          <p class="text-center mt-12">
+            <v-btn
+              href="https://npostart.nl/"
+              color="primary"
+              class="my-2"
+              target="_new"
+              nuxt
+              x-large
+            >
+              Bekijken op NPO Start
+              <v-icon right>
+                mdi-open-in-new
+              </v-icon>
+            </v-btn>
+          </p>
         </v-flex>
       </v-layout>
     </section>
