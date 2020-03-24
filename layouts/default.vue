@@ -209,7 +209,7 @@ export default {
       &:hover,
       &:focus,
       &:active {
-        box-shadow: 0 3px 0 #c63866;
+        box-shadow: 0 3px 0 currentColor;
       }
     }
   }
