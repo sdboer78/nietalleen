@@ -29,13 +29,16 @@
             flat
             hover
             multiple
+            class="text-left"
           >
             <!-- repeat -->
             <v-expansion-panel v-for="(item,i) in faq" :key="i">
               <v-expansion-panel-header :expand-icon="openPanels.includes(i) ? 'mdi-minus' : 'mdi-plus'">
                 {{ item.question }}
               </v-expansion-panel-header>
-              <v-expansion-panel-content>{{ item.answer }}</v-expansion-panel-content>
+              <v-expansion-panel-content>
+                {{ item.answer }}
+              </v-expansion-panel-content>
             </v-expansion-panel>
             <!-- repeat -->
           </v-expansion-panels>
@@ -95,7 +98,9 @@ export default {
   .v-expansion-panel-header {
     background-color: #EFEFF4;
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
+    font-size: 16px;
     font-weight: bold;
+    transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
     &:before {
       background-color: #FFFFFF;
@@ -114,6 +119,6 @@ export default {
   .v-expansion-panel-header__icon {
     background-color: #EFEFF4;
     border-radius: 100%;
-    padding: 4px;
+    padding: 2px;
   }
 </style>
