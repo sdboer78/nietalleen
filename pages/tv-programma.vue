@@ -19,7 +19,7 @@
           </h1>
           <p class="subtitle-2 mb-3 d-flex align-center grey--text text--darken-1">
             <v-icon size="16" color="grey" left>mdi-clock</v-icon>
-            Elke woensdag op
+            Elke woensdag om 16:45 op
             <img :src="require('@/assets/logo-npo-1.svg')" width="50" />
           </p>
           <p class="font-weight-bold">
@@ -48,7 +48,7 @@
           </p>
           <p class="text-center mt-12">
             <v-btn
-              href="https://npostart.nl/"
+              href="https://www.npostart.nl/zoeken?term=nietalleen"
               color="primary"
               class="my-2"
               target="_new"
