@@ -44,6 +44,14 @@
           >
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
+          <p class="caption mb-6">
+            Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de
+            juiste hulpaanbieder te binden. Daarmee is #Nietalleen verantwoordelijk voor het
+            doorzetten van de hulpvraag naar (lokale) initiatieven. Het indienen van een hulpvraag
+            betekent niet dat er recht op hulp ontstaat; de (lokale) aanbieders zullen hun best
+            doen om jouw vraag zo goed mogelijk op te pakken. De kwaliteit, in algemene zin,
+            van het hulpaanbod ligt bij de initiatieven zelf.
+          </p>
         </v-flex>
       </v-layout>
     </section>

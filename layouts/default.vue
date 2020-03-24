@@ -21,7 +21,7 @@
         grow
         :class="{'has-no-active': !currentPageHasTab}"
       >
-        <v-tab 
+        <v-tab
           v-for="item in tabItems"
           :key="item.to"
           :to="item.to"
@@ -119,13 +119,13 @@ export default {
         { text: 'Ik zoek hulp', to: '/' },
         { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' },
         { text: 'Doneren', to: '/doneren' },
-        { text: 'Over ons', to: '/over' },
+        { text: 'Over ons', to: '/over' }
       ],
       activeTabItem: null,
       tabItems: [
         { text: 'Ik zoek hulp', to: '/' },
         { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' }
-      ],
+      ]
     }
   },
   computed: {
