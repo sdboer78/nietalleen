@@ -11,5 +11,7 @@ module.exports = {
     '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
-  rules: {}
+  rules: {
+    'vue/no-v-html': 0
+  }
 }
