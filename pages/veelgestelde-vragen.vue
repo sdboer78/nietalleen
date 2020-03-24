@@ -32,11 +32,11 @@
             tile
           >
             <!-- repeat -->
-            <v-expansion-panel v-for="(item,i) in 5" :key="i">
+            <v-expansion-panel v-for="(item,i) in faq" :key="i">
               <v-expansion-panel-header :expand-icon="openPanels.includes(i) ? 'mdi-minus' : 'mdi-plus'">
-                vraag
+                {{ item.question }}
               </v-expansion-panel-header>
-              <v-expansion-panel-content>content</v-expansion-panel-content>
+              <v-expansion-panel-content>{{ item.answer }}</v-expansion-panel-content>
             </v-expansion-panel>
             <!-- repeat -->
           </v-expansion-panels>
@@ -52,7 +52,17 @@ export default {
   components: { HeroImage },
   data () {
     return {
-      openPanels: []
+      openPanels: [],
+      faq: [
+        {
+          question: 'Dit is mijn vraag',
+          answer: 'Dit is mijn antwoord'
+        },
+        {
+          question: 'Dit is mijn vraag',
+          answer: 'Dit is mijn tweede antwoord'
+        }
+      ]
     }
   },
   head () {
