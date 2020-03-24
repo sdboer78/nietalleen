@@ -34,7 +34,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer color="primary py-5">
+    <v-footer color="primary pa-0">
       <footer-content />
     </v-footer>
     <v-navigation-drawer

@@ -1,32 +1,61 @@
 <template>
-  <div class="mx-auto">
-    <p class="caption mb-2 white--text text-center">
-      #Nietalleen wordt gecoördineerd door Protestantse Kerk in Nederland en Evangelische Omroep.
-    </p>
-    <p class="caption mb-0 white--text text-center">
-      <nuxt-link to="/over" class="white--text wrap-whitespace">
-        Over ons
-      </nuxt-link>
-      <span class="mx-2">|</span>
-      <a
-        href="javascript:void(null)"
-        class="white--text"
-        @click.stop="showTermsConditionsDialog = true"
-      >Algemene voorwaarden</a>
-      <span class="mx-2 d-none d-sm-inline">|</span>
-      <br class="mx-2 d-sm-none">
-      <a
-        href="javascript:void(null)"
-        class="white--text"
-        @click.stop="showPrivacyDialog = true"
-      >Privacyverklaring</a>
-      <span class="mx-2">|</span>
-      <a
-        href="javascript:void(null)"
-        class="white--text"
-        @click.stop="showCookiesDialog = true"
-      >Cookie instellingen</a>
-    </p>
+  <div class="footer__content">
+    <div class="prefooter py-10 mx-auto text-center">
+      <h4 class="display-1 white--text mb-0">
+        Volg ons
+      </h4>
+      <v-btn
+        text
+        icon
+        color="white"
+        class="mx-3"
+        target="_new"
+        href="https://www.facebook.com/nietalleennl/"
+        large
+      >
+        <v-icon>mdi-facebook</v-icon>
+      </v-btn>
+      <v-btn
+        text
+        icon
+        color="white"
+        class="mx-3"
+        target="_new"
+        href="https://twitter.com/nietalleen_nl"
+        large
+      >
+        <v-icon>mdi-twitter</v-icon>
+      </v-btn>
+    </div>
+    <div class="mx-auto py-5">
+      <p class="caption mb-2 white--text text-center">
+        #Nietalleen wordt gecoördineerd door Protestantse Kerk in Nederland en Evangelische Omroep.
+      </p>
+      <p class="caption mb-0 white--text text-center">
+        <nuxt-link to="/over" class="white--text wrap-whitespace">
+          Over ons
+        </nuxt-link>
+        <span class="mx-2">|</span>
+        <a
+          href="javascript:void(null)"
+          class="white--text"
+          @click.stop="showTermsConditionsDialog = true"
+        >Algemene voorwaarden</a>
+        <span class="mx-2 d-none d-sm-inline">|</span>
+        <br class="mx-2 d-sm-none">
+        <a
+          href="javascript:void(null)"
+          class="white--text"
+          @click.stop="showPrivacyDialog = true"
+        >Privacyverklaring</a>
+        <span class="mx-2">|</span>
+        <a
+          href="javascript:void(null)"
+          class="white--text"
+          @click.stop="showCookiesDialog = true"
+        >Cookie instellingen</a>
+      </p>
+    </div>
 
     <v-dialog
       v-model="showTermsConditionsDialog"
@@ -175,3 +204,13 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+  .footer__content {
+    width: 100%;
+  }
+
+  .prefooter {
+    background-color: #D94174;
+  }
+</style>
