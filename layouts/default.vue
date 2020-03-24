@@ -75,20 +75,15 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-      <v-flex
-        justify-center
-        align-center
-        row
-        class="mx-0 mt-6"
-      >
+      <div class="d-flex align-center justify-center mt-3">
         <v-btn
           text
           icon
           color="black"
           class="ma-3"
-          nuxt
           target="_new"
-          to="https://www.facebook.com/nietalleennl/"
+          href="https://www.facebook.com/nietalleennl/"
+          large
         >
           <v-icon>mdi-facebook</v-icon>
         </v-btn>
@@ -97,13 +92,13 @@
           icon
           color="black"
           class="ma-3"
-          nuxt
           target="_new"
-          to="https://twitter.com/nietalleen_nl"
+          href="https://twitter.com/nietalleen_nl"
+          large
         >
           <v-icon>mdi-twitter</v-icon>
         </v-btn>
-      </v-flex>
+      </div>
     </v-navigation-drawer>
   </v-app>
 </template>
@@ -186,7 +181,7 @@ export default {
 
     &--active {
       .v-list-item__title {
-        box-shadow: 0 2px 0 #c63866;
+        box-shadow: 0 3px 0 #c63866;
       }
     }
 
@@ -194,17 +189,16 @@ export default {
       box-shadow: none;
       flex-basis: auto;
       flex-grow: 0;
-      font-size: 20px;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding-bottom: 0.15em;
-      padding-top: 0.15em;
+      font-size: 24px;
+      margin: 0.6em auto !important;
+      padding-bottom: 0.2em;
+      padding-top: 0.2em;
       transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
       &:hover,
       &:focus,
       &:active {
-        box-shadow: 0 2px 0 currentColor;
+        box-shadow: 0 3px 0 currentColor;
       }
     }
   }
