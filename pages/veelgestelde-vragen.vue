@@ -20,6 +20,19 @@
               contain
             />
           </hero-image>
+          <h1 class="display-1">
+            Veelgestelde vragen
+          </h1>
+          <v-expansion-panels focusable flat hover>
+            <!-- repeat -->
+            <v-expansion-panel>
+              <v-expansion-panel-header expand-icon="mdi-plus">
+                vraag
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>content</v-expansion-panel-content>
+            </v-expansion-panel>
+            <!-- repeat -->
+          </v-expansion-panels>
         </v-flex>
       </v-layout>
     </section>
