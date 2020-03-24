@@ -29,7 +29,6 @@
             flat
             hover
             multiple
-            tile
           >
             <!-- repeat -->
             <v-expansion-panel v-for="(item,i) in 5" :key="i">
@@ -83,4 +82,28 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
+  .v-expansion-panel-header {
+    background-color: #EFEFF4;
+    font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
+    font-weight: bold;
+
+    &:before {
+      background-color: #FFFFFF;
+    }
+  }
+
+  .v-expansion-panels.v-expansion-panels--focusable .v-expansion-panel-header--active {
+    background-color: #FFFFFF;
+  }
+
+  .v-expansion-panels.v-expansion-panels--focusable .v-expansion-panel-header--active:hover:before,
+  .v-expansion-panels.v-expansion-panels--focusable .v-expansion-panel-header--active:before {
+    opacity: 0 !important;
+  }
+
+  .v-expansion-panel-header__icon {
+    background-color: #EFEFF4;
+    border-radius: 100%;
+    padding: 4px;
+  }
 </style>
