@@ -23,10 +23,10 @@
           <h1 class="display-1">
             Veelgestelde vragen
           </h1>
-          <v-expansion-panels focusable flat hover>
+          <v-expansion-panels v-model="openPanels" focusable flat hover multiple>
             <!-- repeat -->
-            <v-expansion-panel>
-              <v-expansion-panel-header expand-icon="mdi-plus">
+            <v-expansion-panel v-for="(item,i) in 5" :key="i">
+              <v-expansion-panel-header :expand-icon="openPanels.includes(i) ? 'mdi-minus' : 'mdi-plus'">
                 vraag
               </v-expansion-panel-header>
               <v-expansion-panel-content>content</v-expansion-panel-content>
@@ -43,6 +43,11 @@ import HeroImage from '~/components/HeroImage.vue'
 
 export default {
   components: { HeroImage },
+  data () {
+    return {
+      openPanels: []
+    }
+  },
   head () {
     // page specific metadata
     return {
