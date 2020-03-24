@@ -25,6 +25,7 @@
           </h1>
           <v-expansion-panels
             v-model="openPanels"
+            accordion
             focusable
             flat
             hover
