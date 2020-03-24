@@ -37,12 +37,9 @@
     <v-footer color="primary py-5">
       <footer-content />
     </v-footer>
-
     <v-navigation-drawer
       v-model="showMenu"
       fixed
-      absolute
-      temporary
       width="420"
     >
       <div class="drawer-content">
@@ -77,7 +74,7 @@
               </v-list-item>
             </v-list-item-group>
           </v-list>
-          <div class="d-flex align-center justify-center mt-3">
+          <div class="d-flex align-center justify-center my-3">
             <v-btn
               text
               icon
