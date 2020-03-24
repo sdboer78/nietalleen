@@ -45,59 +45,63 @@
       temporary
       width="420"
     >
-      <v-btn
-        text
-        icon
-        color="black"
-        class="ma-3"
-        @click.stop="showMenu = !showMenu"
-      >
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
-      <v-list
-        tile
-        flat
-        class="text-center"
-      >
-        <v-list-item-group
-          v-model="activeNavItem"
-          active-class="primary--text"
+      <div class="drawer-content">
+        <v-btn
+          text
+          icon
+          color="black"
+          class="ma-3"
+          @click.stop="showMenu = !showMenu"
         >
-          <v-list-item
-            v-for="item in navItems"
-            :key="item.to"
-            :to="item.to"
-            exact
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <div class="my-auto">
+          <v-list
+            tile
+            flat
+            class="text-center"
           >
-            <v-list-item-title>
-              {{ item.text }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-      <div class="d-flex align-center justify-center mt-3">
-        <v-btn
-          text
-          icon
-          color="black"
-          class="ma-3"
-          target="_new"
-          href="https://www.facebook.com/nietalleennl/"
-          large
-        >
-          <v-icon>mdi-facebook</v-icon>
-        </v-btn>
-        <v-btn
-          text
-          icon
-          color="black"
-          class="ma-3"
-          target="_new"
-          href="https://twitter.com/nietalleen_nl"
-          large
-        >
-          <v-icon>mdi-twitter</v-icon>
-        </v-btn>
+            <v-list-item-group
+              v-model="activeNavItem"
+              active-class="primary--text"
+            >
+              <v-list-item
+                v-for="item in navItems"
+                :key="item.to"
+                :to="item.to"
+                exact
+              >
+                <v-list-item-title>
+                  {{ item.text }}
+                </v-list-item-title>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+          <div class="d-flex align-center justify-center mt-3">
+            <v-btn
+              text
+              icon
+              color="black"
+              class="ma-3"
+              target="_new"
+              href="https://www.facebook.com/nietalleennl/"
+              large
+            >
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn
+              text
+              icon
+              color="black"
+              class="ma-3"
+              target="_new"
+              href="https://twitter.com/nietalleen_nl"
+              large
+            >
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+          </div>
+        </div>
       </div>
     </v-navigation-drawer>
   </v-app>
@@ -175,6 +179,15 @@ export default {
       font-weight: bold;
     }
   }
+
+  .drawer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
   .v-list-item {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-weight: bold;
@@ -198,7 +211,7 @@ export default {
       &:hover,
       &:focus,
       &:active {
-        box-shadow: 0 3px 0 currentColor;
+        box-shadow: 0 3px 0 #c63866;
       }
     }
   }
