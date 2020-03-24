@@ -23,7 +23,7 @@
           <h1 class="display-1">
             Veelgestelde vragen
           </h1>
-          <v-expansion-panels v-model="openPanels" focusable flat hover multiple>
+          <v-expansion-panels v-model="openPanels" focusable flat hover multiple tile>
             <!-- repeat -->
             <v-expansion-panel v-for="(item,i) in 5" :key="i">
               <v-expansion-panel-header :expand-icon="openPanels.includes(i) ? 'mdi-minus' : 'mdi-plus'">
