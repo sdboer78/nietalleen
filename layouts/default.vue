@@ -40,6 +40,7 @@
     <v-navigation-drawer
       v-model="showMenu"
       fixed
+      temporary
       width="420"
     >
       <div class="drawer-content">
