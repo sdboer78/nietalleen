@@ -13,13 +13,13 @@ export default {
     title: '#Nietalleen',
     meta: [
       { charset: 'utf-8' },
-      { 
-        name: 'viewport', 
+      {
+        name: 'viewport',
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'description', 
-        name: 'description', 
+        hid: 'description',
+        name: 'description',
         content: 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
       },
       {
