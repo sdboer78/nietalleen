@@ -10,11 +10,19 @@
         elevation="0"
         fixed
       >
+        <v-btn
+          flat
+          text
+          icon
+          color="black"
+        >
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
         <v-tabs
           v-model="activeTab"
           color="primary"
           slider-size="4"
-          fixed-tabs
+          grow
           :class="{'has-no-active': !currentPageHasTab}"
         >
           <v-tab key="1" exact to="/">
@@ -84,6 +92,14 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
+  .v-tabs {
+    max-width: 720px;
+
+    @media (min-width: 720px) {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
   .v-tab {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-size: 16px;
