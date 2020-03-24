@@ -4,7 +4,7 @@
       <v-layout
         justify-center
         align-center
-        class="pa-8 text-center"
+        class="pa-8"
       >
         <v-flex
           xs12
@@ -14,30 +14,35 @@
           xl3
           class="pb-12"
         >
-          <hero-image
-            :src="require('@/assets/vegetable-basket.jpg')"
-            size="400px"
-            class="mx-auto mb-8"
-          >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
-          </hero-image>
-          <h1 class="display-1">
-            TV-programma
+          <v-img
+            :src="require('@/assets/logo-niet-alleen.svg')"
+            max-width="200px"
+            aspect-ratio="5"
+            position="center center"
+            contain
+          />
+          <h1 class="display-1 mb-0">
+            #Nietalleen
           </h1>
-          <p class="mt-10">
-            Van Apeldoorn tot Afghanistan en van Rotterdam tot Rwanda: de gevolgen van het coronavirus raken ons allemaal. Dichtbij, in onze huizen en onze steden. Verder weg, bij onze medemensen over de hele wereld.
+          <p class="subtitle-2 mb-3 grey--text text--darken-1">
+            <v-icon size="16" color="grey">mdi-clock</v-icon>
+            Elke woensdag op
+            <img :src="require('@/assets/logo-npo-1.svg')" width="50" style="vertical-align:middle;" />
+          </p>
+          <p class="font-weight-bold">
+            In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
           </p>
           <p>
-            Daarom start EO Metterdaad een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen. Dat doen we samen met de initiatiefnemers achter nietalleen.nl en met de andere hulporganisaties in ons netwerk. Zij doen wat ze kunnen om mensen in nood te bij te staan. In Nederland én wereldwijd. Met uw gift steunt u hun belangrijke werk.
+            Het zijn inspirerende verhalen die onder andere zijn ingezonden via het online platform #Nietalleen. Via dit platform worden hulpvragers en lokale hulpaanbieders aan elkaar verbonden. In het programma zijn beelden te zien van acties die in Nederland en daarbuiten op gang zijn gekomen.
           </p>
           <p>
-            Zoals altijd zien wij er zorgvuldig op toe dat donaties terecht komen waar ze nodig zijn. Dat doen we als EO Metterdaad immers al bijna 50 jaar. Geef dus met een gerust hart.
+            Bert van Leeuwen: “Wat ik mooi vind aan Nederland is dat er in deze lastige coronatijd door het hele land initiatieven ontstaan om anderen te helpen. Al meer dan achthonderd organisaties en kerken hebben zich opgegeven voor het platform #Nietalleen. Mensen staan klaar voor anderen, dat wil ik in dit programma laten zien. Het zijn hoopvolle verhalen in tijden van stress en angst.”
+          </p>
+          <p>
+            Bert presenteert het nieuwe programma vanuit huis en doet dat niet voor niets: “Door vanuit mijn eigen huis te presenteren, wil ik gehoor geven aan de oproep om binnen te blijven en het signaal geven dat het echt belangrijk is dat mensen nadenken voordat ze naar buiten gaan. Is het nodig? Zo niet, blijf dan thuis.” In Berts huis wordt gefilmd met drie op afstand bestuurbare camera’s. Anne-Mar is via de webcam in contact met Bert en houdt de kijker op de hoogte van de initiatieven die op gang komen via het platform #Nietalleen.
+          </p>
+          <p>
+            Het programma Nietalleen.nl is een coproductie met SkyHigh TV en is vanaf woensdag 25 maart, dagelijks om 16.45 uur, te zien bij de EO op NPO 1.
           </p>
           <v-btn
             href="https://npostart.nl/"
@@ -59,25 +64,16 @@
 </template>
 
 <script>
-import HeroImage from '~/components/HeroImage.vue'
-
 export default {
-  components: { HeroImage },
   head () {
     // page specific metadata
     return {
-      title: 'Doneren',
+      title: 'TV-programma',
       meta: [
         {
           hid: 'og-title',
           property: 'og:title',
-          content: '#Nietalleen - Doneren'
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'EO Metterdaad heeft een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen. Met uw gift steunt u het belangrijke werk van de de initiatiefnemers achter nietalleen.nl en andere hulporganisaties.'
+          content: '#Nietalleen - TV-programma'
         },
         {
           hid: 'og-url',
