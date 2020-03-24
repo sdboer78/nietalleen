@@ -118,6 +118,7 @@ export default {
       navItems: [
         { text: 'Ik zoek hulp', to: '/' },
         { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' },
+        { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
         { text: 'Doneren', to: '/doneren' },
         { text: 'Over ons', to: '/over' }
       ],
