@@ -1,0 +1,13 @@
+[build]
+    command = "npm run generate"
+    publish = "dist"
+
+[context.production.environment]
+    URL = "https://nietalleen.nl"
+
+[context."develop".environment]
+    URL = "https://develop.nietalleen.nl"
+
+[context.deploy-preview.environment]
+#    NODE_ENV = "development"
+    URL = "https://develop.nietalleen.nl"

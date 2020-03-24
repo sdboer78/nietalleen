@@ -2,6 +2,9 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'universal',
+  env: {
+    URL: process.env.URL
+  },
   /*
   ** Headers of the page
   */
@@ -10,8 +13,40 @@ export default {
     title: '#Nietalleen',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { 
+        name: 'viewport', 
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description', 
+        name: 'description', 
+        content: 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
+      },
+      {
+        hid: 'og-type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og-title',
+        property: 'og:site_name',
+        content: '#Nietalleen'
+      },
+      {
+        hid: 'og-description',
+        property: 'og:description',
+        content: 'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
+      },
+      {
+        hid: 'og-image',
+        property: 'og:image',
+        content: process.env.URL + '/og-image-nietalleen.jpg'
+      },
+      {
+        hid: 'twitter-card',
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

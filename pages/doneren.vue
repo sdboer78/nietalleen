@@ -6,7 +6,14 @@
         align-center
         class="pa-8 text-center"
       >
-        <v-flex xs12 sm8 md6 lg4 xl3 class="pb-12">
+        <v-flex
+          xs12
+          sm8
+          md6
+          lg4
+          xl3
+          class="pb-12"
+        >
           <hero-image
             :src="require('@/assets/vegetable-basket.jpg')"
             size="400px"
@@ -49,7 +56,9 @@
             x-large
           >
             Doneer via EO Metterdaad
-            <v-icon right>mdi-open-in-new</v-icon>
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
@@ -63,10 +72,26 @@ import HeroImage from '~/components/HeroImage.vue'
 export default {
   components: { HeroImage },
   head () {
+    // page specific metadata
     return {
       title: 'Doneren',
       meta: [
-        { hid: 'doneren', name: 'description', content: 'EO Metterdaad heeft een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen. Met uw gift steunt u het belangrijke werk van de de initiatiefnemers achter nietalleen.nl en andere hulporganisaties.' }
+        {
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen - Doneren'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'EO Metterdaad heeft een noodhulpcampagne om u de mogelijkheid te geven ook financieel te helpen. Met uw gift steunt u het belangrijke werk van de de initiatiefnemers achter nietalleen.nl en andere hulporganisaties.'
+        },
+        {
+          hid: 'og-url',
+          property: 'og:url',
+          content: process.env.URL + this.$route.path
+        }
       ]
     }
   }
