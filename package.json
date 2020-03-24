@@ -1,11 +1,11 @@
 {
   "name": "nietalleen",
   "version": "1.0.0",
-  "description": "Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.",
+  "description": "Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.",
   "author": "Studio Digitaal - Evangelische Omroep",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "dotenv-load nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -22,10 +22,11 @@
     "object-hash": "^2.0.3"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/vuetify": "^1.0.0",
     "babel-eslint": "^10.0.1",
+    "dotenv-load": "^2.0.0",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "node-sass": "^4.13.1",
