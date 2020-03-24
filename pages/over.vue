@@ -139,7 +139,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Logo
           </v-btn>
           <v-btn
@@ -149,7 +151,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Posters
           </v-btn>
           <br>
@@ -160,7 +164,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Social posts voor Facebook
           </v-btn>
           <v-btn
@@ -170,7 +176,9 @@
             target="_new"
             large
           >
-            <v-icon left>mdi-download</v-icon>
+            <v-icon left>
+              mdi-download
+            </v-icon>
             Social posts voor Twitter
           </v-btn>
         </v-flex>
@@ -185,10 +193,26 @@ import HeroImage from '~/components/HeroImage.vue'
 export default {
   components: { HeroImage },
   head () {
+    // page specific metadata
     return {
-      title: 'Over',
+      title: 'Over ons',
       meta: [
-        { hid: 'over', name: 'description', content: 'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.' }
+        {
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen - Over ons'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
+        },
+        {
+          hid: 'og-url',
+          property: 'og:url',
+          content: process.env.URL + this.$route.path
+        }
       ]
     }
   }
@@ -196,7 +220,7 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
-.partner-list p {
-  line-height: 1.2;
-}
+  .partner-list p {
+    line-height: 1.2;
+  }
 </style>

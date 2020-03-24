@@ -4,7 +4,9 @@
       #Nietalleen wordt gecoördineerd door Protestantse Kerk in Nederland en Evangelische Omroep.
     </p>
     <p class="caption mb-0 white--text text-center">
-      <nuxt-link to="/over" class="white--text wrap-whitespace">Over ons</nuxt-link>
+      <nuxt-link to="/over" class="white--text wrap-whitespace">
+        Over ons
+      </nuxt-link>
       <span class="mx-2">|</span>
       <a
         href="javascript:void(null)"
@@ -63,7 +65,9 @@
             text
           >
             Bekijk
-            <v-icon right>mdi-open-in-new</v-icon>
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -106,7 +110,9 @@
             text
           >
             Bekijk
-            <v-icon right>mdi-open-in-new</v-icon>
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>

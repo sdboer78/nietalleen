@@ -75,7 +75,14 @@
         align-center
         class="px-8 py-12 accent text-center"
       >
-        <v-flex xs12 sm10 md8 lg6 xl5 class="my-5">
+        <v-flex
+          xs12
+          sm10
+          md8
+          lg6
+          xl5
+          class="my-5"
+        >
           <h2 class="display-1 mb-5 px-8">
             Corona raakt ons allemaal:<br>
             blijf om elkaar geven
@@ -88,7 +95,9 @@
             position="center center"
             contain
           />
-          <p class="mb-5">EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.</p>
+          <p class="mb-5">
+            EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.
+          </p>
           <v-btn
             href="/doneren"
             color="primary"
@@ -117,14 +126,25 @@ export default {
     }
   },
   head () {
+    // page specific metadata
     return {
       title: 'Wij kunnen hulp bieden',
       meta: [
         {
-          hid: 'aanbieden',
+          hid: 'og-title',
+          property: 'og:title',
+          content: '#Nietalleen - Hulp bieden'
+        },
+        {
+          hid: 'description',
           name: 'description',
           content:
             'Op deze plek willen we mensen die getroffen zijn door de gevolgen van het coronavirus helpen door hulpvragen en lokale organisaties actief met elkaar in contact te brengen.'
+        },
+        {
+          hid: 'og-url',
+          property: 'og:url',
+          content: process.env.URL + this.$route.path
         }
       ]
     }

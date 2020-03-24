@@ -46,11 +46,13 @@
 
 <script>
 import FooterContent from '~/components/FooterContent.vue'
+
 export default {
   components: { FooterContent },
   data () {
     return {
-      activeTab: null
+      activeTab: null,
+      baseUrl: null
     }
   },
   computed: {
