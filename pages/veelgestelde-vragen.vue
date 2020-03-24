@@ -122,6 +122,10 @@ export default {
     & > *:last-child {
       margin-bottom: 0;
     }
+
+    &.v-expansion-panel--active {
+      border: 1px solid #EFEFF4;
+    }
   }
 
   .v-expansion-panel,
