@@ -75,11 +75,11 @@ export default {
         },
         {
           question: 'Hoe kunnen kerken en lokale organisaties hun diensten aanbieden?',
-          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="https://nietalleen.nl/hulp-bieden">https://nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
+          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="https://nietalleen.nl/hulp-bieden">nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
         },
         {
           question: 'Kunnen particulieren ook hun diensten aanbieden?',
-          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="https://nietalleen.nl/">https://nietalleen.nl/</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
+          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="https://nietalleen.nl/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
         },
         {
           question: 'Voor wie is #Nietalleen bedoeld?',
@@ -87,7 +87,7 @@ export default {
         },
         {
           question: 'Welke kerken en organisaties zitten er achter #Nietalleen',
-          answer: 'Christelijk Gereformeerde Kerken<br>ChristenUnie<br>Diaconaal Steunpunt<br>Evangelische Omroep<br>Gereformeerde Kerken Vrijgemaakt<br>Kerk in Actie<br>Missie Nederland<br>Navigators<br>Nederlands Gereformeerde Kerken<br>Protestantse Kerk in Nederland<br>Rooms Katholieke Kerk<br>SGP<br>Stichting Agapè<br>Hip Helpt<br>Stichting Present<br>Stichting Schuldhulpmaatje<br>Tear<br>Tot Heil des Volks<br>4e Musketier<br>Youth for Christ<br><br>En nog steeds breidt de lijst zich uit… kijk op <a href="https://nietalleen.nl/over/">https://nietalleen.nl/over/</a> voor de meest recente lijst.<br><br>PKN en EO coördineren de onderlinge samenwerking.'
+          answer: 'Christelijk Gereformeerde Kerken<br>ChristenUnie<br>Diaconaal Steunpunt<br>Evangelische Omroep<br>Gereformeerde Kerken Vrijgemaakt<br>Kerk in Actie<br>Missie Nederland<br>Navigators<br>Nederlands Gereformeerde Kerken<br>Protestantse Kerk in Nederland<br>Rooms Katholieke Kerk<br>SGP<br>Stichting Agapè<br>Hip Helpt<br>Stichting Present<br>Stichting Schuldhulpmaatje<br>Tear<br>Tot Heil des Volks<br>4e Musketier<br>Youth for Christ<br><br>En nog steeds breidt de lijst zich uit… kijk op <a href="https://nietalleen.nl/over/">nietalleen.nl/over</a> voor de meest recente lijst.<br><br>PKN en EO coördineren de onderlinge samenwerking.'
         },
         {
           question: 'Wordt mijn hulpvraag altijd opgepakt?',
