@@ -32,7 +32,6 @@
             multiple
             class="text-left"
           >
-            <!-- repeat -->
             <v-expansion-panel v-for="(item,i) in faq" :key="i">
               <v-expansion-panel-header :expand-icon="openPanels.includes(i) ? 'mdi-minus' : 'mdi-plus'">
                 {{ item.question }}
@@ -41,7 +40,6 @@
                 <span v-html="item.answer"></span>
               </v-expansion-panel-content>
             </v-expansion-panel>
-            <!-- repeat -->
           </v-expansion-panels>
         </v-flex>
       </v-layout>
@@ -105,12 +103,6 @@ export default {
           hid: 'og-title',
           property: 'og:title',
           content: '#Nietalleen - Veelgestelde vragen'
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.'
         },
         {
           hid: 'og-url',
