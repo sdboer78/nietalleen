@@ -83,7 +83,7 @@
         >
           <h2 class="mb-12">
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              892
+              886
             </span>
             <span class="display-1 mb-0 d-block" style="line-height:1.1;">
               initiatieven
