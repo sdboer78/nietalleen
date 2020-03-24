@@ -95,6 +95,20 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
+  .v-expansion-panel {
+    margin-bottom: 16px;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .v-expansion-panel,
+  .v-expansion-panel-content {
+    border-radius: 4px !important;
+    overflow: hidden;
+  }
+
   .v-expansion-panel-header {
     background-color: #EFEFF4;
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
