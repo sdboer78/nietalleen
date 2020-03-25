@@ -53,7 +53,7 @@
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
           <p class="pb-6">
-            Voor meer informatie over corona en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over corona <a href="tel:08001351">0800 1351</a>.
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
           <p class="caption mb-6 grey--text text--darken-1">
             Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de

@@ -93,7 +93,7 @@ export default {
         },
         {
           question: 'Kan ik ook contact opnemen met algemene vragen over het coronavirus (COVID-19)?',
-          answer: 'Voor meer informatie over corona en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over corona <a href="tel:08001351">0800 1351</a>.'
+          answer: 'Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.'
         }
       ]
     }
