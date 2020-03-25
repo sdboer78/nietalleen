@@ -32,7 +32,12 @@
           <p
             class="mb-8 subtitle-1"
           >
-            Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+            Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je
+            <a
+              href="javascript:void(null)"
+              @click.stop="showDisclaimerDialog = true"
+            >zo goed mogelijk</a>
+            te helpen.
           </p>
           <need-help-form />
           <divider class="my-5" />
@@ -53,14 +58,6 @@
             class="pa-6"
           >
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
-          </p>
-          <p class="caption mb-6 grey--text text--darken-1">
-            Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de
-            juiste hulpaanbieder te binden. Daarmee is #Nietalleen verantwoordelijk voor het
-            doorzetten van de hulpvraag naar (lokale) initiatieven. Het indienen van een hulpvraag
-            betekent niet dat er recht op hulp ontstaat; de (lokale) aanbieders zullen hun best
-            doen om jouw vraag zo goed mogelijk op te pakken. De kwaliteit, in algemene zin,
-            van het hulpaanbod ligt bij de initiatieven zelf.
           </p>
         </v-flex>
       </v-layout>
@@ -184,6 +181,39 @@
         </v-flex>
       </v-layout>
     </section>
+    <v-dialog
+      v-model="showDisclaimerDialog"
+      width="500"
+    >
+      <v-card>
+        <v-card-title
+          class="headline"
+          primary-title
+        >
+          Disclaimer
+        </v-card-title>
+        <v-card-text>
+          <p>
+            Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de
+            juiste hulpaanbieder te binden. Daarmee is #Nietalleen verantwoordelijk voor het
+            doorzetten van de hulpvraag naar (lokale) initiatieven. Het indienen van een hulpvraag
+            betekent niet dat er recht op hulp ontstaat; de (lokale) aanbieders zullen hun best
+            doen om jouw vraag zo goed mogelijk op te pakken. De kwaliteit, in algemene zin,
+            van het hulpaanbod ligt bij de initiatieven zelf.
+          </p>
+        </v-card-text>
+        <v-divider />
+        <v-card-actions @click="showDisclaimerDialog = false">
+          <v-spacer />
+          <v-btn
+            color="primary"
+            text
+          >
+            Sluiten
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -197,6 +227,11 @@ export default {
     HeroImage,
     NeedHelpForm,
     Divider
+  },
+  data () {
+    return {
+      showDisclaimerDialog: false
+    }
   },
   head () {
     // page specific metadata
