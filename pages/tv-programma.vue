@@ -38,7 +38,7 @@
           >
             <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
               <span class="npo-play-button">
-                <img :src="require('@/assets/npo-player-play.svg')">
+                <img :src="require('~/static/npo-player-play.svg')">
               </span>
             </a>
           </v-img>
