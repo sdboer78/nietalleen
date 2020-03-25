@@ -18,9 +18,11 @@
             #Nietalleen
           </h1>
           <p class="subtitle-2 mb-3 d-flex align-center grey--text text--darken-1">
-            <v-icon size="16" color="grey" left>mdi-clock</v-icon>
-            Elke woensdag om 16:45 op
-            <img :src="require('@/assets/logo-npo-1.svg')" width="50" />
+            <v-icon size="16" color="grey" left>
+              mdi-clock
+            </v-icon>
+            Elke dag rond 16:30 op
+            <img :src="require('@/assets/logo-npo-1.svg')" width="50">
           </p>
           <p class="font-weight-bold">
             In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
@@ -33,7 +35,27 @@
             width="auto"
             max-width="none"
             cover
-          />
+          >
+            <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
+              <span class="npo-play-button" />
+            </a>
+          </v-img>
+          <p class="text-center mt-n12">
+            <v-btn
+              href="https://www.npostart.nl/nietalleennl/VPWON_1318786"
+              color="npo"
+              class="my-2"
+              target="_new"
+              nuxt
+              large
+              dark
+            >
+              Bekijk op NPO Start
+              <v-icon x-small right>
+                mdi-open-in-new
+              </v-icon>
+            </v-btn>
+          </p>
           <p>
             Het zijn inspirerende verhalen die onder andere zijn ingezonden via het online platform #Nietalleen. Via dit platform worden hulpvragers en lokale hulpaanbieders aan elkaar verbonden. In het programma zijn beelden te zien van acties die in Nederland en daarbuiten op gang zijn gekomen.
           </p>
@@ -45,21 +67,6 @@
           </p>
           <p>
             Het programma Nietalleen.nl is een coproductie met SkyHigh TV en is vanaf woensdag 25 maart, dagelijks om 16.45 uur, te zien bij de EO op NPO 1.
-          </p>
-          <p class="text-center mt-12">
-            <v-btn
-              href="https://www.npostart.nl/nietalleennl/VPWON_1318786"
-              color="primary"
-              class="my-2"
-              target="_new"
-              nuxt
-              x-large
-            >
-              Bekijken op NPO Start
-              <v-icon right>
-                mdi-open-in-new
-              </v-icon>
-            </v-btn>
           </p>
         </v-flex>
       </v-layout>
@@ -89,3 +96,12 @@ export default {
   }
 }
 </script>
+
+<style scoped type="text/css" lang="scss">
+.npo-play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.5) url('https://www.npostart.nl/images/asset_player_play.svg') no-repeat 50%;
+}
+</style>
