@@ -66,7 +66,7 @@
             Bert presenteert het nieuwe programma vanuit huis en doet dat niet voor niets: “Door vanuit mijn eigen huis te presenteren, wil ik gehoor geven aan de oproep om binnen te blijven en het signaal geven dat het echt belangrijk is dat mensen nadenken voordat ze naar buiten gaan. Is het nodig? Zo niet, blijf dan thuis.” In Berts huis wordt gefilmd met drie op afstand bestuurbare camera’s. Anne-Mar is via de webcam in contact met Bert en houdt de kijker op de hoogte van de initiatieven die op gang komen via het platform #Nietalleen.
           </p>
           <p>
-            Het programma Nietalleen.nl is een coproductie met SkyHigh TV en is vanaf woensdag 25 maart, dagelijks om 16.45 uur, te zien bij de EO op NPO 1.
+            Het programma Nietalleen.nl is een coproductie met SkyHigh TV en dagelijks rond 16:30 te zien bij de EO op NPO 1.
           </p>
         </v-flex>
       </v-layout>
