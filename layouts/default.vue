@@ -119,6 +119,7 @@ export default {
         { text: 'Ik zoek hulp', to: '/' },
         { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' },
         { text: 'TV programma', to: '/tv-programma' },
+        { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
         { text: 'Doneren', to: '/doneren' },
         { text: 'Over ons', to: '/over' }
       ],
