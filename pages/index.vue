@@ -65,7 +65,7 @@
           <p
             class="pa-6"
           >
-            Bekijk <a href="/social-wall">alle verhalen en social posts</a> rondom #Nietalleen.
+            Bekijk <a href="/verhalen">alle verhalen en social posts</a> rondom #Nietalleen.
           </p>
           <social-carousel :render-carousel="allowCarouselRender" />
         </v-flex>

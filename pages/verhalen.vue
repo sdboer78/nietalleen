@@ -15,9 +15,11 @@
           class="pb-12"
         >
           <h1 class="display-1 mb-0">
-            #Nietalleen
+            #Nietalleen verhalen
           </h1>
-
+          <p class="font-weight-bold">
+            Inspireer elkaar. Deel jouw verhaal met #Nietalleen op Twitter, Facebook of Instagram.
+          </p>
           <social-wall :render-wall="allowSocialwallRender" />
         </v-flex>
       </v-layout>
@@ -43,12 +45,12 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Social Posts',
+      title: 'Verhalen',
       meta: [
         {
           hid: 'og-title',
           property: 'og:title',
-          content: '#Nietalleen - Social Posts'
+          content: '#Nietalleen - Verhalen'
         },
         {
           hid: 'og-url',
