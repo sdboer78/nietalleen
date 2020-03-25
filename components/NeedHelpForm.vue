@@ -3,7 +3,7 @@
     ref="form"
     v-model="valid"
     lazy-validation
-    class="need-help-form__form"
+    class="need-help-form__form text-left"
   >
     <v-text-field
       v-model="fullName"
@@ -110,6 +110,9 @@
             elevation="3"
           >
             <div class="px-4 pt-2 pb-0">
+              <p class="mt-5 black--text">
+                Onderstaande gegevens helpen ons bij het beantwoorden van de hulpvraag, maar het is niet verplicht om deze gegevens te verzenden.
+              </p>
               <v-checkbox
                 v-model="consentPrivacyNeedy"
                 :rules="consentPrivacyNeedyRules"
@@ -151,7 +154,7 @@
             </div>
           </v-sheet>
         </v-expand-transition>
-        <p class="text-left mt-5">
+        <p class="mt-5">
           Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
         </p>
         <v-checkbox
@@ -171,7 +174,7 @@
         >
           Vraag hulp
         </v-btn>
-        <p class="text-left mt-5">
+        <p class="mt-5">
           Je hulpvraag wordt vertrouwelijk behandeld
         </p>
       </div>
