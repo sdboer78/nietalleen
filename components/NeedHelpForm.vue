@@ -24,7 +24,7 @@
         x-large
         @click="validate"
       >
-        volgende stap
+        Volgende stap
       </v-btn>
     </v-expand-transition>
     <v-expand-transition>
@@ -169,8 +169,11 @@
           x-large
           @click="submit"
         >
-          vraag hulp
+          Vraag hulp
         </v-btn>
+        <p class="text-left mt-5">
+          Je hulpvraag wordt vertrouwelijk behandeld
+        </p>
       </div>
     </v-expand-transition>
     <v-snackbar
