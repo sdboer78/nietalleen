@@ -59,6 +59,15 @@
           >
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
+          <h2 class="display-1">
+            Kijk hoe #Nietalleen initiatieven verschil maken
+          </h2>
+          <p
+            class="pa-6"
+          >
+            Bekijk <a href="/social-wall">alle verhalen en social posts</a> rondom #Nietalleen.
+          </p>
+          <social-carousel :render-carousel="allowCarouselRender" />
         </v-flex>
       </v-layout>
     </section>
@@ -221,16 +230,26 @@
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
 import Divider from '~/components/Divider.vue'
+import SocialCarousel from '~/components/SocialCarousel.vue'
 
 export default {
   components: {
     HeroImage,
     NeedHelpForm,
-    Divider
+    Divider,
+    SocialCarousel
   },
   data () {
     return {
       showDisclaimerDialog: false
+    }
+  },
+  computed: {
+    cookiePermissions () {
+      return this.$store.state['cookie-permissions'].list
+    },
+    allowCarouselRender () {
+      return this.cookiePermissions.findIndex(cat => cat === 'social') > -1
     }
   },
   head () {
