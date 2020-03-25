@@ -102,6 +102,7 @@ export default {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(0,0,0,.5) url('https://www.npostart.nl/images/asset_player_play.svg') no-repeat 50%;
+  background: rgba(0,0,0,.8) url('https://www.npostart.nl/images/asset_player_play.svg') no-repeat 50% 50%;
+  background-size: 20px;
 }
 </style>
