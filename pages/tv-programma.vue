@@ -48,7 +48,7 @@
           </p>
           <p class="text-center mt-12">
             <v-btn
-              href="https://www.npostart.nl/zoeken?term=nietalleen"
+              href="https://www.npostart.nl/nietalleennl/VPWON_1318786"
               color="primary"
               class="my-2"
               target="_new"
