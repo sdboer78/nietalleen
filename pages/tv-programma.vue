@@ -22,7 +22,7 @@
               mdi-clock
             </v-icon>
             Elke dag rond 16:30 op
-            <img src="~/assets/logo-npo-1.svg" width="50">
+            <img src="~/assets/logo-npo-1.svg?data" width="50">
           </p>
           <p class="font-weight-bold">
             In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
@@ -38,7 +38,7 @@
           >
             <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
               <span class="npo-play-button">
-                <img src="~/assets/npo-player-play.svg">
+                <img src="~/assets/npo-player-play.svg?data">
               </span>
             </a>
           </v-img>
