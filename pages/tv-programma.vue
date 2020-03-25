@@ -37,7 +37,9 @@
             cover
           >
             <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
-              <span class="npo-play-button" />
+              <span class="npo-play-button">
+                <img :src="require('@/assets/npo-player-play.svg')">
+              </span>
             </a>
           </v-img>
           <p class="text-center mt-n12">
@@ -102,7 +104,10 @@ export default {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(0,0,0,.8) url('https://www.npostart.nl/images/asset_player_play.svg') no-repeat 50% 50%;
-  background-size: 20px;
+  background: rgba(0,0,0,.8);
+  padding: 20px;
+  img {
+    width: 20px;
+  }
 }
 </style>
