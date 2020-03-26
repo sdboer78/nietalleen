@@ -60,6 +60,46 @@
         </v-flex>
       </v-layout>
     </section>
+    <section class="accent">
+      <v-layout
+        justify-center
+        align-center
+        class="pa-8 pt-12 text-center"
+      >
+        <v-flex
+          xs12
+          sm8
+          md5
+          lg4
+          xl3
+        >
+          <h2 class="display-1 mb-4">
+            Kijk hoe #Nietalleen-initiatieven verschil maken
+          </h2>
+          <p>
+            Bekijk <a href="/verhalen">alle verhalen en social posts</a> rondom #Nietalleen.
+          </p>
+        </v-flex>
+      </v-layout>
+      <v-layout
+        justify-center
+        align-center
+        class="px-8 pb-8 text-center"
+      >
+        <v-flex
+          xs12
+          sm12
+          md12
+          lg8
+          xl6
+        >
+          <social-carousel
+            :render-carousel="allowCarouselRender"
+            class="mx-n8 mb-6"
+          />
+        </v-flex>
+      </v-layout>
+    </section>
     <section>
       <v-layout
         justify-center
@@ -219,16 +259,26 @@
 import HeroImage from '~/components/HeroImage.vue'
 import NeedHelpForm from '~/components/NeedHelpForm.vue'
 import Divider from '~/components/Divider.vue'
+import SocialCarousel from '~/components/SocialCarousel.vue'
 
 export default {
   components: {
     HeroImage,
     NeedHelpForm,
-    Divider
+    Divider,
+    SocialCarousel
   },
   data () {
     return {
       showDisclaimerDialog: false
+    }
+  },
+  computed: {
+    cookiePermissions () {
+      return this.$store.state['cookie-permissions'].list
+    },
+    allowCarouselRender () {
+      return this.cookiePermissions.findIndex(cat => cat === 'social') > -1
     }
   },
   head () {
