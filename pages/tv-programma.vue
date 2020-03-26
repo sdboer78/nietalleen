@@ -36,7 +36,11 @@
             max-width="none"
             cover
           >
-            <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
+            <a
+              target="_blank"
+              href="https://www.npostart.nl/nietalleennl/VPWON_1318786"
+              class="npo-play d-flex fill-height align-center justify-center"
+            >
               <span class="npo-play-button">
                 <img src="~/assets/npo-player-play.svg?data">
               </span>
@@ -100,12 +104,25 @@ export default {
 </script>
 
 <style scoped type="text/css" lang="scss">
+.npo-play {
+  &:hover,
+  &:active,
+  &:focus {
+    .npo-play-button {
+      transform: scale(1.08);
+    }
+  }
+}
+
 .npo-play-button {
+  display: block;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: rgba(0,0,0,.8);
   padding: 20px;
+  transition: transform 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
+
   img {
     width: 20px;
   }
