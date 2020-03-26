@@ -136,7 +136,11 @@ export default {
     }
   },
   mounted () {
-    if (window) {
+    if (!window) { return }
+
+    if ((typeof window.ccm !== 'undefined') && (window.ccm.isDone() === true)) {
+      this.getCookiePermissions()
+    } else {
       window.addEventListener('CCM_done', this.getCookiePermissions, false)
     }
   },
