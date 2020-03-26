@@ -3,7 +3,6 @@
     <v-expand-transition>
       <div v-if="renderCarousel">
         <div id="flockler-embed-17111be1f7103d16a5baeb89dac8ee91" />
-        <script src="https://flockler.embed.codes/LrD78j" async />
       </div>
       <p
         v-if="!renderCarousel"
@@ -24,6 +23,12 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  mounted () {
+    const embedScript = document.createElement('script')
+    embedScript.setAttribute('src', 'https://flockler.embed.codes/LrD78j')
+    embedScript.async = true
+    document.head.appendChild(embedScript)
   }
 }
 </script>

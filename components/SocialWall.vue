@@ -3,7 +3,6 @@
     <v-expand-transition>
       <div v-if="renderWall">
         <div id="flockler-embed-17111acdf600a77f7984f5072fd98ca3" />
-        <script src="https://flockler.embed.codes/Lm4wY2" async />
       </div>
       <p
         v-if="!renderWall"
@@ -24,6 +23,12 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  mounted () {
+    const embedScript = document.createElement('script')
+    embedScript.setAttribute('src', 'https://flockler.embed.codes/Lm4wY2')
+    embedScript.async = true
+    document.head.appendChild(embedScript)
   }
 }
 </script>
