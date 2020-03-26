@@ -14,12 +14,12 @@
           xl3
         >
           <hero-image
-            :src="require('@/assets/sitting-on-a-bench.jpg')"
+            :src="require('~/assets/sitting-on-a-bench.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
             <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
+              :src="require('~/assets/logo-niet-alleen.svg?data')"
               max-width="200px"
               aspect-ratio="5"
               position="center center"
@@ -75,7 +75,7 @@
           xl3
         >
           <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
+            :src="require('~/assets/logo-niet-alleen.svg?data')"
             max-width="200px"
             position="center center"
             contain
@@ -148,12 +148,12 @@
           class="my-5"
         >
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
             <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
+              :src="require('~/assets/logo-niet-alleen.svg?data')"
               max-width="200px"
               aspect-ratio="5"
               position="center center"

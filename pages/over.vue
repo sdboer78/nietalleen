@@ -8,12 +8,12 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
             <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
+              :src="require('~/assets/logo-niet-alleen.svg?data')"
               max-width="200px"
               aspect-ratio="5"
               position="center center"
@@ -120,12 +120,12 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/cooking.jpg')"
+            :src="require('~/assets/cooking.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
             <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
+              :src="require('~/assets/logo-niet-alleen.svg?data')"
               max-width="200px"
               aspect-ratio="5"
               position="center center"
