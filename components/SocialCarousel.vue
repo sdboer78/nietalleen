@@ -24,11 +24,26 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      externalScript: null
+    }
+  },
   mounted () {
-    const embedScript = document.createElement('script')
-    embedScript.setAttribute('src', 'https://flockler.embed.codes/LrD78j')
-    embedScript.async = true
-    document.head.appendChild(embedScript)
+    this.addExternalScript()
+  },
+  beforeUpdate () {
+    this.addExternalScript()
+  },
+  methods: {
+    addExternalScript () {
+      if (this.renderCarousel) {
+        this.externalScript = document.createElement('script')
+        this.externalScript.setAttribute('src', 'https://flockler.embed.codes/LrD78j')
+        this.externalScript.async = true
+        this.$el.appendChild(this.externalScript)
+      }
+    }
   }
 }
 </script>
