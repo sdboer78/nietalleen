@@ -64,7 +64,7 @@
       <v-layout
         justify-center
         align-center
-        class="pa-8 pt-8 text-center"
+        class="pa-8 pt-12 text-center"
       >
         <v-flex
           xs12
@@ -95,7 +95,7 @@
         >
           <social-carousel
             :render-carousel="allowCarouselRender"
-            class="mx-n8 mb-8"
+            class="mx-n8"
           />
         </v-flex>
       </v-layout>
