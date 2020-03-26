@@ -118,6 +118,7 @@ export default {
       navItems: [
         { text: 'Ik zoek hulp', to: '/' },
         { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' },
+        { text: 'Verhalen', to: '/verhalen' },
         { text: 'TV programma', to: '/tv-programma' },
         { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
         { text: 'Doneren', to: '/doneren' },
@@ -208,10 +209,10 @@ export default {
       box-shadow: none;
       flex-basis: auto;
       flex-grow: 0;
-      font-size: 24px;
+      font-size: 22px;
       margin: 0.6em auto !important;
-      padding-bottom: 0.2em;
-      padding-top: 0.2em;
+      padding-bottom: 0.15em;
+      padding-top: 0.15em;
       transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
       &:hover,
