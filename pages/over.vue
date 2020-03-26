@@ -8,17 +8,14 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Over ons
@@ -120,17 +117,14 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/cooking.jpg')"
+            :src="require('~/assets/cooking.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h2 class="display-1">
             Gebruik dit logo en de social posts voor jouw lokale initiatief!

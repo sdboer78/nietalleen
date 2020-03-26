@@ -14,17 +14,14 @@
           xl3
         >
           <hero-image
-            :src="require('@/assets/sitting-on-a-bench.jpg')"
+            :src="require('~/assets/sitting-on-a-bench.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Ik zoek hulp
@@ -114,13 +111,10 @@
           lg4
           xl3
         >
-          <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="200px"
-            position="center center"
-            contain
-            class="mx-auto mb-12"
-          />
+          <img
+            src="~/assets/logo-niet-alleen.svg?data"
+            width="200"
+          >
           <h2 class="display-1">
             Ondanks het coronavirus staan we voor je klaar.
           </h2>
@@ -188,17 +182,14 @@
           class="my-5"
         >
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h2 class="display-1">
             Over ons

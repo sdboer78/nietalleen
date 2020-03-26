@@ -28,7 +28,7 @@
             In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
           </p>
           <v-img
-            :src="require('@/assets/bert-van-leeuwen.jpg')"
+            :src="require('~/assets/bert-van-leeuwen.jpg')"
             class="mx-n8 mx-auto my-5"
             aspect-ratio="1.75"
             position="center center"
