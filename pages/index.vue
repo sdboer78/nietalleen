@@ -94,7 +94,7 @@
           xl6
         >
           <social-carousel
-            :render-carousel="true"
+            :render-carousel="allowCarouselRender"
             class="mx-n8 mb-8"
           />
         </v-flex>
