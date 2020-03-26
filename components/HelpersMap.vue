@@ -8,7 +8,7 @@
       />
       <p
         v-if="!renderMap"
-        class="caption"
+        class="caption text-center"
       >
         Pas je <a href="https://cookies.nietalleen.nl/sites/EO/nietalleen.nl/settings.html" class="npo_cc_settings_link" rel="noreferrer">cookie instellingen</a>
         aan om deze kaart te kunnen zien.
