@@ -74,7 +74,7 @@
           xl3
         >
           <h2 class="display-1 mb-4">
-            Kijk hoe #Nietalleen initiatieven verschil maken
+            Kijk hoe #Nietalleen-initiatieven verschil maken
           </h2>
           <p>
             Bekijk <a href="/verhalen">alle verhalen en social posts</a> rondom #Nietalleen.
@@ -95,7 +95,7 @@
         >
           <social-carousel
             :render-carousel="allowCarouselRender"
-            class="mx-n8"
+            class="mx-n8 mb-6"
           />
         </v-flex>
       </v-layout>
