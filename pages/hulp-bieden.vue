@@ -8,17 +8,14 @@
       >
         <v-flex xs12 sm8 md5 lg4 xl3>
           <hero-image
-            :src="require('@/assets/love-your-neighbour.jpg')"
+            :src="require('~/assets/love-your-neighbour.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Zo werkt het
@@ -90,14 +87,11 @@
             Corona raakt ons allemaal:<br>
             blijf om elkaar geven
           </h2>
-          <v-img
-            :src="require('@/assets/logo-anbi.svg')"
-            class="mx-auto my-5"
-            max-width="40px"
-            aspect-ratio="1.27"
-            position="center center"
-            contain
-          />
+          <img
+            src="~/assets/logo-anbi.svg?data"
+            class="mx-auto my-5 d-block"
+            height="35"
+          >
           <p class="mb-5">
             EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.
           </p>
