@@ -12,13 +12,10 @@
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('~/assets/logo-niet-alleen.svg?data')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200px"
+            >
           </hero-image>
           <h1 class="display-1">
             Veelgestelde vragen

@@ -19,13 +19,10 @@
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('~/assets/logo-niet-alleen.svg?data')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200px"
+            >
           </hero-image>
           <h1 class="display-1">
             Corona raakt ons allemaal: blijf om elkaar geven
@@ -39,14 +36,11 @@
           <p>
             Zoals altijd zien wij er zorgvuldig op toe dat donaties terecht komen waar ze nodig zijn. Dat doen we als EO Metterdaad immers al bijna 50 jaar. Geef dus met een gerust hart.
           </p>
-          <v-img
-            :src="require('~/assets/logo-anbi.svg?data')"
-            class="mx-auto my-5"
-            max-width="40px"
-            aspect-ratio="1.27"
-            position="center center"
-            contain
-          />
+          <img
+            src="~/assets/logo-anbi.svg?data"
+            class="mx-auto my-5 d-block"
+            height="35"
+          >
           <v-btn
             href="https://metterdaad.eo.nl/corona/doneren"
             color="primary"

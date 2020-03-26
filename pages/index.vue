@@ -18,13 +18,10 @@
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('~/assets/logo-niet-alleen.svg?data')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200px"
+            >
           </hero-image>
           <h1 class="display-1">
             Ik zoek hulp
@@ -74,13 +71,10 @@
           lg4
           xl3
         >
-          <v-img
-            :src="require('~/assets/logo-niet-alleen.svg?data')"
-            max-width="200px"
-            position="center center"
-            contain
-            class="mx-auto mb-12"
-          />
+          <img
+            src="~/assets/logo-niet-alleen.svg?data"
+            width="200px"
+          >
           <h2 class="display-1">
             Ondanks het coronavirus staan we voor je klaar.
           </h2>
@@ -152,13 +146,10 @@
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('~/assets/logo-niet-alleen.svg?data')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200px"
+            >
           </hero-image>
           <h2 class="display-1">
             Over ons
