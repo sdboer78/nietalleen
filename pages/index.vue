@@ -60,7 +60,7 @@
         </v-flex>
       </v-layout>
     </section>
-    <section>
+    <section class="accent">
       <v-layout
         justify-center
         align-center
