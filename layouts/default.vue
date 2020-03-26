@@ -136,12 +136,14 @@ export default {
     }
   },
   mounted () {
-    if (!window) { return }
+    if (window) {
+      const { ccm } = window
 
-    if ((typeof window.ccm !== 'undefined') && (window.ccm.isDone() === true)) {
-      this.getCookiePermissions()
-    } else {
-      window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      if ((typeof ccm !== 'undefined') && (ccm.isDone() === true)) {
+        this.getCookiePermissions()
+      } else {
+        window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      }
     }
   },
   methods: {
