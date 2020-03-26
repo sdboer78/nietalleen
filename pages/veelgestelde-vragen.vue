@@ -90,6 +90,10 @@ export default {
         {
           question: 'Wordt mijn hulpvraag altijd opgepakt?',
           answer: 'Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de juiste hulpaanbieder te binden. Daarmee is #Nietalleen verantwoordelijk voor het doorzetten van de hulpvraag naar (lokale) initiatieven. Het indienen van een hulpvraag betekent niet dat er recht op hulp ontstaat; de (lokale) aanbieders zullen hun best doen om jouw vraag zo goed mogelijk op te pakken. De kwaliteit, in algemene zin, van het hulpaanbod ligt bij de initiatieven zelf.'
+        },
+        {
+          question: 'Kan ik ook contact opnemen met algemene vragen over het coronavirus (COVID-19)?',
+          answer: 'Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.'
         }
       ]
     }

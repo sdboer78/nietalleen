@@ -52,6 +52,9 @@
           <p class="caption mt-4">
             Wil je de vermelding van jouw organisatie wijzigen of, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://bit.ly/afm-lokale-organisaties">dit formulier</a>. Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
+          <p class="caption mt-4">
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
+          </p>
         </v-flex>
       </v-layout>
     </section>

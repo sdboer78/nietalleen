@@ -54,10 +54,8 @@
             <strong>zaterdag en zondag:</strong>
             van 09.00 - 20.00 uur
           </p>
-          <p
-            class="pa-6"
-          >
-            Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          <p class="caption pb-6">
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
         </v-flex>
       </v-layout>
