@@ -54,8 +54,8 @@
             <strong>zaterdag en zondag:</strong>
             van 09.00 - 20.00 uur
           </p>
-          <p class="py-6">
-            Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          <p class="caption pb-6">
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
         </v-flex>
       </v-layout>
@@ -146,7 +146,7 @@
         >
           <h2 class="mb-12">
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              939
+              1016
             </span>
             <span class="display-1 mb-0 d-block" style="line-height:1.1;">
               initiatieven

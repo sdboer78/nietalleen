@@ -22,7 +22,7 @@
               mdi-clock
             </v-icon>
             Elke dag rond 16:30 op
-            <img :src="require('@/assets/logo-npo-1.svg')" width="50">
+            <img src="~/assets/logo-npo-1.svg?data" width="50">
           </p>
           <p class="font-weight-bold">
             In het nieuwe tv-programma Nietalleen.nl laat de EO zien hoe, midden in de coronacrisis, mensen voor elkaar klaarstaan. Live vanuit hun eigen huiskamers delen EO-presentatoren Bert van Leeuwen en Anne-Mar Zwart bemoedigende initiatieven die in deze bijzondere tijd ontstaan.
@@ -36,8 +36,14 @@
             max-width="none"
             cover
           >
-            <a target="_blank" href="https://www.npostart.nl/nietalleennl/VPWON_1318786" class="flex row fill-height ma-0 align-center justify-center">
-              <span class="npo-play-button" />
+            <a
+              target="_blank"
+              href="https://www.npostart.nl/nietalleennl/VPWON_1318786"
+              class="npo-play d-flex fill-height align-center justify-center"
+            >
+              <span class="npo-play-button">
+                <img src="~/assets/npo-player-play.svg?data">
+              </span>
             </a>
           </v-img>
           <p class="text-center mt-n12">
@@ -98,11 +104,27 @@ export default {
 </script>
 
 <style scoped type="text/css" lang="scss">
+.npo-play {
+  &:hover,
+  &:active,
+  &:focus {
+    .npo-play-button {
+      transform: scale(1.08);
+    }
+  }
+}
+
 .npo-play-button {
+  display: block;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(0,0,0,.8) url('https://www.npostart.nl/images/asset_player_play.svg') no-repeat 50% 50%;
-  background-size: 20px;
+  background: rgba(0,0,0,.8);
+  padding: 20px;
+  transition: transform 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  img {
+    width: 20px;
+  }
 }
 </style>
