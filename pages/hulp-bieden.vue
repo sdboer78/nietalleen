@@ -25,7 +25,7 @@
           </h1>
           <p>
             <span class="d-block font-weight-bold primary--text">1.</span>
-            Meld je hulpinitiatief of organisatie aan via dit formulier
+            Meld je hulpinitiatief of organisatie aan via dit formulier<br>
             <v-btn
               href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
               target="_new"
@@ -33,7 +33,7 @@
               class="mt-2"
               x-large
             >
-              aanmelden
+              Aanmelden
             </v-btn>
           </p>
           <p class="mt-8">
