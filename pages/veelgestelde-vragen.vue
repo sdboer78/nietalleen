@@ -65,7 +65,7 @@ export default {
         },
         {
           question: 'Hoe kunnen mensen om hulp vragen? ',
-          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a>'
+          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a> of via <a href="https://nietalleen.nl">het webformulier</a>.'
         },
         {
           question: 'Wat kunnen mensen verwachten van #Nietalleen?',
@@ -85,7 +85,7 @@ export default {
         },
         {
           question: 'Welke kerken en organisaties zitten er achter #Nietalleen',
-          answer: 'Christelijk Gereformeerde Kerken<br>ChristenUnie<br>Diaconaal Steunpunt<br>Evangelische Omroep<br>Gereformeerde Kerken Vrijgemaakt<br>Kerk in Actie<br>Missie Nederland<br>Navigators<br>Nederlands Gereformeerde Kerken<br>Protestantse Kerk in Nederland<br>Rooms Katholieke Kerk<br>SGP<br>Stichting Agapè<br>Hip Helpt<br>Stichting Present<br>Stichting Schuldhulpmaatje<br>Tear<br>Tot Heil des Volks<br>4e Musketier<br>Youth for Christ<br><br>En nog steeds breidt de lijst zich uit… kijk op <a href="https://nietalleen.nl/over/">nietalleen.nl/over</a> voor de meest recente lijst.<br><br>PKN en EO coördineren de onderlinge samenwerking.'
+          answer: 'Deze lijst breidt zich steeds verder uit. Kijk op <a href="https://nietalleen.nl/over">nietalleen.nl/over</a> voor de meest recente lijst.'
         },
         {
           question: 'Wordt mijn hulpvraag altijd opgepakt?',

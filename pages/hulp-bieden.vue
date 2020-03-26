@@ -33,7 +33,7 @@
               class="mt-2"
               x-large
             >
-              aanmelden
+              Aanmelden
             </v-btn>
           </p>
           <p class="mt-8">
