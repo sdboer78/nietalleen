@@ -137,7 +137,13 @@ export default {
   },
   mounted () {
     if (window) {
-      window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      const { ccm } = window
+
+      if ((typeof ccm !== 'undefined') && (ccm.isDone() === true)) {
+        this.getCookiePermissions()
+      } else {
+        window.addEventListener('CCM_done', this.getCookiePermissions, false)
+      }
     }
   },
   methods: {
