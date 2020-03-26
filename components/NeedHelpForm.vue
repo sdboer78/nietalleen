@@ -340,7 +340,11 @@ export default {
 }
 </script>
 
-<style type="text/css" lang="scss">
+<style type="text/css" lang="scss" scoped>
+  .v-text-field {
+    position: relative;
+  }
+
   .v-text-field .v-text-field__suffix {
     color: #8F9094;
     font-size: 0.9em;
