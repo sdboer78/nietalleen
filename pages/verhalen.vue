@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="pa-8">
+    <section class="pa-8 text-center">
       <v-layout
         justify-center
         align-center
