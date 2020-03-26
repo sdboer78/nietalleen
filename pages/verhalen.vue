@@ -1,10 +1,9 @@
 <template>
   <div>
-    <section>
+    <section class="pa-8">
       <v-layout
         justify-center
         align-center
-        class="pa-8"
       >
         <v-flex
           xs12
@@ -12,15 +11,30 @@
           md6
           lg4
           xl3
-          class="pb-12"
         >
-          <h1 class="display-1 mb-0">
+          <h1 class="display-1 mb-2">
             #Nietalleen verhalen
           </h1>
-          <p class="font-weight-bold">
+          <p class="font-weight-bold mb-8">
             Inspireer elkaar. Deel jouw verhaal met #Nietalleen op Twitter, Facebook of Instagram.
           </p>
-          <social-wall :render-wall="allowSocialwallRender" />
+        </v-flex>
+      </v-layout>
+      <v-layout
+        justify-center
+        align-center
+      >
+        <v-flex
+          xs12
+          sm12
+          md12
+          lg12
+          xl12
+        >
+          <social-wall
+            :render-wall="allowSocialwallRender"
+            class="mx-n2"
+          />
         </v-flex>
       </v-layout>
     </section>
@@ -62,3 +76,14 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss">
+  .flockler-btn-load-more {
+    background-color: #C63866 !important;
+    border-radius: 10px;
+    font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 20px;
+    line-height: 1;
+    padding: 6px 32px;
+  }
+</style>
