@@ -14,7 +14,7 @@
           >
             <img
               src="~/assets/logo-niet-alleen.svg?data"
-              width="200px"
+              width="200"
             >
           </hero-image>
           <h1 class="display-1">
@@ -123,7 +123,7 @@
           >
             <img
               src="~/assets/logo-niet-alleen.svg?data"
-              width="200px"
+              width="200"
             >
           </hero-image>
           <h2 class="display-1">

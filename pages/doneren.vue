@@ -21,7 +21,7 @@
           >
             <img
               src="~/assets/logo-niet-alleen.svg?data"
-              width="200px"
+              width="200"
             >
           </hero-image>
           <h1 class="display-1">
