@@ -30,7 +30,7 @@ export default {
 
 <style type="text/css" lang="scss">
   .flockler-carousel_v2-item__text__content a {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
   }
   .flockler-carousel_v2-item__media + .flockler-carousel_v2-item__text {
     background-color: rgba(0, 0, 0, 0.75) !important;
