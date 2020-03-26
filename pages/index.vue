@@ -54,20 +54,49 @@
             <strong>zaterdag en zondag:</strong>
             van 09.00 - 20.00 uur
           </p>
-          <p
-            class="pa-6"
-          >
+          <p class="py-6">
             Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
           </p>
-          <h2 class="display-1">
+        </v-flex>
+      </v-layout>
+    </section>
+    <section>
+      <v-layout
+        justify-center
+        align-center
+        class="pa-8 pt-8 text-center"
+      >
+        <v-flex
+          xs12
+          sm8
+          md5
+          lg4
+          xl3
+        >
+          <h2 class="display-1 mb-4">
             Kijk hoe #Nietalleen initiatieven verschil maken
           </h2>
-          <p
-            class="pa-6"
-          >
+          <p>
             Bekijk <a href="/verhalen">alle verhalen en social posts</a> rondom #Nietalleen.
           </p>
-          <social-carousel :render-carousel="allowCarouselRender" />
+        </v-flex>
+      </v-layout>
+      <v-layout
+        justify-center
+        align-center
+        class="px-8 pb-8 text-center"
+      >
+        <v-flex
+          xs12
+          sm12
+          md12
+          lg8
+          xl6
+        >
+          <social-carousel
+            :render-carousel="true"
+            class="mx-n8 mb-8"
+          />
         </v-flex>
       </v-layout>
     </section>
