@@ -65,7 +65,7 @@ export default {
         },
         {
           question: 'Hoe kunnen mensen om hulp vragen? ',
-          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a> of via <a href="https://nietalleen.nl">het webformulier</a>.'
+          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a> of via <a href="/">het webformulier</a>.'
         },
         {
           question: 'Wat kunnen mensen verwachten van #Nietalleen?',
@@ -73,11 +73,11 @@ export default {
         },
         {
           question: 'Hoe kunnen kerken en lokale organisaties hun diensten aanbieden?',
-          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="https://nietalleen.nl/hulp-bieden">nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
+          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="/hulp-bieden">nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
         },
         {
           question: 'Kunnen particulieren ook hun diensten aanbieden?',
-          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="https://nietalleen.nl/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
+          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
         },
         {
           question: 'Voor wie is #Nietalleen bedoeld?',
@@ -85,7 +85,7 @@ export default {
         },
         {
           question: 'Welke kerken en organisaties zitten er achter #Nietalleen',
-          answer: 'Deze lijst breidt zich steeds verder uit. Kijk op <a href="https://nietalleen.nl/over">nietalleen.nl/over</a> voor de meest recente lijst.'
+          answer: 'Deze lijst breidt zich steeds verder uit. Kijk op <a href="/over">nietalleen.nl/over</a> voor de meest recente lijst.'
         },
         {
           question: 'Wordt mijn hulpvraag altijd opgepakt?',
