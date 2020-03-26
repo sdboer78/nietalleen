@@ -39,7 +39,7 @@
             >zo goed mogelijk</a>
             te helpen.
           </p>
-          <need-help-form v-cloak />
+          <need-help-form />
           <divider class="my-5" />
           <p>Bel met ons nummer:</p>
           <v-btn href="tel:0800-1322" color="primary" x-large>
