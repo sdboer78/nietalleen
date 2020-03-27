@@ -155,7 +155,7 @@
           </v-sheet>
         </v-expand-transition>
         <p class="mt-5">
-          Dit initiatief wordt gecoördineerd door de EO. Ik geeft hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden eo.nl/algemenevoorwaarden en privacy statement eo.nl/privacy van de EO.
+          Dit initiatief wordt gecoördineerd door de EO. Ik geef hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden (eo.nl/algemenevoorwaarden) en privacy statement (eo.nl/privacy) van de EO.
         </p>
         <v-checkbox
           v-model="consentPrivacy"

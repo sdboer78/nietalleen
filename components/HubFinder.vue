@@ -1,6 +1,6 @@
 <template>
   <v-dialog
-    v-model="showDialog"
+    v-model="show"
     fullscreen
     hide-overlay
     transition="dialog-bottom-transition"
@@ -17,7 +17,7 @@
         <v-btn
           icon
           dark
-          @click="showDialog = false"
+          @click="show = false"
         >
           <v-icon>mdi-close</v-icon>
         </v-btn>
@@ -38,38 +38,47 @@
       </v-toolbar>
       <v-card-text class="px-4 py-2">
         <v-row>
-          <v-col
+          <v-slide-y-transition
             v-for="hub in filteredHubs"
             :key="hub.id"
-            cols="12"
-            sm="6"
-            md="4"
-            lg="3"
-            xl="2"
           >
-            <v-card
-              outlined
-              @click="openVolunteerForm(hub)"
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+              lg="3"
+              xl="2"
             >
-              <v-card-title>
-                {{ hub.township }}
-              </v-card-title>
-              <v-card-subtitle>
-                {{ hub.email }}
-              </v-card-subtitle>
-              <v-card-text>
-                De organisatie '<strong>{{ hub.name }}</strong>' is hier het co&ouml;rdinatiepunt.
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col
-            v-if="filteredHubs.length == 0"
-            cols="12"
-          >
-            <p class="caption">
-              Geen co&ouml;rdinatiepunten gevonden bij je zoekopdracht.
-            </p>
-          </v-col>
+              <v-card
+                outlined
+                @click="openVolunteerForm(hub)"
+              >
+                <v-card-title>
+                  {{ hub.township }}
+                  <v-spacer />
+                  <v-icon color="primary">
+                    mdi-message-arrow-right-outline
+                  </v-icon>
+                </v-card-title>
+                <v-card-subtitle>
+                  {{ hub.email }}
+                </v-card-subtitle>
+                <v-card-text>
+                  De organisatie '<strong>{{ hub.name }}</strong>' is hier het co&ouml;rdinatiepunt.
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-slide-y-transition>
+          <v-slide-y-transition>
+            <v-col
+              v-if="filteredHubs.length == 0"
+              cols="12"
+            >
+              <p class="caption">
+                Geen co&ouml;rdinatiepunten gevonden bij je zoekopdracht.
+              </p>
+            </v-col>
+          </v-slide-y-transition>
         </v-row>
       </v-card-text>
       <hub-volunteer-form
@@ -94,7 +103,7 @@ export default {
   },
   data () {
     return {
-      showDialog: this.value,
+      show: this.value,
       showHubVolunteerForm: false,
       searchString: null,
       selectedHub: null,
@@ -158,16 +167,18 @@ export default {
         if (this.searchString === '') { return true }
 
         // @Todo replace with smart filtering based on location of the user for example
-        return hub.name.includes(this.searchString) || hub.township.includes(this.searchString) || hub.email.includes(this.searchString)
-      })
+        if (hub !== undefined && hub.name !== null) {
+          return hub.name.includes(this.searchString) || hub.township.includes(this.searchString) || hub.email.includes(this.searchString)
+        }
+      }).sort((a, b) => a.township.localeCompare(b.township))
     }
   },
   watch: {
     value () {
-      this.showDialog = this.value
+      this.show = this.value
     },
-    showDialog () {
-      this.$emit('input', this.showDialog)
+    show () {
+      this.$emit('input', this.show)
     }
   },
   methods: {
