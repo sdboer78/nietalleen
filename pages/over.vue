@@ -70,7 +70,7 @@
           </h2>
           <v-row class="partner-list">
             <v-col>
-              <p>4e Musketier</p>
+              <p>4M</p>
               <p>ABC gemeenten</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
