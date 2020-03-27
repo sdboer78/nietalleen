@@ -30,13 +30,13 @@
               centered
               icons-and-text
             >
-              <v-tab href="#organisatie">
-                Organisatie
-                <v-icon>mdi-account-group</v-icon>
-              </v-tab>
               <v-tab href="#particulier">
                 Particulier
                 <v-icon>mdi-account</v-icon>
+              </v-tab>
+              <v-tab href="#organisatie">
+                Organisatie
+                <v-icon>mdi-account-group</v-icon>
               </v-tab>
             </v-tabs>
             <v-tabs-items
@@ -44,17 +44,17 @@
             >
               <v-tab-item
                 key="0"
-                value="organisatie"
-                class="px-4 py-8"
-              >
-                <help-as-organisation />
-              </v-tab-item>
-              <v-tab-item
-                key="1"
                 value="particulier"
                 class="px-4 py-8"
               >
                 <help-as-volunteer />
+              </v-tab-item>
+              <v-tab-item
+                key="1"
+                value="organisatie"
+                class="px-4 py-8"
+              >
+                <help-as-organisation />
               </v-tab-item>
             </v-tabs-items>
           </v-card>
