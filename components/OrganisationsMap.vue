@@ -1,5 +1,5 @@
 <template>
-  <div class="map">
+  <div class="map accent">
     <v-expand-transition>
       <iframe
         v-if="renderMap"
@@ -31,7 +31,6 @@ export default {
 
 <style type="text/css" lang="scss">
 .map {
-  background-color: rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
