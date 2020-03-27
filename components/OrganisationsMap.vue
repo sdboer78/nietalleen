@@ -1,11 +1,15 @@
 <template>
   <div class="map accent">
     <v-expand-transition>
-      <iframe
-        v-if="renderMap"
-        class="map__iframe"
-        src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
-      />
+      <div v-if="renderMap">
+        <iframe
+          class="map__iframe"
+          src="https://www.google.com/maps/d/embed?mid=1eDxpR0IUErARS5g1slGMmBlHpyDrPEbl"
+        />
+        <p class="caption text-center pa-3 ma-0">
+          Momenteel is het door technische uitdagingen nog niet mogelijk om alle initiatieven op de kaart te tonen. Hier wordt aan gewerkt zodat we zo snel mogelijk alle mooie initiatieven kunnen weergeven.
+        </p>
+      </div>
       <p
         v-if="!renderMap"
         class="caption text-center"
