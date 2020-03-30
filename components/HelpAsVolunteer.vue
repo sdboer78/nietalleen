@@ -2,21 +2,13 @@
   <div>
     <p>
       <span class="d-block font-weight-bold primary--text">1.</span>
-      Zoek tussen de 300+ co&ouml;rdinatiepunten in Nederland naar eentje bij jou in de buurt.
+      Meld je aan als vrijwilliger via dit formulier.
       <br>
-      <v-btn
-        color="primary"
-        class="mt-2"
-        x-large
-        @click="showHubFinder = !showHubFinder"
-      >
-        Open de lijst
-      </v-btn>
-      <hub-finder v-model="showHubFinder" />
+      <volunteer-form v-model="openVolunteerForm" />
     </p>
     <p class="mt-8">
       <span class="d-block font-weight-bold primary--text">2.</span>
-      Meld je aan bij dat co&ouml;rdinatiepunt door erop te klikken.
+      Je aanmelding wordt verzonden naar het co&ouml;rdinatiepunt bij jou in de buurt.
     </p>
     <p class="mt-8">
       <span class="d-block font-weight-bold primary--text">3.</span>
@@ -26,14 +18,14 @@
 </template>
 
 <script>
-import HubFinder from '~/components/HubFinder.vue'
+import VolunteerForm from '~/components/VolunteerForm.vue'
 
 export default {
   name: 'HelpAsVolunteer',
-  components: { HubFinder },
+  components: { VolunteerForm },
   data () {
     return {
-      showHubFinder: false
+      openVolunteerForm: false
     }
   }
 }

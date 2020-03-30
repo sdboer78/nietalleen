@@ -86,7 +86,6 @@
             validate-on-blur
             outlined
             required
-            class="mb-2"
           />
         </v-expand-transition>
         <v-radio-group
@@ -154,7 +153,7 @@
             </div>
           </v-sheet>
         </v-expand-transition>
-        <p class="mt-5">
+        <p class="mt-5 caption">
           Dit initiatief wordt gecoördineerd door de EO. Ik geef hierbij toestemming om deze gegevens te delen met de EO en met de organisaties die de hulpvraag oppakken en ga akkoord met de algemene voorwaarden (eo.nl/algemenevoorwaarden) en privacy statement (eo.nl/privacy) van de EO.
         </p>
         <v-checkbox
@@ -174,7 +173,7 @@
         >
           Vraag hulp
         </v-btn>
-        <p class="mt-5">
+        <p class="mt-4 mb-12 text-center grey--text">
           Je hulpvraag wordt vertrouwelijk behandeld
         </p>
       </div>
