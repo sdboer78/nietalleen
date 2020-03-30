@@ -28,10 +28,11 @@
             <v-tabs
               v-model="activeTab"
               centered
+              fixed-tabs
               icons-and-text
             >
-              <v-tab href="#particulier">
-                Particulier
+              <v-tab href="#individu">
+                Individu
                 <v-icon>mdi-account</v-icon>
               </v-tab>
               <v-tab href="#organisatie">
@@ -44,7 +45,7 @@
             >
               <v-tab-item
                 key="0"
-                value="particulier"
+                value="individu"
                 class="px-4 py-8"
               >
                 <help-as-volunteer />
@@ -145,7 +146,7 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Wij kunnen hulp bieden',
+      title: 'Ik kan hulp bieden',
       meta: [
         {
           hid: 'og-title',
