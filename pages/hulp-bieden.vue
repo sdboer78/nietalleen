@@ -23,7 +23,7 @@
           <v-card
             flat
             outlined
-            class="mb-8"
+            class="help-options-panel mb-8 mx-n4"
           >
             <v-tabs
               v-model="activeTab"
@@ -46,14 +46,14 @@
               <v-tab-item
                 key="0"
                 value="individu"
-                class="px-4 py-8"
+                class="px-4 py-6"
               >
                 <help-as-volunteer />
               </v-tab-item>
               <v-tab-item
                 key="1"
                 value="organisatie"
-                class="px-4 py-8"
+                class="px-4 py-6"
               >
                 <help-as-organisation />
               </v-tab-item>
@@ -171,6 +171,10 @@ export default {
 </script>
 
 <style type="text/css" lang="scss" scoped>
+  .help-options-panel {
+    max-width: none;
+  }
+
   .v-tab {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-size: 16px;

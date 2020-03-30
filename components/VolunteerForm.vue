@@ -2,7 +2,7 @@
   <div>
     <v-expand-transition>
       <v-form
-        v-if="value"
+        v-if="showFields"
         ref="form"
         v-model="valid"
         lazy-validation
@@ -100,11 +100,11 @@
     </v-expand-transition>
     <v-fade-transition>
       <v-btn
-        v-if="!value"
+        v-if="!showFields"
         color="primary"
         class="mt-2"
         x-large
-        @click="value = !value"
+        @click="showFields = !showFields"
       >
         Aanmelden
       </v-btn>
@@ -142,7 +142,10 @@ export default {
   },
   data: () => {
     return {
+      showFields: false,
       valid: true,
+      alertMessage: '',
+      showAlert: false,
       fullName: '',
       fullNameRules: [
         v => !!v || 'We hebben je naam nodig'
@@ -181,8 +184,6 @@ export default {
       consentPrivacyRules: [
         v => !!v || 'Je moet akkoord gaan om je aan te melden'
       ],
-      alertMessage: '',
-      showAlert: false,
       formSubmissionSuccessMessage: 'Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.'
     }
@@ -192,16 +193,20 @@ export default {
       return this.helpType.includes('iets anders')
     }
   },
+  watch: {
+    value () {
+      this.showFields = this.value
+    },
+    showFields () {
+      this.$emit('input', this.showFields)
+    }
+  },
   methods: {
     hide () {
       this.$emit('input', false)
     },
     show () {
       this.$emit('input', true)
-    },
-    cancelForm () {
-      // @Todo: show a warning if any field has a value
-      this.hide()
     },
     resetValidation () {
       this.$refs.form.resetValidation()

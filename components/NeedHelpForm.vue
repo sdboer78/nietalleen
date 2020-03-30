@@ -174,7 +174,7 @@
           Vraag hulp
         </v-btn>
         <p class="mt-4 mb-12 text-center grey--text">
-          Je hulpvraag wordt vertrouwelijk behandeld
+          Je hulpvraag wordt vertrouwelijk behandeld.
         </p>
       </div>
     </v-expand-transition>
