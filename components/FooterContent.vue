@@ -70,7 +70,7 @@
         </v-card-title>
         <v-card-text>
           <p>
-            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            #Nietalleen wordt geco&ouml;rdineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
             We hechten waarde aan duidelijkheid over ons beleid ten opzichte van de algemene voorwaarden.
           </p>
           <p>
@@ -115,7 +115,7 @@
         </v-card-title>
         <v-card-text>
           <p>
-            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            #Nietalleen wordt geco&ouml;rdineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
             We hechten waarde aan duidelijkheid over ons beleid ten opzichte van uw privacy.
           </p>
           <p>
@@ -160,7 +160,7 @@
         </v-card-title>
         <v-card-text>
           <p>
-            #Nietalleen wordt gecoördineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
+            #Nietalleen wordt geco&ouml;rdineerd door de Protestantse Kerken Nederland en de Evangelische Omroep.
             We hechten waarde aan duidelijkheid over ons beleid ten opzichte van cookies en tracking.
           </p>
           <p>

@@ -165,7 +165,7 @@ export default {
 }
 </script>
 
-<style type="text/css" lang="scss">
+<style type="text/css" lang="scss" scoped>
   .v-tabs {
     font-weight: bold;
     max-width: 720px;
