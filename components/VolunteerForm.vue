@@ -45,12 +45,17 @@
           required
           suffix="2/5"
         />
-        <v-text-field
+        <v-autocomplete
           v-model="city"
           :rules="cityRules"
+          :items="cityItems"
           label="Wat is je woonplaats?"
+          :loading="loadingCities"
+          :search-input.sync="searchCities"
+          cache-items
           color="black"
           validate-on-blur
+          hide-no-data
           outlined
           required
           suffix="3/5"
@@ -155,8 +160,71 @@ export default {
       ],
       city: '',
       cityRules: [
-        v => !!v || 'We hebben je woonplaats nodig om je te koppelen aan een organisatie in jouw buurt',
-        v => !!v || 'Deze plaats komt niet voor in ons systeem' // @Todo: make this field autocomplete
+        v => !!v || 'We hebben je woonplaats nodig om je te koppelen aan een organisatie in jouw buurt'
+      ],
+      cityItems: [],
+      loadingCities: false,
+      searchCities: null,
+      fakeApiResults: [
+        'Alabama',
+        'Alaska',
+        'American Samoa',
+        'Arizona',
+        'Arkansas',
+        'California',
+        'Colorado',
+        'Connecticut',
+        'Delaware',
+        'District of Columbia',
+        'Federated States of Micronesia',
+        'Florida',
+        'Georgia',
+        'Guam',
+        'Hawaii',
+        'Idaho',
+        'Illinois',
+        'Indiana',
+        'Iowa',
+        'Kansas',
+        'Kentucky',
+        'Louisiana',
+        'Maine',
+        'Marshall Islands',
+        'Maryland',
+        'Massachusetts',
+        'Michigan',
+        'Minnesota',
+        'Mississippi',
+        'Missouri',
+        'Montana',
+        'Nebraska',
+        'Nevada',
+        'New Hampshire',
+        'New Jersey',
+        'New Mexico',
+        'New York',
+        'North Carolina',
+        'North Dakota',
+        'Northern Mariana Islands',
+        'Ohio',
+        'Oklahoma',
+        'Oregon',
+        'Palau',
+        'Pennsylvania',
+        'Puerto Rico',
+        'Rhode Island',
+        'South Carolina',
+        'South Dakota',
+        'Tennessee',
+        'Texas',
+        'Utah',
+        'Vermont',
+        'Virgin Island',
+        'Virginia',
+        'Washington',
+        'West Virginia',
+        'Wisconsin',
+        'Wyoming'
       ],
       emailAddress: '',
       emailAddressRules: [
@@ -202,6 +270,9 @@ export default {
     },
     showFields () {
       this.$emit('input', this.showFields)
+    },
+    searchCities (val) {
+      val && val !== this.city && this.queryCitySelections(val)
     }
   },
   methods: {
@@ -216,6 +287,16 @@ export default {
     },
     validate () {
       this.$refs.form.validate()
+    },
+    queryCitySelections (v) {
+      this.loadingCities = true
+      // fake api call
+      setTimeout(() => {
+        this.cityItems = this.fakeApiResults.filter((e) => {
+          return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+        })
+        this.loadingCities = false
+      }, 500)
     },
     async submitForm (evt) {
       evt.preventDefault()
