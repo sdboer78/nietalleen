@@ -27,7 +27,7 @@
             Ik zoek hulp
           </h1>
           <p
-            class="mb-8 subtitle-1"
+            class="mb-8 subtitle-1 grey--text text--darken-1"
           >
             Vul onderstaand formulier in en een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je
             <a

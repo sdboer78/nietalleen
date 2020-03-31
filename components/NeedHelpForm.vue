@@ -5,19 +5,52 @@
     lazy-validation
     class="need-help-form__form text-left"
   >
-    <v-text-field
-      v-model="fullName"
-      :rules="fullNameRules"
-      label="Wat is je naam?"
-      color="black"
-      validate-on-blur
-      outlined
-      required
-      suffix="1/6"
-    />
+    <div
+      :class="{
+        'select-pills': true,
+        'select-pills--has-state': requestTypeValidationState !== '',
+        [`${requestTypeValidationState}--text`]: true
+      }"
+    >
+      <p class="select-pills__label">
+        Op welke manier kunnen we hulp bieden?
+      </p>
+      <v-select
+        ref="requestTypeShadowField"
+        v-model="requestType"
+        :rules="requestTypeRules"
+        :items="requestTypeOptions"
+        required
+        multiple
+        class="d-none"
+      />
+      <v-chip-group
+        column
+        multiple
+      >
+        <v-chip
+          v-for="option in requestTypeOptions"
+          :key="option"
+          :input-value="requestType.includes(option)"
+          :color="requestTypeValidationState == 'error' ? 'error' : (requestType.includes(option) ? 'primary' : '')"
+          filter
+          outlined
+          label
+          large
+          @click="toggleRequestTypeOption(option)"
+        >
+          {{ option }}
+        </v-chip>
+      </v-chip-group>
+      <v-messages
+        v-model="requestTypeMessages"
+        color="error"
+        role="alert"
+      />
+    </div>
     <v-expand-transition>
       <v-btn
-        v-if="!fullName"
+        v-if="requestType.length <= 0"
         color="primary"
         class="mr-4"
         block
@@ -28,7 +61,16 @@
       </v-btn>
     </v-expand-transition>
     <v-expand-transition>
-      <div v-if="fullName">
+      <div v-if="requestType.length > 0">
+        <v-text-field
+          v-model="fullName"
+          :rules="fullNameRules"
+          label="Wat is je naam?"
+          color="black"
+          validate-on-blur
+          outlined
+          required
+        />
         <v-text-field
           v-model="emailAddress"
           :rules="emailAddressRules"
@@ -37,7 +79,6 @@
           validate-on-blur
           outlined
           required
-          suffix="2/6"
           class="mb-2"
         />
         <v-text-field
@@ -48,7 +89,6 @@
           validate-on-blur
           outlined
           required
-          suffix="3/6"
           class="mb-2"
         />
         <v-text-field
@@ -59,20 +99,6 @@
           validate-on-blur
           outlined
           required
-          suffix="4/6"
-          class="mb-2"
-        />
-        <v-select
-          v-model="requestType"
-          :rules="requestTypeRules"
-          :items="requestTypeOptions"
-          label="Op welke manier kunnen we hulp bieden?"
-          color="black"
-          validate-on-blur
-          outlined
-          required
-          multiple
-          suffix="5/6"
           class="mb-2"
         />
         <v-expand-transition>
@@ -95,7 +121,9 @@
           mandatory
         >
           <template v-slot:label>
-            <p>Ik vraag hulp voor... (6/6)</p>
+            <p class="black--text">
+              Ik vraag hulp voor...
+            </p>
           </template>
           <v-radio
             v-for="n in requestAidForOptions"
@@ -226,14 +254,16 @@ export default {
       v => !!v || 'We hebben je telefoonnummer nodig',
       v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
-    requestType: '',
+    requestType: [],
     requestTypeRules: [
-      v => !!v || 'We willen graag weten hoe we kunnen helpen'
+      v => (!!v && v.length > 0) || 'Laat ons weten waarmee we kunnen helpen'
     ],
+    requestTypeValidationState: '',
+    requestTypeMessages: [],
     requestTypeOptions: [
       'boodschappen',
-      'hond uitlaten',
       'praatje',
+      'hond uitlaten',
       'kinderopvang',
       'iets anders'
     ],
@@ -276,14 +306,36 @@ export default {
     formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
   }),
   computed: {
-    isForNeedy () {
-      return this.requestAidFor === this.requestAidForOptions[1]
-    },
     showRequestMessage () {
       return this.requestType.includes('iets anders')
+    },
+    isForNeedy () {
+      return this.requestAidFor === this.requestAidForOptions[1]
     }
   },
+  mounted () {
+    this.$watch(
+      () => {
+        // watch if the validation of the shadow field changes
+        return this.$refs.requestTypeShadowField.validationState
+      },
+      (state) => {
+        // get the validation state
+        this.requestTypeValidationState = state
+        // get the error message
+        this.requestTypeMessages = [this.requestTypeRules[0](this.$refs.requestTypeShadowField.value)]
+      }
+    )
+  },
   methods: {
+    toggleRequestTypeOption (key) {
+      if (!this.requestType.includes(key)) {
+        this.requestType.push(key)
+      } else {
+        this.requestType.splice(this.requestType.indexOf(key), 1)
+        this.requestType = [...this.requestType]
+      }
+    },
     resetValidation () {
       this.$refs.form.resetValidation()
     },
@@ -341,6 +393,29 @@ export default {
 </script>
 
 <style type="text/css" lang="scss" scoped>
+  .select-pills {
+    &__label {
+      margin-bottom: 8px;
+    }
+
+    &--has-state.error--text {
+      .select-pills__label {
+        color: #dd2c00;
+        -webkit-animation: v-shake 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
+        animation: v-shake 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
+      }
+    }
+
+    .v-chip {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &--active {
+        border-width: 2px;
+      }
+    }
+  }
+
   .v-text-field {
     opacity: 0;
     transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
