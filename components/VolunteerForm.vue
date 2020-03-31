@@ -80,7 +80,7 @@
         />
         <p class="mt-2 caption text-left">
           Dit initiatief wordt geco&ouml;rdineerd door de EO. Ik geef hierbij toestemming om deze gegevens te delen met de EO
-          en met de organisaties en ga akkoord met
+          en met betrokken organisaties en ga akkoord met
           de algemene voorwaarden (<a href="https://eo.nl/algemenevoorwaarden" target="_blank">eo.nl/algemenevoorwaarden</a>)
           en privacy statement (<a href="https://eo.nl/privacy" target="_blank">eo.nl/privacy</a>) van de EO.
         </p>
