@@ -79,7 +79,7 @@
           class="mb-2"
         />
         <p class="mt-2 caption text-left">
-          Dit initiatief wordt gecoördineerd door de EO. Ik geef hierbij toestemming om deze gegevens te delen met de EO en betrokken organisaties en ga akkoord met de algemene voorwaarden en privacy statement van de EO.
+          Dit initiatief wordt geco&ouml;rdineerd door de EO. Ik geef hierbij toestemming om deze gegevens te delen met de EO en betrokken organisaties en ga akkoord met de algemene voorwaarden en privacy statement van de EO.
         </p>
         <v-checkbox
           v-model="consentPrivacy"
@@ -184,7 +184,7 @@ export default {
       consentPrivacyRules: [
         v => !!v || 'Je moet akkoord gaan om je aan te melden'
       ],
-      formSubmissionSuccessMessage: 'Jouw verzoek is verstuurd naar het coördinatiepunt.',
+      formSubmissionSuccessMessage: 'Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.'
     }
   },
