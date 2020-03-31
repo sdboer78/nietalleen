@@ -231,7 +231,7 @@
             van het hulpaanbod ligt bij de initiatieven zelf.
           </p>
         </v-card-text>
-        <v-divider />
+        <v-divider label="of" />
         <v-card-actions @click="showDisclaimerDialog = false">
           <v-spacer />
           <v-btn
