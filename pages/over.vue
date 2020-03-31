@@ -73,6 +73,7 @@
               <p>4M</p>
               <p>ABC gemeenten</p>
               <p>Agape</p>
+              <p>Alpha Nederland</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
               <p>Compassion</p>
