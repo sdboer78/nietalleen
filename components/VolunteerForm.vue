@@ -288,15 +288,17 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    queryCitySelections (v) {
+    async queryCitySelections (v) {
       this.loadingCities = true
-      // fake api call
-      setTimeout(() => {
-        this.cityItems = this.fakeApiResults.filter((e) => {
-          return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
-        })
-        this.loadingCities = false
-      }, 500)
+      this.cityItems = []
+
+      const response = await this.$axios.get('https://test-api-nietalleen.eo.nl/locations', {
+        params: {
+          city: v
+        }
+      })
+      this.cityItems = response.data.items.map(item => item.city)
+      this.loadingCities = false
     },
     async submitForm (evt) {
       evt.preventDefault()
