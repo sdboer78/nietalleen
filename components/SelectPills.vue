@@ -8,24 +8,24 @@
     >
       {{ $attrs.label }}
     </p>
-    <v-select
+    <v-combobox
       ref="shadowField"
-      v-model="localValue"
-      class="d-none"
+      v-model="selectedItems"
       v-bind="$attrs"
       multiple
       v-on="listeners"
     />
     <v-chip-group
-      v-if="$attrs.items"
+      v-model="selectedItems"
       column
       multiple
     >
       <v-chip
         v-for="item in $attrs.items"
         :key="item"
-        :input-value="localValue.includes(item)"
-        :color="validationState == 'error' ? 'error' : (localValue.includes(item) ? 'primary' : ($attrs.color || ''))"
+        :value="item"
+        :input-value="isSelected(item)"
+        :color="validationState == 'error' ? 'error' : (isSelected(item) ? ($attrs.color || 'primary') : '')"
         filter
         outlined
         label
@@ -33,6 +33,39 @@
         @click="toggleItem(item)"
       >
         {{ item }}
+      </v-chip>
+      <v-chip
+        v-if="customItem"
+        :key="customItemValue"
+        :value="customItemValue"
+        :input-value="isSelected(customItemValue)"
+        :color="validationState == 'error' ? 'error' : (isSelected(customItemValue) ? ($attrs.color || 'primary') : '')"
+        :close="isSelected(customItemValue)"
+        close-icon="mdi-close"
+        filter
+        outlined
+        label
+        large
+        @click:close="deselectItem(customItemValue)"
+        @click="toggleItemAndFocus(customItemValue)"
+      >
+        <v-slide-x-transition hide-on-leave>
+          <div v-if="isSelected(customItemValue)" @click.stop="">
+            <v-text-field
+              ref="customItemField"
+              v-model="customItemModel"
+              filled
+              rounded
+              dense
+              hide-details
+              @blur="setCustomItemValue"
+              @click.stop="setCustomItemValue"
+            />
+          </div>
+          <span v-if="!isSelected(customItemValue)">
+            {{ customItemLabel }}
+          </span>
+        </v-slide-x-transition>
       </v-chip>
     </v-chip-group>
     <v-messages
@@ -51,11 +84,21 @@ export default {
     value: {
       type: Array,
       default: () => []
+    },
+    customItem: {
+      type: Boolean,
+      default: false
+    },
+    customItemLabel: {
+      type: String,
+      default: 'other...'
     }
   },
   data: () => {
     return {
-      localValue: [],
+      selectedItems: [],
+      customItemModel: '',
+      customItemValue: '',
       validationState: '',
       messages: []
     }
@@ -76,14 +119,27 @@ export default {
     }
   },
   watch: {
-    localValue () {
-      this.$emit('input', this.localValue)
+    // watch if the items given from the parent change
+    value: {
+      handler (value) {
+        this.selectedItems = value
+      },
+      immediate: true
+    },
+    // let the parent know the selected items have changed
+    selectedItems () {
+      this.$emit('input', this.selectedItems)
     }
   },
+  created () {
+    // set default value for custom field
+    this.customItemValue = this.customItemLabel
+    this.customItemModel = this.customItemValue
+  },
   mounted () {
+    // watch if the validation of the shadow field changes
     this.$watch(
       () => {
-        // watch if the validation of the shadow field changes
         return this.$refs.shadowField.validationState
       },
       (state) => {
@@ -94,20 +150,44 @@ export default {
           this.messages = []
         } else if (this.$attrs.rules.length > 0) {
           this.$attrs.rules.forEach((rule) => {
-            this.messages.push(rule(this.localValue))
+            this.messages.push(rule(this.selectedItems))
           })
         }
       }
     )
   },
   methods: {
-    toggleItem (key) {
-      if (!this.localValue.includes(key)) {
-        this.localValue.push(key)
+    isSelected (item) {
+      return this.selectedItems.includes(item)
+    },
+    selectItem (item) {
+      this.selectedItems.push(item)
+    },
+    deselectItem (item) {
+      this.selectedItems.splice(this.selectedItems.indexOf(item), 1)
+      this.selectedItems = [...this.selectedItems]
+    },
+    toggleItem (item) {
+      if (!this.isSelected(item)) {
+        this.selectItem(item)
       } else {
-        this.localValue.splice(this.localValue.indexOf(key), 1)
-        this.localValue = [...this.localValue]
+        this.deselectItem(item)
       }
+    },
+    toggleItemAndFocus (item) {
+      this.toggleItem(item)
+      this.$nextTick(() => {
+        if (this.isSelected(item) && this.$refs.customItemField) {
+          this.$refs.customItemField.focus()
+        }
+      })
+    },
+    setCustomItemValue (e) {
+      // Replace the item in de selectedItems array
+      const oldValue = this.customItemValue
+      this.customItemValue = e.target.value || this.customItemModel
+      this.selectItem(this.customItemValue)
+      this.deselectItem(oldValue)
     }
   }
 }

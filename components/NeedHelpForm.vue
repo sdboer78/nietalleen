@@ -9,7 +9,9 @@
       v-model="requestType"
       :rules="requestTypeRules"
       :items="requestTypeOptions"
-      label="Waarbij heb je hulp nodig?"
+      label="Waar heb je hulp bij nodig?"
+      custom-item-label="iets anders..."
+      custom-item
       required
       class="mb-4"
     />
@@ -66,19 +68,6 @@
           required
           class="mb-2"
         />
-        <v-expand-transition>
-          <v-textarea
-            v-if="showRequestMessage"
-            v-model="requestMessage"
-            :rules="requestMessageRules"
-            no-resize
-            label="Op welke manier kunnen wij hulp bieden?"
-            color="black"
-            validate-on-blur
-            outlined
-            required
-          />
-        </v-expand-transition>
         <v-radio-group
           v-model="requestAidFor"
           color="black"
@@ -233,8 +222,7 @@ export default {
       'boodschappen',
       'praatje',
       'hond uitlaten',
-      'kinderopvang',
-      'iets anders'
+      'kinderopvang'
     ],
     requestMessage: '',
     requestMessageRules: [
@@ -275,9 +263,6 @@ export default {
     formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
   }),
   computed: {
-    showRequestMessage () {
-      return this.requestType.includes('iets anders')
-    },
     isForNeedy () {
       return this.requestAidFor === this.requestAidForOptions[1]
     }
