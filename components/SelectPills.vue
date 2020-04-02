@@ -12,6 +12,7 @@
       ref="shadowField"
       v-model="selectedItems"
       v-bind="$attrs"
+      class="d-none"
       multiple
       v-on="listeners"
     />
