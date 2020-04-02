@@ -5,49 +5,14 @@
     lazy-validation
     class="need-help-form__form text-left"
   >
-    <div
-      :class="{
-        'select-pills': true,
-        'select-pills--has-state': requestTypeValidationState !== '',
-        [`${requestTypeValidationState}--text`]: true
-      }"
-    >
-      <p class="select-pills__label">
-        Op welke manier kunnen we hulp bieden?
-      </p>
-      <v-select
-        ref="requestTypeShadowField"
-        v-model="requestType"
-        :rules="requestTypeRules"
-        :items="requestTypeOptions"
-        required
-        multiple
-        class="d-none"
-      />
-      <v-chip-group
-        column
-        multiple
-      >
-        <v-chip
-          v-for="option in requestTypeOptions"
-          :key="option"
-          :input-value="requestType.includes(option)"
-          :color="requestTypeValidationState == 'error' ? 'error' : (requestType.includes(option) ? 'primary' : '')"
-          filter
-          outlined
-          label
-          large
-          @click="toggleRequestTypeOption(option)"
-        >
-          {{ option }}
-        </v-chip>
-      </v-chip-group>
-      <v-messages
-        v-model="requestTypeMessages"
-        color="error"
-        role="alert"
-      />
-    </div>
+    <select-pills
+      v-model="requestType"
+      :rules="requestTypeRules"
+      :items="requestTypeOptions"
+      label="Op welke manier kunnen we hulp bieden?"
+      required
+      class="mb-4"
+    />
     <v-expand-transition>
       <v-btn
         v-if="requestType.length <= 0"
@@ -232,9 +197,11 @@
 
 <script>
 import postMessage from '~/utils/obi4wan-api'
+import selectPills from '~/components/selectpills'
 
 export default {
   name: 'NeedHelpForm',
+  components: { selectPills },
   data: () => ({
     valid: true,
     fullName: '',
@@ -315,29 +282,7 @@ export default {
       return this.requestAidFor === this.requestAidForOptions[1]
     }
   },
-  mounted () {
-    this.$watch(
-      () => {
-        // watch if the validation of the shadow field changes
-        return this.$refs.requestTypeShadowField.validationState
-      },
-      (state) => {
-        // get the validation state
-        this.requestTypeValidationState = state
-        // get the error message
-        this.requestTypeMessages = [this.requestTypeRules[0](this.$refs.requestTypeShadowField.value)]
-      }
-    )
-  },
   methods: {
-    toggleRequestTypeOption (key) {
-      if (!this.requestType.includes(key)) {
-        this.requestType.push(key)
-      } else {
-        this.requestType.splice(this.requestType.indexOf(key), 1)
-        this.requestType = [...this.requestType]
-      }
-    },
     resetValidation () {
       this.$refs.form.resetValidation()
     },
@@ -395,29 +340,6 @@ export default {
 </script>
 
 <style type="text/css" lang="scss" scoped>
-  .select-pills {
-    &__label {
-      margin-bottom: 8px;
-    }
-
-    &--has-state.error--text {
-      .select-pills__label {
-        color: #dd2c00;
-        -webkit-animation: v-shake 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
-        animation: v-shake 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
-      }
-    }
-
-    .v-chip {
-      padding-left: 10px;
-      padding-right: 10px;
-
-      &--active {
-        border-width: 2px;
-      }
-    }
-  }
-
   .v-text-field {
     opacity: 0;
     transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
