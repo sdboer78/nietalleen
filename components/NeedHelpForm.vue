@@ -9,7 +9,7 @@
       v-model="requestType"
       :rules="requestTypeRules"
       :items="requestTypeOptions"
-      label="Op welke manier kunnen we hulp bieden?"
+      label="Waarbij heb je hulp nodig?"
       required
       class="mb-4"
     />
