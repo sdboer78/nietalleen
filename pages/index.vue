@@ -36,7 +36,7 @@
             >zo goed mogelijk</a>
             te helpen.
           </p>
-          <need-help-form />
+          <needy-form />
           <divider class="my-5" />
           <p>Bel met ons nummer:</p>
           <v-btn href="tel:0800-1322" color="primary" x-large>
@@ -248,14 +248,14 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
-import NeedHelpForm from '~/components/NeedHelpForm.vue'
+import NeedyForm from '~/components/NeedyForm.vue'
 import Divider from '~/components/Divider.vue'
 import SocialCarousel from '~/components/SocialCarousel.vue'
 
 export default {
   components: {
     HeroImage,
-    NeedHelpForm,
+    NeedyForm,
     Divider,
     SocialCarousel
   },
