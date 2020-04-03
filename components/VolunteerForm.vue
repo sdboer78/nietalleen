@@ -208,7 +208,7 @@ export default {
       consentPrivacyRules: [
         v => !!v || 'Je moet akkoord gaan om je aan te melden'
       ],
-      formSubmissionSuccessMessage: 'Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
+      formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.'
     }
   },
