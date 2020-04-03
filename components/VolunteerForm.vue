@@ -162,7 +162,7 @@ export default {
       showAlert: false,
       alertMessage: '',
       formSubmissionState: null,
-      formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
+      formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
       mailFrom: 'noreply@nietalleen.nl',
       mailTo: 'studiodigitaal@eo.nl',
