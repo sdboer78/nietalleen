@@ -32,6 +32,7 @@
         label
         large
         @click="toggleItem(item)"
+        @keypress.space.prevent="toggleItem(item)"
       >
         {{ item }}
       </v-chip>
@@ -49,6 +50,7 @@
         large
         @click:close="deselectItem(customItemValue)"
         @click="toggleItemAndFocus(customItemValue)"
+        @keypress.space.prevent="toggleItemAndFocus(customItemValue)"
       >
         <v-slide-x-transition hide-on-leave>
           <div v-if="isSelected(customItemValue)" @click.stop="">
@@ -59,6 +61,7 @@
               rounded
               dense
               hide-details
+              @keypress.space.stop=""
               @blur="setCustomItemValue"
               @click.stop="setCustomItemValue"
             />
@@ -214,6 +217,24 @@ export default {
 
       &--active {
         border-width: 2px;
+      }
+    }
+  }
+
+  .v-chip.v-chip--clickable {
+    &:hover,
+    &:focus {
+      &:before {
+        opacity: 0.08;
+      }
+    }
+
+    &.v-chip--active {
+      &:hover,
+      &:focus {
+        &:before {
+          opacity: 0.2;
+        }
       }
     }
   }
