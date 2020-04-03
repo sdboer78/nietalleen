@@ -139,6 +139,8 @@
 </template>
 
 <script>
+import constants from '~/constants/nietalleen-api'
+
 export default {
   name: 'VolunteerForm',
   props: {
@@ -150,6 +152,17 @@ export default {
   },
   data: () => {
     return {
+      mailFrom: 'noreply@nietalleen.nl',
+      mailTo: 'studiodigitaal@eo.nl',
+      mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
+      mailFields: [
+        'fullName',
+        'emailAddress',
+        'city',
+        'phoneNumber',
+        'helpType',
+        'helpTypeCustom'
+      ],
       showFields: false,
       valid: true,
       alertMessage: '',
@@ -210,8 +223,8 @@ export default {
     showFields () {
       this.$emit('input', this.showFields)
     },
-    searchCities (val) {
-      val && val !== this.city && this.queryCitySelections(val)
+    searchCities (name) {
+      name && name !== this.city && this.queryCitySelections(name)
     }
   },
   methods: {
@@ -227,15 +240,16 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    async queryCitySelections (v) {
+    async queryCitySelections (city) {
       this.loadingCities = true
       this.cityItems = []
 
-      const response = await this.$axios.get('https://test-api-nietalleen.eo.nl/locations', {
-        params: {
-          city: v
-        }
-      })
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_LOCATIONS}`,
+        {
+          params: {
+            city
+          }
+        })
       this.cityItems = response.data.items.map(item => item.city)
       this.loadingCities = false
     },
@@ -245,11 +259,25 @@ export default {
       if (!this.$refs.form.validate()) {
         return
       }
+      const {
+        mailFrom,
+        mailTo,
+        mailSubject,
+        mailFields
+      } = this
 
-      // @Todo: send the form to our real email API instead of this dummy
-      const response = await new Promise(resolve => setTimeout(resolve({ status: 204 }), 1000))
+      const formData = new FormData()
+      formData.append('from', mailFrom)
+      formData.append('to', mailTo)
+      formData.append('subject', mailSubject)
 
-      if (response.status === 204) {
+      mailFields.map((field) => {
+        formData.append(field, this[field])
+      })
+
+      const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+
+      if (response.statusText === 'OK') {
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
       } else {
