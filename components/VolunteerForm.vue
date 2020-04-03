@@ -120,20 +120,24 @@
     </v-fade-transition>
     <v-snackbar
       v-model="showAlert"
-      color="white"
-      class="black--text"
+      :color="formSubmissionState"
+      class="white--text"
       :timeout="0"
       top
-      multi-line
-      vertical
     >
-      <span v-html="alertMessage" />
-      <v-btn
-        color="primary"
-        text
-        @click="showAlert = false"
+      <v-icon
+        color="white"
+        class="mr-4"
       >
-        sluiten
+        {{ formSubmissionState == 'success' ? 'mdi-check' : 'mdi-alert-octagon' }}
+      </v-icon>
+      {{ alertMessage }}
+      <v-btn
+        color="white"
+        text
+        @click="showAlert = null"
+      >
+        SLUIT
       </v-btn>
     </v-snackbar>
   </div>
@@ -153,6 +157,13 @@ export default {
   },
   data: () => {
     return {
+      valid: true,
+      showFields: false,
+      showAlert: false,
+      alertMessage: '',
+      formSubmissionState: null,
+      formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
+      formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
       mailFrom: 'noreply@nietalleen.nl',
       mailTo: 'studiodigitaal@eo.nl',
       mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
@@ -164,10 +175,6 @@ export default {
         'helpType',
         'helpTypeCustom'
       ],
-      showFields: false,
-      valid: true,
-      alertMessage: '',
-      showAlert: false,
       fullName: '',
       fullNameRules: [
         v => !!v || 'We hebben je naam nodig'
@@ -207,9 +214,7 @@ export default {
       consentPrivacy: '',
       consentPrivacyRules: [
         v => !!v || 'Je moet akkoord gaan om je aan te melden'
-      ],
-      formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het co&ouml;rdinatiepunt.',
-      formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.'
+      ]
     }
   },
   computed: {
@@ -279,9 +284,11 @@ export default {
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
 
       if (response.statusText === 'OK') {
+        this.formSubmissionState = 'success'
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
       } else {
+        this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
       }
       this.showAlert = true
