@@ -41,6 +41,7 @@
         <v-text-field
           v-model="emailAddress"
           :rules="emailAddressRules"
+          type="email"
           label="Wat is je e-mailadres?"
           color="black"
           validate-on-blur
@@ -105,6 +106,7 @@
                 :rules="consentPrivacyNeedyRules"
                 label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
                 color="black"
+                class="mb-2"
                 outlined
                 required
               />
@@ -141,6 +143,7 @@
               <v-text-field
                 v-model="needyEmailAddress"
                 :rules="needyEmailAddressRules"
+                type="email"
                 label="Wat is zijn/haar e-mailadres?"
                 color="black"
                 validate-on-blur
@@ -179,20 +182,24 @@
     </v-expand-transition>
     <v-snackbar
       v-model="showAlert"
-      color="white"
-      class="black--text"
+      :color="formSubmissionState"
+      class="white--text"
       :timeout="0"
       top
-      multi-line
-      vertical
     >
+      <v-icon
+        color="white"
+        class="mr-4"
+      >
+        {{ formSubmissionState == 'success' ? 'mdi-check' : 'mdi-alert-octagon' }}
+      </v-icon>
       {{ alertMessage }}
       <v-btn
-        color="primary"
+        color="white"
         text
         @click="showAlert = null"
       >
-        sluit
+        SLUIT
       </v-btn>
     </v-snackbar>
   </v-form>
@@ -206,6 +213,12 @@ export default {
   name: 'NeedHelpForm',
   components: { selectPills },
   data: () => ({
+    valid: true,
+    showAlert: false,
+    alertMessage: '',
+    formSubmissionState: null,
+    formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
+    formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.',
     mailFrom: 'noreply@nietalleen.nl',
     mailTo: 'studiodigitaal@eo.nl',
     mailSubject: 'Hulpvraag via Nietalleen.nl',
@@ -221,10 +234,6 @@ export default {
       'needyPhoneNumber',
       'needyEmailAddress'
     ],
-
-    alertMessage: '',
-    showAlert: false,
-    valid: true,
     helpType: [],
     helpTypeRules: [
       v => (!!v && v.length > 0) || 'Laat ons weten waarmee we kunnen helpen'
@@ -284,9 +293,7 @@ export default {
     consentPrivacy: '',
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
-    ],
-    formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
-    formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
+    ]
   }),
   computed: {
     isForNeedy () {
@@ -335,15 +342,17 @@ export default {
       formData.append('subject', mailSubject)
 
       mailFields.map((field) => {
-        formData.append(field, this[field])
+        field && field !== '' && formData.append(field, this[field])
       })
 
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
 
       if (response.statusText === 'OK') {
+        this.formSubmissionState = 'success'
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
       } else {
+        this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
       }
       this.showAlert = true
