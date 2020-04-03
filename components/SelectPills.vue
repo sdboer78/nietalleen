@@ -233,7 +233,7 @@ export default {
       &:hover,
       &:focus {
         &:before {
-          opacity: 0.2;
+          opacity: 0.15;
         }
       }
     }
