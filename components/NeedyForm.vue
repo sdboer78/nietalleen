@@ -151,7 +151,7 @@
         <v-btn
           :disabled="!valid || showPopup"
           color="primary"
-          class="mr-4"
+          class="mt-2 mr-4"
           block
           x-large
           @click="submit"
