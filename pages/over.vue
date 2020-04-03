@@ -66,7 +66,7 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <h2 class="display-1">
-            De volgende organisaties hebben zich aangesloten bij #Nietalleen
+            De volgende landelijke organisaties zijn aangesloten bij #Nietalleen
           </h2>
           <v-row class="partner-list">
             <v-col>

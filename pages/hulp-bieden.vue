@@ -64,7 +64,7 @@
       >
         <v-flex xs12 sm10 md8 lg6 xl5>
           <h2 class="mb-5 px-8">
-            Deze organisaties hebben zich al aangemeld
+            Deze iniatieven staan al klaar om hulp te bieden
           </h2>
           <helpers-map :render-map="allowMapRender" />
         </v-flex>
