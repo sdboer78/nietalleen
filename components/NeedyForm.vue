@@ -342,7 +342,7 @@ export default {
       formData.append('subject', mailSubject)
 
       mailFields.map((field) => {
-        field && field !== '' && formData.append(field, this[field])
+        this[field] !== null && this[field] !== '' && formData.append(field, this[field])
       })
 
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
