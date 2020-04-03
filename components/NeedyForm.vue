@@ -48,15 +48,21 @@
           required
           class="mb-2"
         />
-        <v-text-field
-          v-model="postalCode"
-          :rules="postalCodeRules"
-          label="Wat is je postcode?"
+        <v-autocomplete
+          v-model="city"
+          :rules="cityRules"
+          :items="cityItems"
+          label="Wat is je woonplaats?"
+          :loading="loadingCities"
+          :search-input.sync="cityKeyword"
+          cache-items
           color="black"
           validate-on-blur
+          hide-no-data
           outlined
           required
           class="mb-2"
+          @update:search-input="searchCities(cityKeyword, city)"
         />
         <v-text-field
           v-model="phoneNumber"
@@ -109,12 +115,20 @@
                 validate-on-blur
                 outlined
               />
-              <v-text-field
-                v-model="needyPostalCode"
-                label="Wat is zijn/haar postcode?"
+              <v-autocomplete
+                v-model="needyCity"
+                :rules="cityRules"
+                :items="cityItems"
+                label="Wat is zijn/haar woonplaats?"
+                :loading="loadingCities"
+                :search-input.sync="needyCityKeyword"
+                cache-items
                 color="black"
                 validate-on-blur
+                hide-no-data
                 outlined
+                required
+                @update:search-input="searchCities(needyCityKeyword, needyCity)"
               />
               <v-text-field
                 v-model="needyPhoneNumber"
@@ -149,12 +163,12 @@
           required
         />
         <v-btn
-          :disabled="!valid || showPopup"
+          :disabled="!valid || showAlert"
           color="primary"
           class="mt-4 mr-4"
           block
           x-large
-          @click="submit"
+          @click="submitForm"
         >
           Vraag hulp
         </v-btn>
@@ -164,7 +178,7 @@
       </div>
     </v-expand-transition>
     <v-snackbar
-      v-model="showPopup"
+      v-model="showAlert"
       color="white"
       class="black--text"
       :timeout="0"
@@ -172,11 +186,11 @@
       multi-line
       vertical
     >
-      {{ popupMessage }}
+      {{ alertMessage }}
       <v-btn
         color="primary"
         text
-        @click="showPopup = null"
+        @click="showAlert = null"
       >
         sluit
       </v-btn>
@@ -185,33 +199,32 @@
 </template>
 
 <script>
-import postMessage from '~/utils/obi4wan-api'
+import constants from '~/constants/nietalleen-api'
 import selectPills from '~/components/selectpills'
 
 export default {
   name: 'NeedHelpForm',
   components: { selectPills },
   data: () => ({
+    mailFrom: 'noreply@nietalleen.nl',
+    mailTo: 'studiodigitaal@eo.nl',
+    mailSubject: 'Hulpvraag via Nietalleen.nl',
+    mailFields: [
+      'helpType',
+      'fullName',
+      'emailAddress',
+      'city',
+      'phoneNumber',
+      'needy',
+      'needyFullName',
+      'needyCity',
+      'needyPhoneNumber',
+      'needyEmailAddress'
+    ],
+
+    alertMessage: '',
+    showAlert: false,
     valid: true,
-    fullName: '',
-    fullNameRules: [
-      v => !!v || 'We hebben je naam nodig'
-    ],
-    emailAddress: '',
-    emailAddressRules: [
-      v => !!v || 'We hebben je e-mailadres nodig',
-      v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
-    ],
-    postalCode: '',
-    postalCodeRules: [
-      v => !!v || 'We hebben je postcode nodig',
-      v => /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
-    ],
-    phoneNumber: '',
-    phoneNumberRules: [
-      v => !!v || 'We hebben je telefoonnummer nodig',
-      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
-    ],
     helpType: [],
     helpTypeRules: [
       v => (!!v && v.length > 0) || 'Laat ons weten waarmee we kunnen helpen'
@@ -224,6 +237,27 @@ export default {
       'hond uitlaten',
       'kinderopvang'
     ],
+    fullName: '',
+    fullNameRules: [
+      v => !!v || 'We hebben je naam nodig'
+    ],
+    emailAddress: '',
+    emailAddressRules: [
+      v => !!v || 'We hebben je e-mailadres nodig',
+      v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+    ],
+    city: '',
+    cityRules: [
+      v => !!v || 'We hebben je woonplaats nodig om je te koppelen aan een organisatie in jouw buurt'
+    ],
+    cityItems: [],
+    cityKeyword: null,
+    loadingCities: null,
+    phoneNumber: '',
+    phoneNumberRules: [
+      v => !!v || 'We hebben je telefoonnummer nodig',
+      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+    ],
     needy: '',
     needyOptions: [
       'mijzelf',
@@ -233,10 +267,8 @@ export default {
       v => !!v || 'Je moet een keuze maken'
     ],
     needyFullName: '',
-    needyPostalCode: '',
-    needyPostalCodeRules: [
-      v => v === '' || /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
-    ],
+    needyCity: '',
+    needyCityKeyword: null,
     needyPhoneNumber: '',
     needyPhoneNumberRules: [
       v => v === '' || /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
@@ -253,9 +285,7 @@ export default {
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
     ],
-    popupMessage: '',
-    showPopup: false,
-    formSubmissionSuccessMessage: 'Jouw verzoek wordt door ons team zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
+    formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
     formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
   }),
   computed: {
@@ -270,7 +300,22 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    async submit (evt) {
+    searchCities (keyword, currentCity) {
+      keyword && keyword !== currentCity && this.getMatchingCities(keyword)
+    },
+    async getMatchingCities (city) {
+      this.loadingCities = 'secondary'
+      this.cityItems = []
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_LOCATIONS}`,
+        {
+          params: {
+            city
+          }
+        })
+      this.cityItems = response.data.items.map(item => item.city)
+      this.loadingCities = null
+    },
+    async submitForm (evt) {
       evt.preventDefault()
 
       if (!this.$refs.form.validate()) {
@@ -278,41 +323,30 @@ export default {
       }
 
       const {
-        fullName,
-        emailAddress,
-        postalCode,
-        phoneNumber,
-        helpType,
-        consentPrivacy,
-        needy,
-        needyFullName,
-        needyPhoneNumber,
-        needyEmailAddress,
-        needyPostalCode
+        mailFrom,
+        mailTo,
+        mailSubject,
+        mailFields
       } = this
 
-      const response = await postMessage({
-        fullName,
-        emailAddress,
-        postalCode,
-        phoneNumber,
-        helpType,
-        consentPrivacy,
-        needy,
-        needyFullName,
-        needyPhoneNumber,
-        needyEmailAddress,
-        needyPostalCode
+      const formData = new FormData()
+      formData.append('from', mailFrom)
+      formData.append('to', mailTo)
+      formData.append('subject', mailSubject)
+
+      mailFields.map((field) => {
+        formData.append(field, this[field])
       })
 
-      if (response.status === 204) {
-        this.popupMessage = this.formSubmissionSuccessMessage
+      const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+
+      if (response.statusText === 'OK') {
+        this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
       } else {
-        this.popupMessage = this.formSubmissionFailedMessage
+        this.alertMessage = this.formSubmissionFailedMessage
       }
-
-      this.showPopup = true
+      this.showAlert = true
     }
   }
 }
@@ -336,6 +370,13 @@ export default {
 
   .v-textarea .v-text-field__suffix {
     padding-right: 12px;
+  }
+
+  ::v-deep .v-input .v-progress-linear {
+    top: calc(100% - 4px);
+    width: calc(100% - 4px);
+    left: 2px;
+    right: 2px;
   }
 
   .v-select__slot .v-label {
