@@ -51,7 +51,7 @@
           :items="cityItems"
           label="Wat is je woonplaats?"
           :loading="loadingCities"
-          :search-input.sync="searchCities"
+          :search-input.sync="cityKeyword"
           cache-items
           color="black"
           validate-on-blur
@@ -60,6 +60,7 @@
           required
           suffix="3/5"
           class="mb-2"
+          @update:search-input="searchCities(cityKeyword, city)"
         />
         <v-text-field
           v-model="emailAddress"
@@ -176,8 +177,8 @@ export default {
         v => !!v || 'We hebben je woonplaats nodig om je te koppelen aan een organisatie in jouw buurt'
       ],
       cityItems: [],
-      loadingCities: false,
-      searchCities: null,
+      cityKeyword: null,
+      loadingCities: null,
       emailAddress: '',
       emailAddressRules: [
         v => !!v || 'We hebben je e-mailadres nodig',
@@ -222,9 +223,6 @@ export default {
     },
     showFields () {
       this.$emit('input', this.showFields)
-    },
-    searchCities (name) {
-      name && name !== this.city && this.queryCitySelections(name)
     }
   },
   methods: {
@@ -240,18 +238,21 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    async queryCitySelections (city) {
-      this.loadingCities = true
+    searchCities (keyword) {
+      keyword && keyword !== this.city && this.getMatchingCities(keyword)
+    },
+    async getMatchingCities (keyword) {
+      this.loadingCities = 'secondary'
       this.cityItems = []
 
       const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_LOCATIONS}`,
         {
           params: {
-            city
+            city: keyword
           }
         })
       this.cityItems = response.data.items.map(item => item.city)
-      this.loadingCities = false
+      this.loadingCities = null
     },
     async submitForm (evt) {
       evt.preventDefault()
@@ -288,3 +289,12 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss" scoped>
+  ::v-deep .v-input .v-progress-linear {
+    top: calc(100% - 4px);
+    width: calc(100% - 4px);
+    left: 2px;
+    right: 2px;
+  }
+</style>
