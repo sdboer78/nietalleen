@@ -6,9 +6,9 @@
     class="need-help-form__form text-left"
   >
     <select-pills
-      v-model="requestType"
-      :rules="requestTypeRules"
-      :items="requestTypeOptions"
+      v-model="helpType"
+      :rules="helpTypeRules"
+      :items="helpTypeOptions"
       label="Waar heb je hulp bij nodig?"
       custom-item-label="iets anders..."
       custom-item
@@ -17,7 +17,7 @@
     />
     <v-expand-transition>
       <v-btn
-        v-if="requestType.length <= 0"
+        v-if="helpType.length <= 0"
         color="primary"
         class="mr-4"
         block
@@ -28,7 +28,7 @@
       </v-btn>
     </v-expand-transition>
     <v-expand-transition>
-      <div v-if="requestType.length > 0">
+      <div v-if="helpType.length > 0">
         <v-text-field
           v-model="fullName"
           :rules="fullNameRules"
@@ -69,7 +69,7 @@
           class="mb-2"
         />
         <v-radio-group
-          v-model="requestAidFor"
+          v-model="needy"
           color="black"
           mandatory
         >
@@ -79,7 +79,7 @@
             </p>
           </template>
           <v-radio
-            v-for="n in requestAidForOptions"
+            v-for="n in needyOptions"
             :key="n"
             :label="`${n}`"
             :value="n"
@@ -212,28 +212,24 @@ export default {
       v => !!v || 'We hebben je telefoonnummer nodig',
       v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
-    requestType: [],
-    requestTypeRules: [
+    helpType: [],
+    helpTypeRules: [
       v => (!!v && v.length > 0) || 'Laat ons weten waarmee we kunnen helpen'
     ],
-    requestTypeValidationState: '',
-    requestTypeMessages: [],
-    requestTypeOptions: [
+    helpTypeValidationState: '',
+    helpTypeMessages: [],
+    helpTypeOptions: [
       'boodschappen',
       'praatje',
       'hond uitlaten',
       'kinderopvang'
     ],
-    requestMessage: '',
-    requestMessageRules: [
-      v => !!v || 'We hebben je hulpvraag nodig'
-    ],
-    requestAidFor: '',
-    requestAidForOptions: [
+    needy: '',
+    needyOptions: [
       'mijzelf',
       'iemand anders'
     ],
-    requestAidForRules: [
+    needyRules: [
       v => !!v || 'Je moet een keuze maken'
     ],
     needyFullName: '',
@@ -264,7 +260,7 @@ export default {
   }),
   computed: {
     isForNeedy () {
-      return this.requestAidFor === this.requestAidForOptions[1]
+      return this.needy === this.needyOptions[1]
     }
   },
   methods: {
@@ -286,10 +282,9 @@ export default {
         emailAddress,
         postalCode,
         phoneNumber,
-        requestType,
-        requestMessage,
+        helpType,
         consentPrivacy,
-        requestAidFor,
+        needy,
         needyFullName,
         needyPhoneNumber,
         needyEmailAddress,
@@ -301,10 +296,9 @@ export default {
         emailAddress,
         postalCode,
         phoneNumber,
-        requestType,
-        requestMessage,
+        helpType,
         consentPrivacy,
-        requestAidFor,
+        needy,
         needyFullName,
         needyPhoneNumber,
         needyEmailAddress,
