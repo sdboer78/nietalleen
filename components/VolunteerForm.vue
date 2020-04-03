@@ -8,33 +8,17 @@
         lazy-validation
         class="mt-8"
       >
-        <v-select
+        <select-pills
           v-model="helpType"
           :rules="helpTypeRules"
           :items="helpTypeOptions"
           label="Op welke manier kun je hulp bieden?"
-          color="black"
-          validate-on-blur
-          outlined
+          custom-item-label="iets anders..."
+          custom-item
           required
-          multiple
           suffix="1/5"
           class="mb-2"
         />
-        <v-expand-transition>
-          <v-textarea
-            v-if="showHelpTypeCustom"
-            v-model="helpTypeCustom"
-            :rules="helpTypeCustomRules"
-            no-resize
-            label="Op welke manier kun je hulp bieden?"
-            color="black"
-            validate-on-blur
-            outlined
-            required
-            class="mb-2"
-          />
-        </v-expand-transition>
         <v-text-field
           v-model="fullName"
           :rules="fullNameRules"
@@ -145,9 +129,11 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
+import selectPills from '~/components/selectpills'
 
 export default {
   name: 'VolunteerForm',
+  components: { selectPills },
   props: {
     value: {
       type: Boolean,
@@ -172,8 +158,7 @@ export default {
         'emailAddress',
         'city',
         'phoneNumber',
-        'helpType',
-        'helpTypeCustom'
+        'helpType'
       ],
       fullName: '',
       fullNameRules: [
@@ -196,7 +181,7 @@ export default {
         v => !!v || 'We hebben je telefoonnummer nodig',
         v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
       ],
-      helpType: '',
+      helpType: [],
       helpTypeRules: [
         v => !!v || 'We willen graag weten hoe je kunt helpen'
       ],
@@ -207,19 +192,10 @@ export default {
         'kinderopvang',
         'iets anders'
       ],
-      helpTypeCustom: '',
-      helpTypeCustomRules: [
-        v => !!v || 'We hebben je hulpvraag nodig'
-      ],
       consentPrivacy: '',
       consentPrivacyRules: [
         v => !!v || 'Je moet akkoord gaan om je aan te melden'
       ]
-    }
-  },
-  computed: {
-    showHelpTypeCustom () {
-      return this.helpType.includes('iets anders')
     }
   },
   watch: {
@@ -287,6 +263,7 @@ export default {
         this.formSubmissionState = 'success'
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
+        this.showFields = false
       } else {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
