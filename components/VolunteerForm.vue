@@ -130,6 +130,7 @@
 <script>
 import constants from '~/constants/nietalleen-api'
 import selectPills from '~/components/selectpills'
+import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'VolunteerForm',
@@ -151,7 +152,6 @@ export default {
       formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
       mailFrom: 'noreply@nietalleen.nl',
-      mailTo: 'studiodigitaal@eo.nl',
       mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
       mailFields: [
         'fullName',
@@ -198,6 +198,13 @@ export default {
       ]
     }
   },
+  computed: {
+    mailTo () {
+      // @TODO: somehow map city name to existing email address for th  e matching local hub
+      const cityNameSlug = slugify(this.city)
+      return `${cityNameSlug}@nietalleen.nl`
+    }
+  },
   watch: {
     value () {
       this.showFields = this.value
@@ -242,6 +249,7 @@ export default {
         return
       }
       const {
+        emailAddress,
         mailFrom,
         mailTo,
         mailSubject,
@@ -251,6 +259,7 @@ export default {
       const formData = new FormData()
       formData.append('from', mailFrom)
       formData.append('to', mailTo)
+      formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
 
       mailFields.map((field) => {
