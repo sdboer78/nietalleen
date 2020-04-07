@@ -71,6 +71,7 @@
               @keypress.space.stop=""
               @blur="setCustomItemValue"
               @click.stop="setCustomItemValue"
+              @keyup.enter="blurCustomItemField"
             />
           </div>
           <span v-if="!isSelected(customItemValue)">
@@ -207,6 +208,9 @@ export default {
       } else {
         this.deselectItem(oldValue)
       }
+    },
+    blurCustomItemField (e) {
+      this.$refs.customItemField.blur()
     }
   }
 }
@@ -242,18 +246,36 @@ export default {
 
   ::v-deep .custom-item-field {
     max-width: calc(100vw - 144px);
-    width: 250px;
+    width: 280px;
 
     & > .v-input__control > .v-input__slot {
-      background: rgba(255, 255, 255, 0.4);
-      padding-left: 18px;
-      padding-right: 18px;
+      background: transparent;
+      border-radius: 4px;
+      font-style: italic;
+      padding-left: 10px;
+      padding-right: 0;
 
-      &:hover,
-      &:active,
       &:focus,
       &:focus-within {
-        background: rgba(255, 255, 255, 0.7) !important;
+        background: rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .v-chip:hover &,
+      .v-chip:active & {
+        background: transparent;
+
+        &:hover,
+        &:active {
+          background: transparent !important;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus,
+        &:focus-within {
+          background: rgba(255, 255, 255, 1) !important;
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+        }
       }
     }
   }
