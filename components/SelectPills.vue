@@ -7,6 +7,12 @@
       class="select-pills__label"
     >
       {{ $attrs.label }}
+      <span
+        v-if="suffix"
+        class="select-pills__suffix"
+      >
+        {{ suffix }}
+      </span>
     </p>
     <v-combobox
       ref="shadowField"
@@ -97,6 +103,10 @@ export default {
     customItemLabel: {
       type: String,
       default: 'other...'
+    },
+    suffix: {
+      type: String,
+      default: null
     }
   },
   data: () => {
@@ -205,7 +215,17 @@ export default {
 <style type="text/css" lang="scss" scoped>
   .select-pills {
     &__label {
+      align-items: flex-start;
+      display: flex;
       margin-bottom: 8px;
+    }
+
+    &__prefix {
+      margin-right: 8px;
+    }
+
+    &__suffix {
+      margin-left: auto;
     }
 
     &--has-state.error--text {
