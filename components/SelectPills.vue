@@ -57,6 +57,7 @@
             <v-text-field
               ref="customItemField"
               v-model="customItemModel"
+              class="custom-item-field"
               filled
               rounded
               dense
@@ -138,7 +139,6 @@ export default {
   created () {
     // set default value for custom field
     this.customItemValue = this.customItemLabel
-    this.customItemModel = this.customItemValue
   },
   mounted () {
     // watch if the validation of the shadow field changes
@@ -189,9 +189,14 @@ export default {
     setCustomItemValue (e) {
       // Replace the item in de selectedItems array
       const oldValue = this.customItemValue
-      this.customItemValue = e.target.value || this.customItemModel
-      this.selectItem(this.customItemValue)
-      this.deselectItem(oldValue)
+      const newValue = e.target.value || this.customItemModel
+      if (newValue !== '' && newValue != null) {
+        this.customItemValue = newValue
+        this.selectItem(newValue)
+        this.deselectItem(oldValue)
+      } else {
+        this.deselectItem(oldValue)
+      }
     }
   }
 }
@@ -217,6 +222,24 @@ export default {
 
       &--active {
         border-width: 2px;
+      }
+    }
+  }
+
+  ::v-deep .custom-item-field {
+    max-width: calc(100vw - 144px);
+    width: 250px;
+
+    & > .v-input__control > .v-input__slot {
+      background: rgba(255, 255, 255, 0.4);
+      padding-left: 18px;
+      padding-right: 18px;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-within {
+        background: rgba(255, 255, 255, 0.7) !important;
       }
     }
   }
