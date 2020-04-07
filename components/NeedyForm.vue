@@ -12,6 +12,7 @@
       label="Waar heb je hulp bij nodig?"
       custom-item-label="iets anders..."
       custom-item
+      color="grey darken-4"
       required
       class="mb-4"
     />
@@ -77,7 +78,6 @@
         />
         <v-radio-group
           v-model="needy"
-          color="black"
           mandatory
         >
           <template v-slot:label>
@@ -90,6 +90,7 @@
             :key="n"
             :label="`${n}`"
             :value="n"
+            color="black"
           />
         </v-radio-group>
         <v-expand-transition>
@@ -162,6 +163,7 @@
           v-model="consentPrivacy"
           :rules="consentPrivacyRules"
           label="Ja, ik ga akkoord"
+          color="black"
           outlined
           required
         />
@@ -210,7 +212,7 @@ import constants from '~/constants/nietalleen-api'
 import selectPills from '~/components/selectpills'
 
 export default {
-  name: 'NeedHelpForm',
+  name: 'NeedyForm',
   components: { selectPills },
   data: () => ({
     valid: true,
