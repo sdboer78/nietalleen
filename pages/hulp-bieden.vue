@@ -43,14 +43,52 @@
             <span class="d-block font-weight-bold primary--text">3.</span>
             Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
           </p>
-          <p class="caption mt-12">
+          <p class="mt-10">
+            <a
+              href="javascript:void(null)"
+              @click.stop="showVolunteerDialog = true"
+            >Ben je een particulier en wil je ook helpen?</a>
+            <v-dialog
+              v-model="showVolunteerDialog"
+              width="500"
+            >
+              <v-card>
+                <v-card-title
+                  class="headline"
+                  primary-title
+                >
+                  Helpen als particulier
+                </v-card-title>
+                <v-card-text>
+                  <p>
+                    #Nietalleen verbindt hulpvragen aan bestaande initiatieven en organisaties.
+                    Particulieren die graag willen helpen, kunnen zich bij een bestaand initiatief aansluiten.
+                    Je kunt hier zelf een initiatief of organisatie voor benaderen of je kunt via de co&ouml;rdinator
+                    van de betreffende plaats in contact worden gebracht met een van de reeds betrokken initiatieven.
+                    Deze laatste mogelijkheid zal binnenkort beschikbaar komen op de website.
+                  </p>
+                </v-card-text>
+                <v-divider label="of" />
+                <v-card-actions @click="showVolunteerDialog = false">
+                  <v-spacer />
+                  <v-btn
+                    color="primary"
+                    text
+                  >
+                    Sluiten
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </p>
+          <p class="caption mt-10">
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
-          <p class="caption mt-4">
+          <p class="caption mt-6">
             Wil je de vermelding van jouw organisatie wijzigen of, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3kqZjIJ_NhtAgZPtYw5ZT09UOUxTNUZOWklWRjdKMllOUUtRMTRLNEdENSQlQCN0PWcu">dit formulier</a>.
           </p>
-          <p class="caption mt-4">
+          <p class="caption mt-6">
             Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
         </v-flex>
@@ -115,6 +153,11 @@ import HelpersMap from '~/components/HelpersMap.vue'
 
 export default {
   components: { HeroImage, HelpersMap },
+  data () {
+    return {
+      showVolunteerDialog: false
+    }
+  },
   computed: {
     cookiePermissions () {
       return this.$store.state['cookie-permissions'].list
