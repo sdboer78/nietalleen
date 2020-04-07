@@ -6,7 +6,7 @@
         ref="form"
         v-model="valid"
         lazy-validation
-        class="mt-8"
+        class="mt-12 mb-12"
       >
         <select-pills
           v-model="helpType"
@@ -15,9 +15,10 @@
           label="Op welke manier kun je hulp bieden?"
           custom-item-label="iets anders..."
           custom-item
+          color="grey darken-4"
           required
           suffix="1/5"
-          class="mb-2"
+          class="mb-2 text-left"
         />
         <v-text-field
           v-model="fullName"
@@ -78,6 +79,7 @@
           v-model="consentPrivacy"
           :rules="consentPrivacyRules"
           label="Ja, ik ga akkoord"
+          color="black"
           outlined
           required
         />
