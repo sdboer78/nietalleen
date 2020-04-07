@@ -189,8 +189,7 @@ export default {
         'boodschappen',
         'hond uitlaten',
         'praatje',
-        'kinderopvang',
-        'iets anders'
+        'kinderopvang'
       ],
       consentPrivacy: '',
       consentPrivacyRules: [
