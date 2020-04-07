@@ -94,7 +94,7 @@
             height="35"
           >
           <p class="mb-5">
-            EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.
+            EO Metterdaad is een noodhulpcampagne gestart om jou de mogelijkheid te geven ook financieel te helpen.
           </p>
           <v-btn
             href="/doneren"
