@@ -209,12 +209,12 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
-import selectPills from '~/components/selectpills'
+import SelectPills from '~/components/SelectPills'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'NeedyForm',
-  components: { selectPills },
+  components: { SelectPills },
   data: () => ({
     valid: true,
     showAlert: false,
