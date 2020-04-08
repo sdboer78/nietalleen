@@ -131,7 +131,7 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
-import SelectPills from '~/components/Selectpills'
+import SelectPills from '~/components/SelectPills'
 import { slugify } from '~/utils/slugify'
 
 export default {
