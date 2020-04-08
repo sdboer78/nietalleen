@@ -131,12 +131,12 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
-import selectPills from '~/components/selectpills'
+import SelectPills from '~/components/Selectpills'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'VolunteerForm',
-  components: { selectPills },
+  components: { SelectPills },
   props: {
     value: {
       type: Boolean,
