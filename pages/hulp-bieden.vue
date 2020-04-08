@@ -63,10 +63,10 @@
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
-          <p class="caption mt-4">
+          <p class="caption mt-6">
             Wil je de vermelding van jouw organisatie wijzigen of, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3kqZjIJ_NhtAgZPtYw5ZT09UOUxTNUZOWklWRjdKMllOUUtRMTRLNEdENSQlQCN0PWcu">dit formulier</a>.
           </p>
-          <p class="caption mt-4">
+          <p class="caption mt-6">
             Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
         </v-flex>
@@ -79,8 +79,8 @@
         class="px-8 py-12 text-center"
       >
         <v-flex xs12 sm10 md8 lg6 xl5>
-          <h2>
-            Deze organisaties hebben zich al aangemeld
+          <h2 class="mb-5 px-8">
+            Deze iniatieven staan al klaar om hulp te bieden
           </h2>
           <organisations-map
             :render-map="allowMapRender"
@@ -106,7 +106,7 @@
             height="35"
           >
           <p class="mb-5">
-            EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.
+            EO Metterdaad is een noodhulpcampagne gestart om jou de mogelijkheid te geven ook financieel te helpen.
           </p>
           <v-btn
             href="/doneren"
