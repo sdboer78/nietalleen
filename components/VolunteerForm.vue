@@ -153,7 +153,6 @@ export default {
       formSubmissionState: null,
       formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
-      mailFrom: 'noreply@nietalleen.nl',
       mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
       mailFields: [
         'fullName',
@@ -199,13 +198,6 @@ export default {
       ]
     }
   },
-  computed: {
-    mailTo () {
-      // @TODO: somehow map city name to existing email address for th  e matching local hub
-      const cityNameSlug = slugify(this.city)
-      return `${cityNameSlug}@nietalleen.nl`
-    }
-  },
   watch: {
     value () {
       this.showFields = this.value
@@ -230,6 +222,20 @@ export default {
     searchCities (keyword) {
       keyword && keyword !== this.city && this.getMatchingCities(keyword)
     },
+    async getHubEmail () {
+      const { city } = this
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_HUBS}`, {
+        params: {
+          city: slugify(city)
+        }
+      })
+
+      if (response.statusText === 'OK') {
+        const { email } = response.data.items[0]
+        return email
+      }
+      return null
+    },
     async getMatchingCities (keyword) {
       this.loadingCities = 'secondary'
       this.cityItems = []
@@ -251,20 +257,27 @@ export default {
       }
       const {
         emailAddress,
-        mailFrom,
-        mailTo,
         mailSubject,
         mailFields
       } = this
 
+      const mailTo = await this.getHubEmail()
+
+      if (!mailTo) {
+        this.formSubmissionState = 'error'
+        this.alertMessage = this.formSubmissionFailedMessage
+        this.showAlert = true
+        return
+      }
+
       const formData = new FormData()
-      formData.append('from', mailFrom)
+      formData.append('from', emailAddress)
       formData.append('to', mailTo)
       formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
 
       mailFields.map((field) => {
-        this[field] !== null && this[field] !== '' && formData.append(field, this[field])
+        this[field] && formData.append(field, this[field])
       })
 
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
