@@ -210,6 +210,7 @@
 <script>
 import constants from '~/constants/nietalleen-api'
 import selectPills from '~/components/selectpills'
+import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'NeedyForm',
@@ -221,8 +222,6 @@ export default {
     formSubmissionState: null,
     formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
     formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.',
-    mailFrom: 'noreply@nietalleen.nl',
-    mailTo: 'studiodigitaal@eo.nl',
     mailSubject: 'Hulpvraag via Nietalleen.nl',
     mailFields: [
       'helpType',
@@ -309,8 +308,22 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    searchCities (keyword, currentCity) {
-      keyword && keyword !== currentCity && this.getMatchingCities(keyword)
+    searchCities (keyword) {
+      keyword && keyword !== this.city && this.getMatchingCities(keyword)
+    },
+    async getHubEmail () {
+      const { city } = this
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_HUBS}`, {
+        params: {
+          city: slugify(city)
+        }
+      })
+
+      if (response.statusText === 'OK') {
+        const { email } = response.data.items[0]
+        return email
+      }
+      return null
     },
     async getMatchingCities (city) {
       this.loadingCities = 'secondary'
@@ -332,19 +345,28 @@ export default {
       }
 
       const {
-        mailFrom,
-        mailTo,
+        emailAddress,
         mailSubject,
         mailFields
       } = this
 
+      const mailTo = await this.getHubEmail()
+
+      if (!mailTo) {
+        this.formSubmissionState = 'error'
+        this.alertMessage = this.formSubmissionFailedMessage
+        this.showAlert = true
+        return
+      }
+
       const formData = new FormData()
-      formData.append('from', mailFrom)
+      formData.append('from', emailAddress)
       formData.append('to', mailTo)
+      formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
 
       mailFields.map((field) => {
-        this[field] !== null && this[field] !== '' && formData.append(field, this[field])
+        this[field] && formData.append(field, this[field])
       })
 
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
@@ -353,6 +375,7 @@ export default {
         this.formSubmissionState = 'success'
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
+        this.showFields = false
       } else {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
