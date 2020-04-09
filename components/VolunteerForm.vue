@@ -282,7 +282,7 @@ export default {
 
       const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
 
-      if (response.statusText === 'OK') {
+      if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
         this.formSubmissionState = 'success'
         this.alertMessage = this.formSubmissionSuccessMessage
         this.$refs.form.reset()
