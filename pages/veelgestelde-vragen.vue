@@ -8,17 +8,14 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/looking-at-dog.jpg')"
+            :src="require('~/assets/looking-at-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Veelgestelde vragen
@@ -65,7 +62,7 @@ export default {
         },
         {
           question: 'Hoe kunnen mensen om hulp vragen? ',
-          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a>'
+          answer: 'Door te bellen met <a href="tel:0800-1322">0800-1322</a> of via <a href="/">het webformulier</a>.'
         },
         {
           question: 'Wat kunnen mensen verwachten van #Nietalleen?',
@@ -73,11 +70,11 @@ export default {
         },
         {
           question: 'Hoe kunnen kerken en lokale organisaties hun diensten aanbieden?',
-          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="https://nietalleen.nl/hulp-bieden">nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
+          answer: 'Kerken en lokale organisaties kunnen zichzelf aanmelden op <a href="/hulp-bieden">nietalleen.nl/hulp-bieden</a> door het formulier in te vullen.'
         },
         {
           question: 'Kunnen particulieren ook hun diensten aanbieden?',
-          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="https://nietalleen.nl/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
+          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
         },
         {
           question: 'Voor wie is #Nietalleen bedoeld?',
@@ -85,11 +82,15 @@ export default {
         },
         {
           question: 'Welke kerken en organisaties zitten er achter #Nietalleen',
-          answer: 'Christelijk Gereformeerde Kerken<br>ChristenUnie<br>Diaconaal Steunpunt<br>Evangelische Omroep<br>Gereformeerde Kerken Vrijgemaakt<br>Kerk in Actie<br>Missie Nederland<br>Navigators<br>Nederlands Gereformeerde Kerken<br>Protestantse Kerk in Nederland<br>Rooms Katholieke Kerk<br>SGP<br>Stichting Agapè<br>Hip Helpt<br>Stichting Present<br>Stichting Schuldhulpmaatje<br>Tear<br>Tot Heil des Volks<br>4e Musketier<br>Youth for Christ<br><br>En nog steeds breidt de lijst zich uit… kijk op <a href="https://nietalleen.nl/over/">nietalleen.nl/over</a> voor de meest recente lijst.<br><br>PKN en EO coördineren de onderlinge samenwerking.'
+          answer: 'Deze lijst breidt zich steeds verder uit. Kijk op <a href="/over">nietalleen.nl/over</a> voor de meest recente lijst.'
         },
         {
           question: 'Wordt mijn hulpvraag altijd opgepakt?',
           answer: 'Met het platform #Nietalleen probeert de EO zo goed mogelijk een hulpvraag aan de juiste hulpaanbieder te binden. Daarmee is #Nietalleen verantwoordelijk voor het doorzetten van de hulpvraag naar (lokale) initiatieven. Het indienen van een hulpvraag betekent niet dat er recht op hulp ontstaat; de (lokale) aanbieders zullen hun best doen om jouw vraag zo goed mogelijk op te pakken. De kwaliteit, in algemene zin, van het hulpaanbod ligt bij de initiatieven zelf.'
+        },
+        {
+          question: 'Kan ik ook contact opnemen met algemene vragen over het coronavirus (COVID-19)?',
+          answer: 'Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.'
         }
       ]
     }

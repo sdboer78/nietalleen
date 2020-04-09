@@ -14,17 +14,14 @@
           xl3
         >
           <hero-image
-            :src="require('@/assets/sitting-on-a-bench.jpg')"
+            :src="require('~/assets/sitting-on-a-bench.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Ik zoek hulp
@@ -54,20 +51,49 @@
             <strong>zaterdag en zondag:</strong>
             van 09.00 - 20.00 uur
           </p>
-          <p
-            class="pa-6"
-          >
-            Een lokale organisatie of kerk zal je zo snel mogelijk benaderen om je te helpen.
+          <p class="caption pb-6">
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
-          <h2 class="display-1">
-            Kijk hoe #Nietalleen initiatieven verschil maken
+        </v-flex>
+      </v-layout>
+    </section>
+    <section class="accent">
+      <v-layout
+        justify-center
+        align-center
+        class="pa-8 pt-12 text-center"
+      >
+        <v-flex
+          xs12
+          sm8
+          md5
+          lg4
+          xl3
+        >
+          <h2 class="display-1 mb-4">
+            Kijk hoe #Nietalleen-initiatieven verschil maken
           </h2>
-          <p
-            class="pa-6"
-          >
+          <p>
             Bekijk <a href="/verhalen">alle verhalen en social posts</a> rondom #Nietalleen.
           </p>
-          <social-carousel :render-carousel="allowCarouselRender" />
+        </v-flex>
+      </v-layout>
+      <v-layout
+        justify-center
+        align-center
+        class="px-8 pb-8 text-center"
+      >
+        <v-flex
+          xs12
+          sm12
+          md12
+          lg8
+          xl6
+        >
+          <social-carousel
+            :render-carousel="allowCarouselRender"
+            class="mx-n8 mb-6"
+          />
         </v-flex>
       </v-layout>
     </section>
@@ -85,13 +111,10 @@
           lg4
           xl3
         >
-          <v-img
-            :src="require('@/assets/logo-niet-alleen.svg')"
-            max-width="200px"
-            position="center center"
-            contain
-            class="mx-auto mb-12"
-          />
+          <img
+            src="~/assets/logo-niet-alleen.svg?data"
+            width="200"
+          >
           <h2 class="display-1">
             Ondanks het coronavirus staan we voor je klaar.
           </h2>
@@ -117,7 +140,7 @@
         >
           <h2 class="mb-12">
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              939
+              1250
             </span>
             <span class="display-1 mb-0 d-block" style="line-height:1.1;">
               initiatieven
@@ -159,17 +182,14 @@
           class="my-5"
         >
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h2 class="display-1">
             Over ons

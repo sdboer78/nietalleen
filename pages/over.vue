@@ -8,17 +8,14 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/walking-with-dog.jpg')"
+            :src="require('~/assets/walking-with-dog.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Over ons
@@ -73,8 +70,10 @@
           </h2>
           <v-row class="partner-list">
             <v-col>
-              <p>4e Musketier</p>
+              <p>4M</p>
               <p>ABC gemeenten</p>
+              <p>Agape</p>
+              <p>Alpha Nederland</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
               <p>Compassion</p>
@@ -86,12 +85,15 @@
               <p>KBO-PCOB</p>
               <p>Leger des Heils</p>
               <p>Kerk in Actie</p>
+              <p>Micha</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
             </v-col>
             <v-col>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
+              <p>Opwekking</p>
+              <p>Presence</p>
               <p>Protestantse Kerk in Nederland</p>
               <p>Rooms Katholieke Kerk</p>
               <p>Schuldhulpmaatje</p>
@@ -102,6 +104,7 @@
               <p>Tijd voor Actie</p>
               <p>Tot Heil des Volks</p>
               <p>Unie van Baptisten</p>
+              <p>Verenigde Pinkster- en Evangeliegemeenten</p>
               <p>Youth for Christ</p>
               <p>...</p>
             </v-col>
@@ -120,17 +123,14 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <hero-image
-            :src="require('@/assets/cooking.jpg')"
+            :src="require('~/assets/cooking.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h2 class="display-1">
             Gebruik dit logo en de social posts voor jouw lokale initiatief!

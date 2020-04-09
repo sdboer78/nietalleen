@@ -8,17 +8,14 @@
       >
         <v-flex xs12 sm8 md5 lg4 xl3>
           <hero-image
-            :src="require('@/assets/love-your-neighbour.jpg')"
+            :src="require('~/assets/love-your-neighbour.jpg')"
             size="400px"
             class="mx-auto mb-8"
           >
-            <v-img
-              :src="require('@/assets/logo-niet-alleen.svg')"
-              max-width="200px"
-              aspect-ratio="5"
-              position="center center"
-              contain
-            />
+            <img
+              src="~/assets/logo-niet-alleen.svg?data"
+              width="200"
+            >
           </hero-image>
           <h1 class="display-1">
             Zo werkt het
@@ -26,6 +23,7 @@
           <p>
             <span class="d-block font-weight-bold primary--text">1.</span>
             Meld je hulpinitiatief of organisatie aan via dit formulier
+            <br>
             <v-btn
               href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
               target="_new"
@@ -33,7 +31,7 @@
               class="mt-2"
               x-large
             >
-              aanmelden
+              Aanmelden
             </v-btn>
           </p>
           <p class="mt-8">
@@ -50,7 +48,10 @@
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
           <p class="caption mt-4">
-            Wil je de vermelding van jouw organisatie wijzigen of, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://bit.ly/afm-lokale-organisaties">dit formulier</a>. Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
+            Wil je de vermelding van jouw organisatie wijzigen of, om wat voor reden dan ook, <strong>afmelden</strong>? Dat kan via <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3kqZjIJ_NhtAgZPtYw5ZT09UOUxTNUZOWklWRjdKMllOUUtRMTRLNEdENSQlQCN0PWcu">dit formulier</a>.
+          </p>
+          <p class="caption mt-4">
+            Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
           </p>
         </v-flex>
       </v-layout>
@@ -87,14 +88,11 @@
             Corona raakt ons allemaal:<br>
             blijf om elkaar geven
           </h2>
-          <v-img
-            :src="require('@/assets/logo-anbi.svg')"
-            class="mx-auto my-5"
-            max-width="40px"
-            aspect-ratio="1.27"
-            position="center center"
-            contain
-          />
+          <img
+            src="~/assets/logo-anbi.svg?data"
+            class="mx-auto my-5 d-block"
+            height="35"
+          >
           <p class="mb-5">
             EO Metterdaad is een noodhulpcampagne gestart om u de mogelijkheid te geven ook financieel te helpen.
           </p>
