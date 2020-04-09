@@ -74,7 +74,7 @@ export default {
         },
         {
           question: 'Kunnen particulieren ook hun diensten aanbieden?',
-          answer: 'Binnenkort kunnen ook particulieren hun hulpaanbod hier aangeven, dan is op <a href="/">nietalleen.nl</a> te zien bij welke organisatie in de buurt er aansluiting gemaakt kan worden. '
+          answer: 'Veruit de meeste particulieren die zich aanmelden om te helpen doen dit met de beste bedoelingen! Helaas zijn er ook mensen die misbruik willen maken van de situatie. Bestaande organisaties en initiatieven kennen de vrijwilligers met wie zij werken, waardoor we de kans op misbruik zoveel mogelijk kunnen verkleinen. Daarom zetten we geen hulpvragen door naar particulieren. Je kunt je wel aansluiten bij een van de initiatieven. Je kunt hier zelf een initiatief of organisatie voor benaderen of je kunt via de #Nietalleen coördinator van de betreffende plaats in contact worden gebracht met een van de reeds betrokken initiatieven. Deze laatste mogelijkheid zal binnenkort beschikbaar komen op de website.'
         },
         {
           question: 'Voor wie is #Nietalleen bedoeld?',
@@ -91,6 +91,10 @@ export default {
         {
           question: 'Kan ik ook contact opnemen met algemene vragen over het coronavirus (COVID-19)?',
           answer: 'Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.'
+        },
+        {
+          question: 'Wat doet het tv-programma #Nietalleen met mijn hulpaanbod?',
+          answer: 'In elke uitzending worden oproepjes gedaan waarin de hulp van kijkers gevraagd wordt. Kijkers die willen helpen kunnen mailen naar <a target="_blank" href="mailto:ikwilhelpen@nietalleen.nl">ikwilhelpen@nietalleen.nl</a>. De tv-redactie zal contact opnemen als de hulpvraag nog niet is opgelost. Als er geen contact wordt opgenomen dan heeft er al een match plaatsgevonden met een andere hulpaanbieder. In dat geval worden de email-gegevens verwijderd.'
         }
       ]
     }

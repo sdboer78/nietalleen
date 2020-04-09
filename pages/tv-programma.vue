@@ -74,6 +74,10 @@
           <p>
             Het programma Nietalleen.nl is een coproductie met SkyHigh TV en dagelijks rond 16:10 te zien bij de EO op NPO 1.
           </p>
+          <v-divider />
+          <p class="caption mt-4">
+            In elke uitzending worden oproepjes gedaan waarin de hulp van kijkers gevraagd wordt. Kijkers die willen helpen kunnen mailen naar <a href="mailto:ikwilhelpen@nietalleen.nl">ikwilhelpen@nietalleen.nl</a>. De tv-redactie zal contact opnemen als de hulpvraag nog niet is opgelost. Als er geen contact wordt opgenomen dan heeft er al een match plaatsgevonden met een andere hulpaanbieder.
+          </p>
         </v-flex>
       </v-layout>
     </section>

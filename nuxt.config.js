@@ -116,7 +116,6 @@ export default {
   },
   gtm: {
     id: 'GTM-PNF2PX4',
-    layer: 'datalayer',
     variables: { potag1: 'eoportal', potag2: 'nietalleen', potag3: 'eo', potag4: 'eo', potag5: 'omroepportal', potag6: '', potag7: '', potag8: 'site', potag9: 'site', http_status: '200', classification: '', pubdate: 0, pubweek: '01', atinternet_siteid: '59' }
   },
   /*
