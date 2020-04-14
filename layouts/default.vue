@@ -122,7 +122,8 @@ export default {
         { text: 'TV programma', to: '/tv-programma' },
         { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
         { text: 'Doneren', to: '/doneren' },
-        { text: 'Over ons', to: '/over' }
+        { text: 'Over ons', to: '/over' },
+        { text: 'Training NPV', to: '/training-npv' }
       ],
       activeTabItem: null,
       tabItems: [
