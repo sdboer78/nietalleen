@@ -56,18 +56,18 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Doneren',
+      title: 'Training NPV',
       meta: [
         {
           hid: 'og-title',
           property: 'og:title',
-          content: '#Nietalleen - Doneren'
+          content: '#Nietalleen - Training NPV'
         },
         {
           hid: 'description',
           name: 'description',
           content:
-            'EO Metterdaad heeft een noodhulpcampagne om jou de mogelijkheid te geven ook financieel te helpen. Met uw gift steunt u het belangrijke werk van de de initiatiefnemers achter #Nietalleen.nl en andere hulporganisaties.'
+            'Vanwege de coronacrisis is er een groot risico dat mensen in eenzaamheid moeten sterven. Verschillende hospices, verpleeghuizen en terminale thuishulpteams zijn op zoek naar versterking van hun teams door vrijwilligers.'
         },
         {
           hid: 'og-url',
