@@ -74,6 +74,7 @@
               <p>ABC gemeenten</p>
               <p>Agape</p>
               <p>Alpha Nederland</p>
+              <p>Business as Mission</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
               <p>Compassion</p>
@@ -88,9 +89,9 @@
               <p>Micha</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
-              <p>Nederlands Dagblad</p>
             </v-col>
             <v-col>
+              <p>Nederlands Dagblad</p>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Opwekking</p>
@@ -113,6 +114,9 @@
           </v-row>
           <p class="mt-6 font-italic">
             En nog steeds breidt deze lijst zich uit...
+          </p>
+          <p class="mb-12">
+            &nbsp;
           </p>
           <h2>
             #Nietalleen wordt mede mogelijk gemaakt door:
