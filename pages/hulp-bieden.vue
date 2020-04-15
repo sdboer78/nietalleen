@@ -20,68 +20,46 @@
           <h1 class="display-1">
             Zo werkt het
           </h1>
-          <p>
-            <span class="d-block font-weight-bold primary--text">1.</span>
-            Meld je hulpinitiatief of organisatie aan via dit formulier
-            <br>
-            <v-btn
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ra6c-sHLkUCQ_b7C2EYL3rpiNnpU7XZOndQiob_pkfJUMzU3VUw1WFA0WVJZU1pLUk9PVUFLT0NHMy4u"
-              target="_new"
-              color="primary"
-              class="mt-2"
-              x-large
+          <v-card
+            flat
+            outlined
+            class="help-options-panel mb-8 mx-n4"
+          >
+            <v-tabs
+              v-model="activeTab"
+              centered
+              fixed-tabs
+              icons-and-text
             >
-              Aanmelden
-            </v-btn>
-          </p>
-          <p class="mt-8">
-            <span class="d-block font-weight-bold primary--text">2.</span>
-            Alle initiatieven worden verzameld op plaatselijk niveau en aan elkaar gekoppeld.
-            <br>
-          </p>
-          <p class="mt-8">
-            <span class="d-block font-weight-bold primary--text">3.</span>
-            Wij zorgen ervoor dat de binnengekomen hulpvragen bij de lokale kerken en organisaties wordt neergelegd. Zij overleggen samen wie de hulpvraag oppakt.
-          </p>
-          <p class="mt-10">
-            <a
-              href="javascript:void(null)"
-              @click.stop="showVolunteerDialog = true"
-            >Ben je een particulier en wil je ook helpen?</a>
-            <v-dialog
-              v-model="showVolunteerDialog"
-              width="500"
+              <v-tab href="#individu">
+                Individu
+                <v-icon>mdi-account</v-icon>
+              </v-tab>
+              <v-tab href="#organisatie">
+                Organisatie
+                <v-icon>mdi-account-group</v-icon>
+              </v-tab>
+            </v-tabs>
+            <v-tabs-items
+              v-model="activeTab"
             >
-              <v-card>
-                <v-card-title
-                  class="headline"
-                  primary-title
-                >
-                  Helpen als particulier
-                </v-card-title>
-                <v-card-text>
-                  <p>
-                    #Nietalleen verbindt hulpvragen aan bestaande initiatieven en organisaties.
-                    Particulieren die graag willen helpen, kunnen zich bij een bestaand initiatief aansluiten.
-                    Je kunt hier zelf een initiatief of organisatie voor benaderen of je kunt via de co&ouml;rdinator
-                    van de betreffende plaats in contact worden gebracht met een van de reeds betrokken initiatieven.
-                    Deze laatste mogelijkheid zal binnenkort beschikbaar komen op de website.
-                  </p>
-                </v-card-text>
-                <v-divider label="of" />
-                <v-card-actions @click="showVolunteerDialog = false">
-                  <v-spacer />
-                  <v-btn
-                    color="primary"
-                    text
-                  >
-                    Sluiten
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
-          </p>
-          <p class="caption mt-10">
+              <v-tab-item
+                key="0"
+                value="individu"
+                class="px-4 py-6"
+              >
+                <help-as-volunteer />
+              </v-tab-item>
+              <v-tab-item
+                key="1"
+                value="organisatie"
+                class="px-4 py-6"
+              >
+                <help-as-organisation />
+              </v-tab-item>
+            </v-tabs-items>
+          </v-card>
+          <p class="caption">
             Als je vragen hebt of meer wilt weten, mail dan naar <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>.
             Bellen kan ook naar het algemene nummer <a href="tel:0800 1322">0800 1322</a>.
           </p>
@@ -98,13 +76,16 @@
       <v-layout
         justify-center
         align-center
-        class="py-12 text-center"
+        class="px-8 py-12 text-center"
       >
         <v-flex xs12 sm10 md8 lg6 xl5>
           <h2 class="mb-5 px-8">
             Deze iniatieven staan al klaar om hulp te bieden
           </h2>
-          <helpers-map :render-map="allowMapRender" />
+          <organisations-map
+            :render-map="allowMapRender"
+            class="px-n8 mt-5"
+          />
         </v-flex>
       </v-layout>
     </section>
@@ -114,15 +95,8 @@
         align-center
         class="px-8 py-12 accent text-center"
       >
-        <v-flex
-          xs12
-          sm10
-          md8
-          lg6
-          xl5
-          class="my-5"
-        >
-          <h2 class="display-1 mb-5 px-8">
+        <v-flex xs12 sm8 md5 lg4 xl3>
+          <h2 class="display-1 my-5">
             Corona raakt ons allemaal:<br>
             blijf om elkaar geven
           </h2>
@@ -137,6 +111,7 @@
           <v-btn
             href="/doneren"
             color="primary"
+            class="mb-5"
             x-large
           >
             Informatie over doneren
@@ -149,13 +124,15 @@
 
 <script>
 import HeroImage from '~/components/HeroImage.vue'
-import HelpersMap from '~/components/HelpersMap.vue'
+import HelpAsOrganisation from '~/components/HelpAsOrganisation.vue'
+import HelpAsVolunteer from '~/components/HelpAsVolunteer.vue'
+import OrganisationsMap from '~/components/OrganisationsMap.vue'
 
 export default {
-  components: { HeroImage, HelpersMap },
+  components: { HeroImage, HelpAsOrganisation, HelpAsVolunteer, OrganisationsMap },
   data () {
     return {
-      showVolunteerDialog: false
+      activeTab: null
     }
   },
   computed: {
@@ -169,7 +146,7 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Wij kunnen hulp bieden',
+      title: 'Ik kan hulp bieden',
       meta: [
         {
           hid: 'og-title',
@@ -192,3 +169,25 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" lang="scss" scoped>
+  .help-options-panel {
+    max-width: none;
+  }
+
+  .v-tab {
+    font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
+
+    &--active {
+      font-weight: bold;
+    }
+  }
+
+  .v-tabs {
+    border-bottom: thin solid rgba(0, 0, 0, 0.12);
+  }
+</style>

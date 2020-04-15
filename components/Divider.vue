@@ -1,14 +1,23 @@
 <template>
   <div class="divider">
-    <p class="divider__content d-sm-block">
-      of
+    <p
+      v-if="label"
+      class="divider__content d-sm-block"
+    >
+      {{ label }}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Divider'
+  name: 'Divider',
+  props: {
+    label: {
+      type: String,
+      default: null
+    }
+  }
 }
 </script>
 

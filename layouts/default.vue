@@ -117,7 +117,7 @@ export default {
       activeNavItem: null,
       navItems: [
         { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' },
+        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' },
         { text: 'Verhalen', to: '/verhalen' },
         { text: 'TV programma', to: '/tv-programma' },
         { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
@@ -128,7 +128,7 @@ export default {
       activeTabItem: null,
       tabItems: [
         { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Wij kunnen hulp bieden', to: '/hulp-bieden' }
+        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' }
       ]
     }
   },
