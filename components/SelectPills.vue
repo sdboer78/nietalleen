@@ -235,9 +235,11 @@ export default {
         animation: v-shake 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
       }
     }
+
     .v-chip {
       padding-left: 10px;
       padding-right: 10px;
+
       &--active {
         border-width: 2px;
       }

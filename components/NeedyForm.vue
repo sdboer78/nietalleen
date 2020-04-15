@@ -5,19 +5,20 @@
     lazy-validation
     class="need-help-form__form text-left"
   >
-    <v-text-field
-      v-model="fullName"
-      :rules="fullNameRules"
-      label="Wat is je naam?"
-      color="black"
-      validate-on-blur
-      outlined
+    <select-pills
+      v-model="helpType"
+      :rules="helpTypeRules"
+      :items="helpTypeOptions"
+      label="Waar heb je hulp bij nodig?"
+      custom-item-label="iets anders..."
+      custom-item
+      color="grey darken-4"
       required
-      suffix="1/6"
+      class="mb-4"
     />
     <v-expand-transition>
       <v-btn
-        v-if="!fullName"
+        v-if="helpType.length <= 0"
         color="primary"
         class="mr-4"
         block
@@ -28,28 +29,42 @@
       </v-btn>
     </v-expand-transition>
     <v-expand-transition>
-      <div v-if="fullName">
+      <div v-if="helpType.length > 0">
+        <v-text-field
+          v-model="fullName"
+          :rules="fullNameRules"
+          label="Wat is je naam?"
+          color="black"
+          validate-on-blur
+          outlined
+          required
+        />
         <v-text-field
           v-model="emailAddress"
           :rules="emailAddressRules"
+          type="email"
           label="Wat is je e-mailadres?"
           color="black"
           validate-on-blur
           outlined
           required
-          suffix="2/6"
           class="mb-2"
         />
-        <v-text-field
-          v-model="postalCode"
-          :rules="postalCodeRules"
-          label="Wat is je postcode?"
+        <v-autocomplete
+          v-model="city"
+          :rules="cityRules"
+          :items="cityItems"
+          label="Wat is je woonplaats?"
+          :loading="loadingCities"
+          :search-input.sync="cityKeyword"
+          cache-items
           color="black"
           validate-on-blur
+          hide-no-data
           outlined
           required
-          suffix="3/6"
           class="mb-2"
+          @update:search-input="searchCities(cityKeyword, city)"
         />
         <v-text-field
           v-model="phoneNumber"
@@ -59,48 +74,23 @@
           validate-on-blur
           outlined
           required
-          suffix="4/6"
           class="mb-2"
         />
-        <v-select
-          v-model="requestType"
-          :rules="requestTypeRules"
-          :items="requestTypeOptions"
-          label="Op welke manier kunnen we hulp bieden?"
-          color="black"
-          validate-on-blur
-          outlined
-          required
-          multiple
-          suffix="5/6"
-          class="mb-2"
-        />
-        <v-expand-transition>
-          <v-textarea
-            v-if="showRequestMessage"
-            v-model="requestMessage"
-            :rules="requestMessageRules"
-            no-resize
-            label="Op welke manier kunnen wij hulp bieden?"
-            color="black"
-            validate-on-blur
-            outlined
-            required
-          />
-        </v-expand-transition>
         <v-radio-group
-          v-model="requestAidFor"
-          color="black"
+          v-model="needy"
           mandatory
         >
           <template v-slot:label>
-            <p>Ik vraag hulp voor... (6/6)</p>
+            <p class="black--text">
+              Ik vraag hulp voor...
+            </p>
           </template>
           <v-radio
-            v-for="n in requestAidForOptions"
+            v-for="n in needyOptions"
             :key="n"
             :label="`${n}`"
             :value="n"
+            color="black"
           />
         </v-radio-group>
         <v-expand-transition>
@@ -117,6 +107,7 @@
                 :rules="consentPrivacyNeedyRules"
                 label="Ik heb toestemming om zijn/haar gegevens te verstrekken."
                 color="black"
+                class="mb-2"
                 outlined
                 required
               />
@@ -127,12 +118,20 @@
                 validate-on-blur
                 outlined
               />
-              <v-text-field
-                v-model="needyPostalCode"
-                label="Wat is zijn/haar postcode?"
+              <v-autocomplete
+                v-model="needyCity"
+                :rules="cityRules"
+                :items="cityItems"
+                label="Wat is zijn/haar woonplaats?"
+                :loading="loadingCities"
+                :search-input.sync="needyCityKeyword"
+                cache-items
                 color="black"
                 validate-on-blur
+                hide-no-data
                 outlined
+                required
+                @update:search-input="searchCities(needyCityKeyword, needyCity)"
               />
               <v-text-field
                 v-model="needyPhoneNumber"
@@ -145,6 +144,7 @@
               <v-text-field
                 v-model="needyEmailAddress"
                 :rules="needyEmailAddressRules"
+                type="email"
                 label="Wat is zijn/haar e-mailadres?"
                 color="black"
                 validate-on-blur
@@ -163,16 +163,17 @@
           v-model="consentPrivacy"
           :rules="consentPrivacyRules"
           label="Ja, ik ga akkoord"
+          color="black"
           outlined
           required
         />
         <v-btn
-          :disabled="!valid || showPopup"
+          :disabled="!valid || showAlert"
           color="primary"
-          class="mr-4"
+          class="mt-4 mr-4"
           block
           x-large
-          @click="submit"
+          @click="submitForm"
         >
           Vraag hulp
         </v-btn>
@@ -182,33 +183,70 @@
       </div>
     </v-expand-transition>
     <v-snackbar
-      v-model="showPopup"
-      color="white"
-      class="black--text"
+      v-model="showAlert"
+      :color="formSubmissionState"
+      class="white--text"
       :timeout="0"
       top
-      multi-line
-      vertical
     >
-      {{ popupMessage }}
-      <v-btn
-        color="primary"
-        text
-        @click="showPopup = null"
+      <v-icon
+        color="white"
+        class="mr-4"
       >
-        sluit
+        {{ formSubmissionState == 'success' ? 'mdi-check' : 'mdi-alert-octagon' }}
+      </v-icon>
+      {{ alertMessage }}
+      <v-btn
+        color="white"
+        text
+        @click="showAlert = null"
+      >
+        SLUIT
       </v-btn>
     </v-snackbar>
   </v-form>
 </template>
 
 <script>
-import postMessage from '~/utils/obi4wan-api'
+import constants from '~/constants/nietalleen-api'
+import SelectPills from '~/components/SelectPills'
+import { slugify } from '~/utils/slugify'
 
 export default {
-  name: 'NeedHelpForm',
+  name: 'NeedyForm',
+  components: { SelectPills },
   data: () => ({
     valid: true,
+    showAlert: false,
+    alertMessage: '',
+    formSubmissionState: null,
+    formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
+    formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.',
+    mailSubject: 'Hulpvraag via Nietalleen.nl',
+    mailFields: [
+      'helpType',
+      'fullName',
+      'emailAddress',
+      'city',
+      'phoneNumber',
+      'needy',
+      'needyFullName',
+      'needyCity',
+      'needyPhoneNumber',
+      'needyEmailAddress'
+    ],
+    helpType: [],
+    helpTypeRules: [
+      v => (!!v && v.length > 0) || 'Laat ons weten waarmee we kunnen helpen'
+    ],
+    helpTypeValidationState: '',
+    helpTypeMessages: [],
+    helpTypeOptions: [
+      'boodschappen',
+      'praatje',
+      'hond uitlaten',
+      'kinderopvang'
+    ],
     fullName: '',
     fullNameRules: [
       v => !!v || 'We hebben je naam nodig'
@@ -218,44 +256,29 @@ export default {
       v => !!v || 'We hebben je e-mailadres nodig',
       v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
     ],
-    postalCode: '',
-    postalCodeRules: [
-      v => !!v || 'We hebben je postcode nodig',
-      v => /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
+    city: '',
+    cityRules: [
+      v => !!v || 'We hebben je woonplaats nodig om je te koppelen aan een organisatie in jouw buurt'
     ],
+    cityItems: [],
+    cityKeyword: null,
+    loadingCities: null,
     phoneNumber: '',
     phoneNumberRules: [
       v => !!v || 'We hebben je telefoonnummer nodig',
       v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
-    requestType: '',
-    requestTypeRules: [
-      v => !!v || 'We willen graag weten hoe we kunnen helpen'
-    ],
-    requestTypeOptions: [
-      'boodschappen',
-      'hond uitlaten',
-      'praatje',
-      'kinderopvang',
-      'iets anders'
-    ],
-    requestMessage: '',
-    requestMessageRules: [
-      v => !!v || 'We hebben je hulpvraag nodig'
-    ],
-    requestAidFor: '',
-    requestAidForOptions: [
+    needy: '',
+    needyOptions: [
       'mijzelf',
       'iemand anders'
     ],
-    requestAidForRules: [
+    needyRules: [
       v => !!v || 'Je moet een keuze maken'
     ],
     needyFullName: '',
-    needyPostalCode: '',
-    needyPostalCodeRules: [
-      v => v === '' || /^\d{4}\s?\w{2}$/.test(v) || 'Dit is geen geldige postcode'
-    ],
+    needyCity: '',
+    needyCityKeyword: null,
     needyPhoneNumber: '',
     needyPhoneNumberRules: [
       v => v === '' || /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
@@ -271,18 +294,11 @@ export default {
     consentPrivacy: '',
     consentPrivacyRules: [
       v => !!v || 'Je moet akkoord gaan om hulp te vragen'
-    ],
-    popupMessage: '',
-    showPopup: false,
-    formSubmissionSuccessMessage: 'Jouw verzoek wordt door ons team zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
-    formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.'
+    ]
   }),
   computed: {
     isForNeedy () {
-      return this.requestAidFor === this.requestAidForOptions[1]
-    },
-    showRequestMessage () {
-      return this.requestType.includes('iets anders')
+      return this.needy === this.needyOptions[1]
     }
   },
   methods: {
@@ -292,7 +308,36 @@ export default {
     validate () {
       this.$refs.form.validate()
     },
-    async submit (evt) {
+    searchCities (keyword) {
+      keyword && keyword !== this.city && this.getMatchingCities(keyword)
+    },
+    async getHubEmail () {
+      const { city } = this
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_HUBS}`, {
+        params: {
+          city: slugify(city)
+        }
+      })
+
+      if (response.statusText === 'OK') {
+        const { email } = response.data.items[0]
+        return email
+      }
+      return null
+    },
+    async getMatchingCities (city) {
+      this.loadingCities = 'secondary'
+      this.cityItems = []
+      const response = await this.$axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_LOCATIONS}`,
+        {
+          params: {
+            city
+          }
+        })
+      this.cityItems = response.data.items.map(item => item.city)
+      this.loadingCities = null
+    },
+    async submitForm (evt) {
       evt.preventDefault()
 
       if (!this.$refs.form.validate()) {
@@ -300,43 +345,42 @@ export default {
       }
 
       const {
-        fullName,
         emailAddress,
-        postalCode,
-        phoneNumber,
-        requestType,
-        requestMessage,
-        consentPrivacy,
-        requestAidFor,
-        needyFullName,
-        needyPhoneNumber,
-        needyEmailAddress,
-        needyPostalCode
+        mailSubject,
+        mailFields
       } = this
 
-      const response = await postMessage({
-        fullName,
-        emailAddress,
-        postalCode,
-        phoneNumber,
-        requestType,
-        requestMessage,
-        consentPrivacy,
-        requestAidFor,
-        needyFullName,
-        needyPhoneNumber,
-        needyEmailAddress,
-        needyPostalCode
-      })
+      const mailTo = await this.getHubEmail()
 
-      if (response.status === 204) {
-        this.popupMessage = this.formSubmissionSuccessMessage
-        this.$refs.form.reset()
-      } else {
-        this.popupMessage = this.formSubmissionFailedMessage
+      if (!mailTo) {
+        this.formSubmissionState = 'error'
+        this.alertMessage = this.formSubmissionFailedMessage
+        this.showAlert = true
+        return
       }
 
-      this.showPopup = true
+      const formData = new FormData()
+      formData.append('from', emailAddress)
+      formData.append('to', mailTo)
+      formData.append('cc', emailAddress)
+      formData.append('subject', mailSubject)
+
+      mailFields.map((field) => {
+        this[field] && formData.append(field, this[field])
+      })
+
+      const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+
+      if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
+        this.formSubmissionState = 'success'
+        this.alertMessage = this.formSubmissionSuccessMessage
+        this.$refs.form.reset()
+        this.showFields = false
+      } else {
+        this.formSubmissionState = 'error'
+        this.alertMessage = this.formSubmissionFailedMessage
+      }
+      this.showAlert = true
     }
   }
 }
@@ -360,6 +404,13 @@ export default {
 
   .v-textarea .v-text-field__suffix {
     padding-right: 12px;
+  }
+
+  ::v-deep .v-input .v-progress-linear {
+    top: calc(100% - 4px);
+    width: calc(100% - 4px);
+    left: 2px;
+    right: 2px;
   }
 
   .v-select__slot .v-label {
