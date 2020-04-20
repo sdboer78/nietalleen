@@ -21,7 +21,7 @@
             <v-icon size="16" color="grey" left>
               mdi-clock
             </v-icon>
-            Elke maandag en vrijdag dag rond 16:30
+            Elke maandag en vrijdag dag rond 16:30 op
             <img src="~/assets/logo-npo-1.svg?data" width="50">
           </p>
           <p class="font-weight-bold">
@@ -72,7 +72,7 @@
             Bert presenteert het nieuwe programma vanuit huis en doet dat niet voor niets: “Door vanuit mijn eigen huis te presenteren, wil ik gehoor geven aan de oproep om binnen te blijven en het signaal geven dat het echt belangrijk is dat mensen nadenken voordat ze naar buiten gaan. Is het nodig? Zo niet, blijf dan thuis.” In Berts huis wordt gefilmd met drie op afstand bestuurbare camera’s. Anne-Mar is via de webcam in contact met Bert en houdt de kijker op de hoogte van de initiatieven die op gang komen via het platform #Nietalleen.
           </p>
           <p>
-            Het programma Nietalleen.nl is een coproductie met SkyHigh TV en op maandag en vrijdag rond 16:30 te zien bij de EO op NPO 1.
+            Het programma Nietalleen.nl is een coproductie met SkyHigh TV en op maandag en vrijdag rond 16:30 te zien bij de EO op NPO 1. Deze worden herhaald op woensdag- en zaterdagmiddag.
           </p>
           <v-divider />
           <p class="caption mt-4">
