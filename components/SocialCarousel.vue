@@ -2,7 +2,7 @@
   <div class="social-carousel">
     <v-expand-transition>
       <div v-if="renderCarousel">
-        <div id="flockler-embed-17111be1f7103d16a5baeb89dac8ee91" />
+        <div id="flockler-embed-170e325e3c70b45510042c26bfb47670" />
       </div>
       <p
         v-if="!renderCarousel"
@@ -39,7 +39,7 @@ export default {
     addExternalScript () {
       if (this.renderCarousel) {
         this.externalScript = document.createElement('script')
-        this.externalScript.setAttribute('src', 'https://flockler.embed.codes/LrD78j')
+        this.externalScript.setAttribute('src', 'https://flockler.embed.codes/LrDAaj')
         this.externalScript.async = true
         this.$el.appendChild(this.externalScript)
       }
