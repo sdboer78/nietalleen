@@ -183,11 +183,7 @@ export default {
       this.selectedItems = [...this.selectedItems]
     },
     toggleItem (item) {
-      if (!this.isSelected(item)) {
-        this.selectItem(item)
-      } else {
-        this.deselectItem(item)
-      }
+      this.isSelected(item) ? this.deselectItem(item) : this.selectItem(item)
     },
     toggleItemAndFocus (item) {
       this.toggleItem(item)
