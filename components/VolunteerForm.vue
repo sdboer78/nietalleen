@@ -101,7 +101,7 @@
         x-large
         @click="showFields = !showFields"
       >
-        Aanmelden
+        Laat je gegevens achter
       </v-btn>
     </v-fade-transition>
     <v-snackbar

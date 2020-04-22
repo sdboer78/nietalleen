@@ -2,7 +2,7 @@
   <div>
     <p>
       <span class="d-block font-weight-bold primary--text">1.</span>
-      Meld je aan als vrijwilliger via dit formulier.
+      #Nietalleen zet alleen hulpvragen door naar initiatieven en niet naar individuen. Individuen die willen helpen worden in contact gebracht met initiatieven om zich daar bij aan te sluiten.
       <br>
       <volunteer-form v-model="openVolunteerForm" />
     </p>
@@ -12,7 +12,8 @@
     </p>
     <p class="mt-8">
       <span class="d-block font-weight-bold primary--text">3.</span>
-      Het co&ouml;rdinatiepunt neemt zo snel mogelijk contact met je op.
+      Als jouw gemeente al een co&ouml;rdinatiepunt heeft, dan worden jouw gegevens verzonden naar de co&ouml;rdinator. Die laat je weten bij welke initiatieven je kunt aansluiten.
+      <br><br>Als jouw gemeente nog geen co&ouml;rdinatiepunt heeft,<br>dan moet je nog even geduld hebben. Zodra een coördinator is aangesteld worden je gegevens doorgestuurd en wordt er contact met je opgenomen.
     </p>
   </div>
 </template>
