@@ -95,6 +95,7 @@
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Opwekking</p>
+              <p>Oranje Helpers</p>
               <p>Presence</p>
               <p>Protestantse Kerk in Nederland</p>
               <p>Reformatorisch Dagblad</p>
@@ -127,6 +128,7 @@
               <p>Stichting AFAS Foundation</p>
               <p>Stichting Eleven Floawers Foundation</p>
               <p>Stichting Talenting Foundation</p>
+              <p>DND Foundation</p>
             </v-col>
           </v-row>
         </v-flex>
