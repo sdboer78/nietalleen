@@ -301,6 +301,7 @@ export default {
         opacity: 0.08;
       }
     }
+
     &.v-chip--active {
       &:hover,
       &:focus {
