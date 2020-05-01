@@ -238,12 +238,17 @@ export default {
 
       &--active,
       &.v-chip--outlined.v-chip--active {
-        background-color: #6A007D !important;
+        background-color: #fd8f52 !important;
         border-width: 0;
       }
 
       &--label {
         border-radius: 10px !important;
+      }
+
+      &--outlined.v-chip--active:before {
+        background-color: #ffffff;
+        opacity: 0;
       }
     }
   }
@@ -260,19 +265,14 @@ export default {
       padding-right: 0;
 
       input {
-        caret-color: #FFFFFF;
-        color: #FFFFFF;
+        caret-color: #000000;
+        color: #000000;
       }
 
       &:focus,
       &:focus-within {
         background: rgba(255, 255, 255, 1) !important;
         box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-
-        input {
-          caret-color: #000000;
-          color: #000000;
-        }
       }
 
       .v-chip:hover &,
@@ -282,7 +282,7 @@ export default {
         &:hover,
         &:active {
           background: transparent !important;
-          box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
         &:focus,
