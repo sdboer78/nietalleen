@@ -12,7 +12,7 @@
       label="Waar heb je hulp bij nodig?"
       custom-item-label="iets anders..."
       custom-item
-      color="grey darken-4"
+      color="white"
       required
       class="mb-4"
     />
