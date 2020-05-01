@@ -15,7 +15,7 @@
           label="Op welke manier kun je hulp bieden?"
           custom-item-label="iets anders..."
           custom-item
-          color="grey darken-4"
+          color="white"
           required
           suffix="1/5"
           class="mb-2 text-left"
