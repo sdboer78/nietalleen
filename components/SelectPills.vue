@@ -236,8 +236,14 @@ export default {
       padding-left: 10px;
       padding-right: 10px;
 
-      &--active {
-        border-width: 2px;
+      &--active,
+      &.v-chip--outlined.v-chip--active {
+        background-color: #6A007D !important;
+        border-width: 0;
+      }
+
+      &--label {
+        border-radius: 10px !important;
       }
     }
   }
@@ -253,10 +259,20 @@ export default {
       padding-left: 10px;
       padding-right: 0;
 
+      input {
+        caret-color: #FFFFFF;
+        color: #FFFFFF;
+      }
+
       &:focus,
       &:focus-within {
         background: rgba(255, 255, 255, 1) !important;
         box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+
+        input {
+          caret-color: #000000;
+          color: #000000;
+        }
       }
 
       .v-chip:hover &,
@@ -266,7 +282,7 @@ export default {
         &:hover,
         &:active {
           background: transparent !important;
-          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
         }
 
         &:focus,
