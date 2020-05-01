@@ -56,7 +56,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bellota&display=swap' }
-    ]
+    ],
+    script: [
+      { innerHTML: 'dataLayer = [{"potag1":"eoportal","potag2":"nietalleen","potag3":"eo","potag4":"eo","potag5":"omroepportal","potag6":"","potag7":"","potag8":"site","potag9":"site","http_status":"200","classification":"","pubdate":0,"pubweek":"01","atinternet_siteid":"59"}]' }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
   /*
   ** Customize the progress-bar color
@@ -119,9 +123,7 @@ export default {
     }
   },
   gtm: {
-    id: 'GTM-PNF2PX4',
-    layer: 'datalayer',
-    variables: { potag1: 'eoportal', potag2: 'nietalleen', potag3: 'eo', potag4: 'eo', potag5: 'omroepportal', potag6: '', potag7: '', potag8: 'site', potag9: 'site', http_status: '200', classification: '', pubdate: 0, pubweek: '01', atinternet_siteid: '59' }
+    id: 'GTM-PNF2PX4'
   },
   /*
   ** Build configuration
