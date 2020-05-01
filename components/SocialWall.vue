@@ -2,7 +2,7 @@
   <div class="social-wall">
     <v-expand-transition>
       <div v-if="renderWall">
-        <div id="flockler-embed-17111acdf600a77f7984f5072fd98ca3" />
+        <div id="flockler-embed-1719c196ddb0e76ac27ab14c10fd4b3b" />
       </div>
       <p
         v-if="!renderWall"
@@ -39,7 +39,7 @@ export default {
     addExternalScript () {
       if (this.renderWall) {
         this.externalScript = document.createElement('script')
-        this.externalScript.setAttribute('src', 'https://flockler.embed.codes/Lm4wY2')
+        this.externalScript.setAttribute('src', 'https://flockler.embed.codes/j5JPz2')
         this.externalScript.async = true
         this.$el.appendChild(this.externalScript)
       }

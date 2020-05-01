@@ -49,7 +49,7 @@
             van 09.00 - 21.00 uur
             <br>
             <strong>zaterdag en zondag:</strong>
-            van 09.00 - 20.00 uur
+            van 09.00 - 18.00 uur
           </p>
           <p class="caption pb-6">
             Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
@@ -140,7 +140,7 @@
         >
           <h2 class="mb-12">
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              1306
+              1588
             </span>
             <span class="display-1 mb-0 d-block" style="line-height:1.1;">
               initiatieven

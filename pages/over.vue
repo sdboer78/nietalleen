@@ -66,7 +66,7 @@
       >
         <v-flex xs12 sm8 md6 lg4 xl3>
           <h2 class="display-1">
-            De volgende organisaties hebben zich aangesloten bij #Nietalleen
+            De volgende landelijke organisaties zijn aangesloten bij #Nietalleen
           </h2>
           <v-row class="partner-list">
             <v-col>
@@ -74,6 +74,7 @@
               <p>ABC gemeenten</p>
               <p>Agape</p>
               <p>Alpha Nederland</p>
+              <p>Business as Mission</p>
               <p>Christelijk Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
               <p>Compassion</p>
@@ -88,14 +89,18 @@
               <p>Micha</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
+              <p>Nederlands Dagblad</p>
             </v-col>
             <v-col>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Opwekking</p>
+              <p>Oranje Helpers</p>
               <p>Presence</p>
               <p>Protestantse Kerk in Nederland</p>
+              <p>Reformatorisch Dagblad</p>
               <p>Rooms Katholieke Kerk</p>
+              <p>RMU</p>
               <p>Schuldhulpmaatje</p>
               <p>SGP</p>
               <p>Stichting Agapè</p>
@@ -112,6 +117,20 @@
           <p class="mt-6 font-italic">
             En nog steeds breidt deze lijst zich uit...
           </p>
+          <p class="mb-12">
+            &nbsp;
+          </p>
+          <h2>
+            #Nietalleen wordt mede mogelijk gemaakt door:
+          </h2>
+          <v-row class="sponsor-list">
+            <v-col>
+              <p>Stichting AFAS Foundation</p>
+              <p>Stichting Eleven Floawers Foundation</p>
+              <p>Stichting Talenting Foundation</p>
+              <p>DND Foundation</p>
+            </v-col>
+          </v-row>
         </v-flex>
       </v-layout>
     </section>
@@ -226,7 +245,10 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
-  .partner-list p {
-    line-height: 1.2;
+  .partner-list,
+  .sponsor-list {
+    p {
+      line-height: 1.2;
+    }
   }
 </style>
