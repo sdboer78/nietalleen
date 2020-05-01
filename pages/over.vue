@@ -89,16 +89,18 @@
               <p>Micha</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
+              <p>Nederlands Dagblad</p>
             </v-col>
             <v-col>
-              <p>Nederlands Dagblad</p>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Opwekking</p>
+              <p>Oranje Helpers</p>
               <p>Presence</p>
               <p>Protestantse Kerk in Nederland</p>
               <p>Reformatorisch Dagblad</p>
               <p>Rooms Katholieke Kerk</p>
+              <p>RMU</p>
               <p>Schuldhulpmaatje</p>
               <p>SGP</p>
               <p>Stichting Agapè</p>
@@ -126,6 +128,7 @@
               <p>Stichting AFAS Foundation</p>
               <p>Stichting Eleven Floawers Foundation</p>
               <p>Stichting Talenting Foundation</p>
+              <p>DND Foundation</p>
             </v-col>
           </v-row>
         </v-flex>
