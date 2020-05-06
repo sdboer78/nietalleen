@@ -1,3 +1,7 @@
+# 2020-05-06
+develop branch includes
+- bugfix/HOME-129-mailform-sender
+
 # 2020-04-30
 develop branch connected API to production: https://api-nietalleen.eo.nl
 
