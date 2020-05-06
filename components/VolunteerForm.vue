@@ -153,6 +153,7 @@ export default {
       formSubmissionState: null,
       formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
+      mailSender: constants.NIETALLEEN_API_ENDPOINT_MAILFORM_SENDER,
       mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
       mailFields: [
         'fullName',
@@ -257,6 +258,7 @@ export default {
       }
       const {
         emailAddress,
+        mailSender,
         mailSubject,
         mailFields
       } = this
@@ -271,8 +273,9 @@ export default {
       }
 
       const formData = new FormData()
-      formData.append('from', emailAddress)
+      formData.append('from', mailSender)
       formData.append('to', mailTo)
+      formData.append('replyTo', emailAddress)
       formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
 
