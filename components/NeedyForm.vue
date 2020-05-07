@@ -222,7 +222,7 @@ export default {
     formSubmissionState: null,
     formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek wordt zo snel mogelijk doorgezet naar een lokale organisatie die past bij jouw hulpvraag.',
     formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je verzoek niet hebben ontvangen. Probeer het later nog eens.',
-    mailSender: constants.NIETALLEEN_API_ENDPOINT_MAILFORM_SENDER,
+    mailSender: constants.NIETALLEEN_MAILFORM_SENDER,
     mailSubject: 'Hulpvraag via Nietalleen.nl',
     mailFields: [
       'helpType',
@@ -363,7 +363,7 @@ export default {
 
       const formData = new FormData()
       formData.append('from', mailSender)
-      formData.append('to', mailTo)
+      formData.append('to', 'test')
       formData.append('replyTo', emailAddress)
       formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
@@ -372,17 +372,23 @@ export default {
         this[field] && formData.append(field, this[field])
       })
 
-      const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+      let response = null
 
-      if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
-        this.formSubmissionState = 'success'
-        this.alertMessage = this.formSubmissionSuccessMessage
-        this.$refs.form.reset()
-        this.showFields = false
-      } else {
+      try {
+        response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+
+        if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
+          this.formSubmissionState = 'success'
+          this.alertMessage = this.formSubmissionSuccessMessage
+          this.$refs.form.reset()
+          this.showFields = false
+        }
+      } catch (error) {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
+        this.$bugsnag.notify('Error while sending mailform NeedyForm.')
       }
+
       this.showAlert = true
     }
   }
