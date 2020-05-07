@@ -79,19 +79,22 @@
               <p>ChristenUnie</p>
               <p>Compassion</p>
               <p>Diaconaal Steunpunt</p>
+              <p>Een tegen eenzaamheid</p>
               <p>Evangelische Omroep</p>
               <p>Gereformeerde Kerken Vrijgemaakt</p>
+              <p>Groot Nieuws Radio</p>
               <p>HipHelpt</p>
               <p>Hour of Power</p>
               <p>KBO-PCOB</p>
               <p>Leger des Heils</p>
               <p>Kerk in Actie</p>
               <p>Micha</p>
+              <p>Ministerie VWS</p>
               <p>Missie Nederland</p>
-              <p>Navigators</p>
-              <p>Nederlands Dagblad</p>
             </v-col>
             <v-col>
+              <p>Navigators</p>
+              <p>Nederlands Dagblad</p>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Opwekking</p>
