@@ -363,7 +363,7 @@ export default {
 
       const formData = new FormData()
       formData.append('from', mailSender)
-      formData.append('to', 'test')
+      formData.append('to', mailTo)
       formData.append('replyTo', emailAddress)
       formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
@@ -372,10 +372,8 @@ export default {
         this[field] && formData.append(field, this[field])
       })
 
-      let response = null
-
       try {
-        response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+        const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
 
         if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
           this.formSubmissionState = 'success'
@@ -386,7 +384,7 @@ export default {
       } catch (error) {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
-        this.$bugsnag.notify('Error while sending mailform NeedyForm.')
+        this.$bugsnag.notify('Error while sending mailform NeedyForm: ' + error.response.data.message)
       }
 
       this.showAlert = true

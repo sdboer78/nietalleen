@@ -283,10 +283,8 @@ export default {
         this[field] && formData.append(field, this[field])
       })
 
-      let response = null
-
       try {
-        response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+        const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
         if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
           this.formSubmissionState = 'success'
           this.alertMessage = this.formSubmissionSuccessMessage
@@ -296,7 +294,7 @@ export default {
       } catch (error) {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
-        this.$bugsnag.notify('Error while sending mailform VolunteerForm')
+        this.$bugsnag.notify('Error while sending mailform VolunteerForm: ' + error.response.data.message)
       }
 
       this.showAlert = true
