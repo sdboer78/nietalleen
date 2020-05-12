@@ -3,7 +3,11 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   mode: 'universal',
   env: {
-    URL: process.env.URL
+    URL: process.env.URL,
+    NIETALLEEN_API_HOST: process.env.NIETALLEEN_API_HOST,
+    NIETALLEEN_API_ENDPOINT_MAILFORM: process.env.NIETALLEEN_API_ENDPOINT_MAILFORM,
+    NIETALLEEN_API_ENDPOINT_LOCATIONS: process.env.NIETALLEEN_API_ENDPOINT_LOCATIONS,
+    NIETALLEEN_API_ENDPOINT_HUBS: process.env.NIETALLEEN_API_ENDPOINT_HUBS
   },
   /*
   ** Headers of the page
@@ -113,7 +117,7 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.darken3
         }
       }
     }
