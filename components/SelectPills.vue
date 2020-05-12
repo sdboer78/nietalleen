@@ -45,6 +45,7 @@
       <v-chip
         v-if="customItem"
         :key="customItemValue"
+        v-ripple="{ 'class': 'white--text' }"
         :value="customItemValue"
         :input-value="isSelected(customItemValue)"
         :color="validationState == 'error' ? 'error' : (isSelected(customItemValue) ? ($attrs.color || 'primary') : '')"
@@ -70,7 +71,7 @@
               hide-details
               @keypress.space.stop=""
               @blur="setCustomItemValue"
-              @click.stop="setCustomItemValue"
+              @click.stop=""
               @keyup.enter="blurCustomItemField"
             />
           </div>

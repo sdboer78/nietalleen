@@ -13,6 +13,8 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@bugsnag/js": "^7.0.1",
+    "@bugsnag/plugin-vue": "^7.0.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/gtm": "^2.2.3",
     "@nuxtjs/style-resources": "^1.0.0",

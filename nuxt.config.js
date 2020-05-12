@@ -7,7 +7,8 @@ export default {
     NIETALLEEN_API_HOST: process.env.NIETALLEEN_API_HOST,
     NIETALLEEN_API_ENDPOINT_MAILFORM: process.env.NIETALLEEN_API_ENDPOINT_MAILFORM,
     NIETALLEEN_API_ENDPOINT_LOCATIONS: process.env.NIETALLEEN_API_ENDPOINT_LOCATIONS,
-    NIETALLEEN_API_ENDPOINT_HUBS: process.env.NIETALLEEN_API_ENDPOINT_HUBS
+    NIETALLEEN_API_ENDPOINT_HUBS: process.env.NIETALLEEN_API_ENDPOINT_HUBS,
+    BUGSNAG_API_KEY: process.env.BUGSNAG_API_KEY
   },
   /*
   ** Headers of the page
@@ -74,6 +75,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/bugsnag.js'
   ],
   /*
   ** Nuxt.js dev-modules

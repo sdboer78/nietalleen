@@ -153,6 +153,7 @@ export default {
       formSubmissionState: null,
       formSubmissionSuccessMessage: 'Verstuurd! Jouw verzoek is verstuurd naar het coördinatiepunt.',
       formSubmissionFailedMessage: 'Er is iets fout gegaan aan onze kant waardoor we je aanmelding niet hebben ontvangen. Probeer het later nog eens.',
+      mailSender: constants.NIETALLEEN_MAILFORM_SENDER,
       mailSubject: 'Aanmelding vrijwilliger via Nietalleen.nl',
       mailFields: [
         'fullName',
@@ -257,6 +258,7 @@ export default {
       }
       const {
         emailAddress,
+        mailSender,
         mailSubject,
         mailFields
       } = this
@@ -271,8 +273,9 @@ export default {
       }
 
       const formData = new FormData()
-      formData.append('from', emailAddress)
+      formData.append('from', mailSender)
       formData.append('to', mailTo)
+      formData.append('replyTo', emailAddress)
       formData.append('cc', emailAddress)
       formData.append('subject', mailSubject)
 
@@ -280,17 +283,20 @@ export default {
         this[field] && formData.append(field, this[field])
       })
 
-      const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
-
-      if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
-        this.formSubmissionState = 'success'
-        this.alertMessage = this.formSubmissionSuccessMessage
-        this.$refs.form.reset()
-        this.showFields = false
-      } else {
+      try {
+        const response = await this.$axios.post(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_MAILFORM}`, formData)
+        if (response.statusText === 'OK' && response.data.result.Message === 'OK') {
+          this.formSubmissionState = 'success'
+          this.alertMessage = this.formSubmissionSuccessMessage
+          this.$refs.form.reset()
+          this.showFields = false
+        }
+      } catch (error) {
         this.formSubmissionState = 'error'
         this.alertMessage = this.formSubmissionFailedMessage
+        this.$bugsnag.notify('Error while sending mailform VolunteerForm: ' + error.response.data.message)
       }
+
       this.showAlert = true
     }
   }
