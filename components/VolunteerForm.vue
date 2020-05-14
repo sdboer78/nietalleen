@@ -176,7 +176,7 @@ export default {
       emailAddress: '',
       emailAddressRules: [
         v => !!v || 'We hebben je e-mailadres nodig',
-        v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+        v => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(v) || 'Het e-mailadres is niet correct'
       ],
       phoneNumber: '',
       phoneNumberRules: [
