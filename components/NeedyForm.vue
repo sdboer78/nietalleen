@@ -255,7 +255,7 @@ export default {
     emailAddress: '',
     emailAddressRules: [
       v => !!v || 'We hebben je e-mailadres nodig',
-      v => /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(v) || 'Het e-mailadres is niet correct'
+      v => ^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$.test(v) || 'Het e-mailadres is niet correct'
     ],
     city: '',
     cityRules: [
@@ -286,7 +286,7 @@ export default {
     ],
     needyEmailAddress: '',
     needyEmailAddressRules: [
-      v => v === '' || /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(v) || 'Het e-mailadres is niet correct'
+      v => v === '' || ^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$.test(v) || 'Het e-mailadres is niet correct'
     ],
     consentPrivacyNeedy: '',
     consentPrivacyNeedyRules: [
