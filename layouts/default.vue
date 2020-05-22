@@ -107,34 +107,40 @@
 
 <script>
 import FooterContent from '~/components/FooterContent.vue'
+import getCityName from '~/mixins/getCityName.vue'
 
 export default {
   components: { FooterContent },
+  mixins: [getCityName],
   data () {
     return {
       showMenu: false,
       baseUrl: null,
       activeNavItem: null,
-      navItems: [
-        { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' },
+      activeTabItem: null
+    }
+  },
+  computed: {
+    currentPageHasTab () {
+      return this.$nuxt.$route.path.includes(this.activeTabItem)
+    },
+    navItems () {
+      return [
+        { text: 'Ik zoek hulp', to: `/${this.cityNameSlug ? this.cityNameSlug : ''}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden/${this.cityNameSlug ? this.cityNameSlug : ''}` },
         { text: 'Verhalen', to: '/verhalen' },
         { text: 'TV programma', to: '/tv-programma' },
         { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
         { text: 'Doneren', to: '/doneren' },
         { text: 'Over ons', to: '/over' },
         { text: 'Training NPV', to: '/training-npv' }
-      ],
-      activeTabItem: null,
-      tabItems: [
-        { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' }
       ]
-    }
-  },
-  computed: {
-    currentPageHasTab () {
-      return this.$nuxt.$route.path === this.activeTabItem
+    },
+    tabItems () {
+      return [
+        { text: 'Ik zoek hulp', to: `/${this.cityNameSlug ? this.cityNameSlug : ''}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden/${this.cityNameSlug ? this.cityNameSlug : ''}` }
+      ]
     }
   },
   mounted () {
@@ -176,6 +182,11 @@ export default {
       margin-right: auto !important;
     }
   }
+
+  ::v-deep .v-tabs.has-no-active .v-tabs-slider-wrapper {
+    opacity: 0;
+  }
+
   .v-tab {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-size: 16px;
@@ -233,11 +244,5 @@ export default {
   }
   .v-slide-group__content {
     width: 100%;
-  }
-
-  .has-no-active {
-    .v-tabs-slider-wrapper {
-      opacity: 0;
-    }
   }
 </style>

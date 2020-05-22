@@ -211,11 +211,13 @@
 import constants from '~/constants/nietalleen-api'
 import regex from '~/constants/regex'
 import SelectPills from '~/components/SelectPills'
+import getCityName from '~/mixins/getCityName.vue'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'NeedyForm',
   components: { SelectPills },
+  mixins: [getCityName],
   data: () => ({
     valid: true,
     showAlert: false,
@@ -302,6 +304,11 @@ export default {
     isForNeedy () {
       return this.needy === this.needyOptions[1]
     }
+  },
+  created () {
+    // preset city if one has been found in the route path
+    this.cityItems = [this.cityName] || []
+    this.city = this.cityName || ''
   },
   methods: {
     resetValidation () {
