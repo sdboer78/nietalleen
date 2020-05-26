@@ -213,7 +213,6 @@ export default {
       /* eslint-disable object-shorthand */
       handler: function (cityName) {
         // preset city if one has been found in the route path
-        console.log(cityName)
         this.cityItems = [cityName]
         this.city = cityName
       },
