@@ -128,6 +128,12 @@ export default {
     id: 'GTM-PNF2PX4'
   },
   /*
+  ** Static generate configuration
+  */
+  generate: {
+    fallback: '404.html'
+  },
+  /*
   ** Build configuration
   */
   build: {
