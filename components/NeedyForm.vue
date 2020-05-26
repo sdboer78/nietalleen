@@ -305,10 +305,12 @@ export default {
       return this.needy === this.needyOptions[1]
     }
   },
-  created () {
-    // preset city if one has been found in the route path
-    this.cityItems = [this.cityName] || []
-    this.city = this.cityName || ''
+  watch: {
+    cityName (cityName) {
+      // preset city if one has been found in the route path
+      this.cityItems = [cityName]
+      this.city = cityName
+    }
   },
   methods: {
     resetValidation () {

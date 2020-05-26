@@ -208,12 +208,12 @@ export default {
     },
     showFields () {
       this.$emit('input', this.showFields)
+    },
+    cityName (cityName) {
+      // preset city if one has been found in the route path
+      this.cityItems = [cityName]
+      this.city = cityName
     }
-  },
-  created () {
-    // preset city if one has been found in the route path
-    this.cityItems = [this.cityName] || []
-    this.city = this.cityName || ''
   },
   methods: {
     hide () {
