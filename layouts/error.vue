@@ -57,7 +57,7 @@ export default {
 
         // a city has been found. Redirect to the page
         if (matchingCities.length !== 0) {
-          this.$router.push({
+          this.$router.replace({
             name: pageFromPath || 'index',
             query: { plaats: matchingCities[0] }
           })
