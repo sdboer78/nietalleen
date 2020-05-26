@@ -127,7 +127,7 @@ import HeroImage from '~/components/HeroImage.vue'
 import HelpAsOrganisation from '~/components/HelpAsOrganisation.vue'
 import HelpAsVolunteer from '~/components/HelpAsVolunteer.vue'
 import OrganisationsMap from '~/components/OrganisationsMap.vue'
-import getCityName from '~/mixins/getCityName.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: { HeroImage, HelpAsOrganisation, HelpAsVolunteer, OrganisationsMap },

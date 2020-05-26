@@ -107,7 +107,7 @@
 
 <script>
 import FooterContent from '~/components/FooterContent.vue'
-import getCityName from '~/mixins/getCityName.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: { FooterContent },

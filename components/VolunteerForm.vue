@@ -133,7 +133,7 @@
 import constants from '~/constants/nietalleen-api'
 import regex from '~/constants/regex'
 import SelectPills from '~/components/SelectPills'
-import getCityName from '~/mixins/getCityName.vue'
+import getCityName from '~/mixins/getCityName.js'
 import { slugify } from '~/utils/slugify'
 
 export default {
@@ -209,10 +209,16 @@ export default {
     showFields () {
       this.$emit('input', this.showFields)
     },
-    cityName (cityName) {
-      // preset city if one has been found in the route path
-      this.cityItems = [cityName]
-      this.city = cityName
+    cityName: {
+      /* eslint-disable object-shorthand */
+      handler: function (cityName) {
+        // preset city if one has been found in the route path
+        console.log(cityName)
+        this.cityItems = [cityName]
+        this.city = cityName
+      },
+      immediate: true
+      /* eslint-enable */
     }
   },
   methods: {

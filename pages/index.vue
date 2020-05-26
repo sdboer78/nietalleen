@@ -251,7 +251,7 @@ import HeroImage from '~/components/HeroImage.vue'
 import NeedyForm from '~/components/NeedyForm.vue'
 import Divider from '~/components/Divider.vue'
 import SocialCarousel from '~/components/SocialCarousel.vue'
-import getCityName from '~/mixins/getCityName.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: {

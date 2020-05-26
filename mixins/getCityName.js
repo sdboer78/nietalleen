@@ -1,4 +1,3 @@
-<script>
 import { slugify } from '~/utils/slugify'
 
 export default {
@@ -17,4 +16,3 @@ export default {
     await this.$store.dispatch('cities/fetchCities')
   }
 }
-</script>
