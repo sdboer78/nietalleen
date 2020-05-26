@@ -1,6 +1,6 @@
 <template>
   <v-app
-    v-show="!isFindingARedirect"
+    v-show="!isPendingCityQuery"
     dark
     class="pa-5"
   >
@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      isFindingARedirect: false,
+      isPendingCityQuery: false,
       pageNotFound: '404. Pagina niet gevonden.',
       otherError: 'Er heeft zich een fout voorgedaan.'
     }
@@ -43,7 +43,7 @@ export default {
      */
     async redirectToCity () {
       if (this.$route.path) {
-        this.isFindingARedirect = true
+        this.isPendingCityQuery = true
         const path = this.$route.path.replace(/\/$/, '').split('/')
         const pageFromPath = path[path.length - 2].replace(/\//g, '').toString()
         const slugFromPath = slugify(path[path.length - 1].replace(/\//g, '').toString())
@@ -62,7 +62,7 @@ export default {
             query: { plaats: matchingCities[0] }
           })
         } else {
-          this.isFindingARedirect = false
+          this.isPendingCityQuery = false
         }
       }
     }
