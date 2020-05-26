@@ -310,8 +310,10 @@ export default {
       /* eslint-disable object-shorthand */
       handler: function (cityName) {
         // preset city if one has been found in the route path
-        this.cityItems = [cityName]
-        this.city = cityName
+        if (cityName) {
+          this.cityItems = [cityName]
+          this.city = cityName
+        }
       },
       immediate: true
       /* eslint-enable */
