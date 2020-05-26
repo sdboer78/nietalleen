@@ -42,26 +42,28 @@ export default {
      * Get the param and see if it is a city. Then redirect to that page with the correct query
      */
     async redirectToCity () {
-      this.isFindingARedirect = true
-      const path = this.$route.path.replace(/\/$/, '').split('/')
-      const pageFromPath = path[path.length - 2].replace(/\//g, '').toString()
-      const slugFromPath = slugify(path[path.length - 1].replace(/\//g, '').toString())
+      if (this.$route.path) {
+        this.isFindingARedirect = true
+        const path = this.$route.path.replace(/\/$/, '').split('/')
+        const pageFromPath = path[path.length - 2].replace(/\//g, '').toString()
+        const slugFromPath = slugify(path[path.length - 1].replace(/\//g, '').toString())
 
-      // make sure we have the cities available in the store
-      await this.$store.dispatch('cities/fetchCities')
+        // make sure we have the cities available in the store
+        await this.$store.dispatch('cities/fetchCities')
 
-      // see if we know a city that includes the value the user entered into the url
-      const citySlugs = this.$store.state.cities.list.map(city => slugify(city))
-      const matchingCities = citySlugs.filter(citySlug => citySlug.includes(slugFromPath))
+        // see if we know a city that includes the value the user entered into the url
+        const citySlugs = this.$store.state.cities.list.map(city => slugify(city))
+        const matchingCities = citySlugs.filter(citySlug => citySlug.includes(slugFromPath))
 
-      // a city has been found. Redirect to the page
-      if (matchingCities.length !== 0) {
-        this.$router.push({
-          name: pageFromPath || 'index',
-          query: { plaats: matchingCities[0] }
-        })
-      } else {
-        this.isFindingARedirect = false
+        // a city has been found. Redirect to the page
+        if (matchingCities.length !== 0) {
+          this.$router.push({
+            name: pageFromPath || 'index',
+            query: { plaats: matchingCities[0] }
+          })
+        } else {
+          this.isFindingARedirect = false
+        }
       }
     }
   },
