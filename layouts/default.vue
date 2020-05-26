@@ -122,24 +122,27 @@ export default {
   },
   computed: {
     currentPageHasTab () {
-      return this.$nuxt.$route.path.includes(this.activeTabItem)
+      return this.$nuxt.$route.fullPath === this.activeTabItem
+    },
+    cityQuery () {
+      return this.cityNameSlug ? `?plaats=${this.cityNameSlug}` : ''
     },
     navItems () {
       return [
-        { text: 'Ik zoek hulp', to: `/${this.cityNameSlug ? this.cityNameSlug : ''}` },
-        { text: 'Ik kan hulp bieden', to: `/hulp-bieden/${this.cityNameSlug ? this.cityNameSlug : ''}` },
-        { text: 'Verhalen', to: '/verhalen' },
-        { text: 'TV programma', to: '/tv-programma' },
-        { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
-        { text: 'Doneren', to: '/doneren' },
-        { text: 'Over ons', to: '/over' },
-        { text: 'Training NPV', to: '/training-npv' }
+        { text: 'Ik zoek hulp', to: `/${this.cityQuery}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden${this.cityQuery}` },
+        { text: 'Verhalen', to: `/verhalen${this.cityQuery}` },
+        { text: 'TV programma', to: `/tv-programma${this.cityQuery}` },
+        { text: 'Veelgestelde vragen', to: `/veelgestelde-vragen${this.cityQuery}` },
+        { text: 'Doneren', to: `/doneren${this.cityQuery}` },
+        { text: 'Over ons', to: `/over${this.cityQuery}` },
+        { text: 'Training NPV', to: `/training-npv${this.cityQuery}` }
       ]
     },
     tabItems () {
       return [
-        { text: 'Ik zoek hulp', to: `/${this.cityNameSlug ? this.cityNameSlug : ''}` },
-        { text: 'Ik kan hulp bieden', to: `/hulp-bieden/${this.cityNameSlug ? this.cityNameSlug : ''}` }
+        { text: 'Ik zoek hulp', to: `/${this.cityQuery}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden${this.cityQuery}` }
       ]
     }
   },

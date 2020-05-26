@@ -18,7 +18,7 @@
             >
           </hero-image>
           <h1 class="display-1">
-            Zo kun je helpen in {{ cityName }}
+            {{ cityName ? `Zo kun je helpen in ${cityName}` : 'Zo werkt het' }}
           </h1>
           <v-card
             flat
@@ -131,7 +131,6 @@ import getCityName from '~/mixins/getCityName.vue'
 
 export default {
   components: { HeroImage, HelpAsOrganisation, HelpAsVolunteer, OrganisationsMap },
-  middleware: 'validateCityRoute',
   mixins: [getCityName],
   data () {
     return {
@@ -149,7 +148,7 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: `Ik kan hulp bieden in ${this.cityName}`,
+      title: `Ik kan hulp bieden${this.cityName ? ` in ${this.cityName}` : ''}`,
       meta: [
         {
           hid: 'og-title',

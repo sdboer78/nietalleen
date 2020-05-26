@@ -130,22 +130,6 @@ export default {
   gtm: {
     id: 'GTM-PNF2PX4'
   },
-  generate: {
-    interval: 10,
-    routes (callback) {
-      // get all possible city routes for static page generation
-      axios.get(`${constants.NIETALLEEN_API_HOST}/${constants.NIETALLEEN_API_ENDPOINT_LOCATIONS}`)
-        .then((result) => {
-          const routes = []
-          for (const cityData of result.data.items) {
-            routes.push('/' + slugify(cityData.city))
-            routes.push('/hulp-bieden/' + slugify(cityData.city))
-          }
-          callback(null, routes)
-        })
-        .catch(callback)
-    }
-  },
   /*
   ** Build configuration
   */
