@@ -24,7 +24,7 @@
             >
           </hero-image>
           <h1 class="display-1">
-            Ik zoek hulp
+            Ik zoek hulp {{ cityName ? `in ${cityName}` : '' }}
           </h1>
           <p
             class="mb-8 subtitle-1 grey--text text--darken-1"
@@ -251,6 +251,7 @@ import HeroImage from '~/components/HeroImage.vue'
 import NeedyForm from '~/components/NeedyForm.vue'
 import Divider from '~/components/Divider.vue'
 import SocialCarousel from '~/components/SocialCarousel.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: {
@@ -259,6 +260,7 @@ export default {
     Divider,
     SocialCarousel
   },
+  mixins: [getCityName],
   data () {
     return {
       showDisclaimerDialog: false
@@ -275,7 +277,7 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Ik zoek hulp',
+      title: `Ik zoek hulp${this.cityName ? ` in ${this.cityName}` : ''}`,
       meta: [
         {
           hid: 'og-title',

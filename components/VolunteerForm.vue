@@ -133,11 +133,13 @@
 import constants from '~/constants/nietalleen-api'
 import regex from '~/constants/regex'
 import SelectPills from '~/components/SelectPills'
+import getCityName from '~/mixins/getCityName.js'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'VolunteerForm',
   components: { SelectPills },
+  mixins: [getCityName],
   props: {
     value: {
       type: Boolean,
@@ -206,6 +208,18 @@ export default {
     },
     showFields () {
       this.$emit('input', this.showFields)
+    },
+    cityName: {
+      /* eslint-disable object-shorthand */
+      handler: function (cityName) {
+        // preset city if one has been found in the route path
+        if (cityName) {
+          this.cityItems = [cityName]
+          this.city = cityName
+        }
+      },
+      immediate: true
+      /* eslint-enable */
     }
   },
   methods: {

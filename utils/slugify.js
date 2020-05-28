@@ -4,7 +4,7 @@ const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxy
 const p = new RegExp(a.split('').join('|'), 'g')
 
 export const slugify = (text) => {
-  return text.toString().toLowerCase()
+  return text ? text.toString().toLowerCase()
     .replace(/\s+/g, '-')                     // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c)))  // Replace special characters
     .replace(/&/g, '-and-')                   // Replace & with 'and'
@@ -12,4 +12,5 @@ export const slugify = (text) => {
     .replace(/\-\-+/g, '-')                   // Replace multiple - with single -
     .replace(/^-+/, '')                       // Trim - from start of text
     .replace(/-+$/, '')                       // Trim - from end of text
+    : null
 }
