@@ -209,12 +209,15 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
+import regex from '~/constants/regex'
 import SelectPills from '~/components/SelectPills'
+import getCityName from '~/mixins/getCityName.js'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'NeedyForm',
   components: { SelectPills },
+  mixins: [getCityName],
   data: () => ({
     valid: true,
     showAlert: false,
@@ -255,7 +258,7 @@ export default {
     emailAddress: '',
     emailAddressRules: [
       v => !!v || 'We hebben je e-mailadres nodig',
-      v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+      v => regex.EMAIL.test(v) || 'Het e-mailadres is niet correct'
     ],
     city: '',
     cityRules: [
@@ -267,7 +270,7 @@ export default {
     phoneNumber: '',
     phoneNumberRules: [
       v => !!v || 'We hebben je telefoonnummer nodig',
-      v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+      v => regex.PHONE.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
     needy: '',
     needyOptions: [
@@ -282,11 +285,11 @@ export default {
     needyCityKeyword: null,
     needyPhoneNumber: '',
     needyPhoneNumberRules: [
-      v => v === '' || /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+      v => v === '' || regex.PHONE.test(v) || 'Dit is geen geldig telefoonnummer'
     ],
     needyEmailAddress: '',
     needyEmailAddressRules: [
-      v => v === '' || /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+      v => v === '' || regex.EMAIL.test(v) || 'Het e-mailadres is niet correct'
     ],
     consentPrivacyNeedy: '',
     consentPrivacyNeedyRules: [
@@ -300,6 +303,20 @@ export default {
   computed: {
     isForNeedy () {
       return this.needy === this.needyOptions[1]
+    }
+  },
+  watch: {
+    cityName: {
+      /* eslint-disable object-shorthand */
+      handler: function (cityName) {
+        // preset city if one has been found in the route path
+        if (cityName) {
+          this.cityItems = [cityName]
+          this.city = cityName
+        }
+      },
+      immediate: true
+      /* eslint-enable */
     }
   },
   methods: {

@@ -18,7 +18,7 @@
             >
           </hero-image>
           <h1 class="display-1">
-            Zo werkt het
+            {{ cityName ? `Zo kun je helpen in ${cityName}` : 'Zo werkt het' }}
           </h1>
           <v-card
             flat
@@ -127,9 +127,11 @@ import HeroImage from '~/components/HeroImage.vue'
 import HelpAsOrganisation from '~/components/HelpAsOrganisation.vue'
 import HelpAsVolunteer from '~/components/HelpAsVolunteer.vue'
 import OrganisationsMap from '~/components/OrganisationsMap.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: { HeroImage, HelpAsOrganisation, HelpAsVolunteer, OrganisationsMap },
+  mixins: [getCityName],
   data () {
     return {
       activeTab: null
@@ -146,7 +148,7 @@ export default {
   head () {
     // page specific metadata
     return {
-      title: 'Ik kan hulp bieden',
+      title: `Ik kan hulp bieden${this.cityName ? ` in ${this.cityName}` : ''}`,
       meta: [
         {
           hid: 'og-title',

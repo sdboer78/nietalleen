@@ -131,12 +131,15 @@
 
 <script>
 import constants from '~/constants/nietalleen-api'
+import regex from '~/constants/regex'
 import SelectPills from '~/components/SelectPills'
+import getCityName from '~/mixins/getCityName.js'
 import { slugify } from '~/utils/slugify'
 
 export default {
   name: 'VolunteerForm',
   components: { SelectPills },
+  mixins: [getCityName],
   props: {
     value: {
       type: Boolean,
@@ -176,12 +179,12 @@ export default {
       emailAddress: '',
       emailAddressRules: [
         v => !!v || 'We hebben je e-mailadres nodig',
-        v => /.+@.+\..+/.test(v) || 'Het e-mailadres is niet correct'
+        v => regex.EMAIL.test(v) || 'Het e-mailadres is niet correct'
       ],
       phoneNumber: '',
       phoneNumberRules: [
         v => !!v || 'We hebben je telefoonnummer nodig',
-        v => /^((\+|00(\s|\s?-\s?)?)31(\s|\s?-\s?)?(\(0\)[-\s]?)?|0)[1-9]((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/.test(v) || 'Dit is geen geldig telefoonnummer'
+        v => regex.PHONE.test(v) || 'Dit is geen geldig telefoonnummer'
       ],
       helpType: [],
       helpTypeRules: [
@@ -205,6 +208,18 @@ export default {
     },
     showFields () {
       this.$emit('input', this.showFields)
+    },
+    cityName: {
+      /* eslint-disable object-shorthand */
+      handler: function (cityName) {
+        // preset city if one has been found in the route path
+        if (cityName) {
+          this.cityItems = [cityName]
+          this.city = cityName
+        }
+      },
+      immediate: true
+      /* eslint-enable */
     }
   },
   methods: {

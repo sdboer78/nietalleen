@@ -107,34 +107,43 @@
 
 <script>
 import FooterContent from '~/components/FooterContent.vue'
+import getCityName from '~/mixins/getCityName.js'
 
 export default {
   components: { FooterContent },
+  mixins: [getCityName],
   data () {
     return {
       showMenu: false,
       baseUrl: null,
       activeNavItem: null,
-      navItems: [
-        { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' },
-        { text: 'Verhalen', to: '/verhalen' },
-        { text: 'TV programma', to: '/tv-programma' },
-        { text: 'Veelgestelde vragen', to: '/veelgestelde-vragen' },
-        { text: 'Doneren', to: '/doneren' },
-        { text: 'Over ons', to: '/over' },
-        { text: 'Training NPV', to: '/training-npv' }
-      ],
-      activeTabItem: null,
-      tabItems: [
-        { text: 'Ik zoek hulp', to: '/' },
-        { text: 'Ik kan hulp bieden', to: '/hulp-bieden' }
-      ]
+      activeTabItem: null
     }
   },
   computed: {
     currentPageHasTab () {
-      return this.$nuxt.$route.path === this.activeTabItem
+      return this.$nuxt.$route.fullPath === this.activeTabItem
+    },
+    cityQuery () {
+      return this.cityNameSlug ? `?plaats=${this.cityNameSlug}` : ''
+    },
+    navItems () {
+      return [
+        { text: 'Ik zoek hulp', to: `/${this.cityQuery}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden${this.cityQuery}` },
+        { text: 'Verhalen', to: `/verhalen${this.cityQuery}` },
+        { text: 'TV programma', to: `/tv-programma${this.cityQuery}` },
+        { text: 'Veelgestelde vragen', to: `/veelgestelde-vragen${this.cityQuery}` },
+        { text: 'Doneren', to: `/doneren${this.cityQuery}` },
+        { text: 'Over ons', to: `/over${this.cityQuery}` },
+        { text: 'Training NPV', to: `/training-npv${this.cityQuery}` }
+      ]
+    },
+    tabItems () {
+      return [
+        { text: 'Ik zoek hulp', to: `/${this.cityQuery}` },
+        { text: 'Ik kan hulp bieden', to: `/hulp-bieden${this.cityQuery}` }
+      ]
     }
   },
   mounted () {
@@ -176,6 +185,11 @@ export default {
       margin-right: auto !important;
     }
   }
+
+  ::v-deep .v-tabs.has-no-active .v-tabs-slider-wrapper {
+    opacity: 0;
+  }
+
   .v-tab {
     font-family: "Bellota", "Century Gothic", "Avenir", sans-serif !important;
     font-size: 16px;
@@ -233,11 +247,5 @@ export default {
   }
   .v-slide-group__content {
     width: 100%;
-  }
-
-  .has-no-active {
-    .v-tabs-slider-wrapper {
-      opacity: 0;
-    }
   }
 </style>
