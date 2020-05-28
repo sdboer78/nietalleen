@@ -5,6 +5,15 @@
 ## Build Setup
 
 ``` bash
+# use the right node version
+$ nvm use
+
+# Make sure you have our CLI (@eo/cli) globally installed
+$ npm install -g @eo/cli
+
+# provision a .env using our CLI 
+$ veilige-opslag fetch -e nietalleen
+
 # install dependencies
 $ npm install
 
