@@ -45,13 +45,14 @@
             </v-icon>0800-1322
           </v-btn>
           <p class="caption my-6">
-            <strong>maandag t/m vrijdag:</strong>
-            van 09.00 - 21.00 uur
+            <strong>maandag t/m donderdag:</strong>
+            van 09.00 - 17.00 uur
+            <br>
+            <strong>vrijdag:</strong>
+            van 09.00 - 16.00 uur
             <br>
             <strong>zaterdag en zondag:</strong>
-            van 09.00 - 18.00 uur
-            <br>
-            Op maandag 1 juni (2e Pinksterdag) is het callcenter gesloten.
+            gesloten
           </p>
           <p class="caption pb-6">
             Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
