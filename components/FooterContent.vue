@@ -29,7 +29,7 @@
     </div>
     <div class="mx-auto py-5">
       <p class="caption mb-2 white--text text-center">
-        #Nietalleen wordt gecoördineerd door de Protestantse Kerk Nederland en de Evangelische Omroep.
+        #Nietalleen wordt geco&ouml;rdineerd door de Protestantse Kerk Nederland en de Evangelische Omroep.
       </p>
       <p class="caption mb-0 white--text text-center">
         <nuxt-link to="/over" class="white--text wrap-whitespace">
