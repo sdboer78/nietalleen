@@ -119,7 +119,7 @@
             width="200"
           >
           <h2 class="display-1">
-            Ondanks het coronavirus staan we voor je klaar.
+            We staan voor je klaar.
           </h2>
           <p class="subtitle-1">
             Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
@@ -161,12 +161,6 @@
           >
             Aanmelden
           </v-btn>
-          <p class="body-2 my-6 px-4">
-            Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
-          </p>
-          <p class="body-2 my-6 px-4">
-            Wil je je als organisatie hulp vragen? Mail ons dan op <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>, dan nemen we zo snel mogelijk contact met je op.
-          </p>
         </v-flex>
       </v-layout>
     </section>
@@ -198,8 +192,8 @@
             Over ons
           </h2>
           <p class="subtitle-1">
-            Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
-            <br>De hulpvraag wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd
+            #Nietalleen verbindt lokale hulpinitiatieven aan hulpvragers en stimuleert lokale samenwerking
+            tussen hulpinitiatieven. De hulpvraag wordt door één van de samenwerkende organisaties opgepakt.
           </p>
           <v-btn
             href="/over"
