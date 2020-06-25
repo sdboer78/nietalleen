@@ -31,7 +31,7 @@
             Van Apeldoorn tot Afghanistan en van Rotterdam tot Rwanda: de gevolgen van het coronavirus raken ons allemaal. Dichtbij, in onze huizen en onze steden. Verder weg, bij onze medemensen over de hele wereld.
           </p>
           <p>
-            Daarom start EO Metterdaad een noodhulpcampagne om jou de mogelijkheid te geven ook financieel te helpen. Dat doen we samen met de initiatiefnemers achter #Nietalleen.nl en met de andere hulporganisaties in ons netwerk. Zij doen wat ze kunnen om mensen in nood te bij te staan. In Nederland én wereldwijd. Met jouw gift steun je hun belangrijke werk.
+            Daarom is EO Metterdaad een noodhulpcampagne gestart om jou de mogelijkheid te geven ook financieel te helpen. Dat doen we samen met de initiatiefnemers achter #Nietalleen.nl en met de andere hulporganisaties in ons netwerk. Zij doen wat ze kunnen om mensen in nood te bij te staan. In Nederland én wereldwijd. Met jouw gift steun je hun belangrijke werk.
           </p>
           <p>
             Zoals altijd zien wij er zorgvuldig op toe dat donaties terecht komen waar ze nodig zijn. Dat doen we als EO Metterdaad immers al bijna 50 jaar. Geef dus met een gerust hart.
