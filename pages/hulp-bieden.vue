@@ -89,36 +89,6 @@
         </v-flex>
       </v-layout>
     </section>
-    <section>
-      <v-layout
-        justify-center
-        align-center
-        class="px-8 py-12 accent text-center"
-      >
-        <v-flex xs12 sm8 md5 lg4 xl3>
-          <h2 class="display-1 my-5">
-            Corona raakt ons allemaal:<br>
-            blijf om elkaar geven
-          </h2>
-          <img
-            src="~/assets/logo-anbi.svg?data"
-            class="mx-auto my-5 d-block"
-            height="35"
-          >
-          <p class="mb-5">
-            EO Metterdaad is een noodhulpcampagne gestart om jou de mogelijkheid te geven ook financieel te helpen.
-          </p>
-          <v-btn
-            href="/doneren"
-            color="primary"
-            class="mb-5"
-            x-large
-          >
-            Informatie over doneren
-          </v-btn>
-        </v-flex>
-      </v-layout>
-    </section>
   </div>
 </template>
 

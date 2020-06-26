@@ -45,11 +45,14 @@
             </v-icon>0800-1322
           </v-btn>
           <p class="caption my-6">
-            <strong>maandag t/m vrijdag:</strong>
-            van 09.00 - 21.00 uur
+            <strong>maandag t/m donderdag:</strong>
+            van 09.00 - 17.00 uur
+            <br>
+            <strong>vrijdag:</strong>
+            van 09.00 - 16.00 uur
             <br>
             <strong>zaterdag en zondag:</strong>
-            van 09.00 - 18.00 uur
+            gesloten
           </p>
           <p class="caption pb-6">
             Voor meer informatie over het coronavirus en de maatregelen bezoek <a target="_blank" href="https://www.rivm.nl">www.rivm.nl</a> of bel het landelijke nummer voor vragen over het coronavirus <a href="tel:08001351">0800 1351</a>.
@@ -116,7 +119,7 @@
             width="200"
           >
           <h2 class="display-1">
-            Ondanks het coronavirus staan we voor je klaar.
+            We staan voor je klaar.
           </h2>
           <p class="subtitle-1">
             Overal in Nederland zetten talloze lokale organisaties en kerken zich in voor mensen die hulp kunnen gebruiken. Praktische hulp nodig? Een luisterend oor? Je bent #Nietalleen.
@@ -140,7 +143,7 @@
         >
           <h2 class="mb-12">
             <span class="display-4 mb-0 d-block" style="line-height:1.1;">
-              1588
+              1630
             </span>
             <span class="display-1 mb-0 d-block" style="line-height:1.1;">
               initiatieven
@@ -158,12 +161,6 @@
           >
             Aanmelden
           </v-btn>
-          <p class="body-2 my-6 px-4">
-            Ben je een particulier en wil je ook graag helpen? We gaan binnenkort op de website laten zien bij welke organisatie bij jou in de buurt je kan aansluiten.
-          </p>
-          <p class="body-2 my-6 px-4">
-            Wil je je als organisatie hulp vragen? Mail ons dan op <a href="mailto:info@nietalleen.nl">info@nietalleen.nl</a>, dan nemen we zo snel mogelijk contact met je op.
-          </p>
         </v-flex>
       </v-layout>
     </section>
@@ -195,8 +192,8 @@
             Over ons
           </h2>
           <p class="subtitle-1">
-            Met #Nietalleen verbinden we de talloze lokale en kerkelijke hulpinitiatieven aan elkaar en aan hulpvragers.
-            <br>De hulpvraag wordt door één van de samenwerkende organisaties opgepakt en doorgestuurd
+            #Nietalleen verbindt lokale hulpinitiatieven aan hulpvragers en stimuleert lokale samenwerking
+            tussen hulpinitiatieven. De hulpvraag wordt door één van de samenwerkende organisaties opgepakt.
           </p>
           <v-btn
             href="/over"
