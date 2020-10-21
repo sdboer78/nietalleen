@@ -186,7 +186,7 @@
       v-model="showAlert"
       :color="formSubmissionState"
       class="white--text"
-      :timeout="0"
+      :timeout="-1"
       top
     >
       <v-icon

@@ -31,9 +31,9 @@
         </v-tab>
       </v-tabs>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <v-footer color="primary pa-0">
       <footer-content />
     </v-footer>
