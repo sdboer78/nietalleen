@@ -93,9 +93,9 @@
               <p>Ministerie VWS</p>
               <p>Missie Nederland</p>
               <p>Navigators</p>
+              <p>Nederlands Dagblad</p>
             </v-col>
             <v-col>
-              <p>Nederlands Dagblad</p>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
               <p>Samen Kerk In Nederland</p>
@@ -109,12 +109,14 @@
               <p>Schuldhulpmaatje</p>
               <p>SGP</p>
               <p>Stichting Agapè</p>
+              <p>Stichting Chris</p>
               <p>Stichting Present</p>
               <p>Tear</p>
               <p>Tijd voor Actie</p>
               <p>Tot Heil des Volks</p>
               <p>Unie van Baptisten</p>
               <p>Verenigde Pinkster- en Evangeliegemeenten</p>
+              <p>Voorkom!</p>
               <p>Youth for Christ</p>
               <p>...</p>
             </v-col>
