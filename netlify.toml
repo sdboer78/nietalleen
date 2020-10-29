@@ -6,6 +6,8 @@
     URL = "https://nietalleen.nl"
 
 [context."develop".environment]
+#   Overwrite API host for develop branch/app
+    NIETALLEEN_API_HOST = "https://test-api-nietalleen.eo.nl"
     URL = "https://develop.nietalleen.nl"
 
 [context.deploy-preview.environment]
