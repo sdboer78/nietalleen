@@ -118,6 +118,7 @@
               <p>Verenigde Pinkster- en Evangeliegemeenten</p>
               <p>Voorkom!</p>
               <p>Youth for Christ</p>
+              <p>Youth with a mission</p>
               <p>...</p>
             </v-col>
           </v-row>
