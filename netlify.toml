@@ -17,5 +17,5 @@
 [[redirects]]
   from = "/*"
   to = "https://www.eo.nl/programmas/niet-alleen-nl"
-  status = 200
+  status = 301 
   force = true
