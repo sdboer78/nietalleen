@@ -72,12 +72,12 @@
             <v-col>
               <p>4M</p>
               <p>ABC gemeenten</p>
-              <p>Agape</p>
               <p>Alpha Nederland</p>
               <p>Business as Mission</p>
-              <p>Christelijk Gereformeerde Kerken</p>
+              <p>CDA</p>
+              <p>Christelijke Gereformeerde Kerken</p>
               <p>ChristenUnie</p>
-              <p>Compassion</p>
+              <p>Compassion Nederland</p>
               <p>Diaconaal Steunpunt</p>
               <p>Een tegen eenzaamheid</p>
               <p>Evangelische Omroep</p>
@@ -85,19 +85,21 @@
               <p>Groot Nieuws Radio</p>
               <p>HipHelpt</p>
               <p>Hour of Power</p>
+              <p>JobHulpMaatje</p>
               <p>KBO-PCOB</p>
               <p>Leger des Heils</p>
               <p>Kerk in Actie</p>
               <p>Micha</p>
               <p>Ministerie VWS</p>
               <p>Missie Nederland</p>
-            </v-col>
-            <v-col>
               <p>Navigators</p>
               <p>Nederlands Dagblad</p>
+            </v-col>
+            <v-col>
               <p>Nederlands Gereformeerde Kerken</p>
               <p>NPV</p>
-              <p>Opwekking</p>
+              <p>Samen Kerk In Nederland</p>
+              <p>Stichting Opwekking</p>
               <p>Oranje Helpers</p>
               <p>Presence</p>
               <p>Protestantse Kerk in Nederland</p>
@@ -107,13 +109,16 @@
               <p>Schuldhulpmaatje</p>
               <p>SGP</p>
               <p>Stichting Agapè</p>
+              <p>Stichting Chris</p>
               <p>Stichting Present</p>
               <p>Tear</p>
               <p>Tijd voor Actie</p>
               <p>Tot Heil des Volks</p>
               <p>Unie van Baptisten</p>
               <p>Verenigde Pinkster- en Evangeliegemeenten</p>
+              <p>Voorkom!</p>
               <p>Youth for Christ</p>
+              <p>Youth with a mission</p>
               <p>...</p>
             </v-col>
           </v-row>
