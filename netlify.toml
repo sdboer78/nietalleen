@@ -13,3 +13,9 @@
 [context.deploy-preview.environment]
 #    NODE_ENV = "development"
     URL = "https://develop.nietalleen.nl"
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.eo.nl/programmas/niet-alleen-nl"
+  status = 301 
+  force = true
