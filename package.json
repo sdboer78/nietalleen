@@ -20,7 +20,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.2.2",
     "@nuxtjs/svg": "^0.1.12",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "nuxt": "^2.14.7",
     "object-hash": "^2.0.3"
   },
